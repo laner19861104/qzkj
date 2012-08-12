@@ -1,0 +1,23 @@
+<chart palette='2'  caption='绩效评分'  showValues='0' halfErrorBar='0' errorBarColor='8F8C82' errorBarThickness='0' errorBarWidthPercent='30'>
+
+	<categories>
+		<category label1='综合绩效' />
+		<category label2='盈利能力' />
+		<category label3='资产营运' />
+		<category label4='偿债能力' />
+		<category label5='经营增长' />
+	</categories>
+
+	<dataset  >
+		<set value='87.90' color='AFD8F8'/>
+		<set  value='87.22' color='F6BD0F' />
+		<set  value='103.08' color='8BBA00' />
+		<set  value='64.60' color='FF8E46'/>
+		<set  value='97.09' color='008E8E'/>
+	</dataset>
+
+	
+	
+</chart>
+
+

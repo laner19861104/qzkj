@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!--登录操作-->
+	<package name="login" extends="struts-default">
+		<action name="adminLogin" class="loginAction" method="adminlogin">
+			<result name="success" type="velocity">/templates/index.vm</result>
+			<result name="failure" type="velocity">/login.vm</result>
+		</action>
+		<action name="alentry" class="loginEntryAction"
+			method="adminLoginEntry">
+			<result name="success" type="velocity">/login.vm</result>
+		</action>
+
+		<action name="gohome" class="goHomeAction"
+			method="goHome">
+			<result name="success">/templates/sys/main.html</result>
+		</action>
+		<action name="VerifyCodeServlet" class="verifyCodeServletAction"
+			method="generateImageCode">
+
+		</action>
+		<action name="loginleft" class="loginLeftAction"
+			method="loginLeft">
+			<result name="success" >/templates/left.jsp</result>
+		</action>
+	</package>
+
+	<!--系统管理－用户管理-->
+	<package name="user" extends="struts-default">
+		<action name="userentry" class="entryUserAction" method="userEntry">
+			<result name="success" type="velocity">/templates/sys/user_list.vm
+			</result>
+		</action>
+		<action name="userpwdentry" class="entryUserAction" method="upPwdEntry">
+			<result name="success" type="velocity">/templates/sys/pwd_main.vm
+			</result>
+		</action>
+		<action name="uppwd" class="editUserAction" method="uppwd">
+			<result name="success" type="velocity">/templates/sys/pwd_main.vm
+			</result>
+			<result name="failure" type="velocity">/templates/sys/failure.vm
+			</result>
+		</action>
+
+	</package>
+	<!--系统管理－部门管理-->
+	<package name="department" extends="struts-default">
+		<action name="deptentry" class="entryDeptAction" method="deptEntry">
+			<result name="success" type="velocity">/templates/sys/dept_list.vm
+			</result>
+			<result name="failure" type="velocity">/templates/sys/dept_failure.vm
+			</result>
+		</action>
+	</package>
+
+
+
+	<!--系统管理－资源管理-->
+	<package name="resource" extends="struts-default">
+		<action name="resourceentry" class="entryResourceAction" method="resourceEntry">
+			<result name="success" type="velocity">/templates/sys/resource_list.vm
+			</result>
+			<result name="failure" type="velocity">/templates/sys/resource_failure.vm
+			</result>
+		</action>
+
+	</package>
+	<!--系统管理－权限管理-->
+	<package name="permission" extends="struts-default">
+		<action name="permissionentry" class="entryPermissionAction" method="permissionEntry">
+			<result name="success" type="velocity">/templates/sys/permission_list.vm
+			</result>
+			<result name="failure" type="velocity">/templates/sys/permission_failure.vm
+			</result>
+		</action>
+	</package>
+
+	<!--系统管理－角色管理-->
+	<package name="role" extends="struts-default">
+		<action name="roleentry" class="entryRoleAction" method="roleEntry">
+			<result name="success" type="velocity">/templates/sys/role_list.vm
+			</result>
+			<result name="failure" type="velocity">/templates/sys/role_failure.vm
+			</result>
+		</action>
+
+	</package>
+
+	<!--系统管理－日志管理-->
+
+	<!--系统管理－代码字典-->
+	<package name="dmzd" extends="struts-default">
+		<action name="dmzdentry" class="entryDmlbAction" method="dmlbEntry">
+			<result name="success" type="velocity">/templates/sys/dmzd_list.vm
+			</result>
+			<result name="failure" type="velocity">/templates/sys/dmzd_failure.vm
+			</result>
+		</action>
+	</package>
+
+
+	
+	<package name="sys-json" extends="json-default">
+		<!--获取资源树-zhaosy-->
+		<action name="queryresourcetree" class="queryResourceAction" method="queryResourceTree">
+		</action>
+		<!--部门管理-zhaosy-->
+		<action name="querydept" class="queryDeptAction" method="query">
+			<result type="json">
+			</result>
+		</action>
+		<action name="editdept" class="editDeptAction" method="edit">
+			<result type="json">
+			</result>
+		</action>
+		<action name="adddept" class="editDeptAction" method="add">
+			<result type="json">messge
+			</result>
+		</action>
+		<action name="deldept" class="editDeptAction" method="del">
+			<result type="json">
+			</result>
+		</action>
+		<!--权限管理-zhaosy-->
+		<action name="addpermission" class="editPermissionAction" method="add">
+			<result type="json">
+			</result>
+		</action>
+		<action name="editpermission" class="editPermissionAction" method="edit">
+			<result type="json">
+			</result>
+		</action>
+		<action name="delpermission" class="editPermissionAction" method="del">
+			<result type="json">
+			</result>
+		</action>
+		<action name="querypermission" class="queryPermissionAction" method="query">
+			<result type="json">
+			</result>
+		</action>
+		<!--资源管理-zhaosy-->
+		<action name="addresource" class="editResourceAction" method="add">
+			<result type="json">
+			</result>
+		</action>
+		<action name="editresource" class="editResourceAction" method="edit">
+			<result type="json">
+			</result>
+		</action>
+		<action name="delresource" class="editResourceAction" method="del">
+			<result type="json">
+			</result>
+		</action>
+
+		<action name="queryresource" class="queryResourceAction" method="query">
+			<result type="json">
+			</result>
+		</action>
+
+		<!--ComboxTree 获取-zhaosy-->
+		<action name="getsysdmzdtree" class="sysTreeAction" method="getSysDmzdTree">
+			<result type="json">
+			</result>
+		</action>
+		<action name="getdepttree" class="sysTreeAction" method="getDeptTree">
+			<result type="json">
+			</result>
+		</action>
+		<action name="getdepttreebytype" class="sysTreeAction" method="getDeptTreeByType">
+			<result type="json">
+			</result>
+		</action>
+		<action name="getdepttreebylevel" class="sysTreeAction" method="getDeptTreeByLevel">
+			<result type="json">
+			</result>
+		</action>
+		<action name="getdeptgrid" class="sysTreeAction" method="getDeptGrid">
+			<result type="json">
+			</result>
+		</action>
+		<action name="getresourcetree" class="sysTreeAction" method="getResourceTree">
+			<result type="json">
+			</result>
+		</action>
+		<action name="getresourcegrid" class="sysTreeAction" method="getResourceGrid">
+			<result type="json">
+			</result>
+		</action>
+		<action name="getpermissiontree" class="sysTreeAction" method="getPermissionTree">
+			<result type="json">
+			</result>
+		</action>
+		<action name="getpermissiontreeofcheck" class="sysTreeAction"
+			method="getPermissionTreeOfCheck">
+			<result type="json">
+			</result>
+		</action>
+		<action name="getpermissiongrid" class="sysTreeAction" method="getPermissionGrid">
+			<result type="json">
+			</result>
+		</action>
+		<action name="getregiontree" class="sysTreeAction" method="getRegionTree">
+			<result type="json">
+			</result>
+		</action>
+		<action name="getwfregiontree" class="sysTreeAction" method="getWfRegionTree">
+			<result type="json">
+			</result>
+		</action>
+		<action name="getWfhyTree" class="sysTreeAction" method="getWfhyTree">
+			<result type="json">
+			</result>
+		</action>
+		<action name="getregiongrid" class="sysTreeAction" method="getRegionGrid">
+			<result type="json">
+			</result>
+		</action>
+		<action name="gethyzdtree" class="sysTreeAction" method="getHyzdTree">
+			<result type="json">
+			</result>
+		</action>
+		<action name="getResList" class="loginAction" method="getResList">
+			<result type="json">
+			</result>
+		</action>
+		<!--ComboxTree 获取结束-zhaosy-->
+		<!-- 代码字典 -->
+
+		<action name="querydmlb" class="queryDmlbAction." method="query">
+			<result type="json">
+			</result>
+		</action>
+		<action name="adddmlb" class="editDmlbAction" method="add">
+			<result type="json">
+			</result>
+		</action>
+		<action name="deldmlb" class="editDmlbAction" method="del">
+			<result type="json">
+			</result>
+		</action>
+		<action name="querydmzd" class="queryDmzdAction" method="query">
+			<result type="json">
+			</result>
+		</action>
+		<action name="adddmzd" class="editDmzdAction" method="add">
+			<result type="json">
+			</result>
+		</action>
+		<action name="editdmzd" class="editDmzdAction" method="edit">
+			<result type="json">
+			</result>
+		</action>
+		<action name="deldmzd" class="editDmzdAction" method="del">
+			<result type="json">
+			</result>
+		</action>
+
+		<!--  -->
+		<!--角色管理 -->
+		<action name="addrole" class="editRoleAction" method="add">
+			<result type="json">
+			</result>
+		</action>
+		<action name="editrole" class="editRoleAction" method="edit">
+			<result type="json">
+			</result>
+		</action>
+		<action name="delrole" class="editRoleAction" method="del">
+			<result type="json">
+			</result>
+		</action>
+		<action name="queryrole" class="queryRoleAction" method="query">
+			<result type="json">
+			</result>
+		</action>
+		<action name="addrolepermission" class="editRolepermissionAction"
+			method="add">
+			<result type="json">
+			</result>
+		</action>
+		<action name="delrolepermission" class="editRolepermissionAction"
+			method="del">
+			<result type="json">
+			</result>
+		</action>
+		<action name="queryrolepermission" class="queryRolepermissionAction"
+			method="query">
+			<result type="json">
+			</result>
+		</action>
+
+		<!-- 用户管理 -->
+		<action name="delrolepermission" class="editRolepermissionAction"
+			method="del">
+			<result type="json">
+			</result>
+		</action>
+		<action name="edituser" class="editUserAction" method="edit">
+			<result type="json">
+			</result>
+		</action>
+		<action name="adduser" class="editUserAction" method="add">
+			<result type="json">
+			</result>
+		</action>
+		<action name="queryuser" class="queryUserAction" method="query">
+			<result type="json">
+			</result>
+		</action>
+		<action name="deluser" class="editUserAction" method="del">
+			<result type="json">
+			</result>
+		</action>
+		<!-- 用户角色 -->
+		<action name="queryuserrole" class="queryUserRoleAction" method="query">
+			<result type="json">
+			</result>
+		</action>
+		<action name="adduserrole" class="editUserRoleAction" method="add">
+			<result type="json">
+			</result>
+		</action>
+		
+		<action name="deluserrole" class="editUserRoleAction" method="del">
+			<result type="json">
+			</result>
+		</action>
+		<action name="query_*_*" class="{1}" method="{2}">
+			<result type="json">
+			<param name="root">queryJson</param>
+			</result>
+		</action>
+		<action name="modify_*_*" class="{1}" method="{2}">
+			<result type="json">
+			<param name="contentType">text/html;charset=GBK</param>
+			<param name="root">msg</param>
+			</result>
+			</action>
+		<action name="get_*_*" class="{1}" method="{2}">
+			<result type="json">
+			<param name="contentType">text/html;charset=GBK</param>
+			<param name="root">instance</param>
+			</result>
+		</action>
+		<action name="tree_*_*" class="{1}" method="{2}">
+			<result type="json">
+			<param name="contentType">text/html;charset=GBK</param>
+			<param name="root">treelist</param>
+			</result>
+		</action>
+	</package>
+	<package name="download" extends="struts-default">
+		<action name="download_{1}_{2}" class="{1}" method="{2}">
+			<result name="success" type="stream">
+				<!-- 指定下载文件的文件类型 -->
+				<param name="contentType">application/octet-stream;charset=ISO8859-1</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${documentFileName}"</param>
+				<!-- 指定下载文件的缓冲大小 -->
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+		
+	</package>
+
+</struts>    

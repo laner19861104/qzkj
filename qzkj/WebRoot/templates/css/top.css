@@ -1,0 +1,140 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+body {
+	background: url(../image/top_02.gif) repeat-x;
+	
+}
+.logo_01 {
+	background-image: url(../image/top_01.gif);
+	background-repeat: no-repeat;
+	height: 69px;
+	width: 504px;
+}
+.gly {
+	font-size: 12px;
+	font-style: normal;
+	color: #FFFFFF;
+	text-decoration: none;
+	float: right;
+	padding-right: 20px;
+}
+.gly img {
+	height: 15px;
+	width: 15px;
+	margin-right: 6px;
+}
+.bottom {
+	padding-right: 10px;
+}
+.bottom img {
+	margin-right: 10px;
+}
+img{
+border:0}
+.gly .hong {
+	color: #17FFFF;
+	text-decoration: none;
+}
+
+
+.topbody {
+	margin: 0px;
+	font-size: 12px;
+	height: 32px;
+	background: url(../image/top_bg.jpg) left top repeat-x;
+}
+
+
+.menu_nt{
+	width: 98%;
+	clear: both;
+	margin-left: 15px;
+	height: 31px;
+	margin-top: 0px;
+}
+
+.menu_nt .nav {
+	margin-top: 9px;
+	float: left;
+	height: 12px;
+	margin-left: 0px;
+	width: 1000px;
+}
+.menu_nt .nav ul {
+	float: left;
+	margin-left: 30px;
+}
+
+.menu {
+	width: 1000px;
+	clear: right;
+	height: 31px;
+	margin-top: 1px;
+	padding-left: 20px;
+}
+.menu a:hover {
+	border:none
+}
+.menu a.menu_left {
+	background: url(../image/menu_left.png) no-repeat;
+	height: 32px;
+	width: 30px;
+	float: left;
+	margin-top:-1px;
+}
+.menu a:hover.menu_left {
+	background: url(../image/menu_left2.png) no-repeat;
+}
+.menu a.menu_right {
+	background: url(../image/menu_right.png) no-repeat;
+	height: 32px;
+	width: 40px;
+	margin-top:-1px;
+	float: right;
+}
+.menu a:hover.menu_right {
+	background: url(../image/menu_right2.png) no-repeat;
+}
+
+
+
+.menu .nav {
+	width: 776px;
+	margin-top: 8px;
+	float: left;
+	overflow: hidden;
+	overflow: hidden;
+	height: 20px;
+	margin-left: 10px;
+}
+.menu .nav ul {
+	width: 2000px;
+	float: left;
+	position: relative;
+}
+.menu .nav li, .top .menu_nt .nav li {
+	float:left;
+	white-space: nowrap;
+}
+ .menu .nav li a, .top .menu_nt .nav li a{
+	text-decoration: none;
+	line-height:20px;
+	white-space: nowrap;
+	margin-right: 10px;
+	padding: 5px 8px 0px 8px!important;
+	padding: 1px 8px;
+	color:#FFF;
+	font-weight:bold;
+	font-family: "";
+	letter-spacing: 1px;
+}
+.menu .nav a:hover, .top .menu_nt .nav a:hover {
+	background: url(../image/menu_item.png) left -1px;
+	border: 1px solid #00CCFF;
+	padding: 1px 7px;
+}
+
+
+

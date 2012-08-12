@@ -1,0 +1,14 @@
+<graph caption='重点行业工业生产及增长情况' xAxisName='Month' yAxisName='' decimalPrecision='0' formatNumberScale='0'>
+<set name='纺织' value='462' color='AFD8F8' />
+<set name='化工' value='857' color='F6BD0F' />
+<set name='制造' value='671' color='8BBA00' />
+<set name='电力' value='494' color='FF8E46'/>
+<set name='通信' value='761' color='008E8E'/>
+<set name='运输' value='960' color='D64646'/>
+<set name='医药' value='629' color='8E468E'/>
+<set name='有色金属' value='622' color='588526'/>
+<set name='文教体育' value='376' color='B3AA00'/>
+<set name='塑胶' value='494' color='008ED6'/>
+<set name='采矿' value='761' color='9D080D'/>
+<set name='工艺美术' value='960' color='A186BE'/>
+</graph>

@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+<session-factory>
+	<!-- ====================hibernate配置开始==================== -->
+	<!-- 驱动类：driver_class -->
+			<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<!-- 连接URL -->
+		<property name="connection.url">jdbc:mysql://localhost:3306/db_movie?characterEncoding=UTF-8</property>
+		<!-- 用户名 -->
+		<property name="connection.username">root</property>
+		<!-- 密码 -->
+		<property name="connection.password">root</property>
+		<!-- 自动提交 -->
+		<property name="connection.autocommit">true</property>
+
+		<!-- 指定数据库方言 -->
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+	<!--  如果开启, Hibernate将在SQL中生成有助于调试的注释信息, 默认值为false.取值true | false-->
+	<property name="hibernate.use_sql_comments">true</property>
+	<!-- 是否在日志中输出所有Hibernate与数据库交互的SQL语句 -->
+	<property name="hibernate.show_sql">true</property>
+	<!-- 是否在日志中输出的SQL 语句格式化成易读形式 -->
+	<property name="hibernate.format_sql">false</property>
+	<!-- 对于级联查询，一次性获取的级联深度 -->
+	<property name="hibernate.max_fetch_depth">6</property>
+	<!--
+		Fetch Size 是设定JDBC的Statement读取数据的时候每次从数据库中取出的记录条数，一般设置为30、50、100。
+	-->
+	<property name="hibernate.jdbc.fetch_size">50</property>
+	<!--
+		不必等到累计到50个SQL之后才执行.只要事务commit后,不管缓存中有多少条sql语句都要执行.
+		hibernate.jdbc.batch_size参数只是设定一次最多可以提交多少sql语句的上限,提高sql语句的执行效率
+	-->
+	<property name="hibernate.jdbc.batch_size">0</property>
+
+	<!-- 自定义ConnectionProvider的类名, 此类用来向Hibernate提供JDBC连接 -->
+	<property name="hibernate.connection.provider_class">
+		org.hibernate.connection.C3P0ConnectionProvider
+	</property>
+	<!-- ====================hibernate配置结束==================== -->
+
+	<!-- ====================C3p0配置开始==================== -->
+	<!-- 最大连接数 -->
+	<property name="c3p0.max_size">100</property>
+	<!-- 最小连接数 -->
+	<property name="c3p0.min_size">20</property>
+	<!-- 获得连接的超时时间,如果超过这个时间,会抛出异常，单位毫秒 ***-->
+	<property name="c3p0.time_out">1800</property>
+	<!-- 最大的PreparedStatement的数量 -->
+	<property name="c3p0.max_statement">1000</property>
+	<!-- 当连接池里面的连接用完的时候，C3P0一下获取的新的连接数 -->
+	<property name="c3p0.acquire_increment">2</property>
+	<!-- 每隔120秒检查连接池里的空闲连接 ，单位是秒-->
+	<property name="c3p0.idle_test_period">120</property>
+	<!-- 每次都验证连接是否可用 -->
+	<property name="c3p0.validate">true</property>
+	<!-- ====================C3p0配置结束==================== -->
+
+	<!-- ====================对应hbm.xml开始==================== -->
+	<!--==========系统管理开始－zhaosy==========-->
+	<!-- 系统管理－自增ID -->
+	<property name="myeclipse.connection.profile">mysql</property>
+	<mapping resource="com/bip/common/util/idinfo/po/SysIdinfo.hbm.xml" />
+	<!-- 系统管理－用户表 -->
+	<mapping resource="com/bip/sys/user/po/SysUsers.hbm.xml" />
+	<!-- 系统管理－用户角色表 -->
+	<mapping resource="com/bip/sys/user/po/SysUserroles.hbm.xml" />
+	<!-- 系统管理－资源表 -->
+	<mapping resource="com/bip/sys/resource/po/SysResource.hbm.xml" />
+	<!-- 系统管理－部门表 -->
+	<mapping resource="com/bip/sys/dept/po/SysDepartment.hbm.xml" />
+	<!-- 系统管理－权限表 -->
+	<mapping resource="com/bip/sys/permission/po/SysPermission.hbm.xml" />
+	<!-- 系统管理－角色表 -->
+	<mapping resource="com/bip/sys/role/po/SysRole.hbm.xml" />
+	<!-- 系统管理－角色权限表 -->
+	<mapping resource="com/bip/sys/role/po/SysRolepermission.hbm.xml" />
+	<!-- 数据字典—代码字典 -->
+	<mapping resource="com/bip/sys/codediction/dmzd/po/SysDmzd.hbm.xml" />
+	<mapping resource="com/bip/sys/codediction/dmlb/po/SysDmlb.hbm.xml" />
+
+
+	<!--==========业务部分(其它字典设置)开始==========-->
+	<!-- 其它字典管理  企业信息-->
+	<mapping resource="com/bip/sys/enterprise/po/SysEnterprise.hbm.xml" />
+	<!-- 其它字典管理   行业字典-->
+	<mapping resource="com/bip/sys/codediction/po/SysHyzd.hbm.xml" />
+	<!-- 其它字典管理   产品字典-->
+	<mapping resource="com/bip/sys/codediction/po/SysCpzd.hbm.xml" />
+	<!-- 其它字典管理   能源字典-->
+	<mapping resource="com/bip/sys/codediction/po/SysNyzd.hbm.xml" />
+	<!-- 其它字典管理   能耗指标字典-->
+	<mapping resource="com/bip/sys/codediction/po/SysNhzbzd.hbm.xml" />
+	<!-- 其它字典管理   能耗指标限额-->
+	<mapping resource="com/bip/sys/codediction/po/SysNhzbxe.hbm.xml" />
+	<!-- 其它字典管理   设备类别字典-->
+	<mapping resource="com/bip/sys/codediction/po/SysSblbzd.hbm.xml" />
+	<!-- 其它字典管理   设备字典-->
+	<mapping resource="com/bip/sys/codediction/po/SysSbzd.hbm.xml" />
+
+	<!--==========业务部分(其它字典设置)结束==========-->
+	<mapping resource="com/bip/player/po/SysFile.hbm.xml" />
+
+
+
+
+</session-factory>
+</hibernate-configuration>

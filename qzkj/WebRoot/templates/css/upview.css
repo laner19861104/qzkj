@@ -1,0 +1,11 @@
+<style>
+* {margin:0;}
+body {font-size:12px;}
+#container div{margin-top:5px;}
+#select_city h3{float:left;}
+#main_city,#all_province {clear:both;}
+#main_city div,#all_province div{width:600px;clear:left;}
+#main_city h4,#all_province h4{float:left;display:inline;font-size:16px;}
+#main_city div span,#all_province div span{margin:0 10px;cursor:pointer;font-size:12px;}
+#float_lay{width:200px;height:120px;border:1px #d1d1d1 solid;position:absolute;background:#fff;z-index:999;display:none;}
+</style>

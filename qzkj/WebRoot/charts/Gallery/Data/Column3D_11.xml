@@ -1,0 +1,13 @@
+<graph caption='绩效评分' xAxisName='' yAxisName=''  showValues='0'   
+	numberPrefix='$' decimalPrecision='0' bgcolor='F3f3f3' bgAlpha='70' showColumnShadow='1'     
+	divlinecolor='c5c5c5' divLineAlpha='60' showAlternateHGridColor='1' alternateHGridColor='f8f8f8'   
+	  alternateHGridAlpha='60' divLineThickness='5'>
+<set name='综合绩效' value='87.90' color='AFD8F8' />
+<set name='盈利能力' value='87.22' color='F6BD0F' />
+<set name='资产运营' value='103.08' color='8BBA00' />
+<set name='偿债能力' value='64.60' color='FF8E46'/>
+<set name='经营增长' value='97.09' color='008E8E'/>
+
+
+
+</graph>

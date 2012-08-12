@@ -1,0 +1,220 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<HTML>
+ <HEAD>
+  <meta http-equiv="content-type" content="text/html; charset=gbk">
+     <link href="css/main_top.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" type="text/css" href="jquery-easyui-1.2.5/themes/default/easyui.css">
+  <link rel="stylesheet" type="text/css" href="jquery-easyui-1.2.5/themes/icon.css">
+	<script type="text/javascript" src="jquery-easyui-1.2.5/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="jquery-easyui-1.2.5/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="sys/js/dept_list.js"></script>
+</head>
+<body class="easyui-layout">
+ <div region="center" title="系统管理>>机构管理" split="false" style="height:500px;padding:0px;">
+		  <table id="tList">
+           </table>
+            <form id="mForm" method="post" action="">
+                <div>
+                <table width="100%" border="0" cellpadding="0" cellspacing="0" class="list">
+			  <tr>
+				  <th>机构编码：</th>
+				  <td  colspan="3"><input id="deptno" name="deptno" type="text" class="input_text" size="20"  maxlength="50" />
+			      (<font class="hong">*</font>)&nbsp;&nbsp;</td>
+				</tr>
+                <tr>
+				
+				  <td  colspan="4" align="center"><p align="left">权限说明：</p>
+			      <p align="left">1)超级管理员：管理所有用户，编码为8位；2&gt;其它操作用户：管理本机构下属机构（输入6位编码，后两位同本机构一致）</p></td>
+				</tr>
+				<tr>
+				 <th>机构名称：</th>
+				  <td><input id="deptname" name="deptname" type="text" class="input_text" size="20"  maxlength="50" />
+			      (<font class="hong">*</font>)&nbsp;&nbsp;</td>
+				<th>组织机构代码：</th>
+				  <td ><input id="res12" name="res12" type="text" class="input_text" size="20"  maxlength="50" />
+					</td>
+				</tr>
+				<tr>
+				  <th>机构类型：</th>
+				  <td><select id="depttype" name="depttype" style="width:138px">
+                   
+					 #foreach($temp in $session.getAttribute("dept_typesc"))
+                     
+							    <option value="$temp.getBh()">$temp.getMc()</option>
+							  
+							  #end
+                  </select>
+			      (<font class="hong">*</font>)</td>
+			
+				  <th>机构类别：</th>
+				  <td><select id="deptlevel" name="deptlevel" style="width:138px">
+                    
+					 #foreach($temp in $session.getAttribute("dept_levelsc"))
+							    <option value="$temp.getBh()">$temp.getMc()</option>
+							  
+							  #end
+                  </select>
+			      (<font class="hong">*</font>)</td>
+				</tr>
+			   
+				<tr>
+				  <th>电话号码：</th>
+				  <td><input id="telno" name="telno" type="text" class="input_text" size="20"  maxlength="50" />
+					&nbsp;&nbsp;</td>
+				
+				  <th>传真号码：</th>
+				  <td><input id="faxno" name="faxno" type="text" class="input_text" size="20"  maxlength="50" />
+					&nbsp;&nbsp;</td>
+				</tr>
+				<tr>
+				  <th>负责人：</th>
+				  <td><input id="chargep" name="chargep" type="text" class="input_text" size="20"  maxlength="50" />
+					&nbsp;&nbsp;</td>
+				
+				
+				  <th>负责人电话：</th>
+				  <td><input id="chargeptelno" name="chargeptelno" type="text" class="input_text" size="20"  maxlength="50" />
+					&nbsp;&nbsp;</td>
+				</tr>
+				<tr>
+				  <th>联系人：</th>
+				  <td><input id="relap" name="relap" type="text" class="input_text" size="20"  maxlength="50" />
+					&nbsp;&nbsp;</td>
+				
+				  <th>联系人电话：</th>
+				  <td><input id="relaptelno" name="relaptelno" type="text" class="input_text" size="20"  maxlength="50" />
+					&nbsp;&nbsp;</td>
+				</tr>
+                <tr>
+				  <th>邮编：</th>
+				  <td><input id="res01"  name="res01" type="text" class="input_text" size="20"  maxlength="50" />
+					&nbsp;&nbsp;</td>
+				
+				  <th>地址：</th>
+				  <td><input id="res02" name="res02" type="text" class="input_text" size="20"  maxlength="50" />
+					&nbsp;&nbsp;</td>
+				</tr>
+                <tr>
+				  
+				
+				  <th>注册日期：</th>
+				  <td><input id="res03" name="res03" type="text" class="easyui-datebox"    style="width:138px;"  maxlength="50"/>
+					&nbsp;&nbsp;</td>
+                   <th>注册资本：</th>
+				  <td><input id="res05" name="res05" type="text" class="input_text" size="20"  maxlength="50" />
+					&nbsp;&nbsp;</td>
+				</tr>
+                <tr>
+				  <th>企业网址：</th>
+				  <td><input id="res04" name="res04" type="text" class="input_text" size="20"  maxlength="50" />
+					&nbsp;&nbsp;</td>
+				
+				  <th>企业邮箱：</th>
+				  <td><input id="res11" name="res11" type="text" class="input_text" size="20"  maxlength="50" />
+					&nbsp;&nbsp;</td>
+				</tr>
+                
+				<tr>
+				  <td align="center">简介：</td>
+				  <td  colspan="3"><textarea id="remark" name="remark"  style="width:500px;height:50px;"  ></textarea>
+					&nbsp;&nbsp;</td>
+				</tr>
+				</table>
+               </div>
+            </form>
+            
+            
+           
+    <div id="add" class="easyui-window"  modal="true"  title="添加" style="top:50px;padding: 10px;width: 700px;"
+    iconCls="icon-add" closed="true" maximizable="false" minimizable="false" collapsible="false">
+     <div id="aa">
+     </div>
+     <br>
+     <div align="center">
+     <a class="easyui-linkbutton" iconCls="icon-ok" href="javascript:void(0)" onClick="add()">保存</a>
+     <a class="easyui-linkbutton" iconCls="icon-cancel" href="javascript:void(0)" onClick="close1()">取消</a>
+   	 </div>
+    </div>
+    <div id="edit" class="easyui-window" modal="true"  title="修改" style="top:50px;padding: 10px;width: 700px;"
+    iconCls="icon-edit" closed="true" maximizable="false" minimizable="false" collapsible="false">
+     <div id="ee">
+     </div>
+     <br>
+      <div align="center">
+     <a class="easyui-linkbutton" iconCls="icon-ok" href="javascript:void(0)" onClick="edit()">修改</a>
+     <a class="easyui-linkbutton" iconCls="icon-cancel" href="javascript:void(0)" onClick="close2()">取消</a>
+    </div>
+    </div>
+  
+    <div id="view" class="easyui-window" modal="true"  title="详情" style="top:50px;padding: 10px;width: 700px;"
+    iconCls="icon-find" closed="true" maximizable="false" minimizable="false" collapsible="false">
+    <div id="dd">
+     </div>
+	<br>
+      <div align="center">
+     <a class="easyui-linkbutton" iconCls="icon-cancel" href="javascript:void(0)" onClick="close3()">关闭</a>
+    </div>
+    </div>
+    
+    <div id="query" class="easyui-window"  modal="true"  title="查询" style="top:50px;padding: 10px;width: 500px;"
+    iconCls="icon-search" closed="true" maximizable="false" minimizable="false" collapsible="false">
+      <div>
+      <form id="qForm" method="post">
+      
+     
+                <div>
+                 <table border="0" cellspacing="0" cellpadding="6" style="width:auto"  class="list">
+                            <tr>
+                                <th >机构编码：</th>
+                                <td><input id="qdeptno" name="qdeptno" type="text" class="input_text"   maxlength="50"/></td>
+                                <th>机构名称：</th>
+                                <td><input id="qdeptname" name="qdeptname" type="text" class="input_text"   maxlength="50"/></td>
+                                </tr>
+                                
+                                <tr>
+                            
+                                <th>机构类型：</th>
+                                <td>
+                                <select id="qdepttype" name="qdepttype"  style="width:138px;">
+							  <option value="%">全部</option>
+							  #foreach($temp in $session.getAttribute("dept_typesc"))
+							  #if($qdepttype==$temp.getBh())
+							    <option value="$temp.getBh()" selected="selected">$temp.getMc()</option>
+								
+								#else
+								 <option value="$temp.getBh()">$temp.getMc()</option>
+								#end
+							  
+							  #end
+						  </select></td>
+														<th>机构类别：</th>
+														<td><select id="qdeptlevel" name="qdeptlevel" style="width:138px;">
+							  <option value="%">全部</option>
+							   #foreach($temp in $session.getAttribute("dept_levelsc"))
+							   #if($qdeptlevel==$temp.getBh())
+							    <option value="$temp.getBh()" selected="selected">$temp.getMc()</option>
+								#else
+								 <option value="$temp.getBh()">$temp.getMc()</option>
+								#end
+							  
+							  #end
+						  </select></td>
+                            </tr>
+                        </table>
+               </div>
+               <br>
+               <div align="center">
+               <a class="easyui-linkbutton" iconCls="icon-search" href="javascript:void(0);" onClick="query()">查询</a>
+               </div>
+            </form>
+      
+      
+     </div>
+    </div>
+</div>
+
+       
+</body>
+ <script language="javascript" src="js/util.js" ></script>
+</html>

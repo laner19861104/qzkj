@@ -1,0 +1,20 @@
+<chart caption='绩效五星图模型' anchorAlpha='0'>
+   <categories>
+      <category label='综合绩效' />
+      <category label='经营增长' />
+      <category label='偿债能力' />
+      <category label='资产运营' />
+      <category label='盈利能力' />
+     
+   </categories>
+   <dataset >
+      <set value='87.90' />
+      <set value='97.09' />
+      <set value='64.60' />
+      <set value='103.8' />
+      <set value='87.22' />
+    
+     
+   </dataset>
+  
+</chart> 

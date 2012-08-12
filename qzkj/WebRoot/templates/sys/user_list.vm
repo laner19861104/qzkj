@@ -1,0 +1,275 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<HTML>
+ <HEAD>
+  <TITLE> ZTREE DEMO </TITLE>
+  <meta http-equiv="content-type" content="text/html; charset=gbk">
+     <link href="css/main_top.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" type="text/css" href="jquery-easyui-1.2.5/themes/default/easyui.css">
+  <link rel="stylesheet" type="text/css" href="jquery-easyui-1.2.5/themes/icon.css">
+  <link rel="stylesheet" type="text/css" href="jquery-easyui-1.2.5/themes/combo.css"> 
+  <script type="text/javascript" src="jquery-easyui-1.2.5/jquery-1.7.1.min.js"></script>
+  <script type="text/javascript" src="jquery-easyui-1.2.5/jquery.easyui.min.js"></script>
+  <script type="text/javascript" src="sys/js/user_list.js"></script>
+  <script type="text/javascript">
+ function getres1()
+ {
+var deptno=$('#deptid').combotree('getValue');
+if(deptno==null||deptno=="")
+{
+alert('请先选择所属部门！');
+return;
+}
+  $('#res01').combobox({
+    url:'$base/getResList.action?deptno='+deptno,
+    valueField:'id',
+    textField:'text',
+    editable:false
+});
+}
+function getSelTree2()
+{
+	$('#deptid').combotree(
+	{
+			url:'$base/getdepttree.action'
+	}
+	);
+};
+function getSelTree3()
+{
+	$('#regioncode').combotree(
+	{
+			url:'$base/getwfregiontree.action'
+	}
+	);
+}
+</script>	
+</head>
+<body class="easyui-layout">
+ <div region="west" title="用户管理" split="true" style="width:480px;height:100%;padding1:1px;overflow:hidden;">
+			<table id="tList">
+           </table>
+           <form id="mForm"  method="post" action="">
+              <div >
+                  <table width="100%" border="0" cellpadding="0" cellspacing="0" class="list">
+				<tr>
+				  <th>用户名：</th>
+				  <td ><input id="username" name="username" type="text" class="input_text" size="20" maxlength="50"/>(<font 
+
+class="hong">*</font>)
+				      <input name="userid" id="userid" type="hidden" value=""/>
+				</td>
+                <th>用户姓名：</th>
+				  <td><input id="userxm" name="userxm" type="text" class="input_text" size="20" maxlength="50"/>(<font 
+
+class="hong">*</font>)
+				     
+					</td>
+				</tr>
+				<tr>
+				  <th>用户密码：</th>
+				 <td><input id="password" name="password" type="password" class="input_text" size="21" maxlength="50"/>
+
+(<font class="hong">*</font>)
+				     
+					</td>
+				
+				  <th>密码确认：</th>
+				<td><input id="password2" name="password2" type="password" class="input_text" size="21" maxlength="50"/>
+
+(<font class="hong">*</font>)
+				     
+					</td>
+				</tr>
+                 <tr>
+                 <th>所属机构：</th>
+				  <td >
+				  <select class="easyui-combotree" id="deptid"  name="deptid" style="width:138px;"></select><a class="easyui-linkbutton" iconCls="icon-reload" href="javascript:void(0)" onClick="javascript:getSelTree2();">提取</a>(<font class="hong">*</font>)</td>
+			  <th>所属区域：</th>
+				  <td><select class="easyui-combotree" id="regioncode"  name="regioncode" style="width:138px;"></select><a class="easyui-linkbutton" iconCls="icon-reload" href="javascript:void(0)" onClick="javascript:getSelTree3();">提取</a>(<font class="hong">*</font>)</td>
+											
+				</tr>
+				<tr>
+				  
+				<th>性别：</th>
+				  <td><select id="sex" name="sex" style="width:138px">
+				   <option value=""></option>
+				     #foreach($temp in $session.getAttribute("user_sexsc"))
+				   <option value="$temp.getBh()">$temp.getMc()</option>
+				  
+					#end
+                  </select>	 </td>
+				 <th>职务：</th>
+				  <td><select id="postpriv" name="postpriv" style="width:138px">
+				   <option value=""></option>
+				    #foreach($temp in $session.getAttribute("user_postprivsc"))
+				   <option value="$temp.getBh()">$temp.getMc()</option>
+				  
+					#end
+                  </select>	 </td>
+				</tr>
+				
+                <tr>
+                
+				  <th>用户类型：</th>
+				  <td><select id="usetype" name="usetype" style="width:138px">
+				   <option value=""></option>
+				    #foreach($temp in $session.getAttribute("user_typesc"))
+				   <option value="$temp.getBh()">$temp.getMc()</option>
+					#end
+                  </select>	(<font class="hong">*</font>)</td>
+                  <th>岗位：</th>
+				  <td><select id="dutytype" name="dutytype" style="width:138px">
+				   <option value=""></option>
+				    #foreach($temp in $session.getAttribute("user_dutytypesc"))
+				   <option value="$temp.getBh()">$temp.getMc()</option>
+				  
+					#end
+                  </select>	 </td>
+				</tr>
+               <tr>
+				  <th>生日：</th>
+				  <td><input id="birthday" name="birthday" type="text" class="input_text" size="20" maxlength="50"/>
+				     
+					</td>
+				
+				  <th>Email：</th>
+				  <td><input id="email" name="email" type="text" class="input_text" size="20" maxlength="50"/>
+				     
+					</td>
+				</tr>
+                 <tr>
+				  <th>邮编：</th>
+				  <td><input id="ziphome" name="ziphome" type="text" class="input_text" size="20" maxlength="50"/>
+				     
+					</td>
+				
+				  <th>地址：</th>
+				  <td><input id="address" name="address" type="text" class="input_text" size="20" maxlength="50"/>
+				     
+					</td>
+				</tr>
+                <tr>
+				  <th>电话：</th>
+				  <td><input id="telphone" name="telphone" type="text" class="input_text" size="20" maxlength="50"/>
+				     
+					</td>
+				
+				  <th>手机：</th>
+				  <td><input id="mobile" name="mobile" type="text" class="input_text" size="20" maxlength="50"/>
+				     
+					</td>
+				</tr>
+                <tr>
+				  <th>QQ号：</th>
+				  <td><input id="oicq" name="oicq" type="text" class="input_text" size="20" maxlength="50"/>
+				     
+					</td>
+				
+				  <th>ICQ号：</th>
+				  <td><input id="icq" name="icq" type="text" class="input_text" size="20" maxlength="50"/>
+				     
+					</td>
+				</tr>
+                <tr>
+				  <th>MSN号：</th>
+				  <td><input id="msn" name="msn" type="text" class="input_text" size="20" maxlength="50"/>
+				     
+					</td>
+				
+				  <th>skype号：</th>
+				  <td><input id="skype" name="skype" type="text" class="input_text" size="20" maxlength="50"/>
+				     
+					</td>
+				</tr>
+                 <tr>
+				  <th>状态：</th>
+				  <td ><select id="state" name="state" style="width:138px">
+				    #foreach($temp in $session.getAttribute("user_statesc"))
+				   <option value="$temp.getBh()">$temp.getMc()</option>
+				  
+					#end
+                  </select>	</td>
+                    <th></th>
+				  <td >
+				  
+				  
+				  
+				  </td>
+				</tr>
+				<br />
+			</table>
+                       </div>
+                       <br/>
+                    </form>
+   <div id="add" class="easyui-window" modal="true" title="添加" style="top:50px;padding: 10px;width:700px;"
+    iconCls="icon-add" closed="true" maximizable="false" minimizable="false" collapsible="false">
+     <div id="aa">
+     </div>
+      <div align="center">
+     <a class="easyui-linkbutton" iconCls="icon-ok" href="javascript:void(0)" onClick="add()">添加</a>
+     <a class="easyui-linkbutton" iconCls="icon-cancel" href="javascript:void(0)" onClick="close1()">取消</a>
+     </div>
+   </div>
+   
+  <div id="edit" class="easyui-window" modal="true"  title="修改" style="top:50px;padding: 10px;width: 700px;"
+    iconCls="icon-edit" closed="true" maximizable="false" minimizable="false" collapsible="false">
+     <div id="ee">
+     </div>
+     <br>
+      <div align="center">
+     <a class="easyui-linkbutton" iconCls="icon-ok" href="javascript:void(0)" onClick="edit()">修改</a>
+     <a class="easyui-linkbutton" iconCls="icon-cancel" href="javascript:void(0)" onClick="close2()">取消</a>
+      </div>
+  </div>
+  <div id="view" class="easyui-window" modal="true"  title="详情" style="top:50px;padding: 10px;width: 700px;"
+    iconCls="icon-find" closed="true" maximizable="false" minimizable="false" collapsible="false">
+    <div id="dd">
+     </div>
+      <div align="center">
+     <a class="easyui-linkbutton" iconCls="icon-cancel" href="javascript:void(0)" onClick="close3()">关闭</a>
+    </div>
+    </div>
+  </div>
+  <div region="center" title="角色管理"  style="overflow:hidden;">
+					
+					<table id="tList_role">
+			         </table>
+					
+			 <form id="mForm_role" method="post">
+			 <div>
+			    <table width="90%" border="0" cellpadding="0" cellspacing="0"
+						class="list">			     
+			 
+                  <tr>
+                	  <th>角色名称：</th> 
+                	   <td ><select id="roleid" name="roleid"  style="width:254px"> 
+                             	<option value=""></option>
+				    #foreach($temp in $session.getAttribute("rolelist"))
+				   <option value="$temp.getRoleid()">$!temp.getRolename()</option>
+				  
+					#end  
+                  	  </select>(<font class="hong">*</font>)
+                	  </td>
+                  </tr>		
+			    </table>
+			  </div>
+			</form>
+			<div id="add_role" class="easyui-window" modal="true" title="添加" style="top:50px;padding: 10px;width:500px;height:350px;"
+            iconCls="icon-add" closed="true" maximizable="false" minimizable="false" collapsible="false">
+             <div id="aa_role">
+             </div>
+             <br/>
+             <div align="center">
+             <a class="easyui-linkbutton" iconCls="icon-ok" href="javascript:void(0)" onClick="add_role()">添加</a>
+             <a class="easyui-linkbutton" iconCls="icon-cancel" href="javascript:void(0)" onClick="close_role()">取消</a>
+             </div>
+             <br/>
+            </div>
+          	
+		</div>
+<script language="javascript" src="templates/js/util.js" ></script>
+       
+</body>
+ 
+</html>

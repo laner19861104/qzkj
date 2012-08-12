@@ -1,0 +1,74 @@
+body {
+	font-family: "ËÎÌו";
+	margin: 0px;
+	padding: 0px;
+	background-image: url(../image/bg.png);
+	font-size: 14px;
+	color: #FFFFFF;
+	background-repeat: repeat-x;
+}
+.login {
+	background-image: url(../image/login_banner.jpg);
+	background-repeat: no-repeat;
+	height: 406px;
+	width: 767px;
+	margin: 90px auto;
+	background-position: left 113px;
+}
+.login ul {
+	list-style-type: none;
+	margin-top: 60px;
+	margin-left: 390px;
+	background-image: url(../image/loginw_bg.jpg);
+	background-repeat: no-repeat;
+	height: 150px;
+	width: 372px;
+	padding-left: 80px;
+	padding-top: 80px;
+}
+.login input {
+	font-size: 12px;
+	color: #003399;
+	padding-top: 5px;
+	padding-bottom: 2px;
+	height: 12px;
+	width: 180px;
+}
+.login ul li {
+	margin-bottom: 10px;
+}
+.login ul li a.btn {
+	display: block;
+	height: 53px;
+	width: 101px;
+	margin-top: -5px;
+	margin-left: 146px;
+	background-image: url(../image/btn.png);
+	background-repeat: no-repeat;
+}
+.login ul li a.selbtn {
+	display: block;
+	height: 53px;
+	width: 101px;
+	margin-top: -5px;
+	margin-left: 146px;
+	background-image: url(../image/btn.png);
+	background-repeat: no-repeat;
+}
+.login .info {
+	font-size: 12px;
+	text-align: center;
+	letter-spacing: 1px;
+	color: #003366;
+	border-top-width: 2px;
+	border-top-style: groove;
+	border-top-color: #99CCFF;
+	padding-top: 15px;
+}
+.login h1 {
+	background-image: url(../image/login_title.jpg);
+	background-repeat: no-repeat;
+	height: 53px;
+	width: 767px;
+	margin: 0px;
+}

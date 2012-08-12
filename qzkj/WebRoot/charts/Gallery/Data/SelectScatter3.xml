@@ -1,0 +1,42 @@
+<chart  caption='指标等级分布图'   xAxisMaxValue='6' xAxisMinValue='0'  yAxisMaxValue='0'   showFormBtn='0' 
+showLegend='0' showNames='1'
+>
+
+
+
+
+
+<categories>
+<category name='优秀' />
+<category name='Product B' />
+<category name='Product C' />
+<category name='Product D' />
+<category name='Product E' />
+</categories>
+<dataset seriesName='2004' color='AFD8F8' showValues='0'>
+<set value='25601.34' />
+<set value='20148.82' />
+<set value='17372.76' />
+<set value='35407.15' />
+<set value='38105.68' />
+</dataset>
+<dataset seriesName='2005'  color='F6BD0F' showValues='0'>
+<set value='57401.85' />
+<set value='41941.19' />
+<set value='45263.37' />
+<set value='117320.16' />
+<set value='114845.27' />
+</dataset>
+<dataset seriesName='2006' color='8BBA00' showValues='0'>
+<set value='45000.65' />
+<set value='44835.76' />
+<set value='18722.18' />
+<set value='77557.31' />
+<set value='92633.68' />
+</dataset>
+
+
+
+
+
+</chart>

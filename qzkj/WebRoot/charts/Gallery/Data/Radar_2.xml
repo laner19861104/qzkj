@@ -1,0 +1,18 @@
+<chart caption='等级分布对比' anchorAlpha='0'>
+   <categories>
+      <category label='对象1' />
+      <category label='对象3' />
+      <category label='对象2'/>
+      
+     
+   </categories>
+   <dataset color="cc6600">
+      <set value='87.90' />
+      <set value='97.09' />
+      <set value='64.60' />
+     
+    
+     
+   </dataset>
+  
+</chart> 

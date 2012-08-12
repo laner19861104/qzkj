@@ -1,0 +1,29 @@
+<chart caption='指标测评' anchorAlpha='0'>
+   <categories>
+      <category label='对象1' />
+      <category label='对象3' />
+      <category label='对象2'/>
+      
+     
+   </categories>
+   <dataset seriesName='指标1'>
+      <set value='87.90' />
+      <set value='97.09' />
+      <set value='64.60' />
+   </dataset>
+   
+    <dataset seriesName='指标2'>
+      <set value='67.90' />
+      <set value='57.09' />
+      <set value='34.60' />
+  
+   </dataset>
+  
+   <dataset seriesName='指标3'>
+      <set value='57.90' />
+      <set value='47.09' />
+      <set value='74.60' />
+  
+   </dataset>
+  
+</chart> 

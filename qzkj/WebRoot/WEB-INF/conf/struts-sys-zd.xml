@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!--系统管理－能源指标－入口 -->
+	<package name="syszdset" extends="struts-default">
+	
+	    <!--系统管理－单位管理-->
+	
+		<action name="enterpriseentry" class="entryEnterpriseAction" method="enterpriseEntry">
+			<result name="success" type="velocity">/templates/sys/enterprise_list.vm
+			</result>
+			<result name="failure" type="velocity">/templates/sys/enterprise_failure.vm
+			</result>
+		</action>
+		<action name="enterPlayer" class="playerAction" method="entryPlayer">
+			<result name="success" type="velocity">/templates/mediaPlayer/player.html
+			</result>
+			<result name="failure" type="velocity">/templates/sys/enterprise_failure.vm
+			</result>
+		</action>
+	</package>
+	
+</struts>    

@@ -1,0 +1,98 @@
+body {
+	font-family: "ËÎÌå", arial;
+	font-size: 12px;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background: url(../image/maintop.png) repeat-x #fff;
+	overflow:no;
+}
+
+.list {
+	border: 1px solid #99CCFF;
+	border-width: 1px 0px 0px 1px;
+	width: 100%;
+}
+
+.list th {
+	border: 1px solid #99CCFF;
+	border-width: 0px 1px 1px 0px;
+	font-weight: strong;
+	height: 20px;
+	padding: 4px 6px 0px;
+	white-space: nowrap;
+	background-image: url(../image/td_back.jpg);
+	background-repeat: repeat-x;
+	background-position: left bottom;
+	text-align:center;
+}
+
+.list .tdLabel {
+	background: #EFF8FE;
+	border: 1px solid #99CCFF;
+	border-width: 0px 1px 1px 0px;
+	font-weight: normal;
+	height: 20px;
+	padding: 4px 6px 0px;
+	white-space: nowrap;
+}
+
+.list td {
+	border: 1px solid #99CCFF;
+	border-width: 0px 1px 1px 0px;
+	height: 20px;
+	padding: 4px 6px 0px;
+}
+
+.list span {
+	color: #FF3300;
+	text-decoration: underline;
+}
+
+.list td a {
+	color: #003399;
+	text-decoration: none;
+}
+
+.list td a:hover {
+	text-decoration: underline;
+}
+
+.list tr.color1 {
+	background-color: #F8F8F8;
+}
+
+.list tr.color2 {
+	background-color: #FFFFFF;
+}
+.hong {
+	color: #FF3300;
+	text-decoration: none;
+	margin-left: 2px;
+}
+form {
+	display: inline;
+	padding: 0;
+	margin: 0
+}
+
+sup {
+	color: #CC0000;
+	margin-left: 3px
+}
+
+a,div {
+	-moz-outline: none;
+	outline: none;
+	ie-dummy: expression(this.hideFocus = true);
+}
+
+/*ÎÄ±¾¿ò*/
+.input_text {
+	font-size: 12px;
+	color: #0033CC;
+	background: url(../image/input_bg.png) repeat-x;
+	border: 1px solid #999;
+	padding: 4px 5px 2px;
+}

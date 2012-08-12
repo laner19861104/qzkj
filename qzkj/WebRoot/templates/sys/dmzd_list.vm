@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<HTML>
+ <HEAD>
+  <TITLE> ZTREE DEMO </TITLE>
+  <meta http-equiv="content-type" content="text/html; charset=gbk">
+     <link href="css/main_top.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" type="text/css" href="jquery-easyui-1.2.5/themes/default/easyui.css">
+  <link rel="stylesheet" type="text/css" href="jquery-easyui-1.2.5/themes/icon.css">
+  <link rel="stylesheet" type="text/css" href="jquery-easyui-1.2.5/themes/combo.css"> 
+	<script type="text/javascript" src="jquery-easyui-1.2.5/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="jquery-easyui-1.2.5/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="sys/js/dmzd_list.js"></script>	
+</head>
+<body class="easyui-layout">
+ <div region="west" title="代码类别" split="true" style="width:320px;height:100%;padding1:1px;overflow:hidden;">
+			<table id="tList">
+           </table>
+           <form id="mForm" method="post">
+              <div>
+               <table width="90%" border="0" cellpadding="0" cellspacing="0" class="list">
+               <tr><th>
+								类别编号：
+							</th>
+               <td> <input class="easyui-validatebox" type="text" id="lbbh" name="lbbh" style="width:200px;"></input>
+								(<font class="hong">*</font>) 
+				</td>
+               </tr>
+                <tr><th>
+								类别名称：
+							</th>
+               <td> <input class="easyui-validatebox" type="text" id="lbmc" name="lbmc" style="width:200px;"></input>
+								(<font class="hong">*</font>) 
+				</td>
+               </tr>
+                      </table>
+                       </div>
+                       <br/>
+                    </form>
+                    <div id="add" class="easyui-window" modal="true" title="添加" style="top:50px;padding: 10px;width: 600px;"
+    iconCls="icon-add" closed="true" maximizable="false" minimizable="false" collapsible="false">
+     <div id="aa">
+     </div>
+      <div align="center">
+     <a class="easyui-linkbutton" iconCls="icon-ok" href="javascript:void(0)" onClick="add()">添加</a>
+     <a class="easyui-linkbutton" iconCls="icon-cancel" href="javascript:void(0)" onClick="close1()">取消</a>
+     </div>
+    </div>
+               </div>
+             </div>
+  </div>
+  <div region="center" title="对应代码字典详情"  style="overflow:hidden;">
+					
+					<table id="tList_dmzd">
+			         </table>
+					
+			 <form id="mForm_dmzd" method="post">
+			 <div>
+			    <table width="90%" border="0" cellpadding="0" cellspacing="0" class="list">			     
+			       <tr><th>
+								字典编号：
+							</th>
+               <td> <input class="easyui-validatebox" type="text" id="bh" name="bh"></input>
+								(<font class="hong">*</font>) 
+				</td>
+				<th>
+								字典名称：
+							</th>
+               <td> <input class="easyui-validatebox" type="text" id="mc" name="mc"></input>
+								(<font class="hong">*</font>) 
+				</td>
+               </tr>
+                <tr><th>
+								父类编号：
+							</th>
+               <td> <input class="easyui-validatebox" type="text" id="sjbh" name="sjbh"></input>
+								(<font class="hong">*</font>) 
+				</td>
+            
+					<th align="right">
+								启用标志：
+							</th>
+							<td >
+								<select id="startmark" name="startmark" style="width:132px;">
+                                    <option value="1" #if($startmark=='1')selected#end>启用</option>
+									<option value="0" #if($startmark=='0')selected#end>不启用</option>
+                                  
+								</select>
+								(<font class="hong">*</font>)
+							</td>
+						</tr>
+                        
+                        <tr><th>
+								使用权限：
+							</th>
+							<td colspan="3">
+								<select id="ssxt" name="ssxt" style="width:132px;">
+                                    <option value="00" #if($ssxt=='00')selected#end)>全部</option>
+									<option value="01" #if($ssxt=='01')selected#end)>管理机构</option>
+                                    <option value="02" #if($ssxt=='02')selected#end>使用机构</option>
+									 
+								</select>
+								(<font class="hong">*</font>)
+							</td>
+						</tr>
+						<tr><th>
+								备注：
+							</th>
+						<td colspan="3">
+					 <textarea id="remark" name="remark" style="width:400px;height:100px" >
+				   	</textarea>
+				   </td>
+						</tr>
+			    </table>
+			  </div>
+			</form>
+			<div id="add_dmzd" class="easyui-window" modal="true" title="添加" style="top:50px;padding: 10px;width:700px;"
+            iconCls="icon-add" closed="true" maximizable="false" minimizable="false" collapsible="false">
+             <div id="aa_dmzd">
+             </div>
+             <br/>
+             <div align="center">
+             <a class="easyui-linkbutton" iconCls="icon-ok" href="javascript:void(0)" onClick="add_dmzd()">添加</a>
+             <a class="easyui-linkbutton" iconCls="icon-cancel" href="javascript:void(0)" onClick="close1_dmzd()">取消</a>
+             </div>
+             <br/>
+            </div>
+          	<div id="edit_dmzd" class="easyui-window" modal="true"  title="修改" style="top:50px;padding: 10px;width: 700px;"
+    iconCls="icon-edit" closed="true" maximizable="false" minimizable="false" collapsible="false">
+     <div id="ee_dmzd">
+     </div>
+     <br>
+      <div align="center">
+     <a class="easyui-linkbutton" iconCls="icon-ok" href="javascript:void(0)" onClick="edit_dmzd()">修改</a>
+     <a class="easyui-linkbutton" iconCls="icon-cancel" href="javascript:void(0)" onClick="close2_dmzd()">取消</a>
+    </div>
+    </div>
+		</div>
+<script language="javascript" src="js/util.js" ></script>
+       
+</body>
+ 
+</html>

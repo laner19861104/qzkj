@@ -1,0 +1,13 @@
+body,html{
+	margin:0;
+	background-color: #EFF7FF;
+	background: url(../image/leftborder.png) repeat-y right top;
+	height:100%
+}
+
+.suojin {
+	height: 100%;
+	width: 8px;
+	float: left;
+	background: url(../image/suojin.png) no-repeat left top;
+}
