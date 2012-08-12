@@ -1,0 +1,34 @@
+
+ul {
+ list-style: none;
+}
+#faq {
+ font-size: 12px;
+
+}
+
+#faq li {
+ margin: 0 0 5px;
+ padding: 0 0 5px;
+}
+#faq dl {
+ margin: 0;
+ margin-left:-15px;
+ padding:0;
+ display:inline;
+}
+#faq dt {
+ margin-left:-15px;
+ font-weight:bold;
+ cursor:pointer;
+ line-height: 15px;
+ padding: 0 0 0px 0px;
+ border-bottom:1px #ccc dotted;
+ font-family: "ËÎÌו", arial;
+ font-size: 12px;
+}
+#faq dd {
+	display: block;
+	margin: 0;
+	padding: 0px 0 0px 0px;
+}

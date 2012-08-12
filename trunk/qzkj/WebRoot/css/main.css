@@ -1,0 +1,440 @@
+body {
+	font-family: "宋体", arial;
+	font-size: 12px;
+	margin:15px;
+	background: url(../image/maintop.png) repeat-x #fff;
+	overflow:auto
+}
+.margin_top{
+	margin-top:10px
+}
+.margin_left{
+	margin-left:10px
+}
+.clear{
+	clear:both
+}
+form{
+	display:none;
+}
+sup{
+	color:#CC0000;
+	margin-left:3px
+}
+a ,div{
+	-moz-outline:none;outline:none;ie-dummy:expression(this.hideFocus=true);
+}
+.line{
+	border-bottom:1px dashed #cccccc;
+	margin: 5px 0px;
+}
+
+/*当前位置*/
+
+.position {
+	font-size: 12px;
+	background: url(../image/li_4.png) no-repeat;
+	padding-left:18px;
+	color: #0066CC;
+	border-bottom: 2px inset #FFFFFF;
+	padding-bottom: 3px;
+}
+	.position a{
+		text-decoration:none;
+		color: #0066CC;
+	}
+	.position a:hover{
+		text-decoration:none;
+		color: #99CC00;
+	}
+
+
+
+/*文本框*/
+.input_text{
+	font-size: 12px;
+	color: #0033CC;
+	background: url(../image/input_bg.png) repeat-x;
+	border: 1px solid #999;
+	padding:4px 5px 2px;
+}
+/*查询状态*/
+.state {
+	border: 1px solid #CCCCCC;
+	margin-right: 20px;
+	margin-top: 10px;
+}
+	.state td {
+		padding: 6px 15px 5px 36px;
+		background: url(../image/search.png) no-repeat 16px 3px;
+	}
+/*查询条件和查询结果列表*/
+.tableout {
+	padding:0px 10px 0px 0px;
+	clear: both;
+}
+fieldset{
+	margin: 10px;
+	padding: 10px;
+}
+fieldset legend {
+	margin-left: 10px;
+	color: #003366;
+	font-weight: bold;
+	padding: 0px 10px;
+	margin-bottom: 10px;
+}
+fieldset table td{
+	padding:0px 10px 0px 0px
+}
+fieldset table th{
+	font-weight:normal;
+	white-space:nowrap
+}
+
+
+.list {
+	border: 1px solid #99CCFF;
+	border-width: 1px 0px 0px 1px;
+	width: 100%;
+}
+.list th {
+	background:#EFF8FE;
+	border: 1px solid #99CCFF;
+	border-width: 0px 1px 1px 0px;
+	font-weight:normal;
+	height: 20px;
+	padding: 4px 6px 0px;
+	white-space:nowrap;
+}
+.list td {
+	border: 1px solid #99CCFF;
+	border-width: 0px 1px 1px 0px;
+	height: 20px;
+	padding: 4px 6px 0px;
+}
+.list span {
+	color:#FF3300;
+	text-decoration: underline;
+}
+.list td a{
+	color:#003399;
+	text-decoration:none;
+}
+.list td a:hover{
+	text-decoration:underline;
+}
+.list tr.color1{
+ background-color:#F8F8F8;
+}
+.list tr.color2{
+ background-color:#FFFFFF;
+}
+
+/*分页*/
+.page td{
+	color:#000000;
+	text-align: center;
+	height: 30px;
+	padding-top: 6px;
+}
+.page a{
+	color:#000000;
+	text-decoration:none;
+	border: 1px solid #ccc;
+	padding: 4px 5px 0px 5px;
+	background-image: url(../image/input_bg.png);
+	background-repeat: repeat-x;
+	white-space:nowrap;
+}
+.page a:hover{
+	text-decoration:none;
+	border: 1px solid #ccc;
+	padding: 3px 5px 1px 5px;
+	background: #AADDEE;
+
+}
+.page span {
+	color: #FF3300;
+}
+
+/*按钮*/
+.btntable{
+	margin:0px 5px 0px 0px;
+	float: right;
+}
+a.btn{
+	font-size: 12px;
+	color: #000000;
+	background: url(../image/bt_bg.png) repeat-x;
+	border: 2px outset #fff;
+	padding: 5px 10px 2px;
+	margin-right: 10px;
+	cursor: pointer;
+	white-space:nowrap;
+	float: left;
+	text-decoration:none
+}
+a.btn:hover{
+	color: #000000;
+	border: 2px ridge #fff;
+}
+a.btn span {
+	padding: 0px 0px 1px 20px!important;
+	padding: 3px 0px 0px 20px;
+	white-space:nowrap;
+}
+a.btn span.add {
+	background: url(../image/add.png) no-repeat 0px -5px!important;
+	background: url(../image/add.png) no-repeat 0px;
+}
+a.btn span.del{
+	background: url(../image/del.png) no-repeat 0px -5px!important;
+	background: url(../image/del.png) no-repeat 0px;
+}
+a.btn span.view {
+	background: url(../image/view.png) no-repeat 0px -5px!important;
+	background: url(../image/view.png) no-repeat 0px;
+}
+a.btn span.edit {
+	background: url(../image/edit.png) no-repeat 0px -5px!important;
+	background: url(../image/edit.png) no-repeat 0px;
+}
+a.btn span.choose {
+	background: url(../image/choose.png) no-repeat 0px -5px!important;
+	background: url(../image/choose.png) no-repeat 0px;
+}
+a.btn span.count {
+	background: url(../image/count.png) no-repeat 0px -5px!important;
+	background: url(../image/count.png) no-repeat 0px;
+}
+a.btn span.date {
+	background: url(../image/date.png) no-repeat 0px -5px!important;
+	background: url(../image/date.png) no-repeat 0px;
+}
+a.btn span.default {
+	background: url(../image/default.png) no-repeat 0px -5px!important;
+	background: url(../image/default.png) no-repeat 0px;
+}
+a.btn span.fail {
+	background: url(../image/fail.png) no-repeat 0px -5px!important;
+	background: url(../image/fail.png) no-repeat 0px;
+}
+a.btn span.reset {
+	background: url(../image/reset.png) no-repeat 0px -5px!important;
+	background: url(../image/reset.png) no-repeat 0px;
+}
+a.btn span.search {
+	background: url(../image/search1.png) no-repeat 0px -5px!important;
+	background: url(../image/search1.png) no-repeat 0px;
+}
+a.btn span.upload {
+	background: url(../image/upload.png) no-repeat 0px -5px!important;
+	background: url(../image/upload.png) no-repeat 0px;
+}
+a.btn span.user1 {
+	background: url(../image/user1.png) no-repeat 0px -5px!important;
+	background: url(../image/user1.png) no-repeat 0px;
+}
+a.btn span.user2 {
+	background: url(../image/user2.png) no-repeat 0px -5px!important;
+	background: url(../image/user2.png) no-repeat 0px;
+}
+
+a.listbt{
+	text-decoration:none;
+	background:url(../image/002.gif) no-repeat left -1px;
+	padding-left:20px;
+	padding-top:2px
+}
+.list td a.listbt:hover{
+	text-decoration:none;
+	color:#009900
+}
+a.listbtv{
+	text-decoration:none;
+	background:url(../image/018.gif) no-repeat left -1px;
+	padding-left:20px;
+	padding-top:2px
+}
+.list td a.listbtv:hover{
+	text-decoration:none;
+	color:#009900
+}
+
+
+/*查询条件说明*/
+.notice {
+}
+.notice fieldset {
+	padding:10px;
+	text-align:left;
+	border: 1px dashed #0066cc;
+}
+.notice fieldset legend {
+	font-size:12px;
+	font-weight:bold;
+	color:#003366;
+	background-color: #FFFFFF;
+	padding: 0px 10px;
+	margin: 0px 0px 7px 10px;
+}
+.notice ul {
+	font-size: 12px;
+	list-style-type: none;
+	line-height: 1.2pc;
+	background-color: #EFF8FE;
+	margin: 0px;
+	padding: 10px;
+}
+.notice li {
+	margin-top: 3px;
+}
+.notice ul li ul{
+	margin: 0px;
+	padding: 0px;
+	padding-left: 10px;
+}
+.notice li {
+	margin-top: 3px;
+}
+
+
+/*选项卡*/
+/*菜单class*/
+.Menubox {
+
+}
+.Menubox ul{
+	margin:0px;
+	padding:0px;
+	list-style:none;
+	text-align:center;
+}
+.Menubox li{
+	float:left;
+	display:block;
+	cursor:pointer;
+	text-align:center;
+	color:#666666;
+	margin-right: 2px;
+	background-image: url(../image/tab_out.png);
+	background-repeat: repeat-x;
+	height: 15px;
+	padding: 5px 10px;
+	border:1px solid #999;
+	border-bottom:0px;
+	white-space: nowrap;
+ }
+.Menubox li.hover{
+	border:1px solid #999;
+	border-bottom:0px;
+	color:#000000;
+	font-weight:bold;
+	height: 15px;
+	padding: 5px 10px;
+	margin-right: 2px;
+	background: url(../image/tab_on.png) repeat-x;
+}
+.Contentbox{
+	clear:both;
+	margin-top:-1px;
+	border:1px solid #999;
+	background-image: url(../image/tab_con_bg.png);
+	background-repeat: repeat-x;
+	background-position: left bottom;
+}
+.Contentbox th {
+	font-weight: normal;
+	white-space: nowrap;
+}
+.page input {
+	color: #0066CC;
+	height: 13px;
+}
+
+
+/*工作区内小菜单*/
+.mininav {
+	margin-top: 25px;
+	border: 1px solid #0066CC;
+	height: 527px;
+	background-color: #EFF8FE;
+}
+.mininav ul {
+	margin: 10px;
+	padding: 0px;
+	list-style-type: none;
+}
+.mininav ul li {
+	background-image: url(../image/li_5.png);
+	background-repeat: no-repeat;
+	padding-left: 15px;
+	margin-bottom: 8px;
+}
+.mininav ul li a {
+	color: #0066CC;
+	text-decoration: none;
+}
+.mininav h1 {
+	font-size: 12px;
+	color: #FFFFFF;
+	background-color: #003399;
+	padding: 5px;
+	margin: 0;
+	background-image: url(../image/maintop_bg.png);
+}
+
+
+/*带图列表*/
+.list2 {
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
+.list2 li{
+	margin: 0px 20px 20px 0px;
+	padding: 0px;
+	float:left;
+	width:210px;
+	height: 120px;
+}
+.list2 li a{
+	font-size: 12px;
+	text-decoration: none;
+	display: block;
+	height: 100px;
+	width: 210px;
+	padding:8px;
+	border:none;
+}
+.list2 li a:hover{
+	background-color: #EFF8FE;
+}
+.list2 li a img {
+	border: 1px solid #E1E1E1;
+	float:left;
+	height:80px;
+	width:80px;
+	border:1px solid #E1E1E1;
+	margin-right: 10px;
+	padding: 5px;
+	background-color: #FFFFFF;
+}
+.list2 li a h1 {
+	margin: 0px;
+	padding: 0px;
+	font-size: 12px;
+	color: #003366;
+}
+.list2 li a p {
+	line-height: 1.3em;
+	margin: 8px 0px 0px 0px;
+	color: #999999;
+}
+.list2 li a:hover h1 {
+	color: #0033CC;
+}
+.list2 li a:hover p {
+	color: #333333;
+}

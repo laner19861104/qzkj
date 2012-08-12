@@ -1,0 +1,14 @@
+<graph caption='工业销售及出口' subcaption='' xAxisName='年月' yAxisMinValue='15000' yAxisName='Sales' decimalPrecision='0' formatNumberScale='0' numberPrefix='' showNames='1' showValues='0'  showAlternateHGridColor='1' AlternateHGridColor='ff5904' divLineColor='ff5904' divLineAlpha='20' alternateHGridAlpha='5' >
+   <set name='2010-01' value='17400' hoverText='January'/>
+   <set name='2010-02' value='19800' hoverText='February'/>
+   <set name='2010-03' value='21800' hoverText='March'/>
+   <set name='2010-04' value='23800' hoverText='April'/>
+   <set name='2010-05' value='29600' hoverText='May'/>
+   <set name='2010-06' value='27600' hoverText='June'/>
+   <set name='2010-07' value='31800' hoverText='July'/>
+   <set name='2010-08' value='39700' hoverText='August'/>
+   <set name='2010-09' value='37800' hoverText='September'/>
+   <set name='2010-10' value='21900' hoverText='October'/>
+   <set name='2010-11' value='32900' hoverText='November' />
+   <set name='2010-12' value='39800' hoverText='December' />
+</graph>

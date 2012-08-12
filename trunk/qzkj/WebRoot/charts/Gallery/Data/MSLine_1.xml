@@ -1,0 +1,24 @@
+<graph caption='Daily Visits' subcaption='(from 8/6/2006 to 8/12/2006)' hovercapbg='FFECAA' hovercapborder='F47E00' formatNumberScale='0' decimalPrecision='0' showvalues='0' numdivlines='3' numVdivlines='0' yaxisminvalue='0' yaxismaxvalue='5'  rotateNames='1'>
+<categories >
+<category name='指标1' />
+<category name='指标2' />
+<category name='指标3'/>
+<category name='指标4' />
+<category name='指标5' />
+<category name='指标6' />
+
+
+</categories>
+<dataset seriesName='Offline Marketing' color='1D8BD1' anchorBorderColor='1D8BD1' anchorBgColor='1D8BD1'>
+	<set value='1' />
+	<set value='2' />
+	<set value='3' />
+	<set value='4' />
+	<set value='5' />
+	<set value='5' />
+	
+	</dataset>
+
+
+
+</graph>

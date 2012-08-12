@@ -1,0 +1,275 @@
+body {
+	font-family: "宋体";
+	font-size: 12px;
+	margin:0px;
+}
+
+a{
+	color:#333333;
+	text-decoration:none;
+}
+a:hover{
+	color:#0033CC;
+	text-decoration:underline;
+	border:none
+}
+
+ul,li,form,p,h1,h2,h3,dl,dt,dd{
+	margin:0px;
+	padding:0px;
+}
+img{
+	vertical-align:top;
+	border:0;
+}
+.clear{
+	clear:both;
+}
+.margin{
+	margin-top:5px;
+}
+
+
+
+ul {
+	list-style-type: none;
+}
+
+
+
+.column_2 .column_1of2{
+	width:49%;
+	float:left
+}
+.column_2 .column_2of2{
+	width:50%;
+	float:right
+}
+
+
+
+
+
+
+#bd {
+	padding-top: 5px;
+	clear: both;
+	padding-bottom: 10px;
+	height: auto !important;
+	height: 530px;
+	min-height: 530px;
+}
+#bd #main{
+	float:left;
+	width:720px;
+	margin-left:5px;
+}
+#bd #siderbar{
+	float:right;
+	width:225px;
+	margin-right:5px;
+}
+
+
+
+
+
+#bd #main  .news {
+	border: 1px solid #99CCFF;
+	background-image: url(../image/bar_bg2.png);
+	background-repeat: repeat-x;
+}
+#bd #main .news h1 {
+	font-size: 14px;
+	margin-top: 7px;
+	margin-left: 10px;
+}
+#bd #main .news span {
+	float: right;
+	font-size: 12px;
+	font-weight: normal;
+	margin-right: 10px;
+}
+#bd #main .news span a {
+	color: #000000;
+}
+#bd #main .news ul li a h2 {
+	font-size: 12px;
+	color: #0066CC;
+	float: left;
+}
+#bd #main .news ul {
+	margin: 20px 0px 0px 5px;
+}
+#bd #main .news ul li {
+	margin-bottom: 11px;
+}
+#bd #main .news ul li a span{
+	color: #666666;
+}
+#bd #main .news ul li a:hover span{
+	color: #0066CC;
+}
+
+
+
+
+
+
+
+
+
+#bd #main .column_1 .column_2 .column_1of2, #bd #main .column_1 .column_2 .column_2of2 {
+	background-image: url(../image/data_bg1.png);
+	background-repeat: no-repeat;
+	width: 357px;
+	margin-top: 3px;
+	height: 230px;
+}
+
+
+
+
+#bd #main  .news .tab h2 {
+	font-size: 12px;
+	float: left;
+	margin-top: 8px;
+}
+#bd #main  .news .tab h2 a{
+	color:#000
+}
+#bd #main .news .tab {
+	margin-top: 3px;
+	margin-left: 8px;
+}
+
+
+
+#bd #main .news .tab td {
+	width:80px;
+	text-align: center;
+	cursor:pointer;
+	height: 28px;
+}
+#bd #main .news .tab .change_2_1 {
+	background: url(../image/data_tab1.png) bottom center no-repeat;
+	font-weight:bold;
+	color: #FFFFFF;
+}
+#bd #main .news .tab .change_2_2 {
+	background: url(../image/data_tab2.png) bottom center no-repeat;
+	color:#003399;
+}
+#bd #main .news .tab .change_2_1 a {
+	color: #FFFFFF;
+}
+#bd #main .news .tab .change_2_2 a {
+	color:#003399;
+}
+#bd #main .data table {
+	width: 95%;
+	margin-top: 5px;
+	margin-bottom: 0px;
+}
+#bd #main .data th {
+	color: #FF6600;
+	padding-bottom: 3px;
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #999999;
+	text-align: left;
+}
+#bd #main .data td {
+	color: #666666;
+	padding: 8px 0px 0px 0px;
+}
+#bd #main .data td a {
+	color: #003399;
+}
+
+
+
+
+
+
+
+#bd #siderbar h1 {
+	font-size: 14px;
+	background-image: url(../image/bar_bg3.png);
+	background-repeat: repeat-x;
+	padding-top: 7px;
+	padding-left: 10px;
+	padding-bottom: 7px;
+}
+#bd #siderbar span {
+	float: right;
+	font-size: 12px;
+	font-weight: normal;
+	margin-right: 10px;
+}
+#bd #siderbar h1 span a {
+	color: #000000;
+}
+#bd #siderbar .notice, #bd #siderbar .yewu, #bd #siderbar .person, #bd #siderbar .company {
+	border: 1px solid #CCCCCC;
+}
+#bd #siderbar .notice ul, #bd #siderbar .company ul{
+	margin: 10px 0px 0px 5px;
+}
+#bd #siderbar .notice ul li, #bd #siderbar .company ul li{
+	margin-bottom: 7px;
+}
+#bd #siderbar .notice ul li a span{
+	color: #666666;
+}
+#bd #siderbar .notice ul li a:hover span{
+	color: #0066CC;
+}
+#bd #siderbar .yewu ul {
+	width: 214px;
+	margin: 5px 3px 0px 5px;
+}
+#bd #siderbar .yewu ul li {
+	background-image: url(../image/yw_bt_bg.png);
+	background-repeat: no-repeat;
+	text-align: center;
+	height: 32px;
+	width: 106px;
+	float: left;
+	line-height: 32px;
+	margin-right: 1px;
+	margin-bottom: 6px;
+}
+#bd #siderbar .person h2 {
+	background-image: url(../image/data2_bg.png);
+	background-repeat: no-repeat;
+	padding-top: 8px;
+	font-size: 12px;
+	color: #FFFFFF;
+	padding-left: 12px;
+	height: 29px;
+	background-position: 1px top;
+}
+#bd #siderbar .person .data {
+	height:200px;
+}
+#bd #siderbar .person .data table {
+	width: 95%;
+	margin-top: 5px;
+	margin-bottom: 0px;
+}
+#bd #siderbar .person .data th {
+	color: #003399;
+	padding-bottom: 3px;
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #999999;
+	text-align: left;
+}
+#bd #siderbar .person .data td {
+	color: #666666;
+	padding: 8px 0px 0px 0px;
+}
+#bd #siderbar .person .data td a {
+	color: #003399;
+}

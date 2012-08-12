@@ -1,0 +1,35 @@
+<graph xAxisName='' yAxisName='' caption='绩效评分排名' 
+decimalPrecision='0'   showValues='0'>
+<categories>
+<category name='对象1' />
+<category name='对象2' />
+<category name='对象3' />
+
+</categories>
+<dataset seriesName='盈利能力' color='AFD8F8' showValues='0'>
+<set value='25601.34' />
+<set value='20148.82' />
+<set value='17372.76' />
+
+</dataset>
+<dataset seriesName='资产营运'  color='F6BD0F' showValues='0'>
+<set value='57401.85' />
+<set value='41941.19' />
+<set value='45263.37' />
+
+</dataset>
+<dataset seriesName='偿债能力' color='8BBA00' showValues='0'>
+<set value='45000.65' />
+<set value='44835.76' />
+<set value='18722.18' />
+
+</dataset>
+
+<dataset seriesName='经营增长' color='000000' showValues='0'>
+<set value='45000.65' />
+<set value='44835.76' />
+<set value='18722.18' />
+
+</dataset>
+</graph>
+

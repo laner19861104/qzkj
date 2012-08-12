@@ -1,0 +1,481 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link href="templates/css/main.css" rel="stylesheet" type="text/css" />
+<script src="templates/js/tdcolor.js" type="text/javascript"></script>
+<script src="templates/js/lightbox.js" type="text/javascript"></script>
+<script src="templates/js/util.js" type="text/javascript"></script>
+<script src="templates/js/checkbox.js" type="text/javascript"></script>
+
+<script src="templates/js/updown.js" type="text/javascript"></script>
+<script type="text/javascript" charset="utf-8" src="kindeditor/kindeditor.js"></script>
+	<script type="text/javascript">
+		KE.show({
+			id : 'remark',
+			imageUploadJson : '/kindeditor/jsp/upload_json.jsp',
+			fileManagerJson : '/kindeditor/jsp/file_manager_json.jsp',
+			allowFileManager : true,
+			afterCreate : function(id) {
+				KE.event.ctrl(document, 13, function() {
+					KE.util.setData(id);
+				
+				});
+				KE.event.ctrl(KE.g[id].iframeDoc, 13, function() {
+					KE.util.setData(id);
+				
+				});
+			}
+		});
+	</script>
+</head>
+<body >
+<div class="position">当前位置：系统管理 >> 单位管理</div>
+<form name="listForm" id="listForm" action="$base/queryunit.action" method="post"  >
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableout">
+      <tr>
+        <td>
+	   <table  border="0" cellpadding=0 cellspacing=0 width="100%" height="25" align="center" >
+        <tr> 
+          <td  class=updown  style="cursor: hand" onClick="outliner()" child="1ALL" id="updown1" background="templates/image/title_bg_down.jpg">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         </tr>
+      </table>
+	   <div   class="expanded"   id="1ALL" align="center"> 
+        
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableout" >
+										<tr>
+											<td>
+											<fieldset>
+												<legend></legend>
+												<input name="pageId" type="hidden" value="$!pageId"/>
+												<input name="startIndex" type="hidden" value="$!ps.getStartIndex()"/>
+												<input name="hql" type="hidden" value="$!hql"/>
+											 
+											      <table border="0" cellspacing="0" cellpadding="6" style="width:auto">
+													<tr>
+														<th>单位编码：</th>
+														<td><input name="qunitno" type="text" class="input_text"  value="$!qunitno" maxlength="50"/></td>
+														<th>单位名称：</th>
+														<td><input name="qunitname" type="text" class="input_text"   value="$!qunitname" maxlength="50"/></td>
+														</tr>
+														
+														<tr>
+													
+														<th>单位类型：</th>
+														<td>
+														<select name="qunittype">
+							  <option value="%">----------------</option>
+							  #foreach($temp in $session.getAttribute("unittypesc"))
+							  #if($qunittype==$temp.getBh())
+							    <option value="$temp.getBh()" selected="selected">$temp.getMc()</option>
+								
+								#else
+								 <option value="$temp.getBh()">$temp.getMc()</option>
+								#end
+							  
+							  #end
+						  </select></td>
+														<th>单位类别：</th>
+														<td><select name="qunitlevel">
+							  <option value="%">----------------</option>
+							   #foreach($temp in $session.getAttribute("unitlevelsc"))
+							   #if($qunitlevel==$temp.getBh())
+							    <option value="$temp.getBh()" selected="selected">$temp.getMc()</option>
+								#else
+								 <option value="$temp.getBh()">$temp.getMc()</option>
+								#end
+							  
+							  #end
+						  </select></td>
+													</tr>
+												</table>
+												  <div class="line"></div>
+												<table border="0" cellpadding="0" cellspacing="0" class="btntable">
+                                      <tr>
+                                        <td>  <a class="btn" id="searchbtn" onClick="javascript:goQuery();"><span class="search">查 询</span></a> <a class="btn" id="addbtn"  target="_parent"><span class="add">新 增</span></a>  <a class="btn"  id="delbtn" onClick="javascript:if(confirm('确认要删除吗？')){delAll();}"><span class="del">删 除</span></a> </td>
+                                      </tr>
+        </table>
+											</fieldset>								
+											</td>
+										</tr>
+	    </table>
+			
+			</div>				
+			 <div class="line"></div>	
+		
+	 		
+          <table border="0" cellspacing="0" cellpadding="0" class="list" id="table1"  width="100%">
+            <tr>
+              <th width="20"><input type="checkbox" name="toggleAll" title="Select or deselect all items" onClick="ToggleAll(this);" /></th>
+              <th  width="60">单位编码</th>
+              <th>单位名称</th>
+              <th>上级单位编码</th>
+              <th>单位类型</th>
+              <th>单位类别</th>
+			  <th>电话号码</th>
+			  <th>传真号码</th>
+			  
+              <th>操作</th>
+            </tr>
+            #if($ps)
+			#foreach($temp in $ps.items)
+            <tr onDblClick="javascript:entryedit('$temp.getUnitid()');">
+              <td align="center"><input type="checkbox" name="checkid" value="$temp.getUnitid()"  onClick="Toggle(this)" /></td>
+			  <td><a  href="javascript:void(0)" onClick="javascript:entryedit('$temp.getUnitid()');">$!temp.getUnitno()</a></td>
+              <td>$!temp.getUnitname()</td>
+              <td>$!temp.getParentno()</td>
+              <td align="center">#foreach($tempt in $session.getAttribute("unittypesc"))#if($temp.getUnittype()==$tempt.getBh())$tempt.getMc()#end#end&nbsp;</td>
+              <td align="center">#foreach($tempt in $session.getAttribute("unitlevelsc"))#if($temp.getUnitlevel()==$tempt.getBh())$tempt.getMc()#end#end&nbsp;</td>
+			  <td>$!temp.getTelno()&nbsp;</td>
+			  <td>$!temp.getFaxno()&nbsp;</td>
+              <td align="center"><a  href="javascript:void(0)" class="listbte" id="editbtn"  onClick="javascript:entryedit('$temp.getDeptid()');">修 改</a> <!-- <a href="javascript:void(0)"  class="listbtd" id="delbtn"  onClick="javascript:if(confirm('确认要删除吗？')){del('$temp.getDeptid()');}">删 除</a>--> </td>
+            </tr>
+			#end
+            #end
+        </table>
+           <table width="100%" border="0" cellspacing="0" cellpadding="0" class="page">
+            <tr>
+              <td>#if($ps.viewPrevious==true)<a href="javascript:goFirst();">首 页</a> <a href="javascript:goPre();">上一页</a>#else首 页  上一页 #end #if($ps.viewNext==true)<a href="javascript:goNext();">下一页</a> <a href="javascript:goLast();">末 页</a>#else 下一页  末 页#end
+                  <input name="currentPage" type="text" size="4" maxlength="4" value="$ps.currentPage"/>
+                  <a href="javascript:goGo();">跳 转</a> 【第<span> $ps.currentPage </span>页 , 共<span> $ps.pageCount </span>页 】【<span>$ps.pageSize</span>条/页 , 共<span>$ps.totalCount</span>条记录】 </td>
+            </tr>
+          </table>
+		 
+		  <div class="line"></div>
+        </td>
+      </tr>
+</table>
+<!--弹出层的内容-->
+<div id="idBox" class="lightbox" style="width:680px;height:500px;">
+	<h1 id="idBoxHead">单位编辑<span><img src="templates/image/quit.png" id="idBoxCancel"  /></span></h1>
+	<div class="content">
+		<table width="670" border="0" align="center" cellpadding="0" cellspacing="0" class="tableout">
+		  <tr>
+			<td><fieldset>
+			  <table width="100%" border="0" cellpadding="0" cellspacing="0" class="list">
+			  <tr>
+				  <th>单位编码：</th>
+				  <td><input name="unitno" type="text" class="input_text" size="20"  maxlength="50" />(<font class="hong">*</font>)
+				      <input name="unitid" type="hidden" value=""/>
+					&nbsp;&nbsp;</td>
+				
+				  <th>单位名称：</th>
+				  <td><input name="unitname" type="text" class="input_text" size="20"  maxlength="50" />(<font class="hong">*</font>)
+					&nbsp;&nbsp;</td>
+				</tr>
+				<tr>
+				  <th>上级单位编码：</th>
+				  <td  colspan="3"><input name="parentno" type="text" class="input_text" size="20"  maxlength="50" />(<font class="hong">*</font>)
+					&nbsp;&nbsp;</td>
+				</tr>
+				<tr>
+				  <th>单位类型：</th>
+				  <td><select name="unittype">
+                    <option value=" ">--------</option>
+					 #foreach($temp in $session.getAttribute("unittypesc"))
+							    <option value="$temp.getBh()">$temp.getMc()</option>
+							  
+							  #end
+                  </select>				   (<font class="hong">*</font>)</td>
+				
+				  <th>单位类别：</th>
+				  <td><select name="unitlevel">
+                    <option value=" ">--------</option>
+					 #foreach($temp in $session.getAttribute("unitlevelsc"))
+							    <option value="$temp.getBh()">$temp.getMc()</option>
+							  
+							  #end
+                  </select>				    (<font class="hong">*</font>)</td>
+				</tr>
+			
+				<tr>
+				  <th>邮编：</th>
+				  <td><input name="postcode" type="text" class="input_text" size="20"  maxlength="50" />
+					&nbsp;&nbsp;</td>
+				
+				  <th>地址：</th>
+				  <td><input name="address" type="text" class="input_text" size="20"  maxlength="50" />
+					&nbsp;&nbsp;</td>
+				</tr>
+				<tr>
+				  <th>电话号码：</th>
+				  <td><input name="telno" type="text" class="input_text" size="20"  maxlength="50" />
+					&nbsp;&nbsp;</td>
+				
+				  <th>传真号码：</th>
+				  <td><input name="faxno" type="text" class="input_text" size="20"  maxlength="50" />
+					&nbsp;&nbsp;</td>
+				</tr>
+				<tr>
+				  <th>负责人：</th>
+				  <td><input name="chargep" type="text" class="input_text" size="20"  maxlength="50" />
+					&nbsp;&nbsp;</td>
+				
+				  <th>负责人电话：</th>
+				  <td><input name="chargeptelno" type="text" class="input_text" size="20"  maxlength="50" />
+					&nbsp;&nbsp;</td>
+				</tr>
+				<tr>
+				  <th>联系人：</th>
+				  <td><input name="relap" type="text" class="input_text" size="20"  maxlength="50" />
+					&nbsp;&nbsp;</td>
+				
+				  <th>联系人电话：</th>
+				  <td><input name="relaptelno" type="text" class="input_text" size="20"  maxlength="50" />
+					&nbsp;&nbsp;</td>
+				</tr>
+				<tr>
+				  <td align="center">简介：</td>
+				  <td  colspan="3"><textarea name="remark"  style="width:520px;height:100px;visibility:hidden;"  ></textarea>
+					&nbsp;&nbsp;</td>
+				</tr>
+				</table>
+			  <table align="center">
+                <tr>
+                  <td><a  class="btn" id="confirmbtn"  onClick="javascript:edit();" >确 定</a>  </a> <a class="btn" href="#" id="idBoxCancel2" >取 消</a> </td>
+                </tr>
+              </table>
+			</fieldset></td>
+		  </tr>
+	  </table>
+	</div>
+</div>
+<div id="idOverlay"></div>
+</form>
+<script>
+var tableidArray = new Array('table1');
+onloadEvent(showtable);
+
+var box = new LightBox("idBox", "idOverlay", {
+	Center : true
+});
+var drag = new Drag("idBox", "idBoxHead", {
+	mxContainer : document.documentElement,
+	Lock : true
+});
+$("idBoxCancel").onclick = function() {
+
+	box.Close();
+}
+$("idBoxCancel2").onclick = function() {
+
+	box.Close();
+}
+$("addbtn").onclick = function() {
+    document.getElementsByName('unitid')[0].value = "";
+	document.getElementsByName('unitno')[0].value = "";
+	document.getElementsByName('unitname')[0].value = "";
+	document.getElementsByName('unittype')[0].value = "";
+	document.getElementsByName('unitlevel')[0].value = "";
+	document.getElementsByName('postcode')[0].value = "";
+	document.getElementsByName('address')[0].value = "";
+	document.getElementsByName('telno')[0].value = "";
+	document.getElementsByName('faxno')[0].value = "";
+	document.getElementsByName('remark')[0].innerText = "";
+	document.getElementsByName('chargep')[0].value = "";
+	document.getElementsByName('chargeptelno')[0].value = "";
+	document.getElementsByName('relap')[0].value = "";
+	document.getElementsByName('relaptelno')[0].value = "";
+	
+	document.getElementsByName('parentno')[0].value = "";
+  
+	box.Show();
+}
+
+function edit() {
+    if(document.listForm.unitno.value==""||!loginCheck(document.listForm.unitno.value))
+	{
+	    alert("输入错误,请重新输入单位编码！");
+		return;
+	}
+	if(document.listForm.unitname.value==""||!descCheck(document.listForm.unitname.value))
+	{
+	    alert("输入错误,请重新输入单位名称！");
+		return;
+	}
+	if(document.listForm.parentno.value==""||!descCheck(document.listForm.parentno.value))
+	{
+	    alert("输入错误,请重新输入上级单位编码！");
+		return;
+	}
+	if(document.listForm.telno.value!=""&&!telCheck(document.listForm.telno.value))
+	{
+	    alert("输入错误,请重新输入电话号码！");
+		return;
+	}
+	if(document.listForm.faxno.value!=""&&!telCheck(document.listForm.faxno.value))
+	{
+	    alert("输入错误,请重新输入传真号码！");
+		return;
+	}
+	if(document.listForm.chargep.value!=""&&!descCheck(document.listForm.chargep.value))
+	{
+	    alert("输入错误,请重新输入负责人！");
+		return;
+	}
+	if(document.listForm.relap.value!=""&&!descCheck(document.listForm.relap.value))
+	{
+	    alert("输入错误,请重新输入联系人！");
+		return;
+	}
+	if(document.listForm.chargeptelno.value!=""&&!telCheck(document.listForm.chargeptelno.value))
+	{
+	    alert("输入错误,请重新输入负责人电话号码！");
+		return;
+	}
+	if(document.listForm.relaptelno.value!=""&&!telCheck(document.listForm.relaptelno.value))
+	{
+	    alert("输入错误,请重新输入联系人电话号码！");
+		return;
+	}
+	if(document.listForm.unittype.value=="")
+	{
+	    alert("输入错误,请重新输入单位类型！");
+		return;
+	}
+	
+	if(document.listForm.unitlevel.value=="")
+	{
+	    alert("输入错误,请重新输入单位类别！");
+		return;
+	}
+	
+	if(document.getElementsByName('unitid')[0].value=="")
+	{
+	/*新增*/
+	  #foreach($temp in $ps.items)
+	if('$temp.getUnitno()'==document.getElementsByName('unitno')[0].value)
+	{
+	 alert("输入单位编码重复,请重新输入！");
+		return;
+	}
+	if('$temp.getUnitname()'==document.getElementsByName('unitname')[0].value)
+	{
+	 alert("输入单位名称重复,请重新输入！");
+		return;
+	}
+	#end
+	document.listForm.action="..$base/addunit.action";
+    document.listForm.submit();
+	}
+	else
+	{
+	/*修改*/
+	document.listForm.action="..$base/editunit.action";
+    document.listForm.submit();
+	}
+};
+function delAll() {
+	
+	/*删除*/
+	var arr = document.getElementsByName('checkid');
+	var checkok=false;
+    for (var i=0;i<arr.length;i++ ){
+     if(arr[i].checked){ //判断复选框是否选中
+     checkok=true;
+
+}
+    }
+   if(!checkok)
+   {
+        alert("请选择要删除的记录！");
+		return;
+   }
+	document.listForm.action="..$base/delallunit.action";
+    document.listForm.submit();
+	
+};
+
+function del(deptid) {
+	
+	/*删除*/
+	document.listForm.action="..$base/delunit.action?unitid="+deptid
+    document.listForm.submit();
+	
+};
+
+function entryedit(unitid) {
+
+    #foreach($temp in $ps.items)
+	if(unitid==$temp.getUnitid())
+	{
+	document.getElementsByName('unitid')[0].value="$!temp.getUnitid()";
+	document.getElementsByName('unitno')[0].value="$!temp.getUnitno()";
+	document.getElementsByName('unitname')[0].value="$!temp.getUnitname()";
+	document.getElementsByName('unittype')[0].value="$!temp.getUnittype()";
+    document.getElementsByName('unitlevel')[0].value="$!temp.getUnitlevel()";
+	document.getElementsByName('postcode')[0].value = "$!temp.getPostcode()";
+	document.getElementsByName('address')[0].value = "$!temp.getAddress()";
+	document.getElementsByName('telno')[0].value = "$!temp.getTelno()";
+	document.getElementsByName('faxno')[0].value = "$!temp.getFaxno()";
+	document.getElementsByName('remark')[0].innerText = "$!temp.getRemark()";
+	document.getElementsByName('chargep')[0].value = "$!temp.getChargep()";
+	document.getElementsByName('chargeptelno')[0].value = "$!temp.getChargeptelno()";
+	document.getElementsByName('relap')[0].value = "$!temp.getRelap()";
+	document.getElementsByName('relaptelno')[0].value = "$!temp.getRelaptelno()";	
+	document.getElementsByName('parentno')[0].value = "$!temp.getParentno()";
+	}
+	#end
+    box.Show();
+};
+
+
+box.Close();
+box.Fixed = false;
+drag.Lock = false;
+
+
+function goQuery(action) {
+      if(document.listForm.qunitno.value!=""&&!loginCheck(document.listForm.qunitno.value))
+	{
+	    alert("输入非法字符,请重新输入单位编码！");
+		return;
+	}
+	if(document.listForm.qunitname.value!=""&&!descCheck(document.listForm.qunitname.value))
+	{
+	    alert("输入非法字符,请重新输入单位名称！");
+		return;
+	}
+	listForm.pageId.value = "0";
+	listForm.startIndex.value = "0";
+	listForm.submit();
+}
+
+function goFirst(action) {
+	listForm.startIndex.value = "0";
+	listForm.submit();
+}
+
+function goNext() {
+	listForm.startIndex.value = $ps.getNextIndex();
+	listForm.submit();
+}
+function goPre() {
+	listForm.startIndex.value = $ps.getPreviousIndex();
+	listForm.submit();
+}
+function goLast() {
+	listForm.startIndex.value = $ps.getLastIndex() - 1;
+	listForm.submit();
+}
+
+
+function goGo() {
+	if (listForm.currentPage.value == '') {
+		alert("请输入页的数字值！");
+		return;
+	}
+	if (listForm.currentPage.value < 1
+			|| (listForm.currentPage.value > $ps.getPageCount())
+			|| !IsNumber(listForm.currentPage.value, null)) {
+		alert("请输入正确的数值！");
+		return;
+	}
+	listForm.startIndex.value = (listForm.currentPage.value - 1)
+			* $ps.getPageSize();
+	listForm.submit();
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+body{
+	background:url(../image/topbg.png) repeat-x;
+	margin:0;
+	font-family: "ËÎÌו", arial;
+	font-size:12px;
+}
+.logo1 {
+	background-image: url(../image/logo1.png);
+	background-repeat: no-repeat;
+	width: 234px;
+}
+.logo2 {
+	background-image: url(../image/logo2.png);
+	background-repeat: no-repeat;
+	width: 452px;
+	background-position: left top;
+}
+.userbar {
+	background-image: url(../image/userbar2.png);
+	background-repeat: repeat-x;
+	margin-top: 12px;
+	height: 29px;
+	margin-left: 20px;
+	color: #0066CC;
+}
+.userbar .leftborder {
+	background-image: url(../image/userbar1.png);
+	background-repeat: no-repeat;
+	width: 12px;
+}
+.userbar .rightborder {
+	background-image: url(../image/userbar3.png);
+	background-repeat: no-repeat;
+	width: 12px;
+}
+.userbar ul {
+	list-style-type: none;
+	padding:0px 0px 0px 5px;
+	margin:0px;
+}
+.userbar ul li {
+	float: left;
+	margin: 0px 0px 0px 0px;
+	padding:9px 0px 0px 18px;
+	height: 29px;
+	white-space: nowrap;
+	background-repeat: no-repeat;
+}
+.userbar ul li.user {
+	background-image: url(../image/userbar4.png);
+}
+
+
+.tools {
+	list-style-type: none;
+	padding:0px 0px 0px 5px;
+	margin:0px 15px 0px 0px;
+	*margin:0px;
+	float:right
+}
+.tools li {
+	float: left;
+	margin: 0px 20px 0px 0px;
+	padding:9px 0px 0px 18px;
+	height: 29px;
+	background-repeat: no-repeat;
+}
+.tools li.user {
+	background-image: url(../image/userbar4.png);
+}
+.tools li.password {
+	background-image: url(../image/userbar5.png);
+}
+.tools li.faq {
+	background-image: url(../image/userbar6.png);
+}
+.tools li.quit {
+	background-image: url(../image/userbar7.png);
+}
+.tools li a {
+	text-decoration: none;
+	white-space: nowrap;
+	color: #FFFFFF;
+}
+.tools li a:hover {
+	color: #99FFFF;
+}

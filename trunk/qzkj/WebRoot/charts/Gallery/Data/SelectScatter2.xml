@@ -1,0 +1,40 @@
+<chart  caption='指标等级分布图'   xAxisMinValue='0'  yAxisMaxValue='5'   showFormBtn='0' 
+ showNames='1'
+>
+
+
+<categories>
+	<category x='1' name='指标1' />
+	<category x='2' name='指标2' />
+	<category x='3' name='指标3' />
+	<category x='4' name='指标4' />
+	<category x='5' name='指标5' />
+	<category x='6' name='指标6' />
+	
+	
+</categories>
+
+
+
+ <dataset  color='009900' anchorSides='20' anchorRadius='3' anchorBgColor='0000ff' anchorBorderColor='0000ff'> 
+    <set x="1" y="5" /> 
+	<set x="2" y="4" /> 
+	<set x="3" y="3" /> 
+	<set x="4" y="2" /> 
+	<set x="5" y="1" /> 
+	<set x="6" y="0" /> 
+	
+	
+   </dataset> 
+<trendlines>
+<line startValue='0' endValue='0'  displayValue='差'   isTrendZone='1'  valueOnleft='1'/>
+<line startValue='1' endValue='1'  displayValue='较差' isTrendZone='1'  valueOnleft='1'/>
+<line startValue='2' endValue='2'  displayValue='较低' isTrendZone='1'  valueOnleft='1'/>
+<line startValue='3' endValue='3'  displayValue='中等' isTrendZone='1'  valueOnleft='1'/>
+<line startValue='4' endValue='4'  displayValue='良好' isTrendZone='1'  valueOnleft='1'/>
+<line startValue='5' endValue='5'  displayValue='优秀' isTrendZone='1'  valueOnleft='1'/>
+</trendlines>
+
+
+
+</chart>

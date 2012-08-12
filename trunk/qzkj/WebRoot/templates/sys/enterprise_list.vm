@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+	<HEAD>
+	<TITLE>企业管理</TITLE>
+	<meta http-equiv="content-type" content="text/html; charset=gbk">
+	<link href="css/main_top.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="jquery-easyui-1.2.5/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="jquery-easyui-1.2.5/themes/icon.css">
+
+	<script type="text/javascript" src="jquery-easyui-1.2.5/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="jquery-easyui-1.2.5/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../js/easyui_tools.js"></script>
+	<script type="text/javascript" src="../js/validate.js"></script>
+	<script type="text/javascript" src="sys/js/enterprise_list.js"></script>
+	</head>
+	<body class="easyui-layout">
+<div region="center" title="企业基本信息设置" style="width:600px;height:100%;padding1:1px;overflow:hidden;">
+      <table fit="true" id="tlist">
+  </table>
+      <form id="mForm" method="post">
+    <div>
+          <table width="100%" border="0" cellpadding="0" cellspacing="0" class="list">
+        <tr>
+              <th align="right">企业编号：</th>
+              <td>
+                <input name="dwbh" id="dwbh" type="text" class="easyui-validatebox input_text" style="width:144px" maxlength="50" validType="minLength[5]" required="true" missingMessage="请输入企业编号！" />(<font class="hong">*</font>) 
+              </td>
+              <th align="right">企业名称：</th>
+              <td>
+                <input name="dwmc" id="dwmc" type="text" class="easyui-validatebox input_text" style="width:144px" maxlength="50" required="true" missingMessage="请输入企业名称！" />(<font class="hong">*</font>) 
+              </td>
+            </tr>
+        <tr>
+              <th align="right">所属区域：</th>
+              <td>
+                <select id="ssqy" name="ssqy"  class="easyui-combotree" cascadeCheck="false"  style="width:155px" required="true" missingMessage="请输入所属区域！" url='$base/getsysdmzdtree.action?lbbh=sys_wfregion'>       	  
+                </select>
+              </td>
+              <th align="right">企业类型：</th>
+              <td >
+                <select id="zdlb" name="zdlb"  class="easyui-combotree" cascadeCheck="false"  style="width:155px" url='$base/getsysdmzdtree.action?lbbh=enterprise_zdlb'>       	  
+                </select>
+              </td>
+            </tr>
+        <tr>
+              <th align="right">行业分类（标准）：</th>
+              <td>
+                <select id="hyfl" name="hyfl"  class="easyui-combotree" cascadeCheck="false"  style="width:155px">       	  
+                </select><a class="easyui-linkbutton" iconCls="icon-reload" href="javascript:void(0)" onClick="getOptions('hyfl', '$base/');">提取</a>
+              </td>
+              <th align="right">行业分类（传统）：</th>
+              <td>
+                <select id="xxtype" name="xxtype"  class="easyui-combotree" cascadeCheck="false"  style="width:155px">       	  
+                </select><a class="easyui-linkbutton" iconCls="icon-reload" href="javascript:void(0)" onClick="getOptions('xxtype', '$base/');">提取</a>
+              </td>
+            </tr>
+        <tr>
+              <th align="right">企业性质：</th>
+              <td>
+                <select id="dwlx" name="dwlx"  class="easyui-combotree" cascadeCheck="false"  style="width:155px" url='$base/getsysdmzdtree.action?lbbh=enterprise_dwlx'>       	  
+                </select>
+              </td>
+              <th align="right">企业规模：</th>
+              <td>
+                <select id="type" name="type"  class="easyui-combotree" cascadeCheck="false"  style="width:155px" url='$base/getsysdmzdtree.action?lbbh=enterprise_type'>       	  
+                </select>
+              </td>
+            </tr>
+        <tr>
+              <th align="right">所属系统：</th>
+              <td>
+                <select id="flag" name="flag"  class="easyui-combotree" cascadeCheck="false"  style="width:155px" url='$base/getsysdmzdtree.action?lbbh=enterprise_flag'>       	  
+                </select>
+              </td>
+              <th align="right">纳入统计：</th>
+              <td>
+                <select id="zdlx" name="zdlx"  class="easyui-combotree" cascadeCheck="false"  style="width:155px" url='$base/getsysdmzdtree.action?lbbh=enterprise_zdlx'>       	  
+                </select>
+              </td>
+            </tr>
+        <tr>
+              <th align="right">注册资本：</th>
+              <td>
+                <input type="text" name="zczj" id="zczj" class="easyui-validatebox input_text" style="width:144px" maxlength="50" />（万元）
+              </td>
+              <th align="right">注册日期：</th>
+              <td>
+                <input type="text" name="zcrq" id="zcrq" class="easyui-datebox" editable='false' okText="" currentText="今天" style="width:155px" maxlength="50" />
+              </td>
+            </tr>
+        <tr>
+              <th align="right">法人代表：</th>
+              <td>
+                <input type="text" name="frdb" id="frdb" class="easyui-validatebox input_text" style="width:144px" maxlength="50" />
+              </td>
+              <th align="right">电子邮箱：</th>
+              <td>
+                <input type="text" name="email" id="email" class="easyui-validatebox input_text" style="width:144px" maxlength="50" />
+              </td>
+            </tr>
+        <tr>
+              <th align="right">邮政编码：</th>
+              <td>
+                <input type="text" name="yzbm" id="yzbm" class="easyui-validatebox input_text" style="width:144px" maxlength="50" />
+              </td>
+              <th align="right">能耗范围：</th>
+              <td>
+                <select id="nhfw" name="nhfw"  class="easyui-combotree" cascadeCheck="false"  style="width:155px" url='$base/getsysdmzdtree.action?lbbh=SYS_NHFW'>       	  
+                </select>
+              </td>
+            </tr>
+        <tr>
+              <th align="right">详细地址：</th>
+              <td colspan="3">
+                <input type="text" name="xxdz" id="xxdz" class="easyui-validatebox input_text" style="width:552px" maxlength="50" />
+              </td>
+            </tr>
+      </table>
+          <br>
+        </div>
+  </form>
+      <div id="add" class="easyui-window" modal="true" title="添加" style="top:5px;padding: 10px;width: 850px;"
+    iconCls="icon-add" closed="true" maximizable="false" minimizable="false" collapsible="false">
+    <div id="aa"> </div>
+    <div align="center"> <a class="easyui-linkbutton" iconCls="icon-ok" href="javascript:void(0)" onClick="add()">添加</a> <a class="easyui-linkbutton" iconCls="icon-cancel" href="javascript:void(0)" onClick="close1()">取消</a> </div>
+  </div>
+      <div id="edit" class="easyui-window" modal="true" title="修改" style="top:5px;padding: 10px;width: 850px;"
+    iconCls="icon-edit" closed="true" maximizable="false" minimizable="false" collapsible="false">
+    <div id="ee"> </div>
+    <div align="center"> <a class="easyui-linkbutton" iconCls="icon-ok" href="javascript:void(0)" onClick="edit()">修改</a> <a class="easyui-linkbutton" iconCls="icon-cancel" href="javascript:void(0)" onClick="close2()">取消</a> </div>
+  </div>
+      <div id="query" class="easyui-window" modal="true"  title="查询" style="top:50px;padding: 10px;width: 850px;"
+    iconCls="icon-search" closed="true" maximizable="false" minimizable="false" collapsible="false"> 
+      <form id="qForm" name="qForm" method="post">
+    <div>
+          <table width="90%" border="0" cellpadding="0" cellspacing="0" class="list">
+        <tr>
+              <th align="right">企业编号：</th>
+              <td>
+                <input name="dwbh" id="s_dwbh" type="text" class="easyui-validatebox" style="width:144px" maxlength="50" />
+              </td>
+              <th align="right">企业名称：</th>
+              <td>
+                <input name="dwmc" id="s_dwmc" type="text" class="easyui-validatebox" style="width:144px" maxlength="50" />
+              </td>
+            </tr>
+        <tr>
+              <th align="right">所属区域：</th>
+              <td>
+                <select id="s_ssqy" name="s_ssqy"  class="easyui-combotree" cascadeCheck="false"  style="width:155px" url='$base/getsysdmzdtree.action?lbbh=sys_wfregion'>       	  
+                </select>
+              </td>
+              <th align="right">企业类型：</th>
+              <td >
+                <select id="s_zdlb" name="s_zdlb"  class="easyui-combotree" cascadeCheck="false"  style="width:155px" url='$base/getsysdmzdtree.action?lbbh=enterprise_zdlb'>       	  
+                </select>
+              </td>
+            </tr>
+        <tr>
+              <th align="right">行业分类（标准）：</th>
+              <td>
+                <select id="s_hyfl" name="qhyfl"  class="easyui-combotree" cascadeCheck="false"  style="width:155px">       	  
+                </select><a class="easyui-linkbutton" iconCls="icon-reload" href="javascript:void(0)" onClick="getOptions('qhyfl', '$base/');">提取</a>
+              </td>
+              <th align="right">行业分类（传统）：</th>
+              <td>
+                <select id="s_xxtype" name="qxxtype"  class="easyui-combotree" cascadeCheck="false" style="width:155px">       	  
+                </select><a class="easyui-linkbutton" iconCls="icon-reload" href="javascript:void(0)" onClick="getOptions('qxxtype', '$base/');">提取</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+    <br>
+    <div align="center"> <a class="easyui-linkbutton" iconCls="icon-search" href="javascript:void(0);" onClick="query()">查询</a> </div>
+  </form>
+  </div>
+</div>
+
+</body>
+	<script language="javascript" src="js/util.js" ></script>
+</html>

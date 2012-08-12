@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.bip.sys.codediction.po.SysNhzbxe" table="SYS_NHZBXE" >
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" precision="30" scale="0" />
+            <generator class="native" />
+        </id>
+        <property name="nhzbbh" type="java.lang.String">
+            <column name="NHZBBH" length="50" />
+        </property>
+        <property name="year" type="java.lang.String">
+            <column name="YEAR" length="20" />
+        </property>
+        <property name="countryquota" type="java.lang.Double">
+            <column name="COUNTRYQUOTA" precision="30" />
+        </property>
+        <property name="provincequota" type="java.lang.Double">
+            <column name="PROVINCEQUOTA" precision="30" />
+        </property>
+    </class>
+</hibernate-mapping>

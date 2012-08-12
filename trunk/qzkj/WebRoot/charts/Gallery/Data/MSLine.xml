@@ -1,0 +1,92 @@
+<graph caption='ZCXGOV' subcaption='2010.01~~2010.07'  adjustDiv="0" hovercapbg='FFECAA' hovercapborder='F47E00' formatNumberScale='0' decimalPrecision='0' showvalues='0'   numdivlines='0'  showAnchors='0'  showDivLineValue='1'  yAxisMaxValue='4500' chartRightMargin='40'  showLimits='1' showAlternateHGridColor="1"  rotateNames='0'>
+<categories >
+<category name='2010.01' />
+<category name='2010.02' />
+<category name='2010.03' />
+<category name='2010.04' />
+<category name='2010.05' />
+<category name='2010.06' />
+<category name='2010.07' />
+
+</categories>
+
+<dataset seriesName='过热' color='F1683C' anchorBorderColor='F1683C' anchorBgColor='F1683C' >
+	<set value='3600' />
+	<set value='3600' />
+	<set value='3600' />
+	<set value='3600' />
+	<set value='3600' />
+	<set value='3600' />
+	<set value='3600' />
+</dataset>
+
+
+
+<dataset seriesName='趋热' color='DBDC25' anchorBorderColor='DBDC25' anchorBgColor='DBDC25'>
+	<set value='2900' />
+	<set value='2900' />
+	<set value='2900' />
+	<set value='2900' />
+	<set value='2900' />
+	<set value='2900' />
+	<set value='2900' />
+</dataset>
+
+
+<dataset seriesName='绿色' color='2AD62A' anchorBorderColor='2AD62A' anchorBgColor='2AD62A'>
+	<set value='2200' />
+	<set value='2200' />
+	<set value='2200' />
+	<set value='2200' />
+	<set value='2200' />
+	<set value='2200' />
+	<set value='2200' />
+</dataset>
+
+
+
+
+<dataset seriesName='趋冷' color='1D8000' anchorBorderColor='1D8000' anchorBgColor='1D8000'>
+	<set value='1500' />
+	<set value='1500' />
+	<set value='1500' />
+	<set value='1500' />
+	<set value='1500' />
+	<set value='1500' />
+	<set value='1500' />
+</dataset>
+
+
+
+
+
+<dataset seriesName='过冷' color='1D8BD1' anchorBorderColor='1D8BD1' anchorBgColor='1D8BD1'>
+	<set value='800' />
+	<set value='800' />
+	<set value='800' />
+	<set value='800' />
+	<set value='800' />
+	<set value='800' />
+	<set value='800' />
+</dataset>
+
+
+<dataset seriesName='监测趋势' color='DBDC25' anchorBorderColor='DBDC25' anchorBgColor='DBDC25'>
+	<set value='1541' />
+	<set value='781' />
+	<set value='2920' />
+	<set value='1754' />
+	<set value='1840' />
+	<set value='893' />
+	<set value='2451' />
+</dataset>
+
+
+
+
+
+
+
+
+
+</graph>

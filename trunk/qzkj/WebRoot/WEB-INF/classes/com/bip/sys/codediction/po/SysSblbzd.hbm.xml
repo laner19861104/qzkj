@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.bip.sys.codediction.po.SysSblbzd" table="SYS_SBLBZD" >
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" precision="30" scale="0" />
+            <generator class="native" />
+        </id>
+        <property name="sblb" type="java.lang.String">
+            <column name="SBLB" length="50" not-null="true" />
+        </property>
+        <property name="lbmc" type="java.lang.String">
+            <column name="LBMC" length="50" />
+        </property>
+        <property name="sfttsb" type="java.lang.String">
+            <column name="SFTTSB" length="10" />
+        </property>
+        
+        <property name="cnsfttsb" type="java.lang.String"
+            formula="(select dm.mc from sys_dmzd dm where dm.bh=sfttsb and dm.lbbh='SYS_JUDGE')">
+        </property>
+    </class>
+</hibernate-mapping>

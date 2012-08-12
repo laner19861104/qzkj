@@ -1,0 +1,27 @@
+/* CSS Document */
+
+#bd .right .news ul li span {
+	margin-top: -13px;
+}
+
+
+
+#bd h1 a {
+	margin:-20px 5px 0px 0px;
+}
+#bd .right h1 a {
+	margin:-25px 5px 0px 0px;
+}
+
+
+#bd .right {
+	float: left;
+	margin-left: -20px;
+}
+
+#bd .right .news ul li {
+	margin-bottom: 12px;
+}
+#bd .news3 h1 a{
+	margin-top:-20px
+}

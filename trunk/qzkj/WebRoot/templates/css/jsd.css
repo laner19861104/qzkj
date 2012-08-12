@@ -1,0 +1,89 @@
+.tableout_jsd {
+	padding:0px 0px 0px 0px;
+	clear: both;
+}
+
+.list_jsd {
+	border: 1px solid #99CCFF;
+	border-width: 1px 0px 0px 1px;
+	width: 100%;
+}
+
+body {
+	font-family: "ËÎÌו", arial;
+	font-size: 12px;
+	margin:15px;
+	background: url(../image/maintop.png) repeat-x #fff;
+	overflow:auto
+}
+.list_jsd th {
+	background:#EFF8FE;
+	border: 1px solid #99CCFF;
+	border-width: 0px 1px 1px 0px;
+	font-weight:normal;
+	height: 20px;
+	padding: 4px 6px 0px;
+	white-space:nowrap;
+}
+.list_jsd th a{
+	color: #000000;
+	text-decoration: none;
+}
+.list_jsd th a:HOVER{
+	color: red;
+	text-decoration: none;
+}
+
+.list_jsd td {
+	border: 1px solid #99CCFF;
+	border-width: 0px 1px 1px 0px;
+	height: 20px;
+	padding: 4px 6px 0px;
+
+}
+.list_jsd span {
+	color:#FF3300;
+	text-decoration: underline;
+}
+.list_jsd td a{
+	color:#003399;
+	text-decoration:none;
+}
+.list_jsd td a:hover{
+	text-decoration:underline;
+}
+.list_jsd tr.color1{
+ background-color:#F8F8F8;
+}
+.list_jsd tr.color2{
+ background-color:#FFFFFF;
+}
+
+#jsd img ,.list_jsd img{
+ 
+ width:16px;
+ height:18px;
+}
+
+
+
+#jsd {
+	border: 0px;
+	
+
+	
+}
+#jsd th {
+	background:#EFF8FE;
+	border: 1px solid #99CCFF;
+	border-width: 0px 1px 1px 0px;
+	font-weight:normal;
+	height: 20px;
+	padding: 4px 6px 0px;
+	white-space:nowrap;
+}
+#jsd td {
+	height: 20px;
+	padding: 4px 6px 0px;
+	text-align: left;
+}

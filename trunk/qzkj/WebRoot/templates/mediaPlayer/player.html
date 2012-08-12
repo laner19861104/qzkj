@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>极酷Flvplayer网页播放器,最酷的Flvplayer网页播放器-download by http://www.jz116.com</title>
+<style type="text/css">
+<!--
+body {padding:0; font-size:12px; color:#313131;font-family:Verdana, Arial, Helvetica, sans-serif;  background:#390011; line-height:22px; text-align:left; margin:0 aotu;}
+/* __link */
+a {color: #ffffff; text-decoration:none;}
+a:link {color: #ffffff;text-decoration:underline;}
+a:visited {color: #ffffff;text-decoration:underline;}
+a:hover {color: #FF3300; text-decoration:underline;}
+a:active {color: #ffffff;text-decoration:underline;}
+-->
+</style>
+</head>
+<body>
+<div id="player5" style="width:300px; margin:0px; border:solid 5px #50031a;color:#ffffff;" ></div>
+<script type="text/javascript" src="templates/mediaPlayer/swfobject.js"></script>
+<script type="text/javascript">
+	function start(name)
+	{
+	var s5 = new SWFObject("templates/mediaPlayer/FlvPlayer201002.swf","playlist","600","480","7");
+	s5.addParam("allowfullscreen","true");
+	s5.addVariable("autostart","true");
+	s5.addVariable("image","flashM-cebbank.jpg");
+	s5.addVariable("file","getFlv.action");
+	s5.addVariable("width","600");
+	s5.addVariable("height","480");
+	s5.write("player5");
+	}
+	start("test.flv");
+</script>
+<input type="button" onclick="start('test2.flv')"/>
+</body>
+</html>
