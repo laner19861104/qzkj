@@ -13,7 +13,6 @@
 package com.bip.sys.resource.serviceimpl;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,7 +21,6 @@ import javax.annotation.Resource;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
-import com.bip.common.jqueryeasyui.Tree;
 import com.bip.common.service.BaseService;
 import com.bip.common.util.*;
 import com.bip.sys.resource.po.*;
@@ -117,14 +115,14 @@ public class ResourceServiceImpl extends BaseService implements ResourceService 
 
 	}
 
-	public List<Tree> getRsourceListByResPid(String resourceid,Integer userid) {
-		String sql="select t6.resourceno as id,t6.resourcename as name,t6.link as url,if(t6.link ='','true','false') as isParent,'mainFrame' as target"+
+	public List getRsourceListByResPid(String resourceid, Integer userid) {
+		String sql="select t6.resourceno as id, t6.presourceno as pid, t6.resourcename as name,t6.link as url, t6.imageurl as icon, if(t6.link is null,'true','false') as isParent,'mainFrame' as target"+
 		 " from sys_users t1"+
 		 " join sys_userroles t2 on t1.userid=t2.userid"+
 		 " join sys_role t3 on t2.roleid=t3.roleid"+
 		 " join sys_rolepermission t4 on t3.roleid=t4.roleid"+
 		 " join sys_permission t5 on t4.permissionid=t5.permissionid"+
-		 " join sys_resource t6 on t5.resourceid=t6.resourceno where t6.PRESOURCENO='"+resourceid+"' and t1.userid="+userid;
-		return super.QueryBySql(sql, resourceDao, Tree.class);
+		 " join sys_resource t6 on t5.resourceid=t6.resourceno where t6.PRESOURCENO like'"+resourceid+"%' and t1.userid="+userid+" order by t6.resourceno";
+		return resourceDao.query(sql);
 	}
 }
