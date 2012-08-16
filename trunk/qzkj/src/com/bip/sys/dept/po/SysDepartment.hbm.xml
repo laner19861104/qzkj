@@ -95,7 +95,7 @@
 			<column name="res20" length="50" />
 		</property>
 		<property name="parentid" type="java.lang.String">
-			<column name="_parentid" length="50" />
+			<column name="parentid" length="50" />
 		</property>
 		<property name="cndepttype" type="java.lang.String"
 			formula="(select t.mc from  sys_dmzd t where  upper(t.lbbh)=upper('dept_type')  and upper(t.bh)=upper(depttype))">
