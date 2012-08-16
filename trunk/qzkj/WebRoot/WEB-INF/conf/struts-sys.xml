@@ -22,7 +22,7 @@
 		</action>
 		<action name="loginleft" class="loginLeftAction"
 			method="loginLeft">
-			<result name="success" >/templates/left.jsp</result>
+			<result name="success" >/templates/left.vm</result>
 		</action>
 	</package>
 
