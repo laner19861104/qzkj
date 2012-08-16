@@ -4,7 +4,7 @@
  <HEAD>
   <TITLE> ZTREE DEMO </TITLE>
   <meta http-equiv="content-type" content="text/html; charset=gbk">
-     <link href="templates/css/main_top.css" rel="stylesheet" type="text/css" />
+  <link href="templates/css/main_top.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" type="text/css" href="templates/jquery-easyui-1.2.5/themes/default/easyui.css">
   <link rel="stylesheet" type="text/css" href="templates/jquery-easyui-1.2.5/themes/icon.css">
   <link rel="stylesheet" type="text/css" href="templates/jquery-easyui-1.2.5/themes/combo.css"> 

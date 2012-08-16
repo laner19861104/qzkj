@@ -4,13 +4,13 @@
  <HEAD>
   <TITLE> ZTREE DEMO </TITLE>
   <meta http-equiv="content-type" content="text/html; charset=gbk">
-     <link href="css/main_top.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" type="text/css" href="jquery-easyui-1.2.5/themes/default/easyui.css">
-  <link rel="stylesheet" type="text/css" href="jquery-easyui-1.2.5/themes/icon.css">
-  <link rel="stylesheet" type="text/css" href="jquery-easyui-1.2.5/themes/combo.css"> 
-	<script type="text/javascript" src="jquery-easyui-1.2.5/jquery-1.7.1.min.js"></script>
-	<script type="text/javascript" src="jquery-easyui-1.2.5/jquery.easyui.min.js"></script>
-    <script type="text/javascript" src="sys/js/role_list.js"></script>
+  <link href="templates/css/main_top.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" type="text/css" href="templates/jquery-easyui-1.2.5/themes/default/easyui.css">
+  <link rel="stylesheet" type="text/css" href="templates/jquery-easyui-1.2.5/themes/icon.css">
+  <link rel="stylesheet" type="text/css" href="templates/jquery-easyui-1.2.5/themes/combo.css"> 
+	<script type="text/javascript" src="templates/jquery-easyui-1.2.5/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="templates/jquery-easyui-1.2.5/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="templates/sys/js/role_list.js"></script>
 </head>
 <body class="easyui-layout">
  <div region="west" title="角色管理" split="true" style="width:480px;height:100%;padding1:1px;overflow:hidden;">
@@ -118,7 +118,7 @@
             </div>
           	
 		</div>
-<script language="javascript" src="js/util.js" ></script>
+<script language="javascript" src="templates/js/util.js" ></script>
        
 </body>
  
