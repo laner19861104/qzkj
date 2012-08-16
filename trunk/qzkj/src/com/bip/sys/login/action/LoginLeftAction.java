@@ -13,20 +13,16 @@
 package com.bip.sys.login.action;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-import net.sf.json.JSONObject;
-
-import org.apache.struts2.ServletActionContext;
 import org.springframework.stereotype.Controller;
 
 import com.bip.common.action.baseAction;
-import com.bip.common.util.Tool;
-import com.bip.sys.codediction.dmzd.service.DmzdService;
 import com.bip.sys.resource.service.ResourceService;
-import com.opensymphony.xwork2.ActionSupport; //模块包
 @Controller
 public class LoginLeftAction extends baseAction {
 	/*
@@ -35,39 +31,40 @@ public class LoginLeftAction extends baseAction {
 	@Resource
 	private ResourceService resservice;
 
-	public ResourceService getResservice() {
-		return resservice;
-	}
-
-	public void setResservice(ResourceService resservice) {
-		this.resservice = resservice;
-	}
-
 	private static final long serialVersionUID = 1L;
 	private String message = "";
+	String treeListstr;
 	/*
 	 * 页面赋值
 	 */
 	private String resourceid;
 
 	public String loginLeft() {
+		HttpServletRequest request = this.getRequest();
+		HttpServletResponse response = this.getResponse();
 		try {
-			resourceid = this.getRequest().getParameter("resourceid");
-			List list=this.resservice.getRsourceListByResPid(resourceid,super.getUser().getUserid());
+			resourceid = request.getParameter("resourceid");//顶级模块ID
+			List<Map> list=this.resservice.getRsourceListByResPid(resourceid, super.getUser().getUserid());
 			String str="";
-			for(int i=0;i<list.size();i++)
-			{
-				if(i==0)
-				{
-					str=JSONObject.fromObject(list.get(i)).toString();
-				}else
-				{
-					str+=","+JSONObject.fromObject(list.get(i)).toString();
-				}
+			if (null == list || 0 == list.size()) {
+				request.setAttribute("treeList", "");
+				return "success";
 			}
-			
-			
-			this.getRequest().setAttribute("treeList",str);
+			for (Map o : list) {
+				str = str 
+					+ "{id:\"" + o.get("id")
+					+ "\", pId:\"" + o.get("pid") 
+					+ "\", name:\"" + (null == o.get("name") ? "" :  o.get("name"))
+					+ "\", icon:\"" + (null == o.get("icon") ? "" : o.get("icon"))
+					+ "\", url:\"" + (null == o.get("url") ? "" : o.get("url"))
+					+ "\", target:\"" + (null == o.get("target") ? "" : o.get("target"))
+					+ "\"}, ";
+			}
+//			this.response.setHeader("Pragma", "no-cache");
+//			this.response.setHeader("Cache-Control", "no-cache");
+			treeListstr = str.substring(0, str.lastIndexOf(", "));
+			request.setAttribute("treeListstr", treeListstr);
+			System.out.println("json-str : " + treeListstr);
 			return "success";
 		} catch (Exception ex) {
 			ex.printStackTrace();
@@ -75,7 +72,6 @@ public class LoginLeftAction extends baseAction {
 			return "failure";
 		}
 	}
-
 	public String getMessage() {
 		return message;
 	}
@@ -92,4 +88,11 @@ public class LoginLeftAction extends baseAction {
 		this.resourceid = resourceid;
 	}
 
+	public ResourceService getResservice() {
+		return resservice;
+	}
+
+	public void setResservice(ResourceService resservice) {
+		this.resservice = resservice;
+	}
 }

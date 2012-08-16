@@ -67,5 +67,5 @@ public interface ResourceService {
 	 */
 	void delete(SysResource resource);
 	Boolean delete(String table,String where);
-	List<Tree> getRsourceListByResPid(String resourceid, Integer integer);
+	List getRsourceListByResPid(String resourceid, Integer userid);
 }
