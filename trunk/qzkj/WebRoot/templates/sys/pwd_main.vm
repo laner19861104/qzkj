@@ -2,10 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 
-<link href="css/main.css" rel="stylesheet" type="text/css" />
-<script src="js/tdcolor.js" type="text/javascript"></script>
-<script src="js/upview.js" type="text/javascript"></script>
-<script src="js/util.js" type="text/javascript"></script>
+<link href="templates/css/main.css" rel="stylesheet" type="text/css" />
+<script src="templates/js/tdcolor.js" type="text/javascript"></script>
+<script src="templates/js/upview.js" type="text/javascript"></script>
+<script src="templates/js/util.js" type="text/javascript"></script>
 <script language="javascript">
 function edit() {
 	if(document.listForm.password.value==""||!descCheck(document.listForm.password.value))
