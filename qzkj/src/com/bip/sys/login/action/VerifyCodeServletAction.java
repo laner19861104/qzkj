@@ -37,7 +37,7 @@ public class VerifyCodeServletAction extends baseAction {
 
 			// 生成验证码，写入用户session
 			String verifyCode = VerifyCode.generateTextCode(
-					VerifyCode.TYPE_ALL_MIXED, 6, "0oOilJI1");
+					VerifyCode.TYPE_ALL_MIXED, 4, "0oOilJI1");
 			// System.out.println("generate verifycode is "+verifyCode);
 			this.getSession().setAttribute("verifyCode", verifyCode);
 
