@@ -67,7 +67,7 @@ public interface DmzdService {
 	 * @param resource
 	 * @return
 	 */
-	public SysCodeSupport getSysCodeSupport(String lbbh);
+//	public SysCodeSupport getSysCodeSupport(String lbbh);
 
 	/********** 系统管理－开始 **********/
 	/**

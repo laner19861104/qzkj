@@ -12,10 +12,8 @@
  ************************************************************/
 package com.bip.common.dao;
 
+
 import java.io.Serializable;
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
 import java.math.BigDecimal;
 import java.sql.Connection;
@@ -24,11 +22,8 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Iterator;
@@ -52,11 +47,12 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.dao.DataAccessResourceFailureException;
 import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
+
 import com.bip.common.util.PaginationSupport;
 import com.bip.common.util.QueryJson;
 import com.bip.common.util.SqlUtil;
 import com.bip.common.util.Tool;
-import com.bip.sys.codediction.util.SysCodeSupport;
 
 @SuppressWarnings("unchecked")
 public class GenericDao<T, ID extends Serializable> extends HibernateDaoSupport
@@ -83,6 +79,7 @@ public class GenericDao<T, ID extends Serializable> extends HibernateDaoSupport
 		}
 		return entityClass;
 	}
+
 
 	public void saveOrUpdate(T t) throws DataAccessException {
 		this.getHibernateTemplate().saveOrUpdate(t);
@@ -279,28 +276,7 @@ public class GenericDao<T, ID extends Serializable> extends HibernateDaoSupport
 					}
 				});
 	}
-
-	public int update(final String sql) {
-		return (Integer) super.getHibernateTemplate().execute(
-				new HibernateCallback() {
-
-					public Object doInHibernate(Session session)
-							throws HibernateException, SQLException {
-						Connection conn = session.connection();
-						Statement statement = null;
-						try {
-							statement = conn.createStatement();
-							return statement.executeUpdate(sql);
-						} catch (SQLException e) {
-							e.printStackTrace();
-							return -1;
-						} finally {
-							if (statement != null)
-								statement.close();
-						}
-					}
-				});
-	}
+	
 
 	public Map getSysCodeSupportMap(final String lbbh) {
 		// TODO Auto-generated method stub
@@ -339,24 +315,6 @@ public class GenericDao<T, ID extends Serializable> extends HibernateDaoSupport
 						}
 					}
 				});
-
-	}
-
-	public SysCodeSupport getSysCodeSupport(String lbbh) {
-		// TODO Auto-generated method stub
-		SysCodeSupport form = new SysCodeSupport();
-		Map map = getSysCodeSupportMap(lbbh);
-		List listcode = (List) map.get("listcode");
-		List listName = (List) map.get("listName");
-		String[] strCode = new String[listcode.size()];
-		String[] strCodeName = new String[listName.size()];
-		for (int i = 0; i < listcode.size(); i++) {
-			strCode[i] = (String) listcode.get(i);
-			strCodeName[i] = (String) listName.get(i);
-		}
-		form.setSysDmzdCcodeArray(strCode);
-		form.setSysDmzdNameArray(strCodeName);
-		return form;
 
 	}
 
@@ -789,6 +747,7 @@ public class GenericDao<T, ID extends Serializable> extends HibernateDaoSupport
 	 */
 	public String appendSql(StringBuilder sql, List<String[]> conditions,
 			Class invokeClass) {
+		String orderby="";
 		if (null != conditions && conditions.size() > 0) {
 			for (String[] condition : conditions) {
 				if (condition.length > 1) {
@@ -801,14 +760,14 @@ public class GenericDao<T, ID extends Serializable> extends HibernateDaoSupport
 						String[] s = field.split("-");
 						if ("dateStart".equals(s[0])) {
 							sql.append(" and p.").append(s[1]).append(
-									">=to_date('").append(value.trim()).append(
-									"','yyyy-MM-dd') ");
+									">='").append(value.trim()).append(
+									"' ");
 							continue;
 						}
 						if ("dateEnd".equals(s[0])) {
 							sql.append(" and p.").append(s[1]).append(
-									"<=to_date('").append(value.trim()).append(
-									"','yyyy-MM-dd')");
+									"<='").append(value.trim()).append(
+									"'");
 							continue;
 						}
 						if ("status".equals(s[0])) {
@@ -821,9 +780,29 @@ public class GenericDao<T, ID extends Serializable> extends HibernateDaoSupport
 									.append(value.trim()).append(")");
 							continue;
 						}
+						if ("numStart".equals(s[0])) {
+							sql.append(" and p.").append(s[1]).append(
+									">=").append(value.trim()).append(
+									" ");
+							continue;
+						}
+						if ("numEnd".equals(s[0])) {
+							sql.append(" and p.").append(s[1]).append(
+									"<=").append(value.trim()).append(
+									" ");
+							continue;
+						}
+						if ("startWith".equals(s[0])) {
+							sql.append(" and p.").append(s[1]).append(
+									" like '").append(value.trim()).append(
+									"%' ");
+							continue;
+						}
 					
 					}
-					
+					if(field.equals("orderby"))
+						orderby=" order by p."+value.trim()+(condition.length>2?(" "+condition[2]):" asc");
+					else
 					sql.append(" and p.").append(field).append(" like \'%")
 							.append(value.trim()).append("%\' ");
 				}
@@ -837,7 +816,7 @@ public class GenericDao<T, ID extends Serializable> extends HibernateDaoSupport
 //					new Object[] { sql, user });
 //		}
 		
-		return sql.toString();
+		return sql.toString()+orderby;
 	}
 	/**
 	 * 方法描述：联表查询追加查询条件<br>
@@ -853,6 +832,7 @@ public class GenericDao<T, ID extends Serializable> extends HibernateDaoSupport
 	 */
 	public String appendSql2(StringBuilder sql, List<String[]> conditions,
 			Class invokeClass) {
+		String orderby="";
 		if (null != conditions && conditions.size() > 0) {
 			for (String[] condition : conditions) {
 				if (condition.length > 1) {
@@ -865,14 +845,14 @@ public class GenericDao<T, ID extends Serializable> extends HibernateDaoSupport
 						String[] s = field.split("-");
 						if ("dateStart".equals(s[0])) {
 							sql.append(" and ").append(s[1]).append(
-									">=to_date('").append(value.trim()).append(
-									"','yyyy-MM-dd') ");
+									">='").append(value.trim()).append(
+									"' ");
 							continue;
 						}
 						if ("dateEnd".equals(s[0])) {
 							sql.append(" and ").append(s[1]).append(
-									"<=to_date('").append(value.trim()).append(
-									"','yyyy-MM-dd')");
+									"<='").append(value.trim()).append(
+									"'");
 							continue;
 						}
 						if ("status".equals(s[0])) {
@@ -885,9 +865,28 @@ public class GenericDao<T, ID extends Serializable> extends HibernateDaoSupport
 									.append(value.trim()).append(")");
 							continue;
 						}
-					
+						if ("numStart".equals(s[0])) {
+							sql.append(" and ").append(s[1]).append(
+									">=").append(value.trim()).append(
+									" ");
+							continue;
+						}
+						if ("numEnd".equals(s[0])) {
+							sql.append(" and ").append(s[1]).append(
+									"<=").append(value.trim()).append(
+									" ");
+							continue;
+						}
+						if ("startWith".equals(s[0])) {
+							sql.append(" and ").append(s[1]).append(
+									" like '").append(value.trim()).append(
+									"%' ");
+							continue;
+						}
 					}
-					
+					if(field.equals("orderby"))
+						orderby=" order by "+value.trim();
+					else
 					sql.append(" and ").append(field).append(" like \'%")
 							.append(value.trim()).append("%\' ");
 				}
@@ -900,9 +899,9 @@ public class GenericDao<T, ID extends Serializable> extends HibernateDaoSupport
 //					new Class[] { StringBuilder.class, User.class },
 //					new Object[] { sql, user });
 //		}
-		
-		return sql.toString();
+		return sql.toString()+orderby;
 	}
+
 	public QueryJson findPageByQuery(final Class voClazz, List conList,
 			int pageSize, int startIndex) {
 		final int pageSize1 = pageSize;
@@ -937,7 +936,7 @@ public class GenericDao<T, ID extends Serializable> extends HibernateDaoSupport
 							for(Object obj:items)
 							{
 								try {
-									temp.add(cloneObj(obj,voClazz.newInstance()));
+									temp.add(Tool.cloneObj(obj,voClazz.newInstance()));
 								} catch (InstantiationException e) {
 									// TODO Auto-generated catch block
 									e.printStackTrace();
@@ -954,95 +953,7 @@ public class GenericDao<T, ID extends Serializable> extends HibernateDaoSupport
 					}
 				});
 	}
-	public Object cloneObj(Object source,Object target)
-	{
-		Field [] fields=target.getClass().getDeclaredFields();
-		for(Field field :fields)
-		{
-			try {
-				Method method1=source.getClass().getDeclaredMethod("get"+field.getName().substring(0,1).toUpperCase()+field.getName().substring(1),new Class[0]);
-				Method method2=target.getClass().getDeclaredMethod("set"+field.getName().substring(0,1).toUpperCase()+field.getName().substring(1), field.getType());
-				method2.invoke(target, method1.invoke(source, null));
-			} catch (SecurityException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (NoSuchMethodException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IllegalArgumentException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IllegalAccessException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (InvocationTargetException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		return target;
-	}
-	public Object cloneMapToObj(Map source,Object target)
-	{
-		Field [] fields=target.getClass().getDeclaredFields();
-		for(Field field :fields)
-		{
-
-			if(source.get(field.getName().toLowerCase())==null)
-				continue;
-			try {
-				Method method2=target.getClass().getDeclaredMethod("set"+field.getName().substring(0,1).toUpperCase()+field.getName().substring(1), field.getType());
-				//System.out.println(field.getType().toString()+"   "+field.getType().toString().equals(String.class.toString()));
-				if(field.getType().toString().equals(String.class.toString()))
-				{
-					method2.invoke(target, source.get(field.getName().toLowerCase()).toString());
-				}
-				if(field.getType().toString().equals(int.class.toString())||field.getType().toString().equals(Integer.class.toString()))
-				{
-					method2.invoke(target, Integer.valueOf(source.get(field.getName().toLowerCase()).toString()));
-				}
-				if(field.getType().toString().equals(long.class.toString())||field.getType().toString().equals(Long.class.toString()))
-				{
-					method2.invoke(target, Long.valueOf(source.get(field.getName().toLowerCase()).toString()));
-				}
-				if(field.getType().toString().equals(double.class.toString())||field.getType().toString().equals(Double.class.toString()))
-				{
-					method2.invoke(target, Double.valueOf(source.get(field.getName().toLowerCase()).toString()));
-				}
-				if(field.getType().toString().equals(Date.class.toString()))
-				{
-					try {
-						method2.invoke(target, new SimpleDateFormat("yyyy-MM-dd").parse(source.get(field.getName().toLowerCase()).toString()));
-					} catch (ParseException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				}
-				
-				if(field.getType().toString().equals(boolean.class.toString()))
-				{
-					method2.invoke(target, Boolean.parseBoolean(source.get(field.getName().toLowerCase()).toString()));
-				}
-				//method2.invoke(target, source.get(field.getName()));
-			} catch (SecurityException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (NoSuchMethodException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IllegalArgumentException e) {
-				// TODO Auto-generated catch block
-				//e.printStackTrace();
-			} catch (IllegalAccessException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (InvocationTargetException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		return target;
-	}
+	
 	public QueryJson findPageByQuery(String sql,String countsql,final Class voClazz, List conList,
 			int pageSize, int startIndex) {
 		final int pageSize1 = pageSize;
@@ -1095,7 +1006,7 @@ public class GenericDao<T, ID extends Serializable> extends HibernateDaoSupport
 							for(Object obj:items)
 							{
 								try {
-									temp.add(cloneMapToObj((Map)obj,voClazz.newInstance()));
+									temp.add(Tool.cloneMapToObj((Map)obj,voClazz.newInstance()));
 								} catch (InstantiationException e) {
 									// TODO Auto-generated catch block
 									e.printStackTrace();
@@ -1193,7 +1104,7 @@ public class GenericDao<T, ID extends Serializable> extends HibernateDaoSupport
 							for(Object obj:items)
 							{
 								try {
-									temp.add(cloneMapToObj((Map)obj,voClazz.newInstance()));
+									temp.add(Tool.cloneMapToObj((Map)obj,voClazz.newInstance()));
 								} catch (InstantiationException e) {
 									// TODO Auto-generated catch block
 									e.printStackTrace();
@@ -1206,6 +1117,28 @@ public class GenericDao<T, ID extends Serializable> extends HibernateDaoSupport
 							items.addAll(temp);
 						}
 						return items;
+					}
+				});
+	}
+	@Deprecated
+	public int update(final String sql) {
+		return (Integer) super.getHibernateTemplate().execute(
+				new HibernateCallback() {
+
+					public Object doInHibernate(Session session)
+							throws HibernateException, SQLException {
+						Connection conn = session.connection();
+						Statement statement = null;
+						try {
+							statement = conn.createStatement();
+							return statement.executeUpdate(sql);
+						} catch (SQLException e) {
+							e.printStackTrace();
+							return -1;
+						} finally {
+							if (statement != null)
+								statement.close();
+						}
 					}
 				});
 	}
