@@ -1,18 +1,14 @@
 package com.bip.common.util;
 
-import java.beans.PropertyDescriptor;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.LineNumberReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -34,16 +30,12 @@ import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collection;
 import java.util.Date;
 import java.util.GregorianCalendar;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.StringTokenizer;
-import java.util.TimeZone;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
@@ -1411,7 +1403,7 @@ public class Tool {
 		StringBuffer tmp = new StringBuffer();
 		String shenhe = "";
 		for (int i = 0; i < reource.length; i++) {
-			tmp.append("'").append(reource[i]).append("',");
+			tmp.append("'").append(reource[i].trim()).append("',");
 		}
 		shenhe = tmp.toString().substring(0, tmp.length() - 1);
 
@@ -1653,25 +1645,30 @@ public class Tool {
 
 		return result;
 	}
-	public static  String objToJson(Object obj) {
-		String str="{";
-		Field[] fields= obj.getClass().getDeclaredFields();
-		for(int i=0;i<fields.length;i++)
+	/**
+	 * 
+	 * 功能：克隆对象的值到另一个对象<br>
+	 * author：zj<br>
+	 * 日期：2012-7-7 <br>
+	 * @param source
+	 * @param target
+	 * @return
+	 */
+	public static Object cloneObj(Object source,Object target)
+	{
+		Field [] fields=target.getClass().getDeclaredFields();
+		for(Field field :fields)
 		{
-			Method m=null;
 			try {
-				m = obj.getClass().getDeclaredMethod("get"+fields[i].getName().substring(0, 1).toUpperCase()+fields[i].getName().substring(1),(Class[]) null);
-			} catch (SecurityException e1) {
+				Method method1=source.getClass().getDeclaredMethod("get"+field.getName().substring(0,1).toUpperCase()+field.getName().substring(1),new Class[0]);
+				Method method2=target.getClass().getDeclaredMethod("set"+field.getName().substring(0,1).toUpperCase()+field.getName().substring(1), field.getType());
+				method2.invoke(target, method1.invoke(source, null));
+			} catch (SecurityException e) {
 				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			} catch (NoSuchMethodException e1) {
+				e.printStackTrace();
+			} catch (NoSuchMethodException e) {
 				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-			if(i==0)
-			{
-			try {
-				str+="\""+fields[i].getName()+"\":"+m.invoke(obj, new Object[]{});
+				e.printStackTrace();
 			} catch (IllegalArgumentException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -1682,23 +1679,77 @@ public class Tool {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			}else
-			{
-				try {
-					str+=",\""+fields[i].getName()+"\":"+"\""+m.invoke(obj, new Object[]{})+"\"";
-				} catch (IllegalArgumentException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (IllegalAccessException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (InvocationTargetException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+		}
+		return target;
+	}
+	/**
+	 * 
+	 * 功能：Map中的key对应实体field进行赋值<br>
+	 * author：zj<br>
+	 * 日期：2012-7-7 <br>
+	 * @param source
+	 * @param target
+	 * @return
+	 */
+	public static Object cloneMapToObj(Map source,Object target)
+	{
+		Field [] fields=target.getClass().getDeclaredFields();
+		for(Field field :fields)
+		{
+
+			if(source.get(field.getName().toLowerCase())==null)
+				continue;
+			try {
+				Method method2=target.getClass().getDeclaredMethod("set"+field.getName().substring(0,1).toUpperCase()+field.getName().substring(1), field.getType());
+				//System.out.println(field.getType().toString()+"   "+field.getType().toString().equals(String.class.toString()));
+				if(field.getType().toString().equals(String.class.toString()))
+				{
+					method2.invoke(target, source.get(field.getName().toLowerCase()).toString());
 				}
+				if(field.getType().toString().equals(int.class.toString())||field.getType().toString().equals(Integer.class.toString()))
+				{
+					method2.invoke(target, Integer.valueOf(source.get(field.getName().toLowerCase()).toString()));
+				}
+				if(field.getType().toString().equals(long.class.toString())||field.getType().toString().equals(Long.class.toString()))
+				{
+					method2.invoke(target, Long.valueOf(source.get(field.getName().toLowerCase()).toString()));
+				}
+				if(field.getType().toString().equals(double.class.toString())||field.getType().toString().equals(Double.class.toString()))
+				{
+					method2.invoke(target, Double.valueOf(source.get(field.getName().toLowerCase()).toString()));
+				}
+				if(field.getType().toString().equals(Date.class.toString()))
+				{
+					try {
+						method2.invoke(target, new SimpleDateFormat("yyyy-MM-dd").parse(source.get(field.getName().toLowerCase()).toString()));
+					} catch (ParseException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+				
+				if(field.getType().toString().equals(boolean.class.toString()))
+				{
+					method2.invoke(target, Boolean.parseBoolean(source.get(field.getName().toLowerCase()).toString()));
+				}
+				//method2.invoke(target, source.get(field.getName()));
+			} catch (SecurityException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (NoSuchMethodException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IllegalArgumentException e) {
+				// TODO Auto-generated catch block
+				//e.printStackTrace();
+			} catch (IllegalAccessException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (InvocationTargetException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 		}
-		return str+"}";
-		
+		return target;
 	}
 }

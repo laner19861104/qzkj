@@ -108,11 +108,7 @@ public  class DmzdServiceImpl implements DmzdService {
 		return dmzdDao.delete("sys_dmzd", where);
 	}
 
-	public SysCodeSupport getSysCodeSupport(String lbbh) {
-		// TODO Auto-generated method stub
-		return dmzdDao.getSysCodeSupport(lbbh);
-	}
-
+	
 	/**
 	 * 获取部门字典
 	 * 
