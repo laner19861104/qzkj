@@ -58,7 +58,7 @@ public class WwwUsersAction extends baseAction {
 	}
 
 	public String get() {
-		int id = Integer.parseInt(this.getRequest().getParameter("id"));
+		String id = this.getRequest().getParameter("id");
 		instance = this.wwwUsersService.get(id);
 		return "success";
 	}
@@ -121,7 +121,7 @@ public class WwwUsersAction extends baseAction {
 			 * É¾³ýÊý¾Ý
 			 */
 			String ids = this.getRequest().getParameter("id");
-			wwwUsersService.delete("", " id in (" + ids + ")");
+			wwwUsersService.delete(ids);
 			msg=new resultMsg(true, UniContant.delok);
 		} catch (Exception ex) {
 			ex.printStackTrace();

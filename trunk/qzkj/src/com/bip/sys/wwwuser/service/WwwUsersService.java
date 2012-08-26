@@ -9,12 +9,12 @@ public interface WwwUsersService {
 
 	QueryJson findPageByQuery(String conditions, int row, int i);
 
-	WwwUsers get(int id);
+	WwwUsers get(String id);
 
 	Serializable save(WwwUsers po);
 
 	void update(WwwUsers po);
 
-	void delete(String string, String string2);
+	void delete(String string);
 
 }
