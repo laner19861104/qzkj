@@ -364,4 +364,16 @@
 		
 	</package>
 
+	<package name="upload" extends="struts-default">
+		<action name="uploadentry" class="entryUploadAction" method="entry">
+			<result name="success" type="velocity">templates/upload/upload_list.vm
+			</result>
+			<result name="failure" type="velocity">/templates/failure.vm
+			</result>
+		</action>
+	</package>
+	<package name="upload-json" extends="json-default">
+		<action name="uploadfile" class="uploadAction" method="upload">
+		</action>
+	</package>
 </struts>    

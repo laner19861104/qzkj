@@ -104,6 +104,8 @@
 
 	<!--==========业务部分(其它字典设置)结束==========-->
 	<mapping resource="com/bip/player/po/SysFile.hbm.xml" />
+	
+	<mapping resource="com/bip/common/upload/po/JocFile.hbm.xml" />
 
 
 
