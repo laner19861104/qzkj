@@ -13,7 +13,9 @@
 package com.bip.common.upload.action;
 
 import java.io.File;
-import java.util.UUID;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.util.Map;
 
 import net.sf.json.JSONObject;
 
@@ -23,7 +25,7 @@ import org.springframework.stereotype.Controller;
 
 import com.bip.common.action.baseAction;
 import com.bip.common.upload.service.UploadService;
-import com.bip.common.util.resultMsg;
+import com.bip.common.util.ControllerUtil;
 @Controller
 public class UploadAction extends baseAction {
 	/**
@@ -31,8 +33,6 @@ public class UploadAction extends baseAction {
 	 */
 	private static final long serialVersionUID = 753712457851140501L;
 
-	private resultMsg msg;
-	
 	private File file;
 	private UploadService uploadService;
 	/**
@@ -41,17 +41,17 @@ public class UploadAction extends baseAction {
 	 * @return
 	 * author：lxt<br>
 	 * 日期：2012-7-23
+	 * @throws UnsupportedEncodingException 
 	 */
-	public String upload() {
-		String filename = this.getRequest().getParameter("filename");
-		System.out.println("文件名称：" + filename);
-		String path = ServletActionContext.getServletContext().getRealPath("/upppppppppppppppppppppp");
-		uploadService.upload(file, path, UUID.randomUUID().toString());
-		JSONObject json = new JSONObject();
-		json.put("uuid", "文件UUID");
+	public String upload() throws UnsupportedEncodingException {
+		String fname = this.getRequest().getParameter("fname");
+		String fsize = this.getRequest().getParameter("fsize");
+		String ftype = this.getRequest().getParameter("ftype");
+		fname = URLDecoder.decode(URLDecoder.decode(fname, "utf-8"), "utf-8");
+		String path = ServletActionContext.getServletContext().getRealPath("/views");
+		Map<String, Object> map = uploadService.upload(file, path, 1, fname, ftype, fsize);
 		
-		msg = new resultMsg(true, json.toString());
-				
+		ControllerUtil.responseWriter(JSONObject.fromObject(map).toString(), this.getResponse());
 		return null;
 	}
 	/**
@@ -72,9 +72,5 @@ public class UploadAction extends baseAction {
 	@Autowired
 	public void setUploadService(UploadService uploadService) {
 		this.uploadService = uploadService;
-	}
-	
-	public resultMsg getMsg() {
-		return msg;
 	}
 }

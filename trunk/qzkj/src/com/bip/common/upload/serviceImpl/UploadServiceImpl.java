@@ -17,7 +17,10 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,7 +33,7 @@ public class UploadServiceImpl implements UploadService {
 
 	private List<UploadListener> listeners;
 	
-	public Boolean upload(File file, String uploadPath, String filename) {
+	public Map<String, Object> upload(File file, String fpath, int floors, String fname, String ftype, String fsize) {
 		boolean haslisteners = true;//是否配置了监听
 		if (null == listeners || 0 == listeners.size()) {
 			haslisteners = false;
@@ -46,19 +49,32 @@ public class UploadServiceImpl implements UploadService {
 				l.onUpload();
 			}
 		}
+		String uuid = UUID.randomUUID().toString();//bean的id,也是物理文件的文件名
+		String name = fname.replace(ftype, "");//用于显示的文件名
+		String filename = uuid/* + ftype*/;//便于以后添加后缀
+		String filepath = fpath;
+		if (0 < floors) {
+			for (int i = floors; i > 0; i--) {
+				filepath = filepath + "/" + UUID.randomUUID();
+			}
+		}
+		String path = filepath + "/" + filename;
+		boolean ius = this.excuteUpload(file, filepath, filename);
 		
-		boolean ius = this.excuteUpload(file, uploadPath, filename);
 		if (!ius) {
-			return false;
+			return null;
 		}
 		
 		if (haslisteners) {
 			for (UploadListener l : this.listeners) {
-				l.afterUpload(new UploadFile(filename, "name", "path"));
+				l.afterUpload(new UploadFile(uuid, path, name, fsize, null, null));
 			}
 		}
-		
-		return true;
+		Map<String, Object> rmap = new HashMap<String, Object>();
+		rmap.put("uuid", uuid);
+		rmap.put("name", fname);
+		rmap.put("size", fsize);
+		return rmap;
 	}
 	
 	
