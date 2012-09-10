@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.bip.sys.course.po.JocCourse" table="joc_course" catalog="db_movie">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity"></generator>
+        </id>
+        <many-to-one name="video1" class="com.bip.common.upload.po.JocFile" fetch="select">
+            <column name="video1" length="36">
+                <comment>流畅视频</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="subject" class="com.bip.sys.course.po.JocSubject" fetch="select">
+            <column name="subject_id" not-null="true">
+                <comment>所属科目</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="video3" class="com.bip.common.upload.po.JocFile" fetch="select">
+            <column name="video3" length="36">
+                <comment>高清视频</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="video2" class="com.bip.common.upload.po.JocFile" fetch="select">
+            <column name="video2" length="36">
+                <comment>普清视频</comment>
+            </column>
+        </many-to-one>
+        <property name="name" type="java.lang.String">
+            <column name="name" length="100" not-null="true">
+                <comment>课程名称</comment>
+            </column>
+        </property>
+        <property name="cost" type="java.lang.Integer">
+            <column name="cost">
+                <comment>课程花费</comment>
+            </column>
+        </property>
+        <property name="titleimage" type="java.lang.String">
+            <column name="titleimage" length="100">
+                <comment>课程标题图</comment>
+            </column>
+        </property>
+        <property name="discription" type="java.lang.String">
+            <column name="discription" length="200">
+                <comment>描述</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>
