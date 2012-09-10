@@ -87,6 +87,7 @@ public class QueryResourceAction extends baseAction {
 			hql = hql + " order by resourceno";
 
 			ps = rservice.findPageByQuery(hql, hql, row, (page - 1) * row);
+			 this.getResponse().setCharacterEncoding("utf-8");
 			ControllerUtil.responseWriter(ControllerUtil.getJsonString(ps
 					.getTotalCount(), ps.getItems()), this.getResponse());
 		} catch (Exception ex) {
