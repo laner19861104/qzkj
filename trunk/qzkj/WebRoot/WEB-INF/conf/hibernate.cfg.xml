@@ -106,6 +106,9 @@
 	<mapping resource="com/bip/player/po/SysFile.hbm.xml" />
 	
 	<mapping resource="com/bip/common/upload/po/JocFile.hbm.xml" />
+	<!--==========科目 课程==========-->
+	<mapping resource="com/bip/sys/course/po/JocCourse.hbm.xml" />
+	<mapping resource="com/bip/sys/course/po/JocSubject.hbm.xml" />
 
 
 
