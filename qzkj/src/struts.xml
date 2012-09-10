@@ -34,6 +34,7 @@
 	<!-- 通用及树管理 -->
 	<include file="../conf/split-struts-basicinfo-util.xml"></include>
 	<!--==========基本信息管理-结束========== -->
+	<include file="../conf/struts-sys-wwwusers.xml"></include>
 	
 	<!--==========节能审查项目-开始========== -->
 	<include file="../conf/struts-energyjnproject.xml"></include>
