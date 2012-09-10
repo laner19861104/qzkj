@@ -78,6 +78,7 @@ public class QueryPermissionAction extends baseAction {
 			hql = hql + " order by permissionno";
 
 			ps = dservice.findPageByQuery(hql, hql, row, (page - 1) * row);
+			this.getResponse().setCharacterEncoding("utf-8");
 			ControllerUtil.responseWriter(ControllerUtil.getJsonString(ps
 					.getTotalCount(), ps.getItems()), this.getResponse());
 		} catch (Exception ex) {

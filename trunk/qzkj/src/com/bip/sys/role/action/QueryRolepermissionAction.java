@@ -70,7 +70,7 @@ public class QueryRolepermissionAction extends baseAction {
 			hql = hql + "  order by roleid,permissionid";
 //			System.out.println("hql is " + hql);
 			ps = rpservice.findPageByQuery(hql, hql, row, (page - 1) * row);
-
+			this.getResponse().setCharacterEncoding("utf-8");
 			ControllerUtil.responseWriter(ControllerUtil.getJsonString(ps
 					.getTotalCount(), ps.getItems()), this.getResponse());
 			return;

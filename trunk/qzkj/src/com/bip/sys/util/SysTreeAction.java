@@ -123,7 +123,7 @@ public class SysTreeAction extends baseAction {
 		List datalist = resservice.find("");
 		List treelist = DatalistToTreelist.fromResourcelistToTreelist(datalist);
 		String jsonstr = "[" + JqueryUtil.getComboTreeJson("0", treelist) + "]";
-
+		this.getResponse().setCharacterEncoding("utf-8");
 		ControllerUtil.responseWriter(jsonstr, this.getResponse());
 	}
 
@@ -225,7 +225,7 @@ public class SysTreeAction extends baseAction {
 					+ JqueryUtil.getComboTreeJsonOfCheck("0", combotreelist)
 					+ "]";
 		}
-
+		this.getResponse().setCharacterEncoding("utf-8");
 		ControllerUtil.responseWriter(jsonstr, this.getResponse());
 	}
 

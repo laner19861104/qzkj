@@ -45,6 +45,8 @@ public class EditPermissionAction extends baseAction {
 	 */
 	@Resource
 	private PermissionService dservice;
+	@Resource
+	private IdInfoService idService;
 
 	/*
 	 * 操作返回信息字段 author：zhaosy
@@ -56,7 +58,8 @@ public class EditPermissionAction extends baseAction {
 	 */
 	private String qpermissionname = "";
 
-	private IdInfoService idService = new IdInfoServiceImpl();
+	
+
 
 	/*
 	 * 新增
