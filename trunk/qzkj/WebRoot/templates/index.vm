@@ -43,7 +43,7 @@ function changeDisplayMode(){
 <frameset rows="98,*,0" frameborder="no" border="0" framespacing="0">
   <frame src="templates/top.vm" name="topFrame" scrolling="No" noresize="noresize" id="topFrame" title="topFrame" />
   <frameset cols="205,8,*" frameborder="no" border="0" framespacing="0"id="mainFra">
-    <frame src="templates/left.jsp" name="leftFrame"  scrolling="yes" noresize="noresize" id="leftFrame" title="leftFrame" />
+    <frame src="templates/left.vm" name="leftFrame"  scrolling="yes" noresize="noresize" id="leftFrame" title="leftFrame" />
     <frame src="templates/mid.html" name="midFrame" frameborder="no" scrolling="No" noresize="noresize" id="midFrame" title="midFrame" />
     <frame src="templates/main.jsp" name="mainFrame" frameborder="no" id="mainFrame" title="mainFrame" />
   </frameset>
