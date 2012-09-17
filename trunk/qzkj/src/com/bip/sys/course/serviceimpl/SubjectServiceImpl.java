@@ -30,8 +30,15 @@ public class SubjectServiceImpl implements SubjectService {
 
 	
 	public int delete(String ids) {
-		//
-		return 0;
+		int count = 0;
+		ids = ids.replace(" ", "");
+		String[] idarr = ids.split(",");
+		for (String id : idarr) {
+			if (0 < this.delete(new Integer(id))) {
+				count++;
+			};
+		}
+		return count;
 	}
 
 	
@@ -57,11 +64,19 @@ public class SubjectServiceImpl implements SubjectService {
 
 	
 	public void update(JocSubject bean) throws Exception {
-		subjectDao.update(bean);
+		try {
+			subjectDao.update(bean);
+		} catch (Exception e) {
+			throw new Exception(e.getMessage());
+		}
 	}
 	
 	public void saveOrUpdate(JocSubject bean) throws Exception {
-		subjectDao.saveOrUpdate(bean);
+		try {
+			subjectDao.saveOrUpdate(bean);
+		} catch (Exception e) {
+			throw new Exception(e.getMessage());
+		}
 	}
 	
 	@Autowired

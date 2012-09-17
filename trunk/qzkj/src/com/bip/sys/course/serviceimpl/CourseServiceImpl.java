@@ -30,8 +30,15 @@ public class CourseServiceImpl implements CourseService {
 	}
 
 	public int delete(String ids) {
-		//
-		return 0;
+		int count = 0;
+		ids = ids.replace(" ", "");
+		String[] idarr = ids.split(",");
+		for (String id : idarr) {
+			if (0 < this.delete(new Integer(id))) {
+				count++;
+			};
+		}
+		return count;
 	}
 	
 	
