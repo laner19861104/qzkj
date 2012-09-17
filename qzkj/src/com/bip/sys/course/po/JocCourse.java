@@ -17,6 +17,9 @@ public class JocCourse implements java.io.Serializable {
 	private Integer cost;
 	private String titleimage;
 	private String discription;
+	public JocCourse() {
+		super();
+	}
 	public JocCourse(Integer id) {
 		super();
 		this.id = id;

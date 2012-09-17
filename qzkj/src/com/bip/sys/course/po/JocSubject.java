@@ -11,6 +11,9 @@ public class JocSubject implements java.io.Serializable {
 	private Integer cost;
 	private String titleimage;
 	private String discription;
+	public JocSubject() {
+		super();
+	}
 	public JocSubject(Integer id) {
 		super();
 		this.id = id;
