@@ -379,7 +379,7 @@
 	<package name="courseandother" extends="struts-default">
 		<!-- =====================================科目 课程  开始=====================================-->
 		<action name="entry_*_*" class="{1}EntryAction" method="{2}Entry">
-			<result name="success" type="velocity">templates/sys/{1}/{2}_list.vm
+			<result name="success" type="velocity">templates/{1}/{2}_list.vm
 			</result>
 			<result name="failure" type="velocity">templates/failure.vm
 			</result>
