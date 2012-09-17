@@ -1,0 +1,25 @@
+package com.bip.sys.course.action;
+
+import com.bip.common.action.baseAction;
+
+public class EditCourseAction extends baseAction {
+
+	/**
+	 * Ôö
+	 */
+	public String add() {
+		return null;
+	}
+	/**
+	 * É¾
+	 */
+	public String del() {
+		return null;
+	}
+	/**
+	 * ¸Ä
+	 */
+	public String edit() {
+		return null;
+	}
+}
