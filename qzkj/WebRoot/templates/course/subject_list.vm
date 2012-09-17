@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=gbk">
+<link href="templates/css/main_top.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="templates/jquery-easyui-1.2.5/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="templates/jquery-easyui-1.2.5/themes/icon.css">
+<script type="text/javascript" src="templates/jquery-easyui-1.2.5/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="templates/jquery-easyui-1.2.5/jquery.easyui.min.js"></script>
+<script language="javascript" src="templates/js/util.js" ></script>
+<script type="text/javascript" src="templates/course/js/subject_list.js"></script>
+</head>
+<body class="easyui-layout">
+<div region="center" title="课程管理>>科目管理" split="false" style="height:500px;padding:0px;">
+  <table id="tList">
+  </table>
+  <form id="mForm" method="post" action="">
+    <div>
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" class="list">
+        <tr>
+          <th>名称：</th>
+          <td colspan='3'><input id="name" name="name" type="text" class="input_text" size="20"  maxlength="50" />(<font class="hong">*</font>)</td>
+        </tr>
+        <tr>
+          <th>价格：</th>
+          <td colspan='3'><input id="cost" name="cost" type="text" class="input_text" size="20"  maxlength="50" />(<font class="hong">*</font>)</td>
+        </tr>
+        <tr>
+          <th>标题图：</th>
+          <td colspan='3'><input id="titleimage" name="titleimage" type="text" class="input_text" size="20"  maxlength="50" /></td>
+        </tr>
+        <tr>
+          <th>描述：</th>
+          <td colspan='3'>
+          <textarea id="discription" name="discription" cols="45" rows="5"></textarea>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </form>
+  <div id="add" class="easyui-window"  modal="true"  title="添加" style="top:50px;padding: 10px;width: 700px;"
+    iconCls="icon-add" closed="true" maximizable="false" minimizable="false" collapsible="false">
+    <div id="aa"> </div>
+    <br>
+    <div align="center"> <a class="easyui-linkbutton" iconCls="icon-ok" href="javascript:void(0)" onClick="add()">保存</a> <a class="easyui-linkbutton" iconCls="icon-cancel" href="javascript:void(0)" onClick="close1()">取消</a> </div>
+  </div>
+  <div id="edit" class="easyui-window" modal="true"  title="修改" style="top:50px;padding: 10px;width: 700px;"
+    iconCls="icon-edit" closed="true" maximizable="false" minimizable="false" collapsible="false">
+    <div id="ee"> </div>
+    <br>
+    <div align="center"> <a class="easyui-linkbutton" iconCls="icon-ok" href="javascript:void(0)" onClick="edit()">修改</a> <a class="easyui-linkbutton" iconCls="icon-cancel" href="javascript:void(0)" onClick="close2()">取消</a> </div>
+  </div>
+  <div id="view" class="easyui-window" modal="true"  title="详情" style="top:50px;padding: 10px;width: 700px;"
+    iconCls="icon-find" closed="true" maximizable="false" minimizable="false" collapsible="false">
+    <div id="dd"> </div>
+    <br>
+    <div align="center"> <a class="easyui-linkbutton" iconCls="icon-cancel" href="javascript:void(0)" onClick="close3()">关闭</a> </div>
+  </div>
+  <div id="query" class="easyui-window"  modal="true"  title="查询" style="top:50px;padding: 10px;width: 500px;"
+    iconCls="icon-search" closed="true" maximizable="false" minimizable="false" collapsible="false">
+    <div>
+      <form id="qForm" method="post">
+        <div>
+          <table border="0" cellspacing="0" cellpadding="6" style="width:auto"  class="list">
+            <tr>
+              <th >机构编码：</th>
+              <td><input id="qdeptno" name="qdeptno" type="text" class="input_text"   maxlength="50"/></td>
+              <th>机构名称：</th>
+              <td><input id="qdeptname" name="qdeptname" type="text" class="input_text"   maxlength="50"/></td>
+            </tr>
+          </table>
+        </div>
+        <br>
+        <div align="center"> <a class="easyui-linkbutton" iconCls="icon-search" href="javascript:void(0);" onClick="query()">查询</a> </div>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>
