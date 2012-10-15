@@ -35,7 +35,12 @@ function appCondition(xp,add)
 								if ($("#" + a.id).datebox('getValue') != "")
 									str += "$" + a.id.split("_")[1] + "|"
 											+ $("#" + a.id).datebox('getValue');
-							} else if ($("#" + a.id).attr("class").indexOf(
+							}else if ($("#" + a.id).attr("class").indexOf(
+									'datebox-f') != -1) {
+								if ($("#" + a.id).datebox('getValue') != "")
+									str += "$" + a.id.split("_")[1] + "|"
+											+ $("#" + a.id).datebox('getValue');
+							}else if ($("#" + a.id).attr("class").indexOf(
 									'easyui-numberbox') != -1) {
 								if ($("#" + a.id).numberbox('getValue') != "")
 									str += "$"
@@ -94,6 +99,7 @@ function fillForm(json,name)
 			var sN=name + key;
 		else
 			var sN=key
+         　　//alert("key："+sN+",value："+json[key]); 
 				if ($("#" + sN).attr("class") != undefined) {
 							if ($("#" + sN).attr("class").indexOf(
 									'datebox-f') != -1) {
@@ -104,7 +110,10 @@ function fillForm(json,name)
 									'easyui-numberbox') != -1) {
 								$("#" + sN).numberbox('setValue',json[key]);
 									
-							} else if ($("#" + sN).attr("class").indexOf(
+							}else if ($("#" + sN).attr("searchboxname")!=undefined) {
+								$("#" + sN).searchbox('setValue',json[key]);
+									
+							}else if ($("#" + sN).attr("class").indexOf(
 									'combotree') != -1) {
 								
 								if ($("#" + sN).attr("mutiple")==true)
@@ -156,13 +165,21 @@ function fixWidth(percent) {
  * @return {TypeName} 
  */
 function fixHeight(percent) {
-	return document.body.clientHeight * percent; //这里你可以自己做调整   
+	return document.body.clientHeight-28; //这里你可以自己做调整   
 }
 /**
  * 修改datagrid页脚的显示方式
  * @param {Object} name
  */
 function displayMsg(name) {
+	name = name || "tList";
+	$('#'+name).datagrid('getPager').pagination( {
+		beforePageText: '第',//页数文本框前显示的汉字   
+        afterPageText: '页 共 {pages} 页',   
+		displayMsg : '当前显示从{from}到{to}共{total}记录'
+	});
+}
+function displayTreeMsg(name) {
 	name = name || "tList";
 	$('#'+name).datagrid('getPager').pagination( {
 		beforePageText: '第',//页数文本框前显示的汉字   
