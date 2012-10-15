@@ -1,0 +1,108 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<HTML>
+<HEAD>
+<meta http-equiv="content-type" content="text/html; charset=gbk">
+<link href="templates/css/main_top.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="templates/jquery-easyui-1.2.5/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="templates/jquery-easyui-1.2.5/themes/icon.css">
+<script type="text/javascript" src="templates/jquery-easyui-1.2.5/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="templates/jquery-easyui-1.2.5/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="$base/js/easyui_tools.js"></script>
+<script type="text/javascript" src="templates/js/setmonth1.js"></script>
+<script type="text/javascript" src="templates/wwwuser/js/wwwuser_list.js"></script>
+</head>
+<body class="easyui-layout">
+<div region="center" title="用户管理>>用户信息管理" split="false" style="height:500px;padding:0px;">
+    <div id="tb" class="datagrid-toolbar"
+			style="padding: 0px; height: auto">
+			<div>
+				<a href="#" class="easyui-linkbutton" iconCls="icon-view"
+				plain="true" onclick="getView()">详细</a><span class="xian"></span>
+				<a href="#" class="easyui-linkbutton" iconCls="icon-add"
+				plain="true" onclick="openAdd()">停用</a><span class="xian"></span>
+				<a href="#" class="easyui-linkbutton" iconCls="icon-relation_1"
+				plain="true" onclick="getSelect()">查看消费记录</a><span class="xian"></span>
+				<a href="#" class="easyui-linkbutton" iconCls="icon-relation_2"
+				plain="true" onclick="del()">查看充值记录</a>
+			</div>
+			<form id="qForm">
+			<div id="qpanel" class="easyui-panel" title="" iconCls=""
+				collapsible="true" style="padding: 0px; height: 'auto';background-color:#f6f6f6;">
+				<div style="padding: 0px; width: 100%;">
+					&nbsp;
+              用户名：<input id="s_account" type="text" class="input_text" style="width:100px;" maxlength="50"/>                		
+              用户状态：<select class="easyui-combotree" multiple="true" id="s_sin-state" url="getSysDmzdsystree.action?lbbh=sys_parcel_state"  style="width:112px;"></select>
+					<a class="easyui-linkbutton" iconCls="icon-search"
+						href="javascript:void(0)" onClick="query()">查询</a>
+						 <a class="easyui-linkbutton" iconCls="icon-reload"
+						href="javascript:void(0)" onClick="clearF('qForm')">清空</a>
+			</div>
+</form>
+			</div>
+
+		</div>
+  <table id="tList">
+  </table>
+</div>
+
+  <form id="mForm" method="post" action="">
+    <div>
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" class="list">
+        <tr>
+        <td colspan="6">
+        宗地基本信息：
+        </td>
+        </tr>
+        <tr>
+        </tr>
+          <tr>
+   		  
+ 		</tr>
+          <tr>
+       	 
+       	</tr> 
+       	<tr>
+       		<td colspan="6">储备地块关联信息：</td>
+       	</tr>
+              
+      </table>
+    </div>
+  </form>
+
+
+  <div id="add" class="easyui-window"  modal="true"  title="添加" style="top:50px;padding: 10px;width: 920px;"
+    iconCls="icon-add" closed="true" maximizable="false" minimizable="false" collapsible="false">
+    <div id="aa"> </div>
+    <br>
+    <div align="center"> <a class="easyui-linkbutton" iconCls="icon-ok" href="javascript:void(0)" onClick="add()">保存</a> 
+     <a class="easyui-linkbutton" iconCls="icon-reload" href="javascript:void(0)" onClick="clearF('mForm')">清空</a>
+    <a class="easyui-linkbutton" iconCls="icon-cancel" href="javascript:void(0)" onClick="closeWin('add',tList)">取消</a> </div>
+  </div>
+  <div id="edit" class="easyui-window" modal="true"  title="修改" style="top:50px;padding: 10px;width: 920px;"
+    iconCls="icon-edit" closed="true" maximizable="false" minimizable="false" collapsible="false">
+    <div id="ee"> </div>
+    <br>
+    <div align="center"> <a class="easyui-linkbutton" iconCls="icon-ok" href="javascript:void(0)" onClick="edit()">修改</a> <a class="easyui-linkbutton" iconCls="icon-cancel" href="javascript:void(0)" onClick="closeWin('edit','tList')">取消</a> </div>
+  </div>
+  <div id="view" class="easyui-window" modal="true"  title="详情" style="top:50px;padding: 10px;width: 920px;"
+    iconCls="icon-find" closed="true" maximizable="false" minimizable="false" collapsible="false">
+    <div id="dd"> </div>
+    <br>
+    <div align="center"> <a class="easyui-linkbutton" iconCls="icon-cancel" href="javascript:void(0)" onClick="closeWin('view','tList')">关闭</a> </div>
+  </div>
+  
+  <div id="info" class="easyui-window" modal="true"  title="辅助信息" style="top:50px;padding: 10px;width: 700px;"
+    iconCls="icon-find" closed="true" maximizable="true" minimizable="false" collapsible="false" href="assistinfo.action">
+    <!--<div id="ii">
+	    <table id="infoList">
+		</table>
+    </div>-->
+    <br>
+    <div align="center"> <a class="easyui-linkbutton" iconCls="icon-cancel" href="javascript:void(0)" onClick="close4()">关闭</a> </div>
+  </div>
+
+</body>
+<script language="javascript" src="templates/js/util.js" ></script>
+</html>

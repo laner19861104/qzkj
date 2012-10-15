@@ -92,7 +92,7 @@ public class WwwUsersAction extends baseAction {
 	/*
 	 * 修改
 	 */
-	public String update() {
+	public String edit() {
 		try {
 			/*
 			 * 将页面值转换成po对象

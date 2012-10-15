@@ -5,45 +5,11 @@
 	<constant name="struts.devMode" value="true" />
 	<constant name="struts.i18n.encoding" value="GBK" />
 	<!--导入struts-***.xml文件 -->
-	<include file="../conf/struts-enterpinfo.xml"></include>
 	<!--系统管理 -->
 	<include file="../conf/struts-sys.xml"></include>
 	<!--系统其它字典管理 -->
 	<include file="../conf/struts-sys-zd.xml"></include>
-
-	<!--==========基本信息管理-开始========== -->
-	<!--<include file="../conf/struts-basicinfo.xml"></include>-->
-	<!-- 评级人员管理 -->
-	<include file="../conf/split-struts-basicinfo-ccpq.xml"></include>
-	<!-- 行业类别管理 -->
-	<include file="../conf/split-struts-basicinfo-industry.xml"></include>
-	<!-- 上报财务管理 -->
-	<include file="../conf/split-struts-basicinfo-finstat.xml"></include>
-	<!-- 上报企业信息管理 -->
-	<include file="../conf/split-struts-basicinfo-entbs.xml"></include>
-	<!-- 指标体系设置 -->
-	<include file="../conf/split-struts-basicinfo-budget.xml"></include>
-	<!-- 分值等级设置 -->
-	<include file="../conf/split-struts-basicinfo-condition.xml"></include>
-	<!-- 校验规则设置 -->
-	<include file="../conf/split-struts-basicinfo-verify.xml"></include>
-	<!-- 报告模板设置 -->
-	<include file="../conf/split-struts-basicinfo-repttemplate.xml"></include>
-	<!-- 基础信息系统设置 -->
-	<include file="../conf/split-struts-basicinfo-sys.xml"></include>
-	<!-- 通用及树管理 -->
-	<include file="../conf/split-struts-basicinfo-util.xml"></include>
-	<!--==========基本信息管理-结束========== -->
-	<include file="../conf/struts-sys-wwwusers.xml"></include>
-	
-	<!--==========节能审查项目-开始========== -->
-	<include file="../conf/struts-energyjnproject.xml"></include>
-	<!--==========节能审查项目-结束========== -->
-	
-	<!--==========能源管理-开始========== -->
-	<include file="../conf/struts-energy.xml"></include>
-	<include file="../conf/struts-energyanalysis.xml"></include>	
-	<include file="../conf/struts-energylegislation.xml"></include>
+    <include file="../conf/struts-wwwuser.xml"></include>
 	
 	<!--==========能源管理-结束========== -->
 </struts>    

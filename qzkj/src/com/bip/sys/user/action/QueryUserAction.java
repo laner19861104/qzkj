@@ -15,20 +15,15 @@ package com.bip.sys.user.action;
 import java.util.List;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import org.apache.struts2.ServletActionContext;
+
 import org.springframework.stereotype.Controller;
 
 import com.bip.common.action.baseAction;
 import com.bip.common.util.ControllerUtil;
 import com.bip.common.util.PaginationSupport;
 import com.bip.common.util.UniContant;
-import com.bip.sys.dept.po.SysDepartment;
-import com.bip.sys.user.po.SysUsers;
 import com.bip.sys.user.service.UserService;
-import com.opensymphony.xwork2.ActionSupport;
+
 @Controller
 public class QueryUserAction extends baseAction {
 	

@@ -46,7 +46,7 @@ public class ViewLoginDaoImpl extends GenericDao<ViewLogin, ViewLoginId> impleme
 						List rlist = new ArrayList();
 						try {
 							statement = conn.createStatement();
-							String sql = "select * from view_login where userid="+userid+"";
+							String sql = "select * from VIEW_LOGIN where userid="+userid+"";
 						System.out.println("Sql is "+sql);
 							rs = statement.executeQuery(sql);
 							int i = 0;
