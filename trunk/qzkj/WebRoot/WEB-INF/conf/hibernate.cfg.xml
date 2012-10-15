@@ -7,18 +7,24 @@
 <session-factory>
 	<!-- ====================hibernate配置开始==================== -->
 	<!-- 驱动类：driver_class -->
-			<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-		<!-- 连接URL -->
-		<property name="connection.url">jdbc:mysql://localhost:3306/db_movie?characterEncoding=UTF-8</property>
-		<!-- 用户名 -->
-		<property name="connection.username">root</property>
-		<!-- 密码 -->
-		<property name="connection.password">root</property>
-		<!-- 自动提交 -->
-		<property name="connection.autocommit">true</property>
+	<property name="connection.driver_class">
+		com.mysql.jdbc.Driver
+	</property>
+	<!-- 连接URL -->
+	<property name="connection.url">
+		jdbc:mysql://db4free.org:3306/qzkj?characterEncoding=UTF-8
+	</property>
+	<!-- 用户名 -->
+	<property name="connection.username">qzkj</property>
+	<!-- 密码 -->
+	<property name="connection.password">zhujiang0007</property>
+	<!-- 自动提交 -->
+	<property name="connection.autocommit">true</property>
 
-		<!-- 指定数据库方言 -->
-		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+	<!-- 指定数据库方言 -->
+	<property name="dialect">
+		org.hibernate.dialect.MySQLDialect
+	</property>
 	<!--  如果开启, Hibernate将在SQL中生成有助于调试的注释信息, 默认值为false.取值true | false-->
 	<property name="hibernate.use_sql_comments">true</property>
 	<!-- 是否在日志中输出所有Hibernate与数据库交互的SQL语句 -->
@@ -104,11 +110,12 @@
 
 	<!--==========业务部分(其它字典设置)结束==========-->
 	<mapping resource="com/bip/player/po/SysFile.hbm.xml" />
-	
+
 	<mapping resource="com/bip/common/upload/po/JocFile.hbm.xml" />
 	<!--==========科目 课程==========-->
 	<mapping resource="com/bip/sys/course/po/JocCourse.hbm.xml" />
 	<mapping resource="com/bip/sys/course/po/JocSubject.hbm.xml" />
+	<mapping resource="com/bip/sys/wwwuser/po/WwwUsers.hbm.xml" />
 
 
 
