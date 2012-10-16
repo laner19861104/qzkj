@@ -29,8 +29,17 @@ public class WwwUsers implements java.io.Serializable {
 	private String state;
 	private String crDate;
 	private Double money;
+	private String cnstate;
 
 	// Constructors
+
+	public String getCnstate() {
+		return cnstate;
+	}
+
+	public void setCnstate(String cnstate) {
+		this.cnstate = cnstate;
+	}
 
 	/** default constructor */
 	public WwwUsers() {
@@ -222,6 +231,11 @@ public class WwwUsers implements java.io.Serializable {
 
 	public void setState(String state) {
 		this.state = state;
+		if(state==null||state=="0")
+			cnstate="∆Ù”√";
+		else
+			cnstate="Õ£”√";
+			
 	}
 
 	public String getCrDate() {

@@ -151,7 +151,7 @@ public class PermissionFilter implements Filter {
 				
 				String projcode = (String) session.getAttribute("projcode");
 				if (projcode == null||"".equals(projcode)) {
-					resp.sendRedirect("/zcxjngl/templates/ent_quit.html");
+					resp.sendRedirect("/qzkj/templates/ent_quit.html");
 				} else {
 					chain.doFilter(request, response);
 					return;
@@ -160,7 +160,7 @@ public class PermissionFilter implements Filter {
 				// 管理用户
 				SysUsers sysuser = (SysUsers) session.getAttribute("sysuser");
 				if (sysuser == null) {
-					resp.sendRedirect("/zcxjngl/templates/quit.html");
+					resp.sendRedirect("/qzkj/templates/quit.html");
 				} else {
 					chain.doFilter(request, response);
 					return;
