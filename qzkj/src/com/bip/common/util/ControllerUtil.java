@@ -28,10 +28,10 @@ public class ControllerUtil {
 	 */
 	static public void responseWriter(String msg, HttpServletResponse response) {
 		try {
-//			response.setHeader("Pragma", "no-cache");
+			response.setHeader("Pragma", "no-cache");
 //			response.setHeader("Cache-Control", "no-cache");
 //			response.setDateHeader("Expires", 0);
-//			response.setContentType("text/javascript;charset=GBK");
+			response.setContentType("text/javascript;charset=utf-8");
 			Writer out = response.getWriter();
 			out.write(msg != null ? msg : "");
 			response.flushBuffer();

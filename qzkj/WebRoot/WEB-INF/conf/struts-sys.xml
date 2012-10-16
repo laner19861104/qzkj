@@ -14,7 +14,7 @@
 
 		<action name="gohome" class="goHomeAction"
 			method="goHome">
-			<result name="success">/templates/sys/main.html</result>
+			<result name="success">/templates/main.html</result>
 		</action>
 		<action name="VerifyCodeServlet" class="verifyCodeServletAction"
 			method="generateImageCode">
@@ -22,7 +22,7 @@
 		</action>
 		<action name="loginleft" class="loginLeftAction"
 			method="loginLeft">
-			<result name="success" >/templates/left.vm</result>
+			<result name="success" type="velocity">/templates/left.vm</result>
 		</action>
 	</package>
 
@@ -170,6 +170,10 @@
 			<result type="json">
 			</result>
 		</action>
+		<action name="*systree" class="SysTtree" method="{1}Tree">
+			<result type="json">
+			</result>
+		</action>
 		<action name="getdepttree" class="sysTreeAction" method="getDeptTree">
 			<result type="json">
 			</result>
@@ -234,7 +238,7 @@
 		<!--ComboxTree 获取结束-zhaosy-->
 		<!-- 代码字典 -->
 
-		<action name="querydmlb" class="queryDmlbAction." method="query">
+		<action name="querydmlb" class="queryDmlbAction" method="query">
 			<result type="json">
 			</result>
 		</action>

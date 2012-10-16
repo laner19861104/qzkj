@@ -26,6 +26,7 @@ import com.bip.common.action.baseAction;
 import com.bip.sys.dept.po.SysDepartment;
 import com.bip.sys.dept.service.DeptService;
 import com.bip.sys.login.service.ViewLoginService;
+import com.bip.sys.resource.po.SysResource;
 import com.bip.sys.resource.service.ResourceService;
 import com.bip.sys.user.po.SysUsers;
 import com.bip.sys.user.service.UserService;
@@ -110,6 +111,9 @@ public class LoginAction extends baseAction {
 //			reslist = resservice.findResource(sysuser.getUserid());
 			
 			reslist=viewloginservice.findByUserid(sysuser.getUserid());
+			String resourceId = getFirstResourceId(reslist);
+			this.getSession().setAttribute("resourceId", resourceId);
+			this.getSession().setAttribute("reslist", reslist);
 			
 			this.getSession().setAttribute("reslist", reslist);
 			return "success";
@@ -120,7 +124,15 @@ public class LoginAction extends baseAction {
 		}
 	}
 
-	
+	private String getFirstResourceId(List<SysResource> list){
+		String resourceId = "";
+		for(SysResource rs:list){
+			if("0".equals(rs.getPresourceno()));
+			resourceId = rs.getResourceno();
+			break;
+		}
+		return resourceId;
+	}
 	
 	public String getMessage() {
 		return message;

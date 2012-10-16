@@ -10,7 +10,6 @@
 <script type="text/javascript" src="templates/jquery-easyui-1.2.5/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="templates/jquery-easyui-1.2.5/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="$base/js/easyui_tools.js"></script>
-<script type="text/javascript" src="templates/js/setmonth1.js"></script>
 <script type="text/javascript" src="templates/wwwuser/js/wwwuser_list.js"></script>
 </head>
 <body class="easyui-layout">
@@ -21,6 +20,8 @@
 				<a href="#" class="easyui-linkbutton" iconCls="icon-view"
 				plain="true" onclick="getView()">详细</a><span class="xian"></span>
 				<a href="#" class="easyui-linkbutton" iconCls="icon-add"
+				plain="true" onclick="openAdd()">启用</a><span class="xian"></span>
+				<a href="#" class="easyui-linkbutton" iconCls="icon-remove"
 				plain="true" onclick="openAdd()">停用</a><span class="xian"></span>
 				<a href="#" class="easyui-linkbutton" iconCls="icon-relation_1"
 				plain="true" onclick="getSelect()">查看消费记录</a><span class="xian"></span>
@@ -33,7 +34,7 @@
 				<div style="padding: 0px; width: 100%;">
 					&nbsp;
               用户名：<input id="s_account" type="text" class="input_text" style="width:100px;" maxlength="50"/>                		
-              用户状态：<select class="easyui-combotree" multiple="true" id="s_sin-state" url="getSysDmzdsystree.action?lbbh=sys_parcel_state"  style="width:112px;"></select>
+              用户状态：<select class="easyui-combotree" multiple="true" id="s_sin-state" url="getsysdmzdtree.action?lbbh=sys_parcel_state"  style="width:112px;"></select>
 					<a class="easyui-linkbutton" iconCls="icon-search"
 						href="javascript:void(0)" onClick="query()">查询</a>
 						 <a class="easyui-linkbutton" iconCls="icon-reload"
@@ -51,22 +52,114 @@
     <div>
       <table width="100%" border="0" cellpadding="0" cellspacing="0" class="list">
         <tr>
-        <td colspan="6">
-        宗地基本信息：
+       	 <td colspan="6">
+                        用户基本信息：
         </td>
         </tr>
         <tr>
-        </tr>
+       		 <th>
+        	 帐号:
+        	</th>
+        	<td>
+        	<input id="account" type="text" class="input_text" style="width:130px"> 
+        	</td>
+        	<th>
+        	 姓名:
+        	</th>
+        	<td>
+        	<input id="username" type="text" class="input_text" style="width:130px"> 
+        	</td>
+   		 	 <th>
+        	 电话:
+        	 </th>
+        	<td>
+        	<input id="tel" type="text" class="input_text" style="width:130px"> 
+        	</td>
+          </tr>
           <tr>
-   		  
- 		</tr>
+        	<th>
+        	 性别:
+        	</th>
+        	<td>
+        	<input id="sex" type="text" class="input_text" style="width:130px"> 
+        	</td>
+       	 <th>
+        	身份证号:
+        	</th>
+        	<td>
+        	<input id="id" type="text" class="input_text" style="width:130px"> 
+        	</td>
+        	<th>
+        	 E-mail:
+        	</th>
+        	<td>
+        	<input id="email" type="text" class="input_text" style="width:130px"> 
+        	</td>
+   		  </tr>
           <tr>
-       	 
+   		    <th>
+        	 QICQ:
+        	</th>
+        	<td>
+        	<input id="qq" type="text" class="input_text" style="width:130px"> 
+        	</td>
+        	<th>
+        	 密码问题:
+        	</th>
+        	<td>
+        	<input id="pwdquestion" type="text" class="input_text" style="width:130px"> 
+        	</td>
+        	<th>
+        	状态:
+        	</th>
+        	<td>
+        	<input id="cnstate" type="text" class="input_text" style="width:130px"> 
+        	</td>
        	</tr> 
        	<tr>
-       		<td colspan="6">储备地块关联信息：</td>
+       		<td colspan="6">其他信息：</td>
        	</tr>
-              
+       	<tr>
+            <th>
+        	 出生日期:
+        	</th>
+        	<td>
+        	<input id="birthday" type="text" class="input_text" style="width:130px"> 
+            </td>
+             <th>
+        	学历:
+        	</th>
+        	<td>
+        	<input id="edulv" type="text" class="input_text" style="width:130px"> 
+            </td>
+            <th>
+        	专业技能:
+        	</th>
+        	<td>
+        	<input id="proSkill" type="text" class="input_text" style="width:130px"> 
+            </td>
+           
+        </tr>
+        <tr>
+            <th>
+        	邮编:
+        	</th>
+        	<td>
+        	<input id="postNo" type="text" class="input_text" style="width:130px"> 
+            </td>
+            <th>
+        	通讯地址:
+        	</th>
+        	<td>
+        	<input id="postAddress" type="text" class="input_text" style="width:130px"> 
+            </td>
+            <th>
+        	 工作单位:
+        	</th>
+        	<td>
+        	<input id="workFor" type="text" class="input_text" style="width:130px"> 
+            </td>
+        </tr>
       </table>
     </div>
   </form>

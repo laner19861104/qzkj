@@ -15,25 +15,11 @@
 
 var urls = eval( {
 	"query" : "querywwwuser.action",
-	"get" : "getLandAllocationbyId.action",
-	"add" : "addLandAllocation.action",
-	"edit" : "editLandAllocation.action",
-	"del" : "delLandAllocation.action",
-	"lock" : "lcokLandAllocation.action",
-	"unlock" : "unlcokLandAllocation.action"
+	"close" : "getLandAllocationbyId.action",
+	"open" : "addLandAllocation.action",
 });
 $(function() {
 	$('#mForm').hide();
-	$('#add').window({
-		onOpen:function(){
-			$('#parcelcode').removeAttr('readonly');
-		}
-	});
-	$('#edit').window({
-		onOpen:function(){
-			$('#parcelcode').attr('readonly','readonly');
-		}
-	});
 	$('#tList').datagrid( {
 		iconCls : 'icon-save',
 		width : 'auto',
@@ -42,23 +28,21 @@ $(function() {
 		nowrap : false,
 		striped : true,
 		collapsible : true,
-		url : urls['query']+"?"+appCondition("[id^='s_']","$orderby|state,cRdate"), //暂时取json文件中的数据
+		url : urls['query']+"?"+appCondition("[id^='s_']","$orderby|state,crDate"), //暂时取json文件中的数据
 		loadMsg : '数据装载中......',
 		idField : 'uuid',
-		sortName : 'no',
-		sortOrder : 'asc',
 		remoteSort : false,
 		frozenColumns : [ [ {
 			field : 'ck',
 			checkbox : true
 		},  {
-			title : '宗地编号',
-			field : 'parcelcode',
+			title : '帐号',
+			field : 'account',
 			width : '80',
 			sortable : true
 		}, {
-			title : '宗地位置',
-			field : 'parcelposition',
+			title : '姓名',
+			field : 'username',
 			width : '250',
 			align : 'left',
 			sortable : true
@@ -69,172 +53,90 @@ $(function() {
 			field : 'cnstate',
 			width : '80',
 			align : 'left',
-			sortable : true,
-			rowspan :2
+			sortable : true
+			
 		},{
-			title : '政府出让批复文号',
-			field : 'tradeapprovalcode',
+			title : '性别',
+			field : 'sex',
 			width : '130',
-			align : 'left',
-			rowspan:2
+			align : 'left'
 		},{
-			title : '政府出让批复日期',
-			field : 'tradeapprovaldate',
-			width : '120',
-			align : 'left',
-			rowspan:2
+			title : '账户余额',
+			field : 'money',
+			width : '130',
+			align : 'left'
 		},{
-			title : '出让方式',
-			field : 'cnlandtranmode',
-			width : '80',
-			align : 'left',
-			sortable : true,
-			rowspan :2
+			title : '联系电话',
+			field : 'tel',
+			width : '130',
+			align : 'left'
 		},{
-			title : '土地用途',
-			field : 'landuse',
-			width : '80',
-			align : 'left',
-			rowspan :2
+			title : '身份证号',
+			field : 'id',
+			width : '130',
+			align : 'left'
 		},{
-			title : '面积(平方米)',
-			align : 'center',
-			colspan :3
+			title : 'E-mail',
+			field : 'email',
+			width : '130',
+			align : 'left'
 		},{
-			title : '总成本',
-			field : 'totalcost',
-			width : '60',
-			align : 'right',
-			sortable : true,
-			rowspan :2
+			title : 'QICQ',
+			field : 'qq',
+			width : '130',
+			align : 'left'
 		},{
-			title : '支出',
-			align : 'center',
-			colspan :2
+			title : '密码问题',
+			field : 'pwdquestion',
+			width : '130',
+			align : 'left'
 		},{
-			title : '规划设计条件',
-			align : 'center',
-			colspan :3
-		},
-		   /* {
-			title : '储备年月',
-			field : 'reserveyear',
-			width : '65',
-			align : 'left',
-			sortable : true,
-			rowspan :2
-		},  {
-			title : '土地级别',
-			field : 'landlevel',
-			width : '60',
-			align : 'left',
-			sortable : true,
-			rowspan :2
-		}, {
-			title : '原土地级别',
-			field : 'landlevelorig',
-			width : '80',
-			align : 'left',
-			sortable : true,
-			rowspan :2
-		}, {
-			title : '土地使用权类别',
-			field : 'landuserighttype',
-			width : '100',
-			align : 'left',
-			sortable : true,
-			rowspan :2
-		}, {
-			title : '原土地使用权类别',
-			field : 'landrighttypeorig',
-			width : '120',
-			align : 'left',
-			sortable : true,
-			rowspan :2
-		}, 
-		*/{
-			title : '委托单位名称',
-			field : 'entrustunitname',
-			width : '150',
-			align : 'left',
-			sortable : true,
-			rowspan :2
-		}, {
-			title : '原用地单位',
-			field : 'landuseunitorig',
-			width : '150',
-			align : 'left',
-			sortable : true,
-			rowspan :2
-		}],[{
-			title : '土地面积',
-			field : 'landaream',
-			width : '60',
-			align : 'right',
-			sortable : true
-		}, {
-			title : '报批面积',
-			field : 'approvalaream',
-			width : '60',
-			align : 'right',
-			sortable : true
+			title : '出生日期',
+			field : 'birthday',
+			width : '130',
+			align : 'left'
+
 		},{
-			title : '补偿面积',
-			field : 'compensateaream',
-			width : '60',
-			align : 'right',
-			sortable : true
+			title : '地址',
+			field : 'address',
+			width : '130',
+			align : 'left'
 		},{
-			title : '应支出',
-			field : 'totalexpend',
-			width : '60',
-			align : 'right',
-			sortable : true
+			title : '学历',
+			field : 'edulv',
+			width : '130',
+			align : 'left'
 		},{
-			title : '已支出',
-			field : 'isenpend',
-			width : '60',
-			align : 'right',
-			sortable : true
+			title : '工作单位',
+			field : 'workFor',
+			width : '130',
+			align : 'left'
 		},{
-			title : '净用地面积',
-			field : 'netaream',
-			width : '80',
-			align : 'right',
-			sortable : true
-		}, {
-			title : '绿化带面积',
-			field : 'greenaream',
-			width : '80',
-			align : 'right',
-			sortable : true
-		}, {
-			title : '道路用地面积',
-			field : 'roadaream',
-			width : '80',
-			align : 'left',
-			sortable : true
+			title : '工作单位',
+			field : 'workFor',
+			width : '130',
+			align : 'left'
+		},{
+			title : '通讯地址',
+			field : 'postAddress',
+			width : '130',
+			align : 'left'
+		},{
+			title : '邮编',
+			field : 'postNo',
+			width : '130',
+			align : 'left'
 		}
 		]],
 		pagination : true,
-		rownumbers : true,
-		
+		rownumbers : true,	
 		toolbar : '#tb'
 	});
 	displayMsg();
 	init();
 });
 function init() {
-	$('#crdate').datebox( {
-		colseText : '关闭',
-		currentText : '',
-		okText : '确定',
-		//cls:'input_text',
-		width : 172,
-		formatter : function(date) {
-			return date.format('yyyy-MM-dd');
-		}
-	})
+
 
 }
 function openAdd() {
@@ -246,124 +148,7 @@ function openAdd() {
 function openQuery() {
 			$('#query').window('open');
 
-		}
-/**
- * 根据权限获取操作按钮
- * @return
- */
-function getToolbar() {
-	return [ {
-		text : '详细',
-		iconCls : 'icon-view',
-		handler : getView
-	}, '-', {
-		text : '添加',
-		iconCls : 'icon-add',
-		handler : function() {
-			$('#add').window('open');
-			$('#mForm').show();
-			$('#mForm').form('clear');
-			$('#mForm').appendTo('#aa');
-		}
-	}, '-', {
-		text : '修改',
-		iconCls : 'icon-edit',
-		handler : getSelect
-	}, '-', {
-		text : '删除',
-		iconCls : 'icon-remove',
-		handler : del
-	}, '-', {
-		text : '查询',
-		iconCls : 'icon-search',
-		handler : function() {
-			$('#query').window('open');
 
-		}
-	}, '-', {
-		text : '辅助信息',
-		iconCls : 'icon-relation_2',
-		handler : showReserveAssistInfo
-	}, '-', {
-		text : '地类构成',
-		iconCls : 'icon-relation_2',
-		handler : showParcelComprise
-	}, '-', {
-		text : '宗地附着物',
-		iconCls : 'icon-relation_3',
-		handler : showParcelreserveAttachment
-	}, '-', {
-		text : '宗地安置人口',
-		iconCls : 'icon-relation_4',
-		handler : showParcelreservePopulation
-	}];
-}
-
-/*
- *输入字段的有效性校验
- */
-function validateCheck() {
-	if (mForm.parcelcode.value == "") {
-		$.messager.alert('警告', '宗地编号不能为空!', 'warning');
-		return false;
-	}
-
-	if ($('#landaream').numberbox('getValue') == "") {
-		$.messager.alert('警告', '土地面积不能为空!', 'warning');
-		return false;
-	}
-	if (mForm.reserveyear.value == "") {
-		$.messager.alert('警告', '请选择储备年月!', 'warning');
-		return false;
-	}
-	if ($('#regioncode').combotree('getValues') == "") {
-		$.messager.alert('警告', '所属区域不能为空!', 'warning');
-		return false;
-	}
-//  if(mForm.newapprovalcode.value!="")
-//	   { 
-//	   var newapprovalcode=mForm.newapprovalcode.value;
-//                       
-//                        var result=$.ajax({
-//                            url:'existsJobapprovalAction.action',
-//                            dataType:"json",
-//                            data:{
-//                        	landrescode:newapprovalcode
-//                            },
-//                            async:false,
-//                            cache:false,
-//                            type:"post"
-//                        }).responseText;
-//
-//            if(jQuery.parseJSON(result).success==false)
-//            	{
-//            	if(!confirm('新增批复文号不存在!是否继续?'))
-//            		return false
-//            	}
-//	   }
-	if(mForm.res01.value!="")
-	   { 
-	   var landrescode=mForm.res01.value;
-                       
-                        var result=$.ajax({
-                            url:'existsJobLandreserve.action',
-                            dataType:"json",
-                            data:{
-                        	landrescode:landrescode
-                            },
-                            async:false,
-                            cache:false,
-                            type:"post"
-                        }).responseText;
-
-            if(jQuery.parseJSON(result).success==false)
-            	{
-            	if(!confirm('储备地块编号不存在!是否继续?'))
-            		return false
-            	}
-	   }
-
-	return true;
 }
 /*
  *添加操作
@@ -375,8 +160,6 @@ function add() {
 	$('#mForm').form('submit', {
 		url : urls['add'],
 		onSubmit : function() {
-		$('#landtranmode').val('03')
-			//return $('#mForm').form('validate');
 	},
 	type : "POST", // 设置请求类型为"POST"，默认为"GET"
 		success : function(message) {
@@ -404,10 +187,6 @@ function getSelect() {
 	var select = $('#tList').datagrid('getSelections');
 	if (select.length != 1) {
 		$.messager.alert('提示', '请选择一行数据!', 'warning');
-		return;
-	}
-	if (select[0].state != "01") {
-		$.messager.alert('提示', '不可修改!', 'warning');
 		return;
 	}
 	uuid = select[0].uuid;
@@ -449,7 +228,6 @@ function edit() {
 	$('#mForm').form('submit', {
 		url : urls['edit'] + '?uuid=' + uuid,
 		onSubmit : function() {
-			$('#landtranmode').val('03')
 		},
 		success : function(message) {
 			var message = eval("(" + message + ")");
@@ -524,7 +302,7 @@ function del() {
  * 查询操作
  */
 function query() {
-	var url = urls['query']+"?"+appCondition("[id^='s_']","$status-landtranmode|03$orderby|state,regioncode,landtranmode");
+	var url =urls['query']+"?"+appCondition("[id^='s_']","$orderby|state,crDate");
 	$('#tList').datagrid( {
 		url : url
 	});
@@ -533,139 +311,4 @@ function query() {
 	$('#query').window('close');
 }
 
-/**
- * 宗地成本
- * @return
- */
-var select;
-function showParcelComprise() {
-	 select = $('#tList').datagrid('getSelections');
-	if (select.length != 1) {
-		$.messager.alert('提示', '请选择一行数据!', 'warning');
-		return;
-	}
-	
-	var height=600;
-	var width=800;
-	var top=(window.screen.height-height)/2;
-	var left=(window.screen.width-width)/2;
-	var url="parcelreserveCompriseTransferEntry.action?parcelcode="+select[0].parcelcode;
-	window.open(url,null,'height='+height+',width='+width+',top='+top+',left='+left+',toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no');
-	
-}
-/**
- * 宗地地块附着物
- * @return
- */
-function showParcelreserveAttachment() {
-	 select = $('#tList').datagrid('getSelections');
-	if (select.length != 1) {
-		$.messager.alert('提示', '请选择一行数据!', 'warning');
-		return;
-	}
-	var height=600;
-	var width=800;
-	var top=(window.screen.height-height)/2;
-	var left=(window.screen.width-width)/2;
-	var url="parcelreserveAttachmentTransferEntry.action?parcelcode="+select[0].parcelcode;
-	window.open(url,null,'height='+height+',width='+width+',top='+top+',left='+left+',toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no');
-	
-}
-/**
- * 宗地安置人口
- * @return
- */
-function showParcelreservePopulation() {
-	 select = $('#tList').datagrid('getSelections');
-	if (select.length != 1) {
-		$.messager.alert('提示', '请选择一行数据!', 'warning');
-		return;
-	}
-	var height=600;
-	var width=800;
-	var top=(window.screen.height-height)/2;
-	var left=(window.screen.width-width)/2;
-	var url="parcelreservePopulationTransferEntry.action?parcelcode="+select[0].parcelcode;
-	window.open(url,null,'height='+height+',width='+width+',top='+top+',left='+left+',toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no');
-	
-}
-function lock()
-{
-	var selecteds = $('#tList').datagrid('getSelections');
-	var ids = "";
-	if (selecteds != "" || selecteds.length > 0) {
-		$.messager.confirm('警告', '确认加锁么?', function(id) {
-			if (id) {
-				for ( var i = 0; i < selecteds.length; i++) {
-					var selected = selecteds[i];//获取某行的行号
-				if (ids == "")
-					ids = "'" + selecteds[i].uuid + "'";
-				else
-					ids = ids + "," + "'" + selecteds[i].uuid + "'";
-			}
 
-			$.ajax( {
-				type : "POST",
-				url : urls["lock"],
-				data : "id=" + ids,
-				dataType : "json",
-				cache : false,
-				success : function callback(msg) {
-					if (msg.success) {
-						$.messager.alert('提示', msg.info, 'info');
-					} else {
-						$.messager.alert('警告', msg.info, 'warning');
-						return;
-					}
-					$('#tList').datagrid('reload');
-					displayMsg('tList');
-				}
-
-			});
-
-		}
-	}	);
-	} else {
-		$.messager.alert('警告', '请选择一行数据', 'warning');
-	}
-}
-function unlock()
-{
-	var selecteds = $('#tList').datagrid('getSelections');
-	var ids = "";
-	if (selecteds != "" || selecteds.length > 0) {
-		$.messager.confirm('警告', '确认解锁么?', function(id) {
-			if (id) {
-				for ( var i = 0; i < selecteds.length; i++) {
-					var selected = selecteds[i];//获取某行的行号
-				if (ids == "")
-					ids = "'" + selecteds[i].uuid + "'";
-				else
-					ids = ids + "," + "'" + selecteds[i].uuid + "'";
-			}
-
-			$.ajax( {
-				type : "POST",
-				url : urls["unlock"],
-				data : "id=" + ids,
-				dataType : "json",
-				cache : false,
-				success : function callback(msg) {
-					if (msg.success) {
-						$.messager.alert('提示', msg.info, 'info');
-					} else {
-						$.messager.alert('警告', msg.info, 'warning');
-						return;
-					}
-					$('#tList').datagrid('reload');
-					displayMsg('tList');
-				}
-
-			});
-
-		}
-	}	);
-	} else {
-		$.messager.alert('警告', '请选择一行数据', 'warning');
-	}
-}
