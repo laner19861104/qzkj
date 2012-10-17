@@ -58,7 +58,7 @@ public class WwwUsersAction extends baseAction {
 	}
 
 	public String get() {
-		String id = this.getRequest().getParameter("id");
+		String id = this.getRequest().getParameter("uuid");
 		instance = this.wwwUsersService.get(id);
 		return "success";
 	}
@@ -98,9 +98,10 @@ public class WwwUsersAction extends baseAction {
 			 * 将页面值转换成po对象
 			 */
 			Map map = new HashMap();
-			map = ControllerUtil.getRequestParameterMap(this.getRequest());
+			map = ControllerUtil.getRequestParameterMap(this.getRequest());	
 			SqlUtil sqlUtil = new SqlUtil();
-			WwwUsers addpo = new WwwUsers();
+			WwwUsers addpo = this.wwwUsersService.get(map.get("uuid").toString());
+			
 			WwwUsers po = (WwwUsers) sqlUtil.getObjByMap(map, addpo);
 			wwwUsersService.update(po);
 			msg=new resultMsg(true, UniContant.editok);
