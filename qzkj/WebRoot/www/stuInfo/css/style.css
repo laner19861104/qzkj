@@ -1,0 +1,342 @@
+@charset "utf-8";
+#main {
+	width: 960px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+}
+#left{
+	float: left;
+	width: 206px;
+	height: 939px;
+	border:1px solid #4bb2f2
+}
+
+#right{
+	float: right;
+	width: 746px;
+	height: auto;
+}
+/*全部课程*/
+#main #left .department {
+	
+	min-height:300px;
+	height: auto;
+	
+}
+#left_box{	
+	border: 1px solid #CCCCCC;
+}
+h1 {
+	height: 22px;
+	padding-top: 6px;
+	padding-left:27px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration: none;
+	background-image: url(../images/w_04.jpg);
+	background-repeat: no-repeat;
+}
+#main #left .news {
+	margin: 0px;
+	padding: 0px;
+}
+
+#main #left span a {
+	font-size: 12px;
+	font-weight: normal;
+	color: #fff;
+	text-decoration: none;
+	float: right;
+	margin-right: 8px;
+	margin-top: -11px;
+}
+#main #left .news ul{
+	padding-top: 6px;
+	padding-right: 0px;
+	padding-bottom: 2px;
+	padding-left: 1px;
+}
+#main #left .news ul li{
+	clear:both;
+	background: url(../images/w_03.jpg) no-repeat;
+	height: 25px;
+	vertical-align: top;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 10px;
+	margin-left: auto;
+	padding-left: 8px;
+	width: 180px;
+}
+#main #left .news ul li a{
+	margin:3px 15px;
+	float: left;
+	padding:4px 0px 0px 3px;
+	width: 173px;
+	
+}
+
+#main #left .news ul li a:hover{
+	font-size: 12px;
+	color: #03C;
+	text-decoration: none;
+	font-weight: bold;
+}
+#main #left .news ul li a:active
+{
+	font-size: 12px;
+	color: #03C;
+	text-decoration: none;
+	font-weight: bold;
+}
+/*中间*/
+#main #right .zuo {
+	float: left;
+	height: auto;
+	width: 534px;
+}
+.box {
+	WIDTH: 534px;
+	margin: 0  auto;
+	height: 176px;
+}
+.box .boxpadding {
+
+	MARGIN-BOTTOM: 0px;
+	padding:0px;
+	
+}
+#Slide {
+	CLEAR: both;
+	OVERFLOW: hidden;
+	WIDTH: 534px;
+	HEIGHT: 176px
+}
+#Slide A {
+	COLOR: #000
+}
+.img {
+	BORDER-RIGHT: #fff 1px solid; BACKGROUND: #fff; MARGIN: 0px auto; BORDER-LEFT: #fff 1px solid; TEXT-ALIGN: center
+}
+.boxpadding {
+	BORDER-RIGHT: #fff 1px solid; BORDER-TOP: #fff 1px solid; BACKGROUND: #f8f8f8; MARGIN-BOTTOM: 8px; BORDER-LEFT: #fff 1px solid; PADDING-TOP: 10px; BORDER-BOTTOM: #fff 1px solid
+}
+
+.thumb_title {
+	-moz-opacity: 0.3;
+	z-index: 1000;
+}
+#Slide_Thumb {
+	MARGIN-TOP: 136px;
+	MARGIN-LEFT: 0px;
+	POSITION: absolute;
+	padding-left: 340px;
+}
+.thumb_on {
+	DISPLAY: inline;
+	FLOAT: left;
+	
+	CURSOR: pointer
+}
+.thumb_off {
+	DISPLAY: inline; FLOAT: left; MARGIN-LEFT: 8px; CURSOR: pointer
+}
+.thumb_off {
+	FILTER: alpha(opacity=50); -moz-opacity: 0.5
+}
+.thumb_on {
+	FILTER: alpha(opacity=100); -moz-opacity: 1
+}
+.thumb_off IMG {
+	BORDER-RIGHT: #fff 1px solid; 
+	BORDER-TOP: #fff 1px solid;
+	 MARGIN-TOP: 12px; 
+	 BORDER-LEFT: #fff 1px solid;
+	  WIDTH: 35px; 
+	  BORDER-BOTTOM: #fff 1px solid; 
+	  HEIGHT: 20px;
+}
+.thumb_on IMG {
+	BORDER-RIGHT: #fff 1px solid; 
+	BORDER-TOP: #fff 1px solid; 
+	BORDER-LEFT: #fff 1px solid; 
+	WIDTH: 40px;
+	 BORDER-BOTTOM: #fff 1px solid; 
+	 HEIGHT:25px;
+	 margin-left:6px;
+}
+
+/*课程*/
+#main #right .zuo .new {
+	height: 205px;
+}
+.zhong_box{
+	border:1px solid #4bb2f2
+	
+	}
+
+.right_box{
+	border:1px solid #b0e1f1;
+	}
+
+#main #right .w203 h3{
+	background: url(../images/w_07.jpg) no-repeat;
+	height: 22px;
+	padding-top: 8px;
+	padding-left:27px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #fff;
+	text-decoration: none;
+}
+
+
+#main #right .zuo h2 
+{
+	background: url(../images/w_15.jpg) no-repeat;
+	height: 22px;
+	padding-top: 8px;
+	padding-left:27px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #fff;
+	text-decoration: none;
+}
+#main span a{
+	font-size: 12px;
+	font-weight: normal;
+	color: #fff;
+	text-decoration: none;
+	float: right;
+	margin-right: 8px;
+	margin-top: -13px;
+	
+	
+	
+}
+#main #right .zuo .new {
+	padding: 0px;
+	height: 260px;
+}
+.list {
+	border: 1px solid #99CCFF;
+	border-width: 1px 0px 0px 1px;
+	width: 99%;
+	margin-top: 1px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+}
+
+.list th {
+	font-weight:bold;
+	height: 20px;
+	padding: 4px 6px 0px;
+	white-space:nowrap;	
+	border-top: 0px solid  #CCC;
+	border-right: 1px solid  #CCC;
+	border-bottom: 1px solid  #CCC;
+	border-left: 0px solid  #CCC;
+	border-top-style: solid;
+	border-right-style: solid;
+}
+
+.list td {
+	border: 1px solid #ccc;
+	border-width: 0px 1px 1px 0px;
+	height: 20px;
+	padding: 4px 6px 0px;
+	text-align: center;
+}
+#main #right .zuo .new.zhong_box .list tr .zhong_zuo {
+	text-align: left;
+}
+.list1 {
+	
+	width: 98%;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+}
+
+.list1 th {
+	font-weight:bold;
+	height: 20px;
+	padding: 4px 6px 0px;
+	white-space:nowrap;	
+
+}
+
+.list1 td {
+	height: 20px;
+	padding: 4px 6px 10px;
+	text-align: left;
+}#main #right .w203 {
+	height: auto;
+	width: 203px;
+	float: right;
+}
+/*公众参与*/
+#main #right .w203 .main_new {
+	_height: 213px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-left: 5px;
+}
+#main #right .w203 .main_new ul li{
+	margin-bottom: 5px;
+	padding: 5px 0px 4px 14px;
+	margin-top: 6px;
+	background-image: url(../images/biao_03.jpg);
+	background-repeat: no-repeat;
+	background-position: 4px 8px;
+}
+#main #right .w203 .canyu {
+	height: 175px;
+}
+#main #right .w203 .c_zhi {
+	height: 110px;
+}
+#main #right .w203 .c_zhi .ka {
+	padding-top: 10px;
+	padding-left: 10px;
+}
+#main #right .w203 .shuzi{
+	height: 280px;
+}
+#main #right .w203 .congshu {
+	height: 134px;
+}
+
+#main #right .w203 .shuzi ul li{
+	margin-bottom: 5px;
+	padding: 5px 0px 4px 8px;
+	margin-top: 6px;
+	
+}
+#main #right .w203 .congshu ul {
+	padding-top: 7px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 10px;
+}
+#main #right .w203 .congshu ul li {
+	background-image: url(../images/biao_03.jpg);
+	background-repeat: no-repeat;
+	background-position: 1px 10px;
+	float: left;
+	width: 78px;
+	margin-bottom: 2px;
+	padding: 5px 0px 4px 8px;
+	margin-top: 3px;
+}
+#main #right .zuo .tese .list1 tr .line_height {
+	line-height: 200%;
+}
+#main #right .zuo .tese {
+	height: 215px;
+}

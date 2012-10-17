@@ -1,0 +1,98 @@
+@charset "utf-8";
+#main #right h3 {
+	font-size: 14px;
+	color: #000;
+	text-decoration: none;
+}
+#main #right .w746 .w775_h3 {
+	background-image: url(../images/title_bg2.gif);
+	background-repeat: no-repeat;
+	font-size: 14px;
+	font-weight: bold;
+	height: 20px;
+	padding-top: 8px;
+	width: 720px;
+	padding-left: 26px;
+}
+#main #right .w746 .w600 {
+	width: 746px;
+}
+#main #right .w746 .w138 {
+	float: right;
+	width: 138px;
+}
+.list3 {
+	border: 1px solid #99CCFF;
+	border-width: 1px 0px 0px 1px;
+	width: 100%;
+	margin-top: 1px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+}
+
+.list3 th {
+	font-weight:bold;
+	height: 20px;
+	padding: 4px 6px 0px;
+	white-space:nowrap;	
+	border-top: 0px solid  #CCC;
+	border-right: 1px solid  #CCC;
+	border-bottom: 1px solid  #CCC;
+	border-left: 0px solid  #CCC;
+	border-top-style: solid;
+	border-right-style: solid;
+}
+
+.list3 td {
+	border: 1px solid #99CCFF;
+	border-width: 0px 1px 1px 0px;
+	height: 20px;
+	padding: 4px 6px 0px;
+	text-align: left;
+}
+#main #right .w746 .w600 .list3 tr td span {
+	color: #900;
+}
+#main #right .page span  {
+	padding:15px 0px 0px 10px;
+	float: left;
+	white-space: nowrap;
+}
+#main #right .page {
+	float: right;
+	margin-right: 10px;
+	margin-bottom: 10px;
+
+}
+#main #right .page a {
+	background: url(../images/3_r21_c8.png) no-repeat -5px -3px;
+	height: 18px;
+	float: left;
+	margin: 10px 2px;
+	border: 1px outset #FFFFFF;
+	color:#000;
+	white-space:nowrap;
+	line-height: 18px;
+	padding: 0px 6px;
+}
+#main #right .page a:hover {
+	background: url(../images/3_r21_c5.png) no-repeat -8px -2px;
+	border: 1px outset #ccc;
+	color:#000
+}
+#main .position {
+	height: 32px;
+	margin-right: 0px;
+	margin-left: 0px;
+	background: url(../images/s_02.jpg) no-repeat;
+	border: 1px solid #ccdffe;
+
+}
+#main .position h2 {
+	font-size: 12px;
+	font-weight: normal;
+	text-decoration: none;
+	margin-left: 30px;
+	margin-top: 10px;
+}
