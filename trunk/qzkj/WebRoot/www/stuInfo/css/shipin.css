@@ -1,0 +1,60 @@
+#main .position {
+	height: 32px;
+	margin-right: 0px;
+	margin-left: 0px;
+	background: url(../images/s_02.jpg) no-repeat;
+	width: 958px;
+	border: 1px solid #ccdffe;
+
+}
+#main .position h1 {
+	font-size: 12px;
+	font-weight: normal;
+	text-decoration: none;
+	margin-left: 30px;
+	margin-top: 10px;
+}
+
+fieldset{
+	background-image: url(#);
+	padding-top: 4px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+}
+fieldset legend {
+	margin-left: 10px;
+	color: #003366;
+	font-weight: bold;
+	padding: 0px 10px;
+	margin-bottom: 10px;
+}
+ 
+#main table tr td fieldset .shi_img tr td  ,#main table tr td fieldset .shi_img1 tr td{
+	height: 75px;
+	
+	
+}
+#main table tr td fieldset tr td .mulu h2 {
+	height: 21px;
+	padding-top: 9px;
+	padding-left:27px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #000;
+	text-decoration: none;
+	background-image: url(../images/s_14.jpg);
+	background-repeat: no-repeat;
+}
+#main table tr td fieldset .shi_img tr td {
+	padding-left: 3px;
+}
+#main table tr td fieldset .shi_img1 tr td {
+	padding-left: 16px;
+	padding-right: 5px;
+}
+
+#main table tr td fieldset table tr td div .mulu {
+	border: 1px solid #c6ecff;
+	height: 440px;
+}

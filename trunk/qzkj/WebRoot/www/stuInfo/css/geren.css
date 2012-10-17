@@ -1,0 +1,184 @@
+#main .position {
+	height: 32px;
+	margin-right: 0px;
+	margin-left: 0px;
+	background: url(../images/s_02.jpg) no-repeat;
+	width: 958px;
+	border: 1px solid #ccdffe;
+
+}
+#main .position h1 {
+	font-size: 12px;
+	font-weight: normal;
+	text-decoration: none;
+	margin-left: 30px;
+	margin-top: 10px;
+}
+
+fieldset{
+	background-image: url(#);
+	padding-top: 4px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-left: 5px;
+}
+fieldset legend {
+	margin-left: 10px;
+	color: #003366;
+	font-weight: bold;
+	padding: 0px 10px;
+	margin-bottom: 10px;
+}
+ 
+#main table tr td fieldset .shi_img tr td  ,#main table tr td fieldset .shi_img1 tr td{
+	height: 75px;
+	
+	
+}
+#main table tr td fieldset tr td .mulu h2 {
+	height: 21px;
+	padding-top: 9px;
+	padding-left:27px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #000;
+	text-decoration: none;
+	background-image: url(../images/s_14.jpg);
+	background-repeat: no-repeat;
+}
+#main table tr td fieldset .shi_img tr td {
+	padding-left: 3px;
+}
+#main table tr td fieldset .shi_img1 tr td {
+	padding-left: 16px;
+	padding-right: 5px;
+}
+
+#main table tr td fieldset table tr td div .mulu {
+	border: 1px solid #c6ecff;
+	height: 440px;
+}
+#ren_top {
+	background-image: url(../images/s_top.jpg);
+	height: 96px;
+}
+#ren_top .ren_new {
+	float: right;
+	width: 760px;
+	padding-top: 70px;
+}
+#ren_top .ren_new ul li {
+	width: 100px;
+	float: left;
+	color: #FFF;
+}
+#ren_top .menu_right a{
+	color: #FFF;
+	height: 19px;
+	width: 50px;
+	font-family: "宋体";
+	
+}
+#ren_top .menu_right a:hover{
+	color: #FF0;	
+	
+}
+#ren_top .menu_right {
+	float: right;
+	width: 240px;
+	height:20px;
+	margin-top: 75px;
+	
+}
+
+#main .position h1 a {
+	color: #900;
+}
+#main table tr td fieldset .w200 {
+	background-color: #e9f8fe;
+	float: left;
+	width: 185px;
+}
+#main table tr td fieldset .w730 {
+	float: right;
+	width: 735px;
+	margin-right: 10px;
+}
+
+#menu .search {
+	float: right;
+	width: 240px;
+	padding-top: 5px;
+}
+#menu .search input {
+	height: 18px;
+	width: 80px;
+}
+#menu .search img {
+	padding-top: 4px;
+}
+#main .position h2 {
+	float:left;
+	width:550px;
+	font-size: 12px;
+	font-weight: normal;
+	text-decoration: none;
+	margin-left: 30px;
+	margin-top: 10px;
+}
+#main table tr td fieldset .w730 .w521 {
+	float: left;
+	width: 720px;
+}
+#main table tr td fieldset .w730 .w201 {
+	float: right;
+	width: 191px;
+	margin-right: 0px;
+}
+.left_menu_fu {
+	BORDER-LEFT: #ffffff 4px solid;
+	WIDTH: 154px;
+	FLOAT: left;
+	PADDING-TOP: 10px
+}
+.left_menu_fu .text {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 10px; WIDTH: 134px; PADDING-RIGHT: 10px; FLOAT: left; PADDING-TOP: 0px
+}
+.left_menu_fu .text .din {
+	BORDER-BOTTOM: #cfdde3 1px solid; PADDING-BOTTOM: 8px; WIDTH: 134px; FLOAT: left
+}
+.left_menu_fu .text .din LI {
+	LINE-HEIGHT: 28px; WIDTH: 134px; FLOAT: left; HEIGHT: 28px
+}
+.left_menu_fu .text .din LI IMG {
+	MARGIN: 4px 8px 0px 10px; FLOAT: left
+}
+.left_menu_fu .text .tian {
+	LINE-HEIGHT: 25px; WIDTH: 134px; FLOAT: left; BORDER-TOP: #ffffff 1px solid; PADDING-TOP: 10px
+}
+.left_menu_fu .text .tian IMG {
+	MARGIN: 4px 8px 0px 10px; FLOAT: left
+}
+.left_menu_fu .zxkf {
+	WIDTH: 154px; FLOAT: left
+}
+#main table tr td fieldset .w730 .w521 .main_box .er_title .biao {
+	background-image: url(../images/s_14.jpg);
+	background-repeat: no-repeat;
+	padding-left: 25px;
+	height: 27px;
+	padding-top: 3px;
+	font-size: 14px;
+	font-weight: bold;
+	width: 720px;
+}
+#main table tr td fieldset .w730 .w521 .main_box .er_title .biao span {
+	float: right;
+	margin-right: 10px;
+	margin-top: -32px;
+}
+#main .position .search {
+	float: right;
+	padding-top: 6px;
+	margin-right: 20px;
+}
