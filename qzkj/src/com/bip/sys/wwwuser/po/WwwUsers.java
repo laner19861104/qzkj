@@ -231,7 +231,7 @@ public class WwwUsers implements java.io.Serializable {
 
 	public void setState(String state) {
 		this.state = state;
-		if(state==null||state=="0")
+		if(state==null||state.equals("0"))
 			cnstate="∆Ù”√";
 		else
 			cnstate="Õ£”√";
