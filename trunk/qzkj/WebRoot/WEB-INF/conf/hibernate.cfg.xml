@@ -116,6 +116,8 @@
 	<mapping resource="com/bip/sys/course/po/JocCourse.hbm.xml" />
 	<mapping resource="com/bip/sys/course/po/JocSubject.hbm.xml" />
 	<mapping resource="com/bip/sys/wwwuser/po/WwwUsers.hbm.xml" />
+	<mapping resource="com/bip/www/po/WwwConsumptionRecord.hbm.xml" />
+	<mapping resource="com/bip/www/po/WwwPayRecord.hbm.xml" />
 
 
 
