@@ -17,4 +17,14 @@ public interface WwwUsersService {
 
 	void delete(String string);
 
+	/**
+	 * 功能：网站登录验证<br>
+	 * author：zj<br>
+	 * 日期：2012-10-18 <br>
+	 * @param account
+	 * @param password
+	 * @return
+	 */
+	boolean validate(String account, String password);
+
 }
