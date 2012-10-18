@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!--系统管理－能源指标－入口 -->
+	<package name="syswwwusers" extends="struts-default">
+		<action name="entrywwwusersentry"  class="wwwUsersAction" method="entry">
+		<result name="success" type="velocity">/templates/wwwusers/wwwusers_list.vm
+			</result>
+			<result name="failure" type="velocity">/templates/sys/enterprise_failure.vm
+			</result>
+		</action>
+	</package>
+	<package name="syswwwusers-json" extends="json-default">
+		<!-- 收入科目设置 -->
+		 <action name="queryWwwUsers"
+			class="wwwUsersAction" method="query">
+			<result type="json">
+			<param name="root">queryJson</param>
+			</result>
+		 </action>
+		 <action name="getWwwUsersbyId" class="wwwUsersAction" method="get">
+			<result type="json">
+			<param name="contentType">text/html;charset=GBK</param>
+			<param name="excludeProperties">incomesubjectBudgets</param>
+			<param name="root">instance</param>
+			</result>
+		</action>
+		 <action name="addWwwUsers"
+			class="wwwUsersAction" method="add">
+			<result type="json">
+			<param name="contentType">text/html;charset=GBK</param>
+			<param name="root">msg</param>
+			</result>
+		 </action>
+		 <action name="editWwwUsers"
+			class="wwwUsersAction" method="edit">
+			<result type="json">
+			<param name="contentType">text/html;charset=GBK</param>
+			<param name="root">msg</param>
+			</result>
+		 </action>
+		  <action name="delWwwUsers"
+			class="wwwUsersAction" method="del">
+			<result type="json">
+			<param name="contentType">text/html;charset=GBK</param>
+			<param name="root">msg</param>
+			</result>
+		 </action>
+		
+	</package>
+</struts>    
