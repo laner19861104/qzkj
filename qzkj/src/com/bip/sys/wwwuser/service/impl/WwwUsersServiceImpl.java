@@ -46,4 +46,16 @@ public void delete(String ids) {
 	List list=this.wwwUsersDao.find("from WwwUsers t where t.uuid in ("+ids+")");
 	this.wwwUsersDao.deleteAll(list);
 }
+
+/* (non-Javadoc)
+ * @see com.bip.sys.wwwuser.service.WwwUsersService#validate(java.lang.String, java.lang.String)
+ */
+@Override
+public boolean validate(String account, String password) {
+	boolean rtn = false;
+	List list= this.wwwUsersDao.find("FROM WwwUsers t where t.account='"+account+"' and password='"+password+"'");
+	if(list.size()>0)
+		rtn=true;
+	return rtn;
+}
 }

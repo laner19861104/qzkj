@@ -20,6 +20,7 @@ import javax.servlet.FilterChain;
 import javax.servlet.http.*;
 
 import com.bip.sys.user.po.SysUsers;
+import com.bip.sys.wwwuser.po.WwwUsers;
 
 import java.io.IOException;
 
@@ -28,7 +29,7 @@ import java.io.IOException;
  * 2.3以后的版本才支持Filter机制。
  * 
  */
-public class PermissionFilter implements Filter {
+public class WebSiteFilter implements Filter {
 
 	protected FilterConfig config;
 	private ServletContext context;
@@ -41,7 +42,7 @@ public class PermissionFilter implements Filter {
 	/**
 	 * init
 	 */
-	public PermissionFilter() {
+	public WebSiteFilter() {
 
 	}
 
@@ -149,8 +150,8 @@ public class PermissionFilter implements Filter {
 			
 
 				// 管理用户
-				SysUsers sysuser = (SysUsers) session.getAttribute("sysuser");
-				if (sysuser == null) {
+				WwwUsers user = (WwwUsers) session.getAttribute("webuser");
+				if (user == null) {
 					resp.sendRedirect("/qzkj/templates/quit.html");
 				} else {
 					chain.doFilter(request, response);

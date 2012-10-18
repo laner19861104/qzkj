@@ -8,6 +8,7 @@ import org.apache.struts2.ServletActionContext;
 
 import com.bip.sys.dept.po.SysDepartment;
 import com.bip.sys.user.po.SysUsers;
+import com.bip.sys.wwwuser.po.WwwUsers;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class baseAction extends ActionSupport{
@@ -30,5 +31,9 @@ public class baseAction extends ActionSupport{
 	public SysUsers getUser()
 	{
 		return  (SysUsers) getSession().getAttribute("sysuser");
+	}
+	public WwwUsers getWwwUser()
+	{
+		return  (WwwUsers) getSession().getAttribute("webuser");
 	}
 }
