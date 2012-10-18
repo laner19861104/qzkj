@@ -21,7 +21,7 @@
 			</li>
             <li>бщжЄТыЃК
 			  <input type="text" name="verifycode" style="width:55px;" />
-			  <img name="verifyCodeImg"  src="../qzkj/VerifyCodeServlet.action" style="cursor:hand" align="top" onClick="javascript:changeVerifyCode()"/> 
+			  <img name="verifyCodeImg"  src="/qzkj/VerifyCodeServlet.action" style="cursor:hand" align="top" onClick="javascript:changeVerifyCode()"/> 
 			</li>
 			<li><a href="javascript:submitButton('LOGIN')" class="btn"></a></li>
 		</ul>
