@@ -18,7 +18,6 @@
 		</action>
 		<action name="VerifyCodeServlet" class="verifyCodeServletAction"
 			method="generateImageCode">
-
 		</action>
 		<action name="loginleft" class="loginLeftAction"
 			method="loginLeft">
@@ -92,8 +91,7 @@
 	<!--系统管理－代码字典-->
 	<package name="dmzd" extends="struts-default">
 		<action name="dmzdentry" class="entryDmlbAction" method="dmlbEntry">
-			<result name="success" type="velocity">/templates/sys/dmzd_list.vm
-			</result>
+			<result name="success" type="velocity">/templates/sys/dmzd_list.vm</result>
 			<result name="failure" type="velocity">/templates/sys/dmzd_failure.vm
 			</result>
 		</action>
