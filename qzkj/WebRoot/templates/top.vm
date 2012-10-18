@@ -23,7 +23,7 @@ document.write("" + ymd +"  " + "星期" + week[d.getDay()] + "");
   </tr>
   <tr>
     <td align="right" class="bottom">
-    <a href="../userpwdentry.action"  target="mainFrame"><img src="image/1_05.gif" alt="修改密码" /></a><a href="../alentry.action" target="_parent"><img src="image/1_07.gif" alt="注销用户" /></a>
+    <a href="../gohome.action"  target="mainFrame"><img src="image/1_05_1.gif"  /></a> <a href="../userpwdentry.action"  target="mainFrame"><img src="image/1_05.gif"/></a><a href="../alentry.action" target="_parent"><img src="image/1_07.gif" /></a>
     </td>
     </tr>
    </table>
@@ -34,18 +34,11 @@ document.write("" + ymd +"  " + "星期" + week[d.getDay()] + "");
 
 
 <div id="north-div" class="topbody">
-		<div class="menu_nt" style="display:none">
-			<div class="nav">
-				<ul>
-					<li><a href="#">系统管理</a></li>
-				</ul>
-			</div>
-		</div><!--end menu_nt-->
 	  
 		<div class="menu">
-			<a href="javascript:;" class="menu_left"  onmousedown=scroll(-20) onmouseup=scroll(0)></a>		
+				
 			<div class="nav" id="nav">
-				 <ul>
+				 <ul style="list-style-type:none;">
 					#foreach($temp in $session.getAttribute("reslist"))
                      #if($temp.getPresourceno()=="0")
 					 <li ><a href="../loginleft.action?resourceid=${temp.getResourceno()}" target="leftFrame"  >$temp.getResourcename()</a></li>
@@ -53,17 +46,17 @@ document.write("" + ymd +"  " + "星期" + week[d.getDay()] + "");
 					#end
 				</ul>
 			</div><!--end nav-->		
-			<a href="javascript:;" class="menu_right" onmousedown=scroll(20) onmouseup=scroll(0) ></a>
+			
 <script language="JavaScript">
 function scroll(n)
-{temp=n;
-if (temp==0) return;
-nav.scrollLeft=nav.scrollLeft+temp;
-setTimeout("scroll(temp)",15);
+{
+	temp=n;
+	if (temp==0) {return;}
+	nav.scrollLeft=nav.scrollLeft+temp;
+	setTimeout("scroll(temp)",15);
 }
 </script>	
         </div>
-	
 </div>
 </body>
 </html>
