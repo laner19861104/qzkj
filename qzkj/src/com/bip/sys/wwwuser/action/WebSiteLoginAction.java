@@ -57,11 +57,11 @@ public String login()
 		return "failure";
 	}
 	
-	if(this.getVerifycode()==null||!this.getVerifycode().equalsIgnoreCase(msgverifycode))
-	{
-		setMessage("验证码错误，请重新输入！");
-		return "failure";
-	}
+//	if(this.getVerifycode()==null||!this.getVerifycode().equalsIgnoreCase(msgverifycode))
+//	{
+//		setMessage("验证码错误，请重新输入！");
+//		return "failure";
+//	}
 	try {
 		// ---判断用户、密码正确
 		if (!wwwUsersService.validate(account, password)) {
