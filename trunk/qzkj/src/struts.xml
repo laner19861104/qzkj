@@ -10,6 +10,7 @@
 	<!--系统其它字典管理 -->
 	<include file="../conf/struts-sys-zd.xml"></include>
     <include file="../conf/struts-wwwuser.xml"></include>
+    <include file="../conf/struts-www.xml"></include>
 	
 	<!--==========能源管理-结束========== -->
 </struts>    

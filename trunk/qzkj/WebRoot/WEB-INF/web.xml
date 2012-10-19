@@ -12,7 +12,7 @@
   <filter-class>com.bip.common.util.PermissionFilter</filter-class>
   <init-param>
    <param-name>directUrl</param-name>
-   <param-value>/alentry.action,/adminLogin.action,/ulentry.action,/entloginentry.action,/entlogin.action,/VerifyCodeServlet.action</param-value>
+   <param-value>/alentry.action,/wlogin.action,/adminLogin.action,/ulentry.action,/entloginentry.action,/entlogin.action,/VerifyCodeServlet.action</param-value>
   </init-param>
  </filter>
   <filter-mapping>
@@ -27,6 +27,10 @@
  <filter>
   <filter-name>webSiteFilter</filter-name>
   <filter-class>com.bip.common.util.WebSiteFilter</filter-class>
+   <init-param>
+   <param-name>directUrl</param-name>
+   <param-value>/wlogin.do</param-value>
+  </init-param>
  </filter>
  <filter-mapping>
   <filter-name>webSiteFilter</filter-name>
