@@ -38,7 +38,18 @@
 			<param name="root">msg</param>
 			</result>
 		 </action>
-		 
+		  <action name="queryPayRecord" 
+			class="wwwPayRecordAction" method="query">
+			<result type="json">
+			<param name="root">queryJson</param>
+			</result>
+		 </action>
+		  <action name="queryConsumptionRecord" 
+			class="wwwConsumptionRecordAction" method="query">
+			<result type="json">
+			<param name="root">queryJson</param>
+			</result>
+		 </action>
 		
 	</package>
 </struts>    
