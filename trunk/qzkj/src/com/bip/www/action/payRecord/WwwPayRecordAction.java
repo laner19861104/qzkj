@@ -21,6 +21,7 @@ import org.springframework.stereotype.Controller;
 
 import com.bip.common.action.baseAction;
 import com.bip.common.util.QueryJson;
+import com.bip.common.util.resultMsg;
 import com.bip.www.service.WwwPayRecordService;
 
 /**
@@ -31,7 +32,15 @@ import com.bip.www.service.WwwPayRecordService;
 @Controller
 public class WwwPayRecordAction extends baseAction{
 	private QueryJson queryJson;
-    @Resource
+	private resultMsg msg;
+    public resultMsg getMsg() {
+		return msg;
+	}
+	public void setMsg(resultMsg msg) {
+		this.msg = msg;
+	}
+
+	@Resource
     private WwwPayRecordService wwwPayRecordService;
 
     public String query() {
@@ -51,6 +60,21 @@ public class WwwPayRecordAction extends baseAction{
 				(page - 1) * row);
 		return "success";
 	}
+    public String pay()
+    {
+    	double money=Double.parseDouble(this.getRequest().getParameter("money"));
+    	boolean flag=this.wwwPayRecordService.pay(money,this.getWwwUser());
+    	if(flag)
+    	{
+    		msg=new resultMsg(true,"缴费成功!");
+    		return "success";
+    	}
+    	else
+    	{
+    		msg=new resultMsg(true,"缴费失败!");
+    		return "failure";
+    	}
+    }
 
 public WwwPayRecordService getWwwPayRecordService() {
 	return wwwPayRecordService;
