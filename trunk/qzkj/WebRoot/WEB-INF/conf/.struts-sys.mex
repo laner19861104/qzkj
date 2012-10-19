@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="login" location="0,0" size="0,0">
+    <action name="adminLogin" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="failure" />
+    </action>
+    <action name="alentry" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="gohome" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="VerifyCodeServlet" location="0,0" size="0,0" />
+    <action name="loginleft" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+  </package>
+  <package name="user" location="0,0" size="0,0">
+    <action name="userentry" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="userpwdentry" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="uppwd" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="failure" />
+    </action>
+  </package>
+  <package name="department" location="0,0" size="0,0">
+    <action name="deptentry" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="failure" />
+    </action>
+  </package>
+  <package name="resource" location="0,0" size="0,0">
+    <action name="resourceentry" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="failure" />
+    </action>
+  </package>
+  <package name="permission" location="0,0" size="0,0">
+    <action name="permissionentry" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="failure" />
+    </action>
+  </package>
+  <package name="role" location="0,0" size="0,0">
+    <action name="roleentry" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="failure" />
+    </action>
+  </package>
+  <package name="dmzd" location="0,0" size="0,0">
+    <action name="dmzdentry" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="failure" />
+    </action>
+  </package>
+  <package name="sutdent" location="0,0" size="0,0">
+    <action name="entrywwwusersentry" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="failure" />
+    </action>
+  </package>
+  <package name="sys-json" location="0,0" size="0,0">
+    <action name="queryresourcetree" location="0,0" size="0,0" />
+    <action name="querydept" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="editdept" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="adddept" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="deldept" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="addpermission" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="editpermission" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="delpermission" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="querypermission" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="addresource" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="editresource" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="delresource" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="queryresource" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="getsysdmzdtree" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="getdepttree" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="getdepttreebytype" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="getdepttreebylevel" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="getdeptgrid" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="getresourcetree" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="getresourcegrid" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="getpermissiontree" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="getpermissiontreeofcheck" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="getpermissiongrid" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="getregiontree" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="getwfregiontree" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="getWfhyTree" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="getregiongrid" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="gethyzdtree" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="getResList" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="querydmlb" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="adddmlb" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="deldmlb" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="querydmzd" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="adddmzd" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="editdmzd" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="deldmzd" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="addrole" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="editrole" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="delrole" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="queryrole" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="addrolepermission" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="delrolepermission" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="queryrolepermission" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="delrolepermission" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="edituser" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="adduser" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="queryuser" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="deluser" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="queryuserrole" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="adduserrole" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="deluserrole" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="query_*_*" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="modify_*_*" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="get_*_*" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="tree_*_*" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+  </package>
+  <package name="download" location="0,0" size="0,0">
+    <action name="download_{1}_{2}" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+  </package>
+  <package name="upload" location="0,0" size="0,0">
+    <action name="uploadentry" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="failure" />
+    </action>
+  </package>
+  <package name="upload-json" location="0,0" size="0,0">
+    <action name="uploadfile" location="0,0" size="0,0" />
+  </package>
+  <package name="courseandother" location="0,0" size="0,0">
+    <action name="entry_*_*" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="failure" />
+    </action>
+  </package>
+</Struts2Diagram>
+

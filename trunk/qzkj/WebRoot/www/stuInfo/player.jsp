@@ -114,6 +114,33 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 	<div class="mulu">
                                     	 <h2> 视频</h2>
                                     
+                                    <!--创建播放器对象-->
+<OBJECT name=myWebPlayer9
+	id=myWebPlayer9
+	classid="clsid:947BA55B-2113-4349-8784-FFB9D7F881C9"
+	width=100%
+	height=95%
+	align=center
+	hspace=0
+	vspace=0
+>
+<!--模式选择, full 表示完整显示包括播放窗口和控制栏, simple 表示简单显示, 只显示播放窗口, 不显示控制栏-->
+<param name="Mode" value="full">
+<!--播放时显示的播放文件的标题-->
+<param name="Title" value="亚瑟的迷你王国A">
+<!--播放开始前, 显示广告的URL地址, 如果包含Flash,最好不要启用显示Flash的右键菜单功能, 地址为空,不显示广告-->
+<param name="AdURL" value="">
+<!--播放的视频的地址,目前支持两种地址格式一是明文HTTP地址，二是WP9://加密地址，见意使用加密地址-->
+<param name="URL" value="http://192.168.117.200:8899/movie/1234.rmvb">
+<!--不限制个数的文字广告-->
+<param name="TextAds" 
+value="技术支持|http://www.webplayer9.com/bbs@久久影音官网|http://www.webplayer9.com">
+<!--播放完毕后跳转到下一个页面的地址, 为空则不跳转-->
+<param name="NextVideoURL" value="">
+<!--控制自动控制IE播放窗口为视频的原始大小. 0 表示不启用, -1 启用-->
+<param name="AutoSize" value=0>
+</OBJECT>
+
                                     
                                     
                                     
