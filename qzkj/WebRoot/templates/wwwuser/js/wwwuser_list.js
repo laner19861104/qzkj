@@ -15,8 +15,8 @@
 
 var urls = eval( {
 	"query" : "querywwwuser.action",
-	"close" : "getLandAllocationbyId.action",
-	"open" : "addLandAllocation.action",
+	"stop" : "editwwwuser.action",
+	"get":"getwwwuser.action"
 });
 $(function() {
 	$('#mForm').hide();
@@ -25,13 +25,13 @@ $(function() {
 		width : 'auto',
 		height : fixHeight(0.94),
 		pageList : [ 15, 30, 45, 60 ],
+		singleSelect:true,
 		nowrap : false,
 		striped : true,
 		collapsible : true,
 		url : urls['query']+"?"+appCondition("[id^='s_']","$orderby|state,crDate"), //暂时取json文件中的数据
 		loadMsg : '数据装载中......',
 		idField : 'uuid',
-		remoteSort : false,
 		frozenColumns : [ [ {
 			field : 'ck',
 			checkbox : true
@@ -95,7 +95,6 @@ $(function() {
 			field : 'birthday',
 			width : '130',
 			align : 'left'
-
 		},{
 			title : '地址',
 			field : 'address',
@@ -132,11 +131,10 @@ $(function() {
 		rownumbers : true,	
 		toolbar : '#tb'
 	});
-	displayMsg();
+	displayMsg('tList');
 	init();
 });
 function init() {
-
 
 }
 function openAdd() {
@@ -145,61 +143,12 @@ function openAdd() {
 			$('#mForm').form('clear');
 			$('#mForm').appendTo('#aa');
 		}
-function openQuery() {
-			$('#query').window('open');
 
-
-}
-/*
- *添加操作
- */
-function add() {
-	if (!validateCheck()) {
-		return;
-	}
-	$('#mForm').form('submit', {
-		url : urls['add'],
-		onSubmit : function() {
-	},
-	type : "POST", // 设置请求类型为"POST"，默认为"GET"
-		success : function(message) {
-
-			var message = eval("(" + message + ")");
-			if (message.success == true) {
-				$.messager.alert('add-success', '添加信息成功!', 'info', function() {
-					$('#tList').datagrid('reload');
-					displayMsg('tList');
-				});
-				return;
-			} else {
-				$.messager.alert('警告', message.info, 'warning');
-				return;
-			}
-		}
-	});
-
-}
 /*
  *获取列表中的单条记录
  */
 var uuid;
-function getSelect() {
-	var select = $('#tList').datagrid('getSelections');
-	if (select.length != 1) {
-		$.messager.alert('提示', '请选择一行数据!', 'warning');
-		return;
-	}
-	uuid = select[0].uuid;
-	jQuery.post(urls['get'] + "?uuid=" + select[0].uuid, "", function(obj) {
-		fillForm(obj)
-		//$('#mForm').form('validate');
-		}, "json");
 
-	$('#edit').window('open');
-	$('#mForm').show();
-	$('#mForm').appendTo('#ee');
-
-}
 /*
  * 详情
  */
@@ -232,7 +181,7 @@ function edit() {
 		success : function(message) {
 			var message = eval("(" + message + ")");
 			if (message.success == true) {
-				$.messager.alert('edit-success', '修改信息成功!', 'info', function() {
+				$.messager.alert('启用', '修改信息成功!', 'info', function() {
 					closeWin('edit');
 					$('#tList').datagrid('reload');
 					$('#tList').datagrid('clearSelections');
@@ -248,54 +197,85 @@ function edit() {
 	});
 
 }
-/*
- * 删除操作
- */
-
-function del() {
+function stop()
+{
 	var selecteds = $('#tList').datagrid('getSelections');
-	if(selecteds!=undefined&&selecteds!=null&&selecteds.length!=1){
-		$.messager.alert('警告', '请选一条宗地数据进行删除!','warning');
-		return;
-	}
-	var uuid = selecteds[0].uuid;
-	
-	var selected = selecteds[0];//获取某行的行号
-		
-		if(selected.state!="01"){
-		$.messager.alert('警告','只有草稿状态的宗地才可以删除!','warning');
-		return;
-	}
+	var ids = "";
+	if (selecteds != "" || selecteds.length > 0) {
+		$.messager.confirm('警告', '确认停用么?', function(id) {
+			if (id) {
+				for ( var i = 0; i < selecteds.length; i++) {
+					var selected = selecteds[i];//获取某行的行号
+				if (ids == "")
+					ids = + selecteds[i].uuid ;
+				else
+					ids = ids + "," + "'" + selecteds[i].uuid + "'";
+			}
 
-	$.messager.confirm('确认',
-		'删除操作将删除宗地关联的地类构成、宗地附着物、安置人口信息，确认删除么？', 
-		function(r) {
-				if(r){
-						
-					$.ajax( {
-						type : "POST",
-						url : urls["del"],
-						data : "id=" + uuid,
-						dataType : "json",
-						cache : false,
-						success : function callback(msg) {
-							if (msg.success) {
-								$.messager.alert('提示', msg.info, 'info');
-								$('#tList').datagrid('clearSelections');
-							} else {
-								$.messager.alert('警告', msg.info, 'warning');
-								return;
-							}
-							$('#tList').datagrid('reload');
-							displayMsg('tList');
-						}
-					});
-				}else{
-					return;
+			$.ajax( {
+				type : "POST",
+				url : urls["stop"],
+				data : "uuid=" + ids+'&state=1',
+				dataType : "json",
+				cache : false,
+				success : function callback(msg) {
+					if (msg.success) {
+						$.messager.alert('提示', '已停用!', 'info');
+					} else {
+						$.messager.alert('警告', msg.info, 'warning');
+						return;
+					}
+					$('#tList').datagrid('reload');
+					displayMsg('tList');
 				}
-			
-		});
-	
+
+			});
+
+		}
+	}	);
+	} else {
+		$.messager.alert('警告', '请选择一行数据', 'warning');
+	}
+}
+function openW()
+{
+	var selecteds = $('#tList').datagrid('getSelections');
+	var ids = "";
+	if (selecteds != "" || selecteds.length > 0) {
+		$.messager.confirm('警告', '确认启用么?', function(id) {
+			if (id) {
+				for ( var i = 0; i < selecteds.length; i++) {
+					var selected = selecteds[i];//获取某行的行号
+				if (ids == "")
+					ids =  selecteds[i].uuid;
+				else
+					ids = ids + "," + "'" + selecteds[i].uuid + "'";
+			}
+
+			$.ajax( {
+				type : "POST",
+				url : urls["stop"],
+				data : "uuid=" + ids+'&state=0',
+				dataType : "json",
+				cache : false,
+				success : function callback(msg) {
+					if (msg.success) {
+						$.messager.alert('提示', "已启用!", 'info');
+					} else {
+						$.messager.alert('警告', msg.info, 'warning');
+						return;
+					}
+					$('#tList').datagrid('reload');
+					displayMsg('tList');
+				}
+
+			});
+
+		}
+	}	);
+	} else {
+		$.messager.alert('警告', '请选择一行数据', 'warning');
+	}
 }
 
 /*
@@ -312,3 +292,101 @@ function query() {
 }
 
 
+function openPay()
+{
+	var select = $('#tList').datagrid('getSelections');
+	if (select.length != 1) {
+		$.messager.alert('提示', '请选择一行数据!', 'warning');
+		return;
+	}
+	$('#payList').datagrid({
+	    iconCls : 'icon-save',
+		width : 'auto',
+		height : fixHeight(0.94),
+		pageList : [ 15, 30, 45, 60 ],
+		sigleSelect:true,
+		nowrap : false,
+		striped : true,
+		collapsible : true,
+		url : "queryPayRecord.action?"+appCondition("[id^='p_']","$userAccount|"+select[0].account+"$orderby|payDate|desc"), //暂时取json文件中的数据
+		loadMsg : '数据装载中......',
+		idField : 'uuid',
+		remoteSort : false,
+		frozenColumns : [ [ {
+			field : 'ck',
+			checkbox : true
+		},  {
+			title : '充值金额',
+			field : 'money',
+			width : '80',
+			sortable : true
+		} ] ],
+
+		columns : [ [ {
+			title : '充值日期',
+			field : 'payDate',
+			width : '250',
+			align : 'left',
+			sortable : true
+		}
+		]],
+		pagination : true,
+		rownumbers : true
+	});
+	displayMsg('payList');
+	
+	$('#pay').window('open');
+}
+
+function openCon()
+{
+	var select = $('#tList').datagrid('getSelections');
+	if (select.length != 1) {
+		$.messager.alert('提示', '请选择一行数据!', 'warning');
+		return;
+	}
+	$('#conList').datagrid({
+	    iconCls : 'icon-save',
+		width : 'auto',
+		height : fixHeight(0.94),
+		pageList : [ 15, 30, 45, 60 ],
+		sigleSelect:true,
+		nowrap : false,
+		striped : true,
+		collapsible : true,
+		url : "queryConsumptionRecord.action?"+appCondition("[id^='p_']","$userAccount|"+select[0].account+"$orderby|conDate|desc"), //暂时取json文件中的数据
+		loadMsg : '数据装载中......',
+		idField : 'uuid',
+		remoteSort : false,
+		frozenColumns : [ [ {
+			field : 'ck',
+			checkbox : true
+		},  {
+			title : '消费金额',
+			field : 'money',
+			width : '80',
+			align:'right',
+			sortable : true
+		}]  ],
+
+		columns : [ [{
+			title : '购买日期',
+			field : 'payDate',
+			width : '250',
+			align : 'left',
+			sortable : true
+		},{
+			title : '商品名称',
+			field : 'payDate',
+			width : '250',
+			align : 'left',
+			sortable : true
+		}
+		]],
+		pagination : true,
+		rownumbers : true
+	});
+	displayMsg('conList');
+	
+	$('#consumption').window('open');
+}
