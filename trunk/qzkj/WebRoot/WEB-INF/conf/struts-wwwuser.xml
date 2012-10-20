@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
-	
+	<package name="sutdent" extends="struts-default">
+		<action name="entrywwwusersentry" class="wwwUsersAction" method="entry">
+			<result name="success" type="velocity">/templates/wwwuser/wwwuser_list.vm
+			</result>
+			<result name="failure" type="velocity">/templates/sys/dmzd_failure.vm
+			</result>
+		</action>
+	</package>
 	<package name="wwwuser-json" extends="json-default">
 		 
 		
