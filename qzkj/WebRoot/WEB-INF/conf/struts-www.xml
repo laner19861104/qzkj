@@ -4,8 +4,8 @@
 	<!--登录操作-->
 	<package name="wlogin" extends="struts-default">
 		<action name="wlogin" class="webSiteLoginAction" method="login">
-			<result name="success" type="velocity">/templates/index.vm</result>
-			<result name="failure" type="velocity">/login.vm</result>
+			<result name="success" >/templates/index.vm</result>
+			<result name="failure" >/reg.jsp</result>
 		</action>
 	</package>
 
