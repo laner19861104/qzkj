@@ -97,14 +97,7 @@
 		</action>
 	</package>
 
-	<package name="sutdent" extends="struts-default">
-		<action name="entrywwwusersentry" class="wwwUsersAction" method="entry">
-			<result name="success" type="velocity">/templates/wwwuser/wwwuser_list.vm
-			</result>
-			<result name="failure" type="velocity">/templates/sys/dmzd_failure.vm
-			</result>
-		</action>
-	</package>
+	
 	
 	<package name="sys-json" extends="json-default">
 		<!--获取资源树-zhaosy-->
