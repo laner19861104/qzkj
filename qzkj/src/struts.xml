@@ -4,6 +4,7 @@
 	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
 	<constant name="struts.devMode" value="true" />
 	<constant name="struts.i18n.encoding" value="GBK" />
+	<constant name="struts.action.extension" value="action,jnlp,do"></constant>
 	<!--导入struts-***.xml文件 -->
 	<!--系统管理 -->
 	<include file="../conf/struts-sys.xml"></include>
