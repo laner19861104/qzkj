@@ -11,6 +11,11 @@
 			<result name="success" >/www/stuInfo/stuInfo.jsp</result>
 			<result name="failure" >/reg.jsp</result>
 		</action>
-		
+		<action name="userEdit" class="wwwUsersAction" method="userEdit">
+			<result name="success" >/www/wwwuser/stu_success.jsp
+			</result>
+			<result name="failure" >/www/sys/stu_failure.jsp
+			</result>
+		</action>	
 	</package>
 </struts>    
