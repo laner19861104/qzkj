@@ -4,10 +4,13 @@
 	<!--登录操作-->
 	<package name="wlogin" extends="struts-default">
 		<action name="wlogin" class="webSiteLoginAction" method="login">
-			<result name="success" >/templates/index.vm</result>
+			<result name="success" >/www/stuInfo/s_center.jsp</result>
 			<result name="failure" >/reg.jsp</result>
 		</action>
+		<action name="entryStuInfo" class="wwwUsersAction" method="entry">
+			<result name="success" >/www/stuInfo/stuInfo.jsp</result>
+			<result name="failure" >/reg.jsp</result>
+		</action>
+		
 	</package>
-
-	
 </struts>    
