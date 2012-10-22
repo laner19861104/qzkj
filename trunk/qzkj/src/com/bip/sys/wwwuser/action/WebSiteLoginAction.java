@@ -77,6 +77,7 @@ public String login()
 	try {
 		
 		// ---进行系统公用参数的读取，并导入session中。
+		wwwUser=this.wwwUsersService.getUserbyAccount(account);
 		this.getSession().setAttribute("webuser", wwwUser);
 
 		

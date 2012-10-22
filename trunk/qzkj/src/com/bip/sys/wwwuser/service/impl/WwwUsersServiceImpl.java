@@ -58,4 +58,16 @@ public boolean validate(String account, String password) {
 		rtn=true;
 	return rtn;
 }
+
+/* (non-Javadoc)
+ * @see com.bip.sys.wwwuser.service.WwwUsersService#getUserbyAccount(java.lang.String)
+ */
+@Override
+public WwwUsers getUserbyAccount(String account) {
+	String hql="FROM WwwUsers where account='"+account+"'";
+	List list=this.wwwUsersDao.find(hql);
+	if(list.size()>0)
+	return (WwwUsers)list.get(0);
+	return null;
+}
 }
