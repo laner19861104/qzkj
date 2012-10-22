@@ -19,7 +19,6 @@ public class WwwUsers implements java.io.Serializable {
 	private String answer;
 	private String sex;
 	private String birthday;
-	private String address;
 	private String edulv;
 	private String proSkill;
 	private String workFor;
@@ -30,7 +29,24 @@ public class WwwUsers implements java.io.Serializable {
 	private String crDate;
 	private Double money;
 	private String cnstate;
+	private String city;
+	public String getCity() {
+		return city;
+	}
 
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getProvince() {
+		return province;
+	}
+
+	public void setProvince(String province) {
+		this.province = province;
+	}
+
+	private String province;
 	// Constructors
 
 	public String getCnstate() {
@@ -67,7 +83,6 @@ public class WwwUsers implements java.io.Serializable {
 		this.answer = answer;
 		this.sex = sex;
 		this.birthday = birthday;
-		this.address = address;
 		this.edulv = edulv;
 		this.proSkill = proSkill;
 		this.workFor = workFor;
@@ -169,13 +184,6 @@ public class WwwUsers implements java.io.Serializable {
 		this.birthday = birthday;
 	}
 
-	public String getAddress() {
-		return this.address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
 
 	public String getEdulv() {
 		return this.edulv;
