@@ -40,8 +40,11 @@
         <property name="birthday" type="java.lang.String">
             <column name="birthday" length="10" />
         </property>
-        <property name="address" type="java.lang.String">
-            <column name="address" length="100" />
+        <property name="city" type="java.lang.String">
+            <column name="city" length="50" />
+        </property>
+          <property name="province" type="java.lang.String">
+            <column name="province" length="50" />
         </property>
         <property name="edulv" type="java.lang.String">
             <column name="edulv" length="45">

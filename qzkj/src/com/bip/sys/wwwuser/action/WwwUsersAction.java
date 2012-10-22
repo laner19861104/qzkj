@@ -25,7 +25,25 @@ public class WwwUsersAction extends baseAction {
 	private WwwUsersService wwwUsersService;
 	private WwwUsers instance;
 	private resultMsg msg;
+	private String smsg;
 	private QueryJson queryJson;
+	private String verifycode="";
+	public String getVerifycode() {
+		return verifycode;
+	}
+
+	public void setVerifycode(String verifycode) {
+		this.verifycode = verifycode;
+	}
+	private WwwUsers wuser;
+
+	public WwwUsers getWuser() {
+		return this.getWwwUser();
+	}
+
+	public void setWuser(WwwUsers wuser) {
+		this.wuser = wuser;
+	}
 
 	public QueryJson getQueryJson() {
 		return queryJson;
@@ -130,6 +148,25 @@ public class WwwUsersAction extends baseAction {
 		}
 		return "success";
 	}
+	public String userEdit()
+	{
+		String msgverifycode=(String)this.getSession().getAttribute("verifyCode");
+		if(this.getVerifycode()==null||!this.getVerifycode().equalsIgnoreCase(msgverifycode))
+		{
+			setSmsg("验证码错误，请重新输入！");
+			return "failure";
+		}
+		try{
+		this.wwwUsersService.update(wuser);
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+			setSmsg("修改失败！请联系网站联系网站管理员！");
+			return "failture";
+		}
+		return "success";
+	}
+	
 	public WwwUsers getInstance() {
 		return instance;
 	}
@@ -151,7 +188,13 @@ public class WwwUsersAction extends baseAction {
 	public WwwUsersService getWwwUsersService() {
 		return wwwUsersService;
 	}
+	public String getSmsg() {
+		return smsg;
+	}
 
+	public void setSmsg(String smsg) {
+		this.smsg = smsg;
+	}
 	@Resource
 	public void setWwwUsersService(WwwUsersService wwwUsersService) {
 		this.wwwUsersService = wwwUsersService;
