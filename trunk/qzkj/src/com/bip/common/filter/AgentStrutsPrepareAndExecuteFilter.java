@@ -9,10 +9,12 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.struts2.dispatcher.ng.filter.StrutsExecuteFilter;
 import org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter;
+import org.apache.struts2.dispatcher.ng.filter.StrutsPrepareFilter;
 //
 public class AgentStrutsPrepareAndExecuteFilter implements Filter{
-	StrutsPrepareAndExecuteFilter strutsFilter=null;
+	StrutsExecuteFilter strutsFilter=null;
 	public void doFilter(ServletRequest request,ServletResponse response,FilterChain filterChain) throws IOException, ServletException{
 		HttpServletRequest req=(HttpServletRequest)request;
 		
@@ -29,7 +31,7 @@ public class AgentStrutsPrepareAndExecuteFilter implements Filter{
 	}
 
 	public void init(FilterConfig arg0) throws ServletException {
-		 strutsFilter=new StrutsPrepareAndExecuteFilter();
+		 strutsFilter=new StrutsExecuteFilter();
 		strutsFilter.init(arg0);
 		
 	}
