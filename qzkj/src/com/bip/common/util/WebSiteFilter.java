@@ -152,7 +152,7 @@ public class WebSiteFilter implements Filter {
 				// 管理用户
 				WwwUsers user = (WwwUsers) session.getAttribute("webuser");
 				if (user == null) {
-					resp.sendRedirect("/qzkj/templates/quit.html");
+					resp.sendRedirect("/qzkj/reg.jsp");
 				} else {
 					chain.doFilter(request, response);
 					return;

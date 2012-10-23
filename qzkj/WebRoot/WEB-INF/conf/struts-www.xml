@@ -7,15 +7,32 @@
 			<result name="success" >/www/stuInfo/s_center.jsp</result>
 			<result name="failure" >/reg.jsp</result>
 		</action>
+		<action name="reLogin" class="webSiteLoginAction" method="reLogin">
+			<result name="success" >/reg.jsp</result>
+			<result name="failure" >/www/stuInfo/stu_failure.jsp
+			</result>
+		</action>	
 		<action name="entryStuInfo" class="wwwUsersAction" method="entry">
 			<result name="success" >/www/stuInfo/stuInfo.jsp</result>
 			<result name="failure" >/reg.jsp</result>
 		</action>
+		<action name="entryAccount" class="wwwUsersAction" method="accountentry">
+			<result name="success" >/www/stuInfo/stu_account.jsp</result>
+			<result name="failure" >/reg.jsp</result>
+		</action>
+		
 		<action name="userEdit" class="wwwUsersAction" method="userEdit">
-			<result name="success" >/www/wwwuser/stu_success.jsp
+			<result name="success" >/www/stuInfo/stu_success.jsp
 			</result>
-			<result name="failure" >/www/sys/stu_failure.jsp
+			<result name="failure" >/www/stuInfo/stu_failure.jsp
 			</result>
-		</action>	
+		</action>
+		<action name="upwpwd" class="wwwUsersAction" method="upwpwd">
+			<result name="success" >/www/stuInfo/stu_success.jsp
+			</result>
+			<result name="failure" >/www/stuInfo/stu_failure.jsp
+			</result>
+		</action>
+			
 	</package>
 </struts>    

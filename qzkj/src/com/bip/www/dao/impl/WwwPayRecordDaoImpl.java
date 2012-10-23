@@ -12,6 +12,11 @@
  ************************************************************/
 package com.bip.www.dao.impl;
 
+import java.sql.SQLException;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.stereotype.Repository;
 
 import com.bip.common.dao.GenericDao;
@@ -25,5 +30,21 @@ import com.bip.www.po.WwwPayRecord;
  */
 @Repository
 public class WwwPayRecordDaoImpl extends GenericDao<WwwPayRecord,String> implements WwwPayRecordDao{
+
+	/* (non-Javadoc)
+	 * @see com.bip.www.dao.WwwPayRecordDao#executeHQL(java.lang.String)
+	 */
+	@Override
+	public String executeHQL(final String hql) {
+		String total=this.getHibernateTemplate().execute(new HibernateCallback() {
+			
+			@Override
+			public Object doInHibernate(Session arg0) throws HibernateException,
+					SQLException {
+				return arg0.createQuery(hql).uniqueResult().toString();
+			}
+		}).toString();
+		return total;
+	}
 
 }
