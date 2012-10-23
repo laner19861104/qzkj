@@ -21,7 +21,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link href="SpryAssets/SpryTabbedPanels.css" rel="stylesheet" type="text/css" />
 <script src="js/datepicker.js" type="text/javascript"></script>
 <script src="js/city.js" type="text/javascript"></script>
-<script src="${basePath}/js/login.js" type="text/javascript"></script>
 </head>
 
 <body onload="init()">
@@ -245,8 +244,8 @@ type=text name=wuser.tel> <SPAN class=font_12><FONT class=color_cheng>*</FONT>
 <DIV class=tc><INPUT id=check class=input_zl onfocus=this.select() 
 onmouseover=this.focus() onMouseOut="if(this.value=='')this.value='请输入右侧数字';" 
 onclick="if(this.value=='请输入右侧数字')this.value=''" value=请输入右侧数字 maxLength=4 
-size=15 type=text name=verifyCode> 
-<img name="verifyCodeImg"  src="/qzkj/VerifyCodeServlet.action" style="cursor:hand" align="top" onClick="javascript:changeVerifyCode()"/>
+size=15 type=text name=verifycode> 
+<img name="verifyCodeImg" id="verifyCodeImg" src="/qzkj/VerifyCodeServlet.action" style="cursor:hand" align="top" onClick="javascript:changeVerifyCode()"/>
  <SPAN class=font_12><FONT 
 class=color_cheng>*</FONT> 点击图片刷新验证码 <FONT class=color_cheng>*</FONT></SPAN> 
 </DIV></DIV>
