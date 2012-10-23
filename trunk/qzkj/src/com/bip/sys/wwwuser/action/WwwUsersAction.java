@@ -35,10 +35,11 @@ public class WwwUsersAction extends baseAction {
 	public void setVerifycode(String verifycode) {
 		this.verifycode = verifycode;
 	}
-	private WwwUsers wuser;
+	private WwwUsers wuser=new WwwUsers();
 
 	public WwwUsers getWuser() {
-		return this.getWwwUser();
+		this.wuser=this.getWwwUser();
+		return wuser;
 	}
 
 	public void setWuser(WwwUsers wuser) {
