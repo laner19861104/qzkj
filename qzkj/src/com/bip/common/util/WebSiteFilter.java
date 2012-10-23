@@ -76,8 +76,8 @@ public class WebSiteFilter implements Filter {
 		try {
 			if (clientLanguage != null) {
 				if (clientLanguage.indexOf("zh-cn") >= 0) { // 简体中文浏览器
-					req.setCharacterEncoding("GB2312");
-					resp.setContentType("text/html; charset=GB2312");
+					req.setCharacterEncoding("UTF-8");
+					resp.setContentType("text/html; charset=UTF-8");
 					// aiLogger.log("ClientLanguage: 简体中文浏览器");
 				} else if (clientLanguage.indexOf("zh-tw") >= 0) { // 繁体中文浏览器
 					req.setCharacterEncoding("BIG5");
@@ -88,12 +88,12 @@ public class WebSiteFilter implements Filter {
 					resp.setContentType("text/html; charset=SJIS");
 					// aiLogger.log("ClientLanguage: 日文浏览器");
 				} else if (clientLanguage.indexOf("en-us") >= 0) { // 英文浏览器
-					req.setCharacterEncoding("GB2312");
-					resp.setContentType("text/html; charset=GB2312");
+					req.setCharacterEncoding("UTF-8");
+					resp.setContentType("text/html; charset=UTF-8");
 					// aiLogger.log("ClientLanguage: 日文浏览器");
 				} else if (clientLanguage.indexOf("en-zh") >= 0) { // 中文浏览器
-					req.setCharacterEncoding("GB2312");
-					resp.setContentType("text/html; charset=GB2312");
+					req.setCharacterEncoding("UTF-8");
+					resp.setContentType("text/html; charset=UTF-8");
 					// aiLogger.log("ClientLanguage: 日文浏览器");
 				}
 
