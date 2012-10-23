@@ -61,7 +61,7 @@ public class WwwUsersAction extends baseAction {
 	public String query() {
 
 		int page = Integer.parseInt(this.getRequest().getParameter("page"));
-		int row = Integer.parseInt(this.getRequest().getParameter("rows"));// ½ÓÊÜ²ÎÊıpageºÍrows
+		int row = Integer.parseInt(this.getRequest().getParameter("rows"));// æ¥å—å‚æ•°pageå’Œrows
 		String conditions = this.getRequest().getParameter("conditions");
 		if (conditions != null)
 			try {
@@ -84,7 +84,7 @@ public class WwwUsersAction extends baseAction {
 	public String add() {
 		try {
 			/*
-			 * ½«Ò³ÃæÖµ×ª»»³Épo¶ÔÏó
+			 * å°†é¡µé¢å€¼è½¬æ¢æˆpoå¯¹è±¡
 			 */
 			Map map = new HashMap();
 			map = ControllerUtil.getRequestParameterMap(this.getRequest());
@@ -93,7 +93,7 @@ public class WwwUsersAction extends baseAction {
 			WwwUsers po = (WwwUsers) sqlUtil.getObjByMap(map, addpo);
 		
 			/*
-			 * Ö´ĞĞÊı¾İ¿âĞ´Èë²Ù×÷£¬²¢¸ù¾İ·µ»ØÖµ½øĞĞ³É¹¦¡¢Ê§°Ü´¦Àí
+			 * æ‰§è¡Œæ•°æ®åº“å†™å…¥æ“ä½œï¼Œå¹¶æ ¹æ®è¿”å›å€¼è¿›è¡ŒæˆåŠŸã€å¤±è´¥å¤„ç†
 			 */
 			Serializable a = wwwUsersService.save(po);
 			if ((Integer) a > 0) {
@@ -109,12 +109,12 @@ public class WwwUsersAction extends baseAction {
 	}
 
 	/*
-	 * ĞŞ¸Ä
+	 * ä¿®æ”¹
 	 */
 	public String edit() {
 		try {
 			/*
-			 * ½«Ò³ÃæÖµ×ª»»³Épo¶ÔÏó
+			 * å°†é¡µé¢å€¼è½¬æ¢æˆpoå¯¹è±¡
 			 */
 			Map map = new HashMap();
 			map = ControllerUtil.getRequestParameterMap(this.getRequest());	
@@ -133,12 +133,12 @@ public class WwwUsersAction extends baseAction {
 	}
 
 	/*
-	 * É¾³ı
+	 * åˆ é™¤
 	 */
 	public String del() {
 		try {
 			/*
-			 * É¾³ıÊı¾İ
+			 * åˆ é™¤æ•°æ®
 			 */
 			String ids = this.getRequest().getParameter("id");
 			wwwUsersService.delete(ids);
@@ -154,7 +154,7 @@ public class WwwUsersAction extends baseAction {
 		String msgverifycode=(String)this.getSession().getAttribute("verifyCode");
 		if(this.getVerifycode()==null||!this.getVerifycode().equalsIgnoreCase(msgverifycode))
 		{
-			setSmsg("ÑéÖ¤Âë´íÎó£¬ÇëÖØĞÂÊäÈë£¡");
+			setSmsg("éªŒè¯ç é”™è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥ï¼");
 			return "failure";
 		}
 		try{
@@ -162,7 +162,7 @@ public class WwwUsersAction extends baseAction {
 		}catch(Exception e)
 		{
 			e.printStackTrace();
-			setSmsg("ĞŞ¸ÄÊ§°Ü£¡ÇëÁªÏµÍøÕ¾ÁªÏµÍøÕ¾¹ÜÀíÔ±£¡");
+			setSmsg("ä¿®æ”¹å¤±è´¥ï¼è¯·è”ç³»ç½‘ç«™è”ç³»ç½‘ç«™ç®¡ç†å‘˜ï¼");
 			return "failture";
 		}
 		return "success";
