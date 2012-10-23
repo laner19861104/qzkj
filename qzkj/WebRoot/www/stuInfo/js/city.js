@@ -78,4 +78,13 @@ function checkdata()
 	return true;
 }
 
-  
+function changeVerifyCode() {
+
+	//1、如果用<iframe>实现，则重新加载<iframe>的内容
+	//verifyCodeFrame.location.reload();
+
+	//2、如果用<img>实现，则修改<img src=url>的url
+	//这里有一个小技巧，如果给url赋相同的值，浏览器不会重新发出请求，因此用js生成一个即时毫秒数做url中的参数
+	t = new Date().getTime();
+	document.form1.verifyCodeImg.src = "VerifyCodeServlet.action?t=" + t;
+}
