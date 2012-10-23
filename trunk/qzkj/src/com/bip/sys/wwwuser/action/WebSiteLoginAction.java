@@ -20,6 +20,7 @@ import javax.annotation.Resources;
 import org.springframework.stereotype.Controller;
 
 import com.bip.common.action.baseAction;
+import com.bip.common.util.Tool;
 import com.bip.sys.wwwuser.po.WwwUsers;
 import com.bip.sys.wwwuser.service.WwwUsersService;
 
@@ -64,7 +65,7 @@ public String login()
 //	}
 	try {
 		// ---判断用户、密码正确
-		if (!wwwUsersService.validate(account, password)) {
+		if (!wwwUsersService.validate(account, Tool.MD5(password))) {
 			setMessage("用户名或密码错误，请重新输入！");
 			return "failure";
 		}
@@ -87,6 +88,18 @@ public String login()
 		ex.printStackTrace();
 		return "failure";
 	}
+}
+public String reLogin()
+{
+	/*
+	 * 清空所有的session
+	 */
+	Enumeration e = this.getSession().getAttributeNames();
+	while (e.hasMoreElements()) {
+		String sessionName = (String) e.nextElement();
+		this.getSession().removeAttribute(sessionName);
+	}
+	return "success";
 }
 public String getMessage() {
 	return message;

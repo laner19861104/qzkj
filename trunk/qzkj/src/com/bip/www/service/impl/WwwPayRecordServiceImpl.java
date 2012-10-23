@@ -81,4 +81,13 @@ public class WwwPayRecordServiceImpl extends BaseService implements WwwPayRecord
 		}
 		return true;
 	}
+	/* (non-Javadoc)
+	 * @see com.bip.www.service.WwwPayRecordService#getTotal(com.bip.sys.wwwuser.po.WwwUsers)
+	 */
+	@Override
+	public String getTotal(WwwUsers wuser) {
+		String hql="select sum(money) form WwwPayRecord where userAccount='"+wuser.getAccount()+"'";
+		String total=this.wwwPayRecordDao.executeHQL(hql);
+		return total;
+	}
 }

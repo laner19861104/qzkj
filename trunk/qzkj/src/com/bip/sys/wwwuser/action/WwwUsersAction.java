@@ -8,21 +8,26 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
+import org.jgroups.tests.adaptjms.Request;
 import org.springframework.stereotype.Controller;
 
 import com.bip.common.action.baseAction;
 import com.bip.common.util.ControllerUtil;
 import com.bip.common.util.QueryJson;
 import com.bip.common.util.SqlUtil;
+import com.bip.common.util.Tool;
 import com.bip.common.util.UniContant;
 import com.bip.common.util.resultMsg;
 import com.bip.sys.wwwuser.po.WwwUsers;
 import com.bip.sys.wwwuser.service.WwwUsersService;
+import com.bip.www.service.WwwPayRecordService;
 
 @Controller
 public class WwwUsersAction extends baseAction {
 
 	private WwwUsersService wwwUsersService;
+	private WwwPayRecordService wwwPayRecordService;
+	
 	private WwwUsers instance;
 	private resultMsg msg;
 	private String smsg;
@@ -57,7 +62,12 @@ public class WwwUsersAction extends baseAction {
 	public String entry() {
 		return "success";
 	}
-
+	public String accountentry()
+	{
+		String totalPay=this.wwwPayRecordService.getTotal(this.getWuser());
+		this.getRequest().setAttribute("totalPay", totalPay);
+		return "success";
+	}
 	public String query() {
 
 		int page = Integer.parseInt(this.getRequest().getParameter("page"));
@@ -158,6 +168,12 @@ public class WwwUsersAction extends baseAction {
 			return "failure";
 		}
 		try{
+		String year=this.getRequest().getParameter("year");
+		String month=this.getRequest().getParameter("month");
+		String date=this.getRequest().getParameter("date");
+		wuser.setBirthday(year+"-"+month+"-"+date);
+		String[] proSkill=this.getRequest().getParameterValues("proSkill");
+		this.wuser.setProSkill(proSkill.toString());
 		this.wwwUsersService.update(wuser);
 		}catch(Exception e)
 		{
@@ -167,7 +183,25 @@ public class WwwUsersAction extends baseAction {
 		}
 		return "success";
 	}
-	
+	public String upwpwd()
+	{
+//		String oldPwd=Tool.MD5(this.getRequest().getParameter("oldPwd"));
+//		if(!oldPwd.equals(this.getWwwUser().getPassword()))
+//		{
+//			setSmsg("就密码输入错误，请重新输入！");
+//			return "failture";
+//		}
+		this.getWwwUser().setPassword(Tool.MD5(this.getRequest().getParameter("newPwd")));
+		try{
+		this.wwwUsersService.update(this.getWwwUser());
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+			setSmsg("网站异常！请联系客服！");
+			return "failture";
+		}
+		return "success";
+	}
 	public WwwUsers getInstance() {
 		return instance;
 	}
@@ -199,5 +233,9 @@ public class WwwUsersAction extends baseAction {
 	@Resource
 	public void setWwwUsersService(WwwUsersService wwwUsersService) {
 		this.wwwUsersService = wwwUsersService;
+	}
+	@Resource
+	public void setWwwPayRecordService(WwwPayRecordService wwwPayRecordService) {
+		this.wwwPayRecordService = wwwPayRecordService;
 	}
 }

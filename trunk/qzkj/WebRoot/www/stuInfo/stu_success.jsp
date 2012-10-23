@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="gb2312"   contentType="text/html;charset=gb2312"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%
@@ -8,40 +8,41 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-
-  <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK2312" />
 <meta http-equiv="x-ua-compatible" content="ie=7" /> 
-    <base href="<%=basePath+"www/stuInfo/"%>">
-    
-    <title>个人中心</title>
- <link href="css/gong.css" rel="stylesheet" type="text/css" />
+<title>������Ϣ</title>
+<base href="<%=basePath+"www/stuInfo/"%>">
+<link href="css/gong.css" rel="stylesheet" type="text/css" />
 <link href="css/geren.css" rel="stylesheet" type="text/css" />
 <link href="css/index_01.css" rel="stylesheet" type="text/css" />
 
+<script src="SpryAssets/SpryTabbedPanels.js" type="text/javascript"></script>
+<link href="SpryAssets/SpryTabbedPanels.css" rel="stylesheet" type="text/css" />
+<script src="js/datepicker.js" type="text/javascript"></script>
+<script src="js/city.js" type="text/javascript"></script>
 </head>
 
-<body>
+<body >
 	<div id="ren_top"> 
     	<div id="menu_1">
        		<ul>
-            	<li><a href="#">职业评测</a></li>
-                <li><a href="#">职业评测</a></li>
-                <li><a href="#">职业评测</a></li>
-                <li><a href="#">职业评测</a></li>
-                <li><a href="#">职业评测</a></li>
+            	<li><a href="#">ְҵ����</a></li>
+                <li><a href="#">ְҵ����</a></li>
+                <li><a href="#">ְҵ����</a></li>
+                <li><a href="#">ְҵ����</a></li>
+                <li><a href="#">ְҵ����</a></li>
               
             </ul>	
         
-          </div><!--menu结束-->
+      </div><!--menu����-->
          <div class="menu_right">
          	<ul>
-            	<li><a href="#">首页</a></li>
-                <li><a href="entryStuInfo.do">设置</a></li>
-                <li><a href="#">邮箱</a></li>
-                <li><a href="entryAccount.do">账户</a></li>
-                <li><a href="javascript:location.href='reLogin.do'">退出</a></li>
+            	<li><a href="#">��ҳ</a></li>
+                <li><a href="entryStuInfo.do">����</a></li>
+                <li><a href="#">����</a></li>
+                <li><a href="entryAccount.do">�˻�</a></li>
+                <li><a href="javascript:location.href='reLogin.do'">�˳�</a></li>
               
             </ul>
          </div> 
@@ -56,7 +57,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
     
     
-    </div><!--ren_top结束-->
+    </div><!--ren_top����-->
     
     <div class="clear mt8"></div>
       
@@ -64,16 +65,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	
     
     
-    <div id="main"><!--中间开始-->
+    <div id="main"><!--�м俪ʼ-->
     		<div class="position">
 		
-			 <h2> 亲爱的 ${webuser.account}，您好！欢迎回家，好好学习吧！<a href="javascript:location.href='reLogin.do'">[退出]</a></h2>
+			 <h2> �װ��� ${webuser.account}�����ã���ӭ�ؼң��ú�ѧϰ�ɣ� <a href="#">[�˳�]</a></h2>
              <div class="search">
         	<select name="">
-        	  <option value="课程">课程</option>
+        	  <option value="�γ�">�γ�</option>
         	</select>
         	<input name="" type="text" style="height:18px;"/>
-        <img src="images/19.gif" width="43" alt="搜索" style="margin-top:3px;"/></div><!--search结束-->
+        <img src="images/19.gif" width="43" alt="����" style="margin-top:3px;"/></div><!--search����-->
 		   </div> <!--end position-->
             <div class="clear mt8"></div>
            
@@ -87,73 +88,64 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <DIV class=din>
 <UL>
   <LI><IMG src="images/nav_21.gif"><A 
-  href="#" target=_blank>互助答疑</A></LI>
+  href="#" target=_blank>��������</A></LI>
   <LI><IMG src="images/nav_11.gif"><A 
-  href="#">税务/会计会员</A></LI>
+  href="#">˰��/��ƻ�Ա</A></LI>
   <LI><IMG src="images/nav_15.gif"><A 
-  href="#" target=_blank>梦想成真专区</A></LI>
+  href="#" target=_blank>�������ר��</A></LI>
   <LI><IMG src="images/nav_07.gif"><A 
-  href="#" target=_blank>每日一练</A></LI>
+  href="#" target=_blank>ÿ��һ��</A></LI>
   <LI><IMG src="images/nav_08.gif"><A 
-  href="#">订阅服务</A></LI>
+  href="#">���ķ���</A></LI>
   <LI><IMG src="images/nav_09.gif"><A 
   href="#" 
-  target=_blank>考试周刊</A></LI>
+  target=_blank>�����ܿ�</A></LI>
   <LI><IMG src="images/nav_19.gif"><A 
   href="#" 
-  target=_blank>《财税资讯》月刊</A></LI>
+  target=_blank>����˰��Ѷ���¿�</A></LI>
   <LI><IMG src="images/nav_18.jpg"><A 
-  href="#" target=_blank>新师资评价</A></LI>
+  href="#" target=_blank>��ʦ������</A></LI>
   <LI><IMG src="images/nav_10.gif"><A 
-  onclick="open()" 
   href="#" 
-  target=_blank>网上支付</A></LI>
+  target=_blank>����֧��</A></LI>
   <LI><IMG src="images/liwu.gif"><A 
-  href="#">网校赠送活动</A></LI>
+  href="#">��У���ͻ</A></LI>
   <LI><IMG src="images/nav_18.jpg"><A onclick=tzzhuye(); 
-  href="#">高会论文班</A></LI>
+  href="#">�߻����İ�</A></LI>
   <SCRIPT>
 			         function tzzhuye(){
-			        	 alert("你好,你还没有选课不能操作此项功能！");
+			        	 alert("���,�㻹û��ѡ�β��ܲ�������ܣ�");
 			      }
 			</SCRIPT>
 </UL></DIV><!-- 
           <div class="tian">
-            <a href="http://java.chinaacc.com/usercenter/tjzj.shtml"><img src="/images/userhome/01/tian.gif" />添加组件</a>
+            <a href="http://java.chinaacc.com/usercenter/tjzj.shtml"><img src="/images/userhome/01/tian.gif" />�������</a>
           </div>  --></DIV>
-<DIV class=zxkf><img src="images/zxkf.jpg" width="154" height="126" alt="呼叫客服" /></DIV>
+<DIV class=zxkf><img src="images/zxkf.jpg" width="154" height="126" alt="���пͷ�" /></DIV>
 <DIV class=zxkf><IMG 
 src="images/left_menu_dpic.gif"></DIV></DIV>
                         
                         
                         
-                        </div><!--w200结束-->
+                        </div><!--w200����-->
                         <div class="w730">
                     
                             <div class="w521">
                             	<DIV class=main_box>
 <DIV class=er_title>
-<DIV class=biao>我的题库<span><a href="#">返回首页</a></span></DIV>
-</DIV>
+
 <DIV class=er_text>
-<DIV class=xxjl>
-<DIV class=xxjl_l><A href="http://member.chinaacc.com/selectcourse/" 
-target=_blank><IMG src="images/wdtk.jpg"></A></DIV>
-<DIV class=xxjl_r><IMG src="images/wdtk2.gif"><BR><BR><A 
-href="http://member.chinaacc.com/selectcourse/" target=_blank><IMG 
-src="images/xxjl_xk.gif"></A><BR>可以参考网校最新的<A class=link_lan 
-href="http://www.chinaacc.com/wangxiao/jieshao/fangan.htm" 
-target=_blank>招生方案</A> </DIV></DIV></DIV>
-<DIV class=er_text><IMG src="images/wdtk03.jpg"> 
-<DIV class=clearz><BR><BR><BR><BR><BR><BR></DIV></DIV></DIV>
+�װ��� ���޸ĳɹ���<a href="javascript:location.href='entryStuInfo.do'">���ظ�������</a>
+
+</DIV></DIV>
                             
-                            </div><!--w521结束-->
+                            </div><!--w521����-->
                     
                     
                     		
                     
                     
-                    	</div><!--w730结束-->
+                   	  </div><!--w730����-->
                     
                     
                     
@@ -167,7 +159,7 @@ target=_blank>招生方案</A> </DIV></DIV></DIV>
                     
                     </td>
                   </tr>
-                </table>
+      </table>
 
            
            
@@ -192,16 +184,19 @@ target=_blank>招生方案</A> </DIV></DIV></DIV>
            
     
     
-	</div><!--中间开始结束-->
+	</div><!--�м俪ʼ����-->
     
     <div class="clear mt8"></div>
-    <div id="foot">
-    	<p>版权所有：潍坊政府采购<br>
-            技术支持：潍坊中财信科技有限公司
+<div id="foot">
+    	<p>��Ȩ���У�Ϋ�������ɹ�<br>
+            ����֧�֣�Ϋ���в��ſƼ����޹�˾
         </p>
     
     
     
     </div>
+<script type="text/javascript">
+var TabbedPanels1 = new Spry.Widget.TabbedPanels("TabbedPanels1");
+    </script>
 </body>
 </html>

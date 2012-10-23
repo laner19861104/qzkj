@@ -43,4 +43,13 @@ public interface WwwPayRecordService {
 	 */
 	boolean pay(double money, WwwUsers wwwUser);
 
+	/**
+	 * 功能：<br>
+	 * author：zj<br>
+	 * 日期：2012-10-23 <br>
+	 * @param wuser
+	 * @return
+	 */
+	String getTotal(WwwUsers wuser);
+
 }

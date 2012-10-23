@@ -41,8 +41,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             	<li><a href="#">首页</a></li>
                 <li><a href="entryStuInfo.do">设置</a></li>
                 <li><a href="#">邮箱</a></li>
-                <li><a href="#">账户</a></li>
-                <li><a href="#">退出</a></li>
+                <li><a href="entryAccount.do">账户</a></li>
+                <li><a href="javascript:location.href='reLogin.do'">退出</a></li>
               
             </ul>
          </div> 
@@ -68,7 +68,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div id="main"><!--中间开始-->
     		<div class="position">
 		
-			 <h2> 亲爱的 ${webuser.account}，您好！欢迎回家，好好学习吧！ <a href="#">[退出]</a></h2>
+			 <h2> 亲爱的 ${webuser.account}，您好！欢迎回家，好好学习吧！<a href="javascript:location.href='reLogin.do'">[退出]</a></h2>
              <div class="search">
         	<select name="">
         	  <option value="课程">课程</option>
@@ -141,7 +141,7 @@ src="images/left_menu_dpic.gif"></DIV></DIV>
     <ul class="TabbedPanelsTabGroup">
       <li class="TabbedPanelsTab" tabindex="0">个人资料修改</li>
       <li class="TabbedPanelsTab" tabindex="0">密码修改</li>
-      <li class="TabbedPanelsTab" tabindex="0">密码修改</li>
+      <li class="TabbedPanelsTab" tabindex="0">昵称修改</li>
     </ul>
     <div class="TabbedPanelsContentGroup">
       <div class="TabbedPanelsContent">
@@ -245,7 +245,7 @@ type=text name=wuser.tel> <SPAN class=font_12><FONT class=color_cheng>*</FONT>
 onmouseover=this.focus() onMouseOut="if(this.value=='')this.value='请输入右侧数字';" 
 onclick="if(this.value=='请输入右侧数字')this.value=''" value=请输入右侧数字 maxLength=4 
 size=15 type=text name=verifycode> 
-<img name="verifyCodeImg" id="verifyCodeImg" src="/qzkj/VerifyCodeServlet.action" style="cursor:hand" align="top" onClick="javascript:changeVerifyCode()"/>
+<img name="verifyCodeImg"  src="/qzkj/VerifyCodeServlet.action" style="cursor:hand" align="top" onClick="javascript:changeVerifyCode(this)"/>
  <SPAN class=font_12><FONT 
 class=color_cheng>*</FONT> 点击图片刷新验证码 <FONT class=color_cheng>*</FONT></SPAN> 
 </DIV></DIV>
@@ -266,7 +266,7 @@ class=color_cheng>*</FONT> 点击图片刷新验证码 <FONT class=color_cheng>*</FONT></
       
       
       
-      
+ <form id="form2" method="post" action="upwpwd.do">     
       </div>
       <div class="TabbedPanelsContent">
       	<DIV class=wdzh>
@@ -276,42 +276,30 @@ class=color_cheng>*</FONT> 点击图片刷新验证码 <FONT class=color_cheng>*</FONT></
 <DIV class=wdzl_txt>
 <DIV class=to>
 <DIV class=name>旧密码：</DIV>
-<DIV class=tc><INPUT id=oldPassword class=input_zl tabIndex=1 size=20 
-type=password name=oldPassword> 请填写正确的旧密码 </DIV></DIV>
+<DIV class=tc><INPUT id=oldPwd class=input_zl tabIndex=1 size=20 
+type=password name=oldPwd> 请填写正确的旧密码 </DIV></DIV>
 <DIV class="tong input_gg"></DIV>
 <DIV class=to>
 <DIV class=name>新密码：</DIV>
-<DIV class=tc><INPUT id=newPassword class=input_zl tabIndex=2 
-onkeyup=chkpassw(value.length) size=20 type=password name=newPassword> 
+<DIV class=tc><INPUT id=newPwd class=input_zl tabIndex=2 
+onkeyup=chkpassw(value.length) size=20 type=password name=newPwd> 
 由4至15位数字和字母组成</DIV></DIV>
 <DIV class=to>
 <DIV class=name>确认新密码：</DIV>
 <DIV class=tc><INPUT id=newPassword1 class=input_zl tabIndex=3 
-onkeyup=chkpassw(value.length) size=20 type=password name=newPassword1> 
+onkeyup=chkpassw(value.length) size=20 type=password name=newPwd1> 
 重复输入新密码</DIV></DIV>
-<DIV class=to>
-<DIV class=name>验证码：</DIV>
-<DIV class=tc><INPUT id=validateNumber class=input_zl onfocus=this.select() 
-onmouseover=this.focus() tabIndex=5 
-onmouseout="if(this.value=='')this.value='请输入右侧数字';" 
-onclick="if(this.value=='请输入右侧数字')this.value=''" value=请输入右侧数字 maxLength=4 
-size=15 type=text name=validateNumber> <IMG 
-onclick="javascript:var date=new Date();this.src='/jsp/image.jsp?VIName=updatePasswd&amp;num='+Date.parse(date);" 
-src="images/image(1).jpg"> <SPAN class=font_12><FONT 
-class=color_cheng>*</FONT> 点击图片刷新验证码 <FONT class=color_cheng>*</FONT></SPAN> 
-</DIV></DIV>
 <DIV class=to>
 <DIV class=name>　</DIV>
 <DIV class=tc><A 
-href="javascript:if(checkPasswordData()){document.getElementById('passwd').submit();}"><IMG 
+href="javascript:if(checkPasswordData()){document.getElementById('form2').submit();}"><IMG 
 src="images/tj2.gif"></A> 　　<A 
 href="javascript:document.getElementById('passwd').reset();"><IMG 
-src="images/cz2.gif"></A> <INPUT value=31259736 type=hidden 
-name=uid> <INPUT value=zhujiang0006 type=hidden name=userName> 
+src="images/cz2.gif"></A>
 </DIV></DIV></DIV></DIV></DIV>
       
       
-      
+    </form>  
       
       
       
