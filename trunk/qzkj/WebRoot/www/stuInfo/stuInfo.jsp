@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="gb2312"   contentType="text/html;charset=gb2312"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%
@@ -9,9 +9,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=GBK2312" />
 <meta http-equiv="x-ua-compatible" content="ie=7" /> 
-<title>个人信息</title>
+<title>������Ϣ</title>
 <base href="<%=basePath+"www/stuInfo/"%>">
 <link href="css/gong.css" rel="stylesheet" type="text/css" />
 <link href="css/geren.css" rel="stylesheet" type="text/css" />
@@ -27,22 +27,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div id="ren_top"> 
     	<div id="menu_1">
        		<ul>
-            	<li><a href="#">职业评测</a></li>
-                <li><a href="#">职业评测</a></li>
-                <li><a href="#">职业评测</a></li>
-                <li><a href="#">职业评测</a></li>
-                <li><a href="#">职业评测</a></li>
+            	<li><a href="#">ְҵ����</a></li>
+                <li><a href="#">ְҵ����</a></li>
+                <li><a href="#">ְҵ����</a></li>
+                <li><a href="#">ְҵ����</a></li>
+                <li><a href="#">ְҵ����</a></li>
               
             </ul>	
         
-      </div><!--menu结束-->
+      </div><!--menu����-->
          <div class="menu_right">
          	<ul>
-            	<li><a href="#">首页</a></li>
-                <li><a href="entryStuInfo.do">设置</a></li>
-                <li><a href="#">邮箱</a></li>
-                <li><a href="#">账户</a></li>
-                <li><a href="#">退出</a></li>
+            	<li><a href="#">��ҳ</a></li>
+                <li><a href="entryStuInfo.do">����</a></li>
+                <li><a href="#">����</a></li>
+                <li><a href="#">�˻�</a></li>
+                <li><a href="#">�˳�</a></li>
               
             </ul>
          </div> 
@@ -57,7 +57,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
     
     
-    </div><!--ren_top结束-->
+    </div><!--ren_top����-->
     
     <div class="clear mt8"></div>
       
@@ -65,16 +65,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	
     
     
-    <div id="main"><!--中间开始-->
+    <div id="main"><!--�м俪ʼ-->
     		<div class="position">
 		
-			 <h2> 亲爱的 ${webuser.account}，您好！欢迎回家，好好学习吧！ <a href="#">[退出]</a></h2>
+			 <h2> �װ��� ${webuser.account}�����ã���ӭ�ؼң��ú�ѧϰ�ɣ� <a href="#">[�˳�]</a></h2>
              <div class="search">
         	<select name="">
-        	  <option value="课程">课程</option>
+        	  <option value="�γ�">�γ�</option>
         	</select>
         	<input name="" type="text" style="height:18px;"/>
-        <img src="images/19.gif" width="43" alt="搜索" style="margin-top:3px;"/></div><!--search结束-->
+        <img src="images/19.gif" width="43" alt="����" style="margin-top:3px;"/></div><!--search����-->
 		   </div> <!--end position-->
             <div class="clear mt8"></div>
            
@@ -88,111 +88,111 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <DIV class=din>
 <UL>
   <LI><IMG src="images/nav_21.gif"><A 
-  href="#" target=_blank>互助答疑</A></LI>
+  href="#" target=_blank>��������</A></LI>
   <LI><IMG src="images/nav_11.gif"><A 
-  href="#">税务/会计会员</A></LI>
+  href="#">˰��/��ƻ�Ա</A></LI>
   <LI><IMG src="images/nav_15.gif"><A 
-  href="#" target=_blank>梦想成真专区</A></LI>
+  href="#" target=_blank>�������ר��</A></LI>
   <LI><IMG src="images/nav_07.gif"><A 
-  href="#" target=_blank>每日一练</A></LI>
+  href="#" target=_blank>ÿ��һ��</A></LI>
   <LI><IMG src="images/nav_08.gif"><A 
-  href="#">订阅服务</A></LI>
+  href="#">���ķ���</A></LI>
   <LI><IMG src="images/nav_09.gif"><A 
   href="#" 
-  target=_blank>考试周刊</A></LI>
+  target=_blank>�����ܿ�</A></LI>
   <LI><IMG src="images/nav_19.gif"><A 
   href="#" 
-  target=_blank>《财税资讯》月刊</A></LI>
+  target=_blank>����˰��Ѷ���¿�</A></LI>
   <LI><IMG src="images/nav_18.jpg"><A 
-  href="#" target=_blank>新师资评价</A></LI>
+  href="#" target=_blank>��ʦ������</A></LI>
   <LI><IMG src="images/nav_10.gif"><A 
   href="#" 
-  target=_blank>网上支付</A></LI>
+  target=_blank>����֧��</A></LI>
   <LI><IMG src="images/liwu.gif"><A 
-  href="#">网校赠送活动</A></LI>
+  href="#">��У���ͻ</A></LI>
   <LI><IMG src="images/nav_18.jpg"><A onclick=tzzhuye(); 
-  href="#">高会论文班</A></LI>
+  href="#">�߻����İ�</A></LI>
   <SCRIPT>
 			         function tzzhuye(){
-			        	 alert("你好,你还没有选课不能操作此项功能！");
+			        	 alert("���,�㻹û��ѡ�β��ܲ�������ܣ�");
 			      }
 			</SCRIPT>
 </UL></DIV><!-- 
           <div class="tian">
-            <a href="http://java.chinaacc.com/usercenter/tjzj.shtml"><img src="/images/userhome/01/tian.gif" />添加组件</a>
+            <a href="http://java.chinaacc.com/usercenter/tjzj.shtml"><img src="/images/userhome/01/tian.gif" />�������</a>
           </div>  --></DIV>
-<DIV class=zxkf><img src="images/zxkf.jpg" width="154" height="126" alt="呼叫客服" /></DIV>
+<DIV class=zxkf><img src="images/zxkf.jpg" width="154" height="126" alt="���пͷ�" /></DIV>
 <DIV class=zxkf><IMG 
 src="images/left_menu_dpic.gif"></DIV></DIV>
                         
                         
                         
-                        </div><!--w200结束-->
+                        </div><!--w200����-->
                         <div class="w730">
                     
                             <div class="w521">
                             	<DIV class=main_box>
 <DIV class=er_title>
-<DIV class=biao>我的题库<span><a href="#">返回首页</a></span></DIV>
+<DIV class=biao>�ҵ����<span><a href="#">������ҳ</a></span></DIV>
 </DIV>
 <DIV class=er_text>
 
   <div id="TabbedPanels1" class="TabbedPanels">
     <ul class="TabbedPanelsTabGroup">
-      <li class="TabbedPanelsTab" tabindex="0">个人资料修改</li>
-      <li class="TabbedPanelsTab" tabindex="0">密码修改</li>
-      <li class="TabbedPanelsTab" tabindex="0">密码修改</li>
+      <li class="TabbedPanelsTab" tabindex="0">���������޸�</li>
+      <li class="TabbedPanelsTab" tabindex="0">�����޸�</li>
+      <li class="TabbedPanelsTab" tabindex="0">�����޸�</li>
     </ul>
     <div class="TabbedPanelsContentGroup">
       <div class="TabbedPanelsContent">
       	<DIV class=wdzh>
-<DIV class=zan_w>为保证您的合法权益，请务必填写以下尽可能详细的真实个人信息，主要用于：<BR>　　 ·密码丢失后身份确认；<BR>　　 
-·网校的学费确认；<BR>　　 ·网校<A class=link_lan href="http://member.chinaacc.com/shop/" 
-target=_blank>财会书店</A>订购辅导书邮购等…… </DIV>
+<DIV class=zan_w>Ϊ��֤���ĺϷ�Ȩ�棬�������д���¾�������ϸ����ʵ������Ϣ����Ҫ���ڣ�<BR>���� �����붪ʧ������ȷ�ϣ�<BR>���� 
+����У��ѧ��ȷ�ϣ�<BR>���� ����У<A class=link_lan href="http://member.chinaacc.com/shop/" 
+target=_blank>�ƻ����</A>�����������ʹ��ȡ��� </DIV>
 <DIV class="wdzl mt_10">
-<DIV class=wdzl_tit>注册信息修改 </DIV>
+<DIV class=wdzl_tit>ע����Ϣ�޸� </DIV>
 <DIV class=wdzl_txt>
 <DIV class=to>
 <form id="form1" method="post" action="userEdit.do">
-<DIV class=name>真实姓名：</DIV>
+<DIV class=name>��ʵ������</DIV>
 <DIV class=tc><INPUT class=input_zl value='${webuser.username}' maxLength=18 size=20 type=text 
 name=wuser.username></DIV></DIV>
 <DIV class=to>
-<DIV class=name>Email：</DIV>
+<DIV class=name>Email��</DIV>
 <DIV class=tc><INPUT id=email class=input_zl maxLength=50 value='${webuser.email}' size=40 type=text 
 name=wuser.email></DIV></DIV>
 <DIV class=to>
-<DIV class=name>QQ号码：</DIV>
+<DIV class=name>QQ���룺</DIV>
 <DIV class=tc><INPUT id=qq class=input_zl maxLength=50 size=40 type=text value="${webuser.qq}"
 name=wuser.qq></DIV></DIV>
 <DIV class=to>
-<DIV class=name>性&nbsp;&nbsp;&nbsp;&nbsp;别：</DIV>
+<DIV class=name>��&nbsp;&nbsp;&nbsp;&nbsp;��</DIV>
 <DIV class=tc>
-<c:if test="${webuser.sex=='女'}">
-<INPUT value=女 type=radio checked name=wuser.sex>女 <INPUT value=男  type=radio name=wuser.sex>男 
+<c:if test="${webuser.sex=='Ů'}">
+<INPUT value=Ů type=radio checked name=wuser.sex>Ů <INPUT value=��  type=radio name=wuser.sex>�� 
 </c:if>
-<c:if test="${webuser.sex=='男'}">
-<INPUT value=女 type=radio  name=wuser.sex>女 <INPUT value=男  type=radio checked name=wuser.sex>男 
+<c:if test="${webuser.sex=='��'}">
+<INPUT value=Ů type=radio  name=wuser.sex>Ů <INPUT value=��  type=radio checked name=wuser.sex>�� 
 </c:if>
 </DIV></DIV>
 <DIV class=to>
-<DIV class=name>出生日期：</DIV>
+<DIV class=name>�������ڣ�</DIV>
 <DIV class=tc>
-<select id="year1"  name=year></select>年 
-<select id="month1" name=month onchange="selectedMonth(form1.month1.value,this.value)"></select>月
-<select id="date1"  name=date></select> 日 
+<select id="year1"  name=year></select>�� 
+<select id="month1" name=month onchange="selectedMonth(form1.month1.value,this.value)"></select>��
+<select id="date1"  name=date></select> �� 
  </DIV></DIV>
 <DIV class=to>
-<DIV class=name>居住地区：</DIV>
-<DIV class=tc><SELECT onchange="areaMap.city(this.value)" id="province" name=wuser.province></SELECT>省（直辖市） 
-<SELECT id=city name=wuser.city> </SELECT>市（地区） </DIV></DIV>
+<DIV class=name>��ס������</DIV>
+<DIV class=tc><SELECT onchange="areaMap.city(this.value)" id="province" name=wuser.province></SELECT>ʡ��ֱϽ�У� 
+<SELECT id=city name=wuser.city> </SELECT>�У������� </DIV></DIV>
 <script>
 		var areaMap = new AreaMap('province','city');
 		var province='${webuser.province}';
 		var city='${webuser.city}';
 		if(province=="")
 		{
-        areaMap.province('请选择省份名','请选择城市名');
+        areaMap.province('��ѡ��ʡ����','��ѡ�������');
         }
 		else
 		{
@@ -200,57 +200,57 @@ name=wuser.qq></DIV></DIV>
 		}
 </script>
 <DIV class=to>
-<DIV class=name>教育程度：</DIV>
+<DIV class=name>�����̶ȣ�</DIV>
 <DIV class=tc><SELECT name=wuser.edulv>
-<OPTION ${webuser.edulv=='1'?'selected':''} value=1>大专以下</OPTION> 
-<OPTION ${webuser.edulv=='2'?'selected':''} value=2>大专</OPTION>
-<OPTION ${webuser.edulv=='3'?'selected':''} value=3>本科</OPTION>
-<OPTION ${webuser.edulv=='4'?'selected':''} value=4>本科以上</OPTION>
+<OPTION ${webuser.edulv=='1'?'selected':''} value=1>��ר����</OPTION> 
+<OPTION ${webuser.edulv=='2'?'selected':''} value=2>��ר</OPTION>
+<OPTION ${webuser.edulv=='3'?'selected':''} value=3>����</OPTION>
+<OPTION ${webuser.edulv=='4'?'selected':''} value=4>��������</OPTION>
 </SELECT></DIV></DIV>
 <DIV class=to>
-<DIV class=name>身份证号：</DIV>
+<DIV class=name>����֤�ţ�</DIV>
 <DIV class=tc><INPUT id=cardID value="${webuser.id}" class=input_zl maxLength=18 size=20 type=text 
 name=wuser.id></DIV></DIV>
 <DIV class=to>
-<DIV class=name>工作单位：</DIV>
+<DIV class=name>������λ��</DIV>
 <DIV class=tc><INPUT class=input_zl value="${webuser.workFor}" maxLength=120 size=40 type=text 
 name=wuser.workFor></DIV></DIV>
 <DIV class=to>
-<DIV class=name>通信地址：</DIV>
+<DIV class=name>ͨ�ŵ�ַ��</DIV>
 <DIV class=tc><INPUT class=input_zl maxLength=120 value="${webuser.postAddress}" size=40 type=text 
 name=wuser.postAddress></DIV></DIV>
 <DIV class=to>
-<DIV class=name>邮政编码：</DIV>
+<DIV class=name>�������룺</DIV>
 <DIV class=tc><INPUT id=zipCode value="${webuser.postNo}" class=input_zl maxLength=6 size=20 type=text 
 name=wuser.postNo></DIV></DIV>
 <DIV class=to>
-<DIV class=name>手机号码：</DIV>
+<DIV class=name>�ֻ����룺</DIV>
 <DIV class=tc><INPUT class=input_zl value="${webuser.tel}" maxLength=50 size=20 
 type=text name=wuser.tel> <SPAN class=font_12><FONT class=color_cheng>*</FONT> 
-强烈建议您认真填写手机号码，以便我们为您发送开课情况等提示短信！</SPAN></DIV></DIV>
+ǿ�ҽ�����������д�ֻ����룬�Ա�����Ϊ�����Ϳ����������ʾ���ţ�</SPAN></DIV></DIV>
 <DIV class=to>
-<DIV class=name>会计资质：</DIV>
+<DIV class=name>������ʣ�</DIV>
 <DIV class=tc>
-<INPUT value=1 ${fn:indexOf(webuser.proSkill,'1')>-1?'checked':''} type=checkbox name=proSkill> 初级职称&nbsp;&nbsp; 
-<INPUT value=2 ${fn:indexOf(webuser.proSkill,'2')>-1?'checked':''} type=checkbox name=proSkill> 中级职称&nbsp;&nbsp; 
-<INPUT value=3 ${fn:indexOf(webuser.proSkill,'3')>-1?'checked':''} type=checkbox name=proSkill> 高级职称<BR>
-<INPUT value=4 ${fn:indexOf(webuser.proSkill,'4')>-1?'checked':''} type=checkbox name=proSkill> 注册会计师
-<INPUT value=5 ${fn:indexOf(webuser.proSkill,'5')>-1?'checked':''} type=checkbox name=proSkill> 注册评估师 
-<INPUT value=6 ${fn:indexOf(webuser.proSkill,'6')>-1?'checked':''} type=checkbox name=proSkill> 注册税务师 
+<INPUT value=1 ${fn:indexOf(webuser.proSkill,'1')>-1?'checked':''} type=checkbox name=proSkill> ����ְ��&nbsp;&nbsp; 
+<INPUT value=2 ${fn:indexOf(webuser.proSkill,'2')>-1?'checked':''} type=checkbox name=proSkill> �м�ְ��&nbsp;&nbsp; 
+<INPUT value=3 ${fn:indexOf(webuser.proSkill,'3')>-1?'checked':''} type=checkbox name=proSkill> �߼�ְ��<BR>
+<INPUT value=4 ${fn:indexOf(webuser.proSkill,'4')>-1?'checked':''} type=checkbox name=proSkill> ע����ʦ
+<INPUT value=5 ${fn:indexOf(webuser.proSkill,'5')>-1?'checked':''} type=checkbox name=proSkill> ע������ʦ 
+<INPUT value=6 ${fn:indexOf(webuser.proSkill,'6')>-1?'checked':''} type=checkbox name=proSkill> ע��˰��ʦ 
 </DIV></DIV>
 <DIV class="tong input_gg"></DIV>
 <DIV class=to>
-<DIV class=name>验&nbsp;证&nbsp;码：</DIV>
+<DIV class=name>��&nbsp;֤&nbsp;�룺</DIV>
 <DIV class=tc><INPUT id=check class=input_zl onfocus=this.select() 
-onmouseover=this.focus() onMouseOut="if(this.value=='')this.value='请输入右侧数字';" 
-onclick="if(this.value=='请输入右侧数字')this.value=''" value=请输入右侧数字 maxLength=4 
+onmouseover=this.focus() onMouseOut="if(this.value=='')this.value='�������Ҳ�����';" 
+onclick="if(this.value=='�������Ҳ�����')this.value=''" value=�������Ҳ����� maxLength=4 
 size=15 type=text name=verifycode> 
 <img name="verifyCodeImg" id="verifyCodeImg" src="/qzkj/VerifyCodeServlet.action" style="cursor:hand" align="top" onClick="javascript:changeVerifyCode()"/>
  <SPAN class=font_12><FONT 
-class=color_cheng>*</FONT> 点击图片刷新验证码 <FONT class=color_cheng>*</FONT></SPAN> 
+class=color_cheng>*</FONT> ���ͼƬˢ����֤�� <FONT class=color_cheng>*</FONT></SPAN> 
 </DIV></DIV>
 <DIV class=to>
-<DIV class=name>　</DIV>
+<DIV class=name>��</DIV>
 <DIV class=tc>
 <A href="javascript:if(checkdata()){document.getElementById('form1').submit();}"><IMG src="images/tj2.gif"></A> 
 <A href="javascript:document.getElementById('memberform').reset();"><IMG src="images/cz2.gif"></A> 
@@ -270,41 +270,41 @@ class=color_cheng>*</FONT> 点击图片刷新验证码 <FONT class=color_cheng>*
       </div>
       <div class="TabbedPanelsContent">
       	<DIV class=wdzh>
-<DIV class=zan_w>为了您的个人帐户安全，建议您定期更改您的密码！</DIV>
+<DIV class=zan_w>Ϊ�����ĸ����ʻ���ȫ�����������ڸ����������룡</DIV>
 <DIV class="wdzl mt_10">
-<DIV class=wdzl_tit>修改密码</DIV>
+<DIV class=wdzl_tit>�޸�����</DIV>
 <DIV class=wdzl_txt>
 <DIV class=to>
-<DIV class=name>旧密码：</DIV>
+<DIV class=name>�����룺</DIV>
 <DIV class=tc><INPUT id=oldPassword class=input_zl tabIndex=1 size=20 
-type=password name=oldPassword> 请填写正确的旧密码 </DIV></DIV>
+type=password name=oldPassword> ����д��ȷ�ľ����� </DIV></DIV>
 <DIV class="tong input_gg"></DIV>
 <DIV class=to>
-<DIV class=name>新密码：</DIV>
+<DIV class=name>�����룺</DIV>
 <DIV class=tc><INPUT id=newPassword class=input_zl tabIndex=2 
 onkeyup=chkpassw(value.length) size=20 type=password name=newPassword> 
-由4至15位数字和字母组成</DIV></DIV>
+��4��15λ���ֺ���ĸ���</DIV></DIV>
 <DIV class=to>
-<DIV class=name>确认新密码：</DIV>
+<DIV class=name>ȷ�������룺</DIV>
 <DIV class=tc><INPUT id=newPassword1 class=input_zl tabIndex=3 
 onkeyup=chkpassw(value.length) size=20 type=password name=newPassword1> 
-重复输入新密码</DIV></DIV>
+�ظ�����������</DIV></DIV>
 <DIV class=to>
-<DIV class=name>验证码：</DIV>
+<DIV class=name>��֤�룺</DIV>
 <DIV class=tc><INPUT id=validateNumber class=input_zl onfocus=this.select() 
 onmouseover=this.focus() tabIndex=5 
-onmouseout="if(this.value=='')this.value='请输入右侧数字';" 
-onclick="if(this.value=='请输入右侧数字')this.value=''" value=请输入右侧数字 maxLength=4 
+onmouseout="if(this.value=='')this.value='�������Ҳ�����';" 
+onclick="if(this.value=='�������Ҳ�����')this.value=''" value=�������Ҳ����� maxLength=4 
 size=15 type=text name=validateNumber> <IMG 
 onclick="javascript:var date=new Date();this.src='/jsp/image.jsp?VIName=updatePasswd&amp;num='+Date.parse(date);" 
 src="images/image(1).jpg"> <SPAN class=font_12><FONT 
-class=color_cheng>*</FONT> 点击图片刷新验证码 <FONT class=color_cheng>*</FONT></SPAN> 
+class=color_cheng>*</FONT> ���ͼƬˢ����֤�� <FONT class=color_cheng>*</FONT></SPAN> 
 </DIV></DIV>
 <DIV class=to>
-<DIV class=name>　</DIV>
+<DIV class=name>��</DIV>
 <DIV class=tc><A 
 href="javascript:if(checkPasswordData()){document.getElementById('passwd').submit();}"><IMG 
-src="images/tj2.gif"></A> 　　<A 
+src="images/tj2.gif"></A> ����<A 
 href="javascript:document.getElementById('passwd').reset();"><IMG 
 src="images/cz2.gif"></A> <INPUT value=31259736 type=hidden 
 name=uid> <INPUT value=zhujiang0006 type=hidden name=userName> 
@@ -335,20 +335,20 @@ cellPadding=6 width=700 align=center>
         <TBODY>
         <TR>
           <TD style="PADDING-BOTTOM: 10px; PADDING-TOP: 10px" class=font14 
-          height=40>我的昵称：<LABEL> <INPUT id=nickName maxLength=16 type=text 
+          height=40>�ҵ��ǳƣ�<LABEL> <INPUT id=nickName maxLength=16 type=text 
             name=nickName> <INPUT id=nickName_old type=hidden name=nickName_old> 
             <INPUT id=nickName_old 
             value=http://img.cdeledu.com/ADVC/2009/1119/1258620743934-0.jpg 
             type=hidden name=newicon_old> </LABEL></TD></TR>
         <TR>
           <TD style="PADDING-BOTTOM: 10px; PADDING-TOP: 10px" class=font14 
-          height=80>您的头像： <IMG 
+          height=80>����ͷ�� <IMG 
             style="BORDER-BOTTOM: #dddddd 1px solid; BORDER-LEFT: #dddddd 1px solid; PADDING-BOTTOM: 2px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; BORDER-TOP: #dddddd 1px solid; BORDER-RIGHT: #dddddd 1px solid; PADDING-TOP: 2px" 
             id=usericon src="images/man1.gif" width=111 
             height=111><INPUT id=iconUrl type=hidden name=iconUrl></TD></TR>
         <TR>
            <TD class=font14 height=40>
-          上传控件
+          �ϴ��ؼ�
           
           
           </TD></TR>
@@ -370,13 +370,13 @@ cellPadding=6 width=700 align=center>
   </div>
 </DIV></DIV>
                             
-                            </div><!--w521结束-->
+                            </div><!--w521����-->
                     
                     
                     		
                     
                     
-                   	  </div><!--w730结束-->
+                   	  </div><!--w730����-->
                     
                     
                     
@@ -415,12 +415,12 @@ cellPadding=6 width=700 align=center>
            
     
     
-	</div><!--中间开始结束-->
+	</div><!--�м俪ʼ����-->
     
     <div class="clear mt8"></div>
 <div id="foot">
-    	<p>版权所有：潍坊政府采购<br>
-            技术支持：潍坊中财信科技有限公司
+    	<p>��Ȩ���У�Ϋ�������ɹ�<br>
+            ����֧�֣�Ϋ���в��ſƼ����޹�˾
         </p>
     
     
