@@ -41,7 +41,8 @@ public class WwwPayRecordDaoImpl extends GenericDao<WwwPayRecord,String> impleme
 			@Override
 			public Object doInHibernate(Session arg0) throws HibernateException,
 					SQLException {
-				return arg0.createQuery(hql).uniqueResult().toString();
+				Object obj=arg0.createQuery(hql).uniqueResult();
+				return obj==null?"0":obj.toString();
 			}
 		}).toString();
 		return total;
