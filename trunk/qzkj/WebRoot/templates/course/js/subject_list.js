@@ -1,3 +1,10 @@
+var urls = eval( {
+	"query" : "query_querySubjectAction_query.action",
+	"add" : "modify_editSubjectAction_add.action",
+	"edit" : "modify_editSubjectAction_edit.action",
+	"del" : "modify_editSubjectAction_del.action",
+	"get":"get_querySubjectAction_get.action"
+});
 $(function() {
 	$('#mForm').hide();
 	$('#tList').datagrid( {
@@ -8,7 +15,7 @@ $(function() {
 		nowrap : false,
 		striped : true,
 		collapsible : true,
-		url : 'query_querySubjectAction_query.action',
+		url : urls['query'],
 		loadMsg : '数据装载中......',
 		idField : 'id',
 		sortName : 'code',
@@ -60,15 +67,10 @@ function showadd() {
 	$('#mForm').show();
 	$('#add').window('open');
 }
-function showedit() {
-	
-}
-function showquery() {}
-function view() {}
 function add() {
 	if (!validateCheck()) {return;}
 	$('#mForm').form('submit', {
-		url : 'modify_editSubjectAction_add.action',
+		url : urls['add'],
 		onSubmit : function() {
 			return $('#mForm').form('validate');
 		},
@@ -89,8 +91,34 @@ function add() {
 		}
 	});
 }
+function showedit() {
+	var select = $('#tList').datagrid('getSelections');
+	if (select.length != 1) {
+		$.messager.alert('警告', '请选择一行数据!', 'warning');
+		return;
+	}
+	jQuery.getJSON(urls['get'], {id:select[0].id}, function(obj) {
+			fillForm(obj);
+		}
+	);
+	$('#view').window('open');
+	$('#mForm').show();
+	$('#mForm').appendTo('#dd');
+}
+function showquery() {}
+function view() {}
 function edit() {}
 function del() {}
+
+function close1() {
+	$('#add').window('close');
+}
+function close2() {
+	$('#edit').window('close');
+}
+function close3() {
+	$('#view').window('close');
+}
 
 function validateCheck() {
 	if (null == $('#code').val() || "" == $('#code').val()) {
