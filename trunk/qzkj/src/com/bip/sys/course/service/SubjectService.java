@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.dao.DataAccessException;
 
 import com.bip.common.util.PaginationSupport;
+import com.bip.common.util.QueryJson;
 import com.bip.sys.course.po.JocSubject;
 
 
@@ -15,7 +16,7 @@ public interface SubjectService {
 	
 	JocSubject get(Integer id);
 	List<JocSubject> find(String queryString);
-	PaginationSupport findPageByQuery(String hql, String countHql, int pageSize, int startIndex);
+	public QueryJson findPageByQuery(String conditions, int row, int i);
 
 	void update(JocSubject bean) throws Exception;
 	void saveOrUpdate(JocSubject bean) throws Exception;
