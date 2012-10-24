@@ -19,7 +19,7 @@ public class QuerySubjectAction extends baseAction {
 		int page = Integer.parseInt(this.getRequest().getParameter("page"));
 		int row = Integer.parseInt(this.getRequest().getParameter("rows"));// 接受参数page和rows
 
-		subjectService.findPageByQuery(hql, countHql, pageSize, startIndex);
+//		subjectService.findPageByQuery(hql, countHql, pageSize, startIndex);
 		return "success";
 	}
 	
