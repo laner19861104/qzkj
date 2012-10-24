@@ -86,7 +86,7 @@ public class WwwPayRecordServiceImpl extends BaseService implements WwwPayRecord
 	 */
 	@Override
 	public String getTotal(WwwUsers wuser) {
-		String hql="select sum(money) form WwwPayRecord where userAccount='"+wuser.getAccount()+"'";
+		String hql="select sum(money) from WwwPayRecord where userAccount='"+wuser.getAccount()+"'";
 		String total=this.wwwPayRecordDao.executeHQL(hql);
 		return total;
 	}
