@@ -9,6 +9,7 @@ public class JocCourse implements java.io.Serializable {
 	 */
 	private static final long serialVersionUID = 4869989997155893851L;
 	private Integer id;
+	private String code;
 	private JocFile video1;
 	private JocSubject subject;
 	private JocFile video3;
@@ -24,11 +25,12 @@ public class JocCourse implements java.io.Serializable {
 		super();
 		this.id = id;
 	}
-	public JocCourse(Integer id, JocFile video1, JocSubject subject,
-			JocFile video3, JocFile video2, String name, Integer cost,
-			String titleimage, String discription) {
+	public JocCourse(Integer id, String code, JocFile video1,
+			JocSubject subject, JocFile video3, JocFile video2, String name,
+			Integer cost, String titleimage, String discription) {
 		super();
 		this.id = id;
+		this.code = code;
 		this.video1 = video1;
 		this.subject = subject;
 		this.video3 = video3;
@@ -91,5 +93,11 @@ public class JocCourse implements java.io.Serializable {
 	}
 	public void setDiscription(String discription) {
 		this.discription = discription;
+	}
+	public String getCode() {
+		return code;
+	}
+	public void setCode(String code) {
+		this.code = code;
 	}
 }

@@ -7,6 +7,7 @@ public class JocSubject implements java.io.Serializable {
 	 */
 	private static final long serialVersionUID = 4773320764979801269L;
 	private Integer id;
+	private String code;
 	private String name;
 	private Integer cost;
 	private String titleimage;
@@ -18,10 +19,11 @@ public class JocSubject implements java.io.Serializable {
 		super();
 		this.id = id;
 	}
-	public JocSubject(Integer id, String name, Integer cost, String titleimage,
-			String discription) {
+	public JocSubject(Integer id, String code, String name, Integer cost,
+			String titleimage, String discription) {
 		super();
 		this.id = id;
+		this.code = code;
 		this.name = name;
 		this.cost = cost;
 		this.titleimage = titleimage;
@@ -56,5 +58,11 @@ public class JocSubject implements java.io.Serializable {
 	}
 	public void setDiscription(String discription) {
 		this.discription = discription;
+	}
+	public String getCode() {
+		return code;
+	}
+	public void setCode(String code) {
+		this.code = code;
 	}
 }

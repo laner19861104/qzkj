@@ -1,7 +1,9 @@
 package com.bip.sys.course.action;
 
-import com.bip.common.action.baseAction;
+import org.springframework.stereotype.Controller;
 
+import com.bip.common.action.baseAction;
+@Controller
 public class EditCourseAction extends baseAction {
 
 	/**
