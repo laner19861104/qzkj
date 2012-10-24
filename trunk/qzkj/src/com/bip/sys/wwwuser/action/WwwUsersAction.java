@@ -65,7 +65,7 @@ public class WwwUsersAction extends baseAction {
 	public String accountentry()
 	{
 		String totalPay=this.wwwPayRecordService.getTotal(this.getWuser());
-		this.getRequest().setAttribute("totalPay", totalPay);
+		this.getSession().setAttribute("totalPay", totalPay);
 		return "success";
 	}
 	public String query() {

@@ -44,7 +44,6 @@ public class WwwPayRecordAction extends baseAction{
     private WwwPayRecordService wwwPayRecordService;
 
     public String query() {
-
 		int page = Integer.parseInt(this.getRequest().getParameter("page"));
 		int row = Integer.parseInt(this.getRequest().getParameter("rows"));// 接受参数page和rows
 		String conditions = this.getRequest().getParameter("conditions");
@@ -58,6 +57,8 @@ public class WwwPayRecordAction extends baseAction{
 			}
 		queryJson = (QueryJson) wwwPayRecordService.findPageByQuery(conditions, row,
 				(page - 1) * row);
+		queryJson.setRow(row);
+		queryJson.setPage(page);
 		return "success";
 	}
     public String pay()
