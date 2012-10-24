@@ -16,11 +16,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link href="css/gong.css" rel="stylesheet" type="text/css" />
 <link href="css/geren.css" rel="stylesheet" type="text/css" />
 <link href="css/index_01.css" rel="stylesheet" type="text/css" />
-
+<script type="text/javascript" src="<%=basePath%>/templates/jquery-easyui-1.2.5/jquery-1.7.1.min.js"></script>
 <script src="SpryAssets/SpryTabbedPanels.js" type="text/javascript"></script>
 <link href="SpryAssets/SpryTabbedPanels.css" rel="stylesheet" type="text/css" />
+<script src="js/ajax.util.js" type="text/javascript"  ></script>
+<script>
+account='${webuser.account}'
+</script>
 </head>
-
 <body>
 	<div id="ren_top"> 
     	<div id="menu_1">
@@ -95,7 +98,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <LI><IMG src="images/nav_18.jpg"><A 
   href="#" target=_blank>新师资评价</A></LI>
   <LI><IMG src="images/nav_10.gif"><A 
-  onclick="#" 
+
   href="#" 
   target=_blank>网上支付</A></LI>
   <LI><IMG src="images/liwu.gif"><A 
@@ -132,7 +135,7 @@ src="images/left_menu_dpic.gif"></DIV></DIV>
       <li class="TabbedPanelsTab" tabindex="0">累计</li>
       <li class="TabbedPanelsTab" tabindex="0">账户余额</li>
       <li class="TabbedPanelsTab" tabindex="0">学习卡</li>
-      <li class="TabbedPanelsTab" tabindex="0">充值</li>
+      <li class="TabbedPanelsTab" tabindex="0" onclick="getPayRecord(1)">充值</li>
        <li class="TabbedPanelsTab" tabindex="0">交费记录</li>
     </ul>
     <div class="TabbedPanelsContentGroup">
@@ -143,7 +146,7 @@ src="images/left_menu_dpic.gif"></DIV></DIV>
             <DIV class=tong>
             <DIV class=hui_box>
             <DIV class="hui_cont ">
-            <DIV class=chong><BR><BR>您累计交费金额：<SPAN class=color_cheng>0</SPAN> 
+            <DIV class=chong><BR><BR>您累计交费金额：<SPAN class=color_cheng>${totalPay}</SPAN> 
             元<BR><BR><BR></DIV></DIV></DIV></DIV>
             </DIV></DIV>
       
@@ -158,7 +161,7 @@ src="images/left_menu_dpic.gif"></DIV></DIV>
             <DIV class=hui_box>
             <DIV class="hui_cont ">
             <DIV class="chong mt_10">
-            <DIV class=shu>您的现金帐户余额为： <SPAN class=color_lv>0</SPAN> 元</DIV>
+            <DIV class=shu>您的现金帐户余额为： <SPAN class=color_lv>${webuser.money}</SPAN> 元</DIV>
             <DIV class=ch><A 
             href="http://member.chinaacc.com/selectcourse/selectPayStyle.shtm"><IMG 
             src="images/xj.gif"></A></DIV></DIV>
@@ -215,8 +218,16 @@ src="images/left_menu_dpic.gif"></DIV></DIV>
                </DIV>
                 <DIV class=nr>
                 <UL></UL></DIV>
-                <DIV class="zan_w mt_10">您好，暂无记录！</DIV>
-                </DIV></DIV></DIV>
+                <div id="plist">
+               
+               </div>
+                <div id="pfoot">
+               
+               </div>
+                
+                </DIV>
+                
+                </DIV></DIV>
        </div>
        
        

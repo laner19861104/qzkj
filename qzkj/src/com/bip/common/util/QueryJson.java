@@ -24,6 +24,8 @@ public class QueryJson {
 	private Integer total;
 	private List rows;
 	private List footer;
+	private int row;
+	private int page;
 public QueryJson(Integer total,List rows)
 {
 	this.total=total;
@@ -34,5 +36,17 @@ public QueryJson(Integer total,List rows,List footer)
 	this.total=total;
 	this.rows=rows;
 	this.footer=footer;
+}
+public int getRow() {
+	return row;
+}
+public void setRow(int row) {
+	this.row = row;
+}
+public int getPage() {
+	return page;
+}
+public void setPage(int page) {
+	this.page = page;
 }
 }
