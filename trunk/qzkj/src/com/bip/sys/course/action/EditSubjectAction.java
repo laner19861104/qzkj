@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 import com.bip.common.action.baseAction;
 import com.bip.common.util.ControllerUtil;
@@ -13,7 +14,7 @@ import com.bip.common.util.UniContant;
 import com.bip.common.util.resultMsg;
 import com.bip.sys.course.po.JocSubject;
 import com.bip.sys.course.service.SubjectService;
-
+@Controller
 public class EditSubjectAction extends baseAction {
 	private resultMsg msg;
 	
