@@ -23,7 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script src="js/city.js" type="text/javascript"></script>
 </head>
 
-<body onload="init()">
+<body onload="init('${webuser.birthday}')">
 	<div id="ren_top"> 
     	<div id="menu_1">
        		<ul>
