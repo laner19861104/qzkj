@@ -1,17 +1,28 @@
-function init() {
+function init(date) {
+	var str;
+	if(date!=undefined&&date!="")
+		{
+		str=date.split('-');
+		}
 	for ( var i = new Date().getYear(); i > 1920; i--) {
 		var newitem = new Option(i, i);
+		if(i==str[0])
+			newitem.selected='selected';
 		var obj = document.getElementById("year1")
 		obj.options.add(newitem)
 	}
 	for ( var i = 1; i < 13; i++) {
-		var newitem = new Option(i < 10 ? "0" + i : i, i);
+		var newitem = new Option(i < 10 ? "0" + i : i, i < 10 ? "0" + i : i);
 		var obj = document.getElementById("month1")
+		if(i==str[1])
+			newitem.selected='selected';
 		obj.options.add(newitem)
 	}
 	for ( var i = 1; i < 32; i++) {
-		var newitem = new Option(i < 10 ? "0" + i : i, i);
+		var newitem = new Option(i < 10 ? "0" + i : i,i < 10 ? "0" + i : i);
 		var obj = document.getElementById("date1")
+		if(i==str[2])
+			newitem.selected='selected';
 		obj.options.add(newitem)
 	}
 }
