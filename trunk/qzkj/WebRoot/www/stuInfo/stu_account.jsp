@@ -136,7 +136,7 @@ src="images/left_menu_dpic.gif"></DIV></DIV>
       <li class="TabbedPanelsTab" tabindex="0">账户余额</li>
       <li class="TabbedPanelsTab" tabindex="0">学习卡</li>
       <li class="TabbedPanelsTab" tabindex="0" onclick="getPayRecord(1)">充值</li>
-       <li class="TabbedPanelsTab" tabindex="0">交费记录</li>
+       <li class="TabbedPanelsTab" tabindex="0" onclick="getConRecord(1)">交费记录</li>
     </ul>
     <div class="TabbedPanelsContentGroup">
       <div class="TabbedPanelsContent">
@@ -242,12 +242,20 @@ src="images/left_menu_dpic.gif"></DIV></DIV>
                 <DIV class=jf_box02>交费号</DIV>
                 <DIV class=jf_box01>课程（商品）名称</DIV>
                 <DIV class="jf_box02 text_center">交费金额</DIV>
-                <DIV class="jf_box02 text_center">交费方式</DIV>
+                <DIV class="jf_box02 text_center">交费时间</DIV>
                 </DIV>
                 <DIV class=nr>
                 <UL></UL></DIV>
-                <DIV class="zan_w mt_10">您好，暂无记录！</DIV>
-                </DIV></DIV></DIV>
+                <div id="conlist">
+               
+               </div>
+                <div id="confoot">
+               
+               </div>
+                
+                </DIV>
+                
+                </DIV></DIV>
        </div>
        
        
