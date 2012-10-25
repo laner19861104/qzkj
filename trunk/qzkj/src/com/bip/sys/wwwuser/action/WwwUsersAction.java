@@ -173,7 +173,10 @@ public class WwwUsersAction extends baseAction {
 		String date=this.getRequest().getParameter("date");
 		wuser.setBirthday(year+"-"+month+"-"+date);
 		String[] proSkill=this.getRequest().getParameterValues("proSkill");
-		this.wuser.setProSkill(proSkill.toString());
+		String temp="";
+		for(String t :proSkill)
+			temp+=t+",";
+		this.wuser.setProSkill(temp);
 		this.wwwUsersService.update(wuser);
 		}catch(Exception e)
 		{
@@ -185,12 +188,12 @@ public class WwwUsersAction extends baseAction {
 	}
 	public String upwpwd()
 	{
-//		String oldPwd=Tool.MD5(this.getRequest().getParameter("oldPwd"));
-//		if(!oldPwd.equals(this.getWwwUser().getPassword()))
-//		{
-//			setSmsg("就密码输入错误，请重新输入！");
-//			return "failture";
-//		}
+		String oldPwd=Tool.MD5(this.getRequest().getParameter("oldPwd"));
+		if(!oldPwd.equals(this.getWwwUser().getPassword()))
+		{
+			setSmsg("旧密码输入错误，请重新输入！");
+			return "failture";
+		}
 		this.getWwwUser().setPassword(Tool.MD5(this.getRequest().getParameter("newPwd")));
 		try{
 		this.wwwUsersService.update(this.getWwwUser());
