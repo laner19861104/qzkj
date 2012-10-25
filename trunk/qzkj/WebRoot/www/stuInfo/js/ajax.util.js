@@ -60,7 +60,7 @@ function paynext(page,pages,fn)
 function getConRecord(page)
 {
 	var url="queryConsumptionRecord.do";
-	$('#plist').html('加载中……');
+	$('#conlist').html('加载中……');
 	$.ajax( {
 				type : "POST",
 				url : url,
@@ -75,11 +75,10 @@ function getConRecord(page)
 					for(var i=0;i<msg.rows.length;i++)
 					{
 					str+='<DIV class=bt>'
-               	    str+='<DIV class=fp_box01>'+msg.rows[i].uuid+'</DIV>'
-                    str+='<DIV class="fp_box02 text_center">'+msg.rows[i].money+'</DIV>'
-                    str+='<DIV class="fp_box02 text_center">'+msg.rows[i].payDate+'</DIV>'
-                    str+='<DIV class="fp_box02 text_center">成功</DIV>'
-                    str+='<DIV class="fp_box02 text_center">银行转账</DIV>'
+               	   	str+='<DIV class=jf_box02>'+msg.rows[i].uuid+'</DIV>'
+                    str+='<DIV class=jf_box01>'+msg.rows[i].typename+'</DIV>'
+                    str+='<DIV class="jf_box02 text_center">'+msg.rows[i].money+'</DIV>'
+                    str+='<DIV class="jf_box02 text_center">'+msg.rows[i].conDate+'</DIV>'
                     str+='</DIV>'
 					}
 					var pages=msg.total<10?1:Math.ceil(msg.total/10);
