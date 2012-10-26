@@ -33,7 +33,7 @@
 			reportObj.text("检测中，请稍等...");
 			$.get("registerExists.do", {account: userName, time: Math.random()},
 	  			function(data){
-	    			if(data.success=="false"){
+	    			if(data.success==true){
 	    				reportObj.css("display","none");
 	    				$("#userNameOk").css("display","");
 	    				userNameFlag = true;
@@ -44,7 +44,7 @@
 	    				$("#userNameOk").css("display","none");
 	    				reportObj.text("对不起,这个用户名已注册！");
 	    			}
-	  		});
+	  		}, "json");
 		}else{
 			$("#userNameOk").css("display","none");
 			if(userName!=""){
@@ -259,11 +259,6 @@
 	String.prototype.trim = function(){
 		return this.replace(/(^\s*)|(\s*$)/g, "");
 	};
-	
-	function changeRandCode(){
-		document.getElementById("randcodeImg").src="http://portal.cdeledu.com/auth/randcode.php?id=register&debug=1&time="+Math.random();
-	}
-
 	function checkdata() {
 		var isEnableSubmit = true;
 		do

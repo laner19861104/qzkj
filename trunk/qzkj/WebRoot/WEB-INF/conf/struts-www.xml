@@ -33,6 +33,6 @@
 			<result name="failure" >/www/stuInfo/stu_failure.jsp
 			</result>
 		</action>
-			
+		
 	</package>
 </struts>    

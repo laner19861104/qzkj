@@ -74,7 +74,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         	<dl>
             	<dt>学员代码：</dt>
                 <dd>
-                	<input name="account" type="text" maxlength="20" id="account" tabindex="1" onblur="checkMember()"><span id="userNameOk" style="display: none; "><img src="http://www.chinaacc.com/images/regnew/ok.gif"></span>
+                	<input name="account" type="text" maxlength="20" id="account" tabindex="1" onblur="checkMember()"><span id="userNameOk"  style="display: none;"><img class="martop6" src="images/ok.gif"></span>
                 	<div class="h25"><div id="report" ></div></div>
                 </dd>  
                 <dd class="crt hui">4-20个字符（可以为字母、数字或下划线'_'，不能包含空格），<br>一旦注册成功，用户名不能修改。</dd>              
@@ -84,27 +84,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         	<dl>
             	<dt>密&nbsp;&nbsp;&nbsp;&nbsp;码：</dt>
                 <dd>
-                	<input name="password" type="text" maxlength="20" id="password" tabindex="2" onblur="checkMember()"><span id="userNameOk" style="display: none; "><img src="http://www.chinaacc.com/images/regnew/ok.gif"></span>
-                	<div class="h25"><div id="reportpassword" ></div></div>
+                	<input name="password" type="text" maxlength="20" id="password" tabindex="2" onblur="checkMsg(2,0)"><span id="passwordOk" class="martop6" style="display: none; "><img class="martop6" src="images/ok.gif"></span>
+                	<div class="h25"><div id="reportPassword" ></div></div>
                 </dd>  
-                <dd class="crt hui">密码由4～15位数字或字母组成。</dd>              
+                <dd class="crt hui martop6">密码由4～15位数字或字母组成。</dd>              
             </dl>
         	</div>
         	<div class="conter mid">
         	<dl>
             	<dt>确认密码：</dt>
                 <dd>
-                	<input name="repassword" type="text" maxlength="20" id="repassword" tabindex="3" onblur="checkMember()"><span id="userNameOk" style="display: none; "><img src="http://www.chinaacc.com/images/regnew/ok.gif"></span>
-                	<div class="h25"><div id="reportrepassword"></div></div>
+                	<input name="repassword" type="text" maxlength="20" id="repassword" tabindex="3" onblur="checkMsg(3,0)"><span id="rePasswordOk" style="display: none; "><img class="martop6" src="images/ok.gif"></span>
+                	<div class="h25"><div id="reportRePassword"></div></div>
                 </dd>  
-                <dd class="crt hui">请再输入一遍您上面输入的密码。。</dd>              
+                <dd class="crt hui martop6">请再输入一遍您上面输入的密码。。</dd>              
             </dl>
         	</div>
         	<div class="conter mid">
         	<dl>
             	<dt>真实姓名：</dt>
                 <dd>
-                	<input name="username" type="text" maxlength="20" id="username" tabindex="4" onblur="checkMember()"><span id="userNameOk" style="display: none; "><img src="http://www.chinaacc.com/images/regnew/ok.gif"></span>
+                	<input name="username" type="text" maxlength="20" id="username" tabindex="4" onblur="checkMember()"><span id="userNameOk" style="display: none; "><img class="martop6" src="images/ok.gif"></span>
                 	<div class="h25"><div id="reportusername" ></div></div>
                 </dd>  
                 <dd class="crt hui"></dd>              
@@ -114,8 +114,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         	<dl>
             	<dt>手&nbsp;机&nbsp;号：</dt>
                 <dd>
-                	<input name="tel" type="text" maxlength="20" id="tel" tabindex="5" onblur="checkMember()"><span id="userNameOk" style="display: none; "><img src="http://www.chinaacc.com/images/regnew/ok.gif"></span>
-                	<div class="h25"><div id="reporttel" ></div></div>
+                	<input name="tel" type="text" maxlength="20" id="tel" tabindex="5" onblur="checkMsg(6,0)"><span id="reportMobileOk" class="martop6" style="display: none; "><img class="martop6" src="images/ok.gif"></span>
+                	<div class="h25"><div id="reportMobile" ></div></div>
                 </dd>  
                 <dd class="crt hui martop6" style="color: #C92525;">对找回密码极为重要，请慎重填写并牢记，更好的保护您的帐号安全！</dd>              
             </dl>
@@ -124,8 +124,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         	<dl>
             	<dt>电子邮箱：</dt>
                 <dd>
-                	<input name="email" type="text" maxlength="20" id="email" tabindex="6" onblur="checkMember()"><span id="userNameOk" style="display: none; "><img src="http://www.chinaacc.com/images/regnew/ok.gif"></span>
-                	<div class="h25"><div id="reportemail" ></div></div>
+                	<input name="email" type="text" maxlength="20" id="email" tabindex="6" onblur="checkMsg(7,0)"><span id="reportMailOk" style="display: none; "><img class="martop6" src="images/ok.gif"></span>
+                	<div class="h25"><div id="reportMail" ></div></div>
                 </dd>  
                 <dd class="crt hui martop6">(选择项)请如实填写</dd>              
             </dl>
@@ -134,8 +134,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         	<dl>
             	<dt>QQ号码：</dt>
                 <dd>
-                	<input name="qq" type="text" maxlength="20" id="qq" tabindex="7" onblur="checkMember()"><span id="userNameOk" style="display: none; "><img src="http://www.chinaacc.com/images/regnew/ok.gif"></span>
-                	<div class="h25"><div id="reportqq" ></div></div>
+                	<input name="qq" type="text" maxlength="20" id="qq" tabindex="7" onblur="checkMsg(8,0)"><span id="reportQQOk" style="display: none; "><img class="martop6" src="images/ok.gif"></span>
+                	<div class="h25"><div id="reportQQ" ></div></div>
                 </dd>  
                 <dd class="crt hui martop6">(选择项)请如实填写</dd>              
             </dl>
@@ -144,8 +144,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         	<dl>
             	<dt>验&nbsp;证&nbsp;码：</dt>
                 <dd style="width:80px">
-                	<input name="qq" type="text" maxlength="20" id="qq" style="width: 70px;" tabindex="7" onblur="checkMember()"><span id="userNameOk" style="display: none; "><img src="http://www.chinaacc.com/images/regnew/ok.gif"></span>
-                	<div class="h25"><div id="reportqq" ></div></div>
+                	<input name="validateNumber" type="text" maxlength="20" id="validateNumber" style="width: 70px;" tabindex="7" onblur="checkMsg(4,0)">
+                	<div class="h25"><div id="reportRandcode" ></div></div>
                 </dd>
                 <dd style="width: 120px">
                 <img name="verifyCodeImg" id="verifyCodeImg"  src="/qzkj/VerifyCodeServlet.action"  align="top" />
