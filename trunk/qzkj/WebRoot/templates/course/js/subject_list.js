@@ -30,7 +30,6 @@ $(function() {
 		{title : '科目名称', field : 'name', width:200, align:'left', sortable:true},
 		{title : '价格',	field : 'cnres01', width : 200,	align:'right', sortable:true}
 		] ],
-		columns : [ [] ],
 		pagination : true,
 		rownumbers : true,
 		toolbar : gettoolbar()
@@ -91,25 +90,105 @@ function add() {
 		}
 	});
 }
+var id;
 function showedit() {
 	var select = $('#tList').datagrid('getSelections');
 	if (select.length != 1) {
 		$.messager.alert('警告', '请选择一行数据!', 'warning');
 		return;
 	}
-	jQuery.getJSON(urls['get'], {id:select[0].id}, function(obj) {
+	id = select[0].id;
+	jQuery.getJSON(urls['get'], {id:id}, function(obj) {
 			fillForm(obj);
 		}
 	);
-	$('#view').window('open');
+	$('#mForm').show();
+	$('#mForm').appendTo('#ee');
+	$('#edit').window('open');
+}
+function edit() {
+	if (!validateCheck()) {return;}
+	
+	$('#mForm').form('submit', {
+		url : urls['edit']+"?id="+id,
+		onSubmit : function() {
+			return $('#mForm').form('validate');
+		},
+		type : "POST", // 设置请求类型为"POST"，默认为"GET"
+		success : function(msg) {
+			var message = eval("(" + msg + ")");
+			if (message.success == true) {
+				$('#edit').window('close');
+				$.messager.alert('提示', '修改信息成功!', 'info', function() {
+					$('#tList').datagrid('reload');
+					displayMsg();
+				});
+				$('#mForm').form('clear');
+				return;
+			} else {
+				$.messager.alert('警告', message.info, 'warning');
+				return;
+			}
+		}
+	});
+}
+function view() {
+	var select = $('#tList').datagrid('getSelections');
+	if (select.length != 1) {
+		$.messager.alert('警告', '请选择一行数据!', 'warning');
+		return;
+	}
+	id = select[0].id;
+	jQuery.getJSON(urls['get'], {id:id}, function(obj) {
+			fillForm(obj);
+		}
+	);
 	$('#mForm').show();
 	$('#mForm').appendTo('#dd');
+	$('#view').window('open');
 }
-function showquery() {}
-function view() {}
-function edit() {}
-function del() {}
-
+function del() {
+	var ids;
+	var selects = $('#tList').datagrid('getSelections');
+	if (null == selects || 0 == selects.length) {
+		$.messager.alert('警告', '请选择要删除的数据!', 'warning');
+		return;
+	}
+	$.messager.confirm('提示', '确认删除么?', function(flag) {
+		if (flag) {
+			ids = selects[0].id;
+			for (var i = 1; i < selects.length; i++) {
+				ids = ids + ',' + selects[i].id;
+			}
+			$.ajax( {
+				type : "POST",
+				url : urls['del'],
+				data : "ids=" + ids,
+				dataType : "json",
+				success : function callback(message) {
+					if (message.success == false) {
+						$.messager.alert('提示', message.info, 'info');
+						return;
+					}
+					$.messager.alert('提示', '删除信息成功!', 'info');
+					$('#tList').datagrid('clearSelections');
+					$('#tList').datagrid('reload');
+				},
+				error : function() {
+					$.messager.alert('警告', '异步执行错误!', 'warning');
+				}
+			});
+		}
+	});
+}
+function showquery() {
+	$('#query').window('open');
+}
+function query() {
+	var queryParams = $('#tList').datagrid('options').queryParams;
+	queryParams.conditions = getCondition();
+	$('#tList').datagrid('reload');
+}
 function close1() {
 	$('#add').window('close');
 }

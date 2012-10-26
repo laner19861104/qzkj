@@ -86,6 +86,69 @@ function appCondition(xp,add)
 					});
 		return "conditions=1|1"+encodeURIComponent(encodeURIComponent(str+(add||"")));
 }
+function getCondition(xp,add)
+{
+	var str="";
+		$(xp==undefined?"[id^='s_']":xp)
+			.each(
+					function(i, a) {
+						if ($("#" + a.id).attr("class") != undefined) {
+							if ($("#" + a.id).attr("class").indexOf(
+									'easyui-datebox') != -1) {
+								if ($("#" + a.id).datebox('getValue') != "")
+									str += "$" + a.id.split("_")[1] + "|"
+											+ $("#" + a.id).datebox('getValue');
+							}else if ($("#" + a.id).attr("class").indexOf(
+									'datebox-f') != -1) {
+								if ($("#" + a.id).datebox('getValue') != "")
+									str += "$" + a.id.split("_")[1] + "|"
+											+ $("#" + a.id).datebox('getValue');
+							}else if ($("#" + a.id).attr("class").indexOf(
+									'easyui-numberbox') != -1) {
+								if ($("#" + a.id).numberbox('getValue') != "")
+									str += "$"
+											+ a.id.split("_")[1]
+											+ "|"
+											+ $("#" + a.id).numberbox(
+													'getValue');
+							} else if ($("#" + a.id).attr("class").indexOf(
+									'combotree') != -1) {
+								if ($("#" + a.id).combotree('getValues') != "")
+									str += "$"
+											+ a.id.split("_")[1]
+											+ "|"
+											+ $("#" + a.id).combotree(
+													'getValues');
+							} else if ($("#" + a.id).attr("class").indexOf(
+									'easyui-combobox') != -1) {
+								if ($("#" + a.id).combobox('getValues') != "")
+									str += "$"
+											+ a.id.split("_")[1]
+											+ "|"
+											+ $("#" + a.id).combobox(
+													'getValues');
+							} else if ($("#" + a.id).attr("class").indexOf(
+									'easyui-combogrid') != -1) {
+								if ($("#" + a.id).combogrid('getValues') != "")
+									str += "$"
+											+ a.id.split("_")[1]
+											+ "="
+											+ $("|" + a.id).combogrid(
+													'getValues');
+							} else {
+								if ($("#" + a.id).val() != "")
+									str += "$" + a.id.split("_")[1] + "|"
+											+ $("#" + a.id).val();
+							}
+
+						} else {
+							if ($("#" + a.id).val() != "")
+								str += "$" + a.id.split("_")[1] + "|" + $("#" + a.id).val();
+						}
+
+					});
+		return "1|1"+encodeURIComponent(encodeURIComponent(str+(add||"")));
+}
 /**
  * 自动将json填充表单
  * @param {Object} json
