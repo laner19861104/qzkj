@@ -205,6 +205,22 @@ public class WwwUsersAction extends baseAction {
 		}
 		return "success";
 	}
+	public String registerExists()
+	{
+		String account=this.getRequest().getParameter("account");
+		if(account==null&&account.equals(""))
+		{
+			msg=new resultMsg(false, "");
+		}
+		if(this.wwwUsersService.getUserbyAccount(account)!=null)
+		{
+			msg=new resultMsg(false, "");
+		}else
+		{
+			msg=new resultMsg(true, "");
+		}
+		return "success";
+	}
 	public WwwUsers getInstance() {
 		return instance;
 	}
