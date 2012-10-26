@@ -340,3 +340,39 @@ h1 {
 #main #right .zuo .tese {
 	height: 215px;
 }
+.h25 { height:25px}
+
+#reg{
+	float: center;
+	width: 958px;
+	height: 650px;
+	border:1px solid #4bb2f2
+}
+.martop6 {
+margin-top: 6px;
+}
+.left
+	{
+	float:left;
+	}
+.hui
+	{
+	color: #B2B2B2;
+	}
+.mid { margin:0 auto; overflow:hidden;}
+#reg .maintop { width:900px; height:40px; line-height:40px; margin-left:auto; margin-right:auto; margin-top:10px; border-bottom:1px #C7E7FE solid; margin-bottom:20px}
+#reg .maintop .left { margin-top:4px; padding-left:14px; margin-bottom: 3px;}
+#reg .maintop .right { margin-top:9px; padding-right:14px ; margin-bottom: 3px; float:right; color: #B2B2B2;}
+#reg a { text-decoration:underline;}
+
+/*快速注册*/
+.conter { width:650px; overflow:hidden;text-align:left; margin-top:2px}
+.conter input { border:1px #ABAFB0 solid; height:25px; line-height:25px; font-size:14px; padding:0 3px; width:164px; margin-right:5px}
+.conter dt { font-size:14px; width:70px; float:left; line-height:28px;margin-top: 4px;}
+.conter dd { float:left; width:200px;}
+.conter .crt { width:380px; line-height:16px;}
+.conter .note { width:150px; height:21px; line-height:21px; border:1px #EFDCBB solid; color:#D06401; PADDING-LEFT: 20px; PADDING-TOP: 2px; background:url(../images/note.gif) no-repeat 2px #FFFFE6;}
+.conter .note2 { width:165px; height:21px; line-height:21px; border:1px #EFDCBB solid; color:#D06401; PADDING-LEFT: 5px; PADDING-TOP: 2px; background: no-repeat 2px #FFFFE6;}
+.conter .msg2 {
+	width:150px; height:21px; line-height:21px; BACKGROUND-POSITION: 2px 2px; BORDER: #1A8EF1 1px solid; PADDING-LEFT: 20px; BACKGROUND-IMAGE: url(/register/images/warning.gif); PADDING-TOP: 2px; BACKGROUND-REPEAT: no-repeat; BACKGROUND-COLOR: #FFF
+}
