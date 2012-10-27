@@ -61,7 +61,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--end menu-->
   	<div class="clear"></div>
     <div id="main"><!--中间开始-->
-    <form method="post" action="fillUser.do" id="form1" onsubmit="return checkdata()">
+    <form method="post" action="<%=basePath%>regEditUser.do" id="form1" ">
     	<div id="reg" ><!--左侧-->
         	<div class="maintop">
         		<div class="left">
@@ -78,7 +78,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <div class="sconter mid">
         	<dl>
             	<dt>手机号码：</dt>
-                <dd><input id="wuser.tel" type="text" name="mobilePhone" class="put"  value=""></dd>
+                <dd><input id="tel" type="text" name="wuser.tel" class="put"  value=""></dd>
                 </dl>
            </div>
           <div class="sconter mid">
@@ -194,7 +194,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										
 							</select> 省<span class="hui">（直辖市）</span> 
 					<select name="city" id="city">
-						<option value="" selected="">选择市区</option>
 					</select> 市<span class="hui">（地区）</span>
 				</dd>
             </dl>
@@ -221,17 +220,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         	<dl>
             	<dt>会计资质：</dt>
                 <dd class="zizhi">
-                	<label><input type="checkbox" name="proSkill" value="cj"> 
+                	<label><input type="checkbox" name="proSkill" value="1"> 
                   初级职称</label>
-                    <label><input type="checkbox" name="proSkill" value="zj">
+                    <label><input type="checkbox" name="proSkill" value="2">
                     中级职称</label> 
-                    <label><input type="checkbox" name="proSkill" value="gj"> 
+                    <label><input type="checkbox" name="proSkill" value="3"> 
                     高级职称</label> 
-                    <label><input type="checkbox" name="proSkill" value="zk"> 
+                    <label><input type="checkbox" name="proSkill" value="4"> 
                     注册会计师</label> 
-                    <label><input type="checkbox" name="proSkill" value="zp"> 
+                    <label><input type="checkbox" name="proSkill" value="5"> 
                     注册评估师</label> 
-                    <label><input type="checkbox" name="proSkill" value="zs"> 
+                    <label><input type="checkbox" name="proSkill" value="6"> 
                     注册税务师</label>
                 </dd>
             </dl>
@@ -239,17 +238,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <div class="sconter mid">
         	<dl>
             	<dt>工作单位：</dt>
-                <dd><input id="unitName" type="text" maxlength="100" name="wuser.workFor" class="put" onclick="clearContentTwo();"></dd>
+                <dd><input id="unitName" type="text" maxlength="100" name="wuser.workFor" class="put" onclick="this.select();"></dd>
                 <dt class="mlt50">通讯地址：</dt>
-                <dd><input id="mailAddr" type="text" maxlength="100" name="wuser.postAddress" class="put" onclick="clearContentTwo();"></dd>
+                <dd><input id="mailAddr" type="text" maxlength="100" name="wuser.postAddress" class="put" onclick="this.select();"></dd>
             </dl>
         </div>
         <div class="sconter mid">
         	<dl>
             	<dt>邮政编码：</dt>
-                <dd><input id="zipCode" type="text" maxlength="6" name="wuser.postNo" class="put" onclick="clearContentTwo();"></dd>
+                <dd><input id="zipCode" type="text" maxlength="6" name="wuser.postNo" class="put" onclick="this.select();"></dd>
                 <dt class="mlt50">身份证号：</dt>
-                <dd><input id="cardID" type="text" maxlength="18" name="wuser.id" class="put" onclick="clearContentTwo();"></dd>
+                <dd><input id="cardID" type="text" maxlength="18" name="wuser.id" class="put" onclick="this.select();"></dd>
             </dl>
         </div>
         <div class="sconter mid">
@@ -259,10 +258,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         	<dl>
             	<dt>&nbsp;</dt>
                 <dd class="zizhi"> 
-	                <input name="uid" type="hidden" value="32403187">
-	    			<input name="userName" type="hidden" value="zjzhdll">
 	                <input type="submit" value="保　存" class="butom">　　
-	                <input type="button" value="跳　过" class="butom" onclick="window.location='/member/registerInfo.shtm?uid=32403187'">
+	                <input type="submit" value="跳　过" class="butom">
                 </dd>
             </dl>
       </div>

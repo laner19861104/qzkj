@@ -348,6 +348,12 @@ h1 {
 	height: 650px;
 	border:1px solid #4bb2f2
 }
+#reg_success{
+	float: center;
+	width: 958px;
+	height: 550px;
+	border:1px solid #4bb2f2
+}
 .martop6 {
 margin-top: 6px;
 }
@@ -397,3 +403,8 @@ margin-top: 6px;
 .line{ width:770px; border-bottom:1px #7F7F7F dashed; height:1px; margin-left:20px; margin-top:20px}
 .mlt50 { margin-left:50px}
 
+/*注册成功*/
+.zhuce { background:url(../images/zcok.gif) no-repeat; width:436px; height:163px;}
+.zhuce .zhuceok { margin-top:110px; width:400px; text-align:center}
+.zhuceft { font-size:14px; line-height:30px; color:#3F3F3F;  width:510px; margin-left:300px; text-align:left}
+.zhuceft a{ font-size:14px}
