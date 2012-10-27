@@ -374,5 +374,6 @@ margin-top: 6px;
 .conter .note { width:150px; height:21px; line-height:21px; border:1px #EFDCBB solid; color:#D06401; PADDING-LEFT: 20px; PADDING-TOP: 2px; background:url(../images/note.gif) no-repeat 2px #FFFFE6;}
 .conter .note2 { width:165px; height:21px; line-height:21px; border:1px #EFDCBB solid; color:#D06401; PADDING-LEFT: 5px; PADDING-TOP: 2px; background: no-repeat 2px #FFFFE6;}
 .conter .msg2 {
-	width:150px; height:21px; line-height:21px; BACKGROUND-POSITION: 2px 2px; BORDER: #1A8EF1 1px solid; PADDING-LEFT: 20px; BACKGROUND-IMAGE: url(/register/images/warning.gif); PADDING-TOP: 2px; BACKGROUND-REPEAT: no-repeat; BACKGROUND-COLOR: #FFF
+	width:150px; height:21px; line-height:21px; BACKGROUND-POSITION: 2px 2px; BORDER: #1A8EF1 1px solid; PADDING-LEFT: 20px; BACKGROUND-IMAGE: url(../images/warning.gif); PADDING-TOP: 2px; BACKGROUND-REPEAT: no-repeat; BACKGROUND-COLOR: #FFF
 }
+.infotip { width:770px; border:1px #EEE8D8 solid; height:30px; margin-left:20px; line-height:30px; text-align:left; background:#FFFEE9 url(../images/ok4.gif) no-repeat 30px ; margin-bottom:20px}
