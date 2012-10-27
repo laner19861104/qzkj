@@ -177,6 +177,10 @@
 			<result type="json">
 			</result>
 		</action>
+		<action name="getsubjecttree" class="sysTreeAction" method="getSubjectTree">
+			<result type="json">
+			</result>
+		</action>
 		<action name="getdeptgrid" class="sysTreeAction" method="getDeptGrid">
 			<result type="json">
 			</result>
