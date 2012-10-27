@@ -11,13 +11,11 @@
 		com.mysql.jdbc.Driver
 	</property>
 	<!-- 连接URL -->
-	<property name="connection.url">
-		jdbc:mysql://db4free.org:3306/qzkj?characterEncoding=UTF-8
-	</property>
+	<property name="connection.url">jdbc:mysql://localhost:3306/db_movie?characterEncoding=UTF-8</property>
 	<!-- 用户名 -->
-	<property name="connection.username">qzkj</property>
+	<property name="connection.username">root</property>
 	<!-- 密码 -->
-	<property name="connection.password">zhujiang0007</property>
+	<property name="connection.password">root</property>
 	<!-- 自动提交 -->
 	<property name="connection.autocommit">true</property>
 
