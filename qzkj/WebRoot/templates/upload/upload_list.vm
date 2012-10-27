@@ -11,6 +11,12 @@
 </head>
 
 <body>
-<div><input id="file_upload_1" type="file" name="file" /></div>
+
+
+			<table border="0" cellspacing="3" cellpadding="0" class='list_001'><tr>
+          	<td><input id="video1" name="video1" type="text" class="input_text" size="20"  maxlength="50" /></td>
+          	<td><div><input id="file_upload_1" type="file" name="file_upload" /></div></td>
+          	<td><input id="video1" name="video1" type="text" class="input_text" size="20"  maxlength="50" /></td>
+          	</tr></table>
 </body>
 </html>

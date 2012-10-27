@@ -13,13 +13,17 @@
 <script language="javascript" src="templates/js/util.js" ></script>
 <script language="javascript" src="js/easyui_tools.js" ></script>
 <script type="text/javascript" src="templates/course/js/course_list.js"></script>
+
+<link href="templates/uploadify-v3.1/uploadify.css" rel="stylesheet" type="text/css" />
+<script src="templates/uploadify-v3.1/jquery.uploadify-3.1.min.js"></script>
+<script src="templates/course/js/upload_list.js"></script>
 </head>
 <body class="easyui-layout">
 <div region="center" title="课程管理>>科目管理" split="false" style="height:500px;padding:0px;">
   <table id="tList">
   </table>
   <form id="mForm" styel="display:none;" method="post" action="">
-    <div>
+    <div id="divhasupload">
       <table width="100%" border="0" cellpadding="0" cellspacing="0" class="list">
         <tr>
           <th>编号：</th>
@@ -41,15 +45,36 @@
         </tr>
         <tr>
           <th>视频：</th>
-          <td colspan='3'><input id="video1" name="video1" type="text" class="input_text" size="20"  maxlength="50" />(<font class="hong">*</font>)</td>
+          <td colspan='3'>
+          	<table border="0" cellspacing="3" cellpadding="0" class='list_001'><tr>
+          	<td style="boder-right:0"><input id="video1" name="video1" type="text" class="input_text" size="20"  maxlength="50" /></td>
+          	<td><div style="margin:0 0 -10px 0;"><input id="file_upload_1" type="file" name="file_upload" /></div></td>
+          	<td><div id='jdt_1' style="margin: auto 10px auto 10px; background-color:#009; height:4px; width:0px; border-color:#999; border-width:1px;"></div></td>
+          	<td><div id='jd_1'></div></td>
+          	</tr></table>
+          </td>
         </tr>
         <tr>
           <th>视频：</th>
-          <td colspan='3'><input id="video2" name="video2" type="text" class="input_text" size="20"  maxlength="50" />(<font class="hong">*</font>)</td>
+          <td colspan='3'>
+          <table border="0" cellspacing="3" cellpadding="0" class='list_001'><tr>
+          	<td style="boder-right:0"><input id="video1" name="video1" type="text" class="input_text" size="20"  maxlength="50" /></td>
+          	<td><div style="margin:0 0 -10px 0;"><input id="file_upload_2" type="file" name="file_upload" /></div></td>
+          	<td><div id='jdt_2' style="margin: auto 10px auto 10px; background-color:#009; height:4px; width:0px; border-color:#999; border-width:1px;"></div></td>
+          	<td><div id='jd_2'></div></td>
+          	</tr></table>
+          </td>
         </tr>
         <tr>
           <th>视频：</th>
-          <td colspan='3'><input id="video3" name="video3" type="text" class="input_text" size="20"  maxlength="50" />(<font class="hong">*</font>)</td>
+          <td colspan='3'>
+          <table border="0" cellspacing="3" cellpadding="0" class='list_001'><tr>
+          	<td style="boder-right:0"><input id="video1" name="video1" type="text" class="input_text" size="20"  maxlength="50" /></td>
+          	<td><div style="margin:0 0 -10px 0;"><input id="file_upload_3" type="file" name="file_upload" /></div></td>
+          	<td><div id='jdt_3' style="margin: auto 10px auto 10px; background-color:#009; height:4px; width:0px; border-color:#999; border-width:1px;"></div></td>
+          	<td><div id='jd_3'></div></td>
+          	</tr></table>
+          </td>
         </tr>
         <tr>
           <th>标题图：</th>
