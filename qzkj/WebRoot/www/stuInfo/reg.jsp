@@ -61,6 +61,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--end menu-->
   	<div class="clear"></div>
     <div id="main"><!--中间开始-->
+    <form method="post" action="<%=basePath%>regUser.do" id="form1" onsubmit="return checkdata()">
     	<div id="reg" ><!--左侧-->
         	<div class="maintop">
         		<div class="left">
@@ -94,7 +95,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         	<dl>
             	<dt>确认密码：</dt>
                 <dd>
-                	<input name="repassword" type="text" maxlength="20" id="repassword" tabindex="3" onblur="checkMsg(3,0)"><span id="rePasswordOk" style="display: none; "><img class="martop6" src="images/ok.gif"></span>
+                	<input name="rePassword" type="text" maxlength="20" id="rePassword" tabindex="3" onblur="checkMsg(3,0)"><span id="rePasswordOk" style="display: none; "><img class="martop6" src="images/ok.gif"></span>
                 	<div class="h25"><div id="reportRePassword"></div></div>
                 </dd>  
                 <dd class="crt hui martop6">请再输入一遍您上面输入的密码。。</dd>              
@@ -155,7 +156,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         	</div>
         	<div class="conter mid">
         		<div style="float: left">
-        		<input type="image" src="images/kszhuce.gif" style="border:none; margin-left:70px; width:132px; height:30px" tabindex="8">
+        		<input type="image" src="images/kszhuce.gif" onclick="javascript:document.form1.submit()" style="border:none; margin-left:70px; width:132px; height:30px" tabindex="8">
         		<input id="article" tabindex="9" type="checkbox" name="article" style="width:auto; border:none;margin-bottom: 5px">
         		</div>
         		<div style="display:inline; float:right; padding-right:194px; padding-top:11px; _padding-top:15px;">我已阅读并接受
@@ -166,7 +167,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         	</div>
         </div><!--左侧结束-->
    
-    
+    </form>
     </div><!--中间开始结束-->
     <script src="js/reg_check.js" type="text/javascript"  ></script>
     <div class="clear mt8"></div>

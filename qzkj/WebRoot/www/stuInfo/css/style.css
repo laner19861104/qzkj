@@ -359,7 +359,7 @@ margin-top: 6px;
 	{
 	color: #B2B2B2;
 	}
-.mid { margin:0 auto; overflow:hidden;}
+.mid { margin:0 auto; overflow:hidden; }
 #reg .maintop { width:900px; height:40px; line-height:40px; margin-left:auto; margin-right:auto; margin-top:10px; border-bottom:1px #C7E7FE solid; margin-bottom:20px}
 #reg .maintop .left { margin-top:4px; padding-left:14px; margin-bottom: 3px;}
 #reg .maintop .right { margin-top:9px; padding-right:14px ; margin-bottom: 3px; float:right; color: #B2B2B2;}
@@ -376,4 +376,24 @@ margin-top: 6px;
 .conter .msg2 {
 	width:150px; height:21px; line-height:21px; BACKGROUND-POSITION: 2px 2px; BORDER: #1A8EF1 1px solid; PADDING-LEFT: 20px; BACKGROUND-IMAGE: url(../images/warning.gif); PADDING-TOP: 2px; BACKGROUND-REPEAT: no-repeat; BACKGROUND-COLOR: #FFF
 }
+
+
+
+.sconter {height:30px;}
+.sconter { width:700px; overflow:hidden;text-align:left; margin-top:10px}
+.sconter {}
+.sconter .put { border:1px #7E9DB9 solid; height:21px; line-height:21px; font-size:14px; padding:0 3px; margin-right:5px; width:170px}
+.sconter dt { font-size:14px; width:100px; float:left; line-height:28px; text-align:right;}
+.sconter dd { float:left; width:200px;}
+.sconter .zizhi { width:600px; font-size:14px; line-height:21px}
+.sconter .zonghe { width:600px; font-size:14px; line-height:28px; height:28px}
+.sconter .dft { width:600px; font-size:12px; line-height:19px}
+.sconter .zizhi input { border:none}
 .infotip { width:770px; border:1px #EEE8D8 solid; height:30px; margin-left:20px; line-height:30px; text-align:left; background:#FFFEE9 url(../images/ok4.gif) no-repeat 30px ; margin-bottom:20px}
+.infotip .font {margin-left:70px; color:#CD6600; margin-top:2px; }
+.butom { background:url(../images/butom.gif) no-repeat; width:101px; height:30px; line-height:33px; padding-left:15px; color:#0750D3; font-size:14px; cursor:pointer; border:0}
+
+.bord {border:1px #7E9DB9 solid}
+.line{ width:770px; border-bottom:1px #7F7F7F dashed; height:1px; margin-left:20px; margin-top:20px}
+.mlt50 { margin-left:50px}
+
