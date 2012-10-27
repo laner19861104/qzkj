@@ -1,7 +1,5 @@
 package com.bip.sys.course.po;
 
-import com.bip.common.upload.po.JocFile;
-
 public class JocCourse implements java.io.Serializable {
 
 	/**
@@ -10,14 +8,16 @@ public class JocCourse implements java.io.Serializable {
 	private static final long serialVersionUID = 4869989997155893851L;
 	private Integer id;
 	private String code;
-	private JocFile video1;
-	private JocSubject subject;
-	private JocFile video3;
-	private JocFile video2;
+	private String video1;
+	private String subjectCode;
+	private String video3;
+	private String video2;
 	private String name;
 	private Integer cost;
 	private String titleimage;
 	private String discription;
+	
+	private String subjectName;
 	public JocCourse() {
 		super();
 	}
@@ -25,14 +25,38 @@ public class JocCourse implements java.io.Serializable {
 		super();
 		this.id = id;
 	}
-	public JocCourse(Integer id, String code, JocFile video1,
-			JocSubject subject, JocFile video3, JocFile video2, String name,
+	public String getVideo1() {
+		return video1;
+	}
+	public void setVideo1(String video1) {
+		this.video1 = video1;
+	}
+	public String getSubjectCode() {
+		return subjectCode;
+	}
+	public void setSubjectCode(String subjectCode) {
+		this.subjectCode = subjectCode;
+	}
+	public String getVideo3() {
+		return video3;
+	}
+	public void setVideo3(String video3) {
+		this.video3 = video3;
+	}
+	public String getVideo2() {
+		return video2;
+	}
+	public void setVideo2(String video2) {
+		this.video2 = video2;
+	}
+	public JocCourse(Integer id, String code, String video1,
+			String subjectCode, String video3, String video2, String name,
 			Integer cost, String titleimage, String discription) {
 		super();
 		this.id = id;
 		this.code = code;
 		this.video1 = video1;
-		this.subject = subject;
+		this.subjectCode = subjectCode;
 		this.video3 = video3;
 		this.video2 = video2;
 		this.name = name;
@@ -45,30 +69,6 @@ public class JocCourse implements java.io.Serializable {
 	}
 	public void setId(Integer id) {
 		this.id = id;
-	}
-	public JocFile getVideo1() {
-		return video1;
-	}
-	public void setVideo1(JocFile video1) {
-		this.video1 = video1;
-	}
-	public JocSubject getSubject() {
-		return subject;
-	}
-	public void setSubject(JocSubject subject) {
-		this.subject = subject;
-	}
-	public JocFile getVideo3() {
-		return video3;
-	}
-	public void setVideo3(JocFile video3) {
-		this.video3 = video3;
-	}
-	public JocFile getVideo2() {
-		return video2;
-	}
-	public void setVideo2(JocFile video2) {
-		this.video2 = video2;
 	}
 	public String getName() {
 		return name;
@@ -99,5 +99,11 @@ public class JocCourse implements java.io.Serializable {
 	}
 	public void setCode(String code) {
 		this.code = code;
+	}
+	public String getSubjectName() {
+		return subjectName;
+	}
+	public void setSubjectName(String subjectName) {
+		this.subjectName = subjectName;
 	}
 }

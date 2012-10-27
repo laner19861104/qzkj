@@ -6,7 +6,6 @@ import java.util.List;
 
 import org.springframework.dao.DataAccessException;
 
-import com.bip.common.util.PaginationSupport;
 import com.bip.common.util.QueryJson;
 import com.bip.sys.course.po.JocSubject;
 
