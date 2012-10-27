@@ -12,7 +12,7 @@
 <script type="text/javascript" src="templates/jquery-easyui-1.2.5/jquery.easyui.min.js"></script>
 <script language="javascript" src="templates/js/util.js" ></script>
 <script language="javascript" src="js/easyui_tools.js" ></script>
-<script type="text/javascript" src="templates/course/js/subject_list.js"></script>
+<script type="text/javascript" src="templates/course/js/course_list.js"></script>
 </head>
 <body class="easyui-layout">
 <div region="center" title="课程管理>>科目管理" split="false" style="height:500px;padding:0px;">
@@ -30,8 +30,26 @@
           <td colspan='3'><input id="name" name="name" type="text" class="input_text" size="20"  maxlength="50" />(<font class="hong">*</font>)</td>
         </tr>
         <tr>
+          <th>科目：</th>
+          <td colspan='3'>
+          	<select class="easyui-combotree" id="subjectCode" name="subjectCode" url="getsubjecttree.action" style="width:138px;"></select>
+          </td>
+        </tr>
+        <tr>
           <th>价格：</th>
           <td colspan='3'><input id="cost" name="cost" type="text" class="input_text" size="20"  maxlength="50" />(<font class="hong">*</font>)</td>
+        </tr>
+        <tr>
+          <th>视频：</th>
+          <td colspan='3'><input id="video1" name="video1" type="text" class="input_text" size="20"  maxlength="50" />(<font class="hong">*</font>)</td>
+        </tr>
+        <tr>
+          <th>视频：</th>
+          <td colspan='3'><input id="video2" name="video2" type="text" class="input_text" size="20"  maxlength="50" />(<font class="hong">*</font>)</td>
+        </tr>
+        <tr>
+          <th>视频：</th>
+          <td colspan='3'><input id="video3" name="video3" type="text" class="input_text" size="20"  maxlength="50" />(<font class="hong">*</font>)</td>
         </tr>
         <tr>
           <th>标题图：</th>
@@ -79,8 +97,10 @@
 	          <td colspan='3'><input id="s_name" name="name" type="text" class="input_text" size="20"  maxlength="50" /></td>
 	        </tr>
 	        <tr>
-	          <th>价格：</th>
-	          <td colspan='3'><input id="s_cost" name="cost" type="text" class="input_text" size="20"  maxlength="50" /></td>
+	          <th>科目：</th>
+	          <td colspan='3'>
+	          	<select class="easyui-combotree" id="s_subjectCode" name="subjectCode" url="getsubjecttree.action" style="width:138px;"></select>
+	          </td>
 	        </tr>
           </table>
         </div>
