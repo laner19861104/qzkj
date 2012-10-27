@@ -55,5 +55,14 @@
         <property name="subjectName" type="java.lang.String"
              formula="(select t.name from www_subject t where t.code=subject_code )" >
         </property>
+        <property name="cnvideo1" type="java.lang.String"
+             formula="(select t.realname from www_file t where t.uuid=video1 )" >
+        </property>
+        <property name="cnvideo2" type="java.lang.String"
+             formula="(select t.realname from www_file t where t.uuid=video2 )" >
+        </property>
+        <property name="cnvideo3" type="java.lang.String"
+             formula="(select t.realname from www_file t where t.uuid=video3 )" >
+        </property>
     </class>
 </hibernate-mapping>

@@ -18,6 +18,9 @@ public class JocCourse implements java.io.Serializable {
 	private String discription;
 	
 	private String subjectName;
+	private String cnvideo1;
+	private String cnvideo2;
+	private String cnvideo3;
 	public JocCourse() {
 		super();
 	}
@@ -105,5 +108,23 @@ public class JocCourse implements java.io.Serializable {
 	}
 	public void setSubjectName(String subjectName) {
 		this.subjectName = subjectName;
+	}
+	public String getCnvideo1() {
+		return cnvideo1;
+	}
+	public void setCnvideo1(String cnvideo1) {
+		this.cnvideo1 = cnvideo1;
+	}
+	public String getCnvideo2() {
+		return cnvideo2;
+	}
+	public void setCnvideo2(String cnvideo2) {
+		this.cnvideo2 = cnvideo2;
+	}
+	public String getCnvideo3() {
+		return cnvideo3;
+	}
+	public void setCnvideo3(String cnvideo3) {
+		this.cnvideo3 = cnvideo3;
 	}
 }
