@@ -54,7 +54,8 @@ public String login()
 	}
     
 	if ("".equals(this.getAccount()) || "".equals(this.getPassword())) {
-		setMessage("用户名、密码不能为空，请输入！");
+		setMessage("false");
+		this.getRequest().setAttribute("message", "false");
 		return "failure";
 	}
 	

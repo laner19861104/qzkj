@@ -93,9 +93,15 @@ public class WwwUsersAction extends baseAction {
 	}
 	public String add() {
 		try {
-			/*
-			 * 将页面值转换成po对象
-			 */
+			String account=this.getRequest().getParameter("account");
+			this.getRequest().setAttribute("account", account);
+			String msgverifycode=(String)this.getSession().getAttribute("verifyCode");
+			if(this.getVerifycode()==null||!this.getVerifycode().equalsIgnoreCase(msgverifycode))
+			{
+				this.getRequest().setAttribute("smsg","false");
+				return "failure";
+			}
+			
 			Map map = new HashMap();
 			map = ControllerUtil.getRequestParameterMap(this.getRequest());
 			SqlUtil sqlUtil = new SqlUtil();
@@ -177,9 +183,36 @@ public class WwwUsersAction extends baseAction {
 		wuser.setBirthday(year+"-"+month+"-"+date);
 		String[] proSkill=this.getRequest().getParameterValues("proSkill");
 		String temp="";
+		if(proSkill!=null)
+		{
 		for(String t :proSkill)
 			temp+=t+",";
 		this.wuser.setProSkill(temp);
+		}
+		this.wwwUsersService.update(wuser);
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+			setSmsg("修改失败！请联系网站联系网站管理员！");
+			return "failture";
+		}
+		return "success";
+	}
+	public String userRegEdit()
+	{
+		try{
+		String year=this.getRequest().getParameter("year");
+		String month=this.getRequest().getParameter("month");
+		String date=this.getRequest().getParameter("date");
+		wuser.setBirthday(year+"-"+month+"-"+date);
+		String[] proSkill=this.getRequest().getParameterValues("proSkill");
+		String temp="";
+		if(proSkill!=null)
+		{
+		for(String t :proSkill)
+			temp+=t+",";
+		this.wuser.setProSkill(temp);
+		}
 		this.wwwUsersService.update(wuser);
 		}catch(Exception e)
 		{
