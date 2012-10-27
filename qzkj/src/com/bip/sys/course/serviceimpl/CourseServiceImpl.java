@@ -7,12 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
-import com.bip.common.util.PaginationSupport;
+import com.bip.common.service.BaseService;
+import com.bip.common.util.QueryJson;
 import com.bip.sys.course.dao.CourseDao;
 import com.bip.sys.course.po.JocCourse;
 import com.bip.sys.course.service.CourseService;
 @Service
-public class CourseServiceImpl implements CourseService {
+public class CourseServiceImpl extends BaseService implements CourseService {
 
 	
 	public void delete(JocCourse bean) {
@@ -47,10 +48,8 @@ public class CourseServiceImpl implements CourseService {
 	}
 
 	
-	public PaginationSupport findPageByQuery(String hql, String countHql,
-			int pageSize, int startIndex) {
-		
-		return courseDao.findPageByQuery(hql, countHql, pageSize, startIndex);
+	public QueryJson findPageByQuery(String conditions, int row, int i) {
+		return super.PageQuery(courseDao, null, conditions, row, i);
 	}
 
 	

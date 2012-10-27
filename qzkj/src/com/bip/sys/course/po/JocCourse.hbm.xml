@@ -12,26 +12,26 @@
                 <comment>编号</comment>
             </column>
         </property>
-        <many-to-one name="video1" class="com.bip.common.upload.po.JocFile" fetch="select">
+        <property name="subjectCode" type="java.lang.String">
+            <column name="subject_code" length="20" not-null="true">
+                <comment>所属科目</comment>
+            </column>
+        </property>
+        <property name="video1" type="java.lang.String">
             <column name="video1" length="36">
                 <comment>流畅视频</comment>
             </column>
-        </many-to-one>
-        <many-to-one name="subject" property-ref="code" class="com.bip.sys.course.po.JocSubject" fetch="select">
-            <column name="subject_code" not-null="true">
-                <comment>所属科目</comment>
-            </column>
-        </many-to-one>
-        <many-to-one name="video3" class="com.bip.common.upload.po.JocFile" fetch="select">
+        </property>
+        <property name="video3" type="java.lang.String">
             <column name="video3" length="36">
                 <comment>高清视频</comment>
             </column>
-        </many-to-one>
-        <many-to-one name="video2" class="com.bip.common.upload.po.JocFile" fetch="select">
+        </property>
+        <property name="video2" type="java.lang.String">
             <column name="video2" length="36">
                 <comment>普清视频</comment>
             </column>
-        </many-to-one>
+        </property>
         <property name="name" type="java.lang.String">
             <column name="name" length="100" not-null="true">
                 <comment>课程名称</comment>
@@ -51,6 +51,9 @@
             <column name="discription" length="200">
                 <comment>描述</comment>
             </column>
+        </property>
+        <property name="subjectName" type="java.lang.String"
+             formula="(select t.name from www_subject t where t.code=subject_code )" >
         </property>
     </class>
 </hibernate-mapping>

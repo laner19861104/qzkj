@@ -23,6 +23,8 @@ import com.bip.common.jqueryeasyui.Tree;
 import com.bip.common.jqueryeasyui.TreeVo;
 import com.bip.common.util.ControllerUtil;
 import com.bip.sys.codediction.dmzd.service.DmzdService;
+import com.bip.sys.course.po.JocSubject;
+import com.bip.sys.course.service.SubjectService;
 
 import com.bip.sys.dept.service.DeptService;
 import com.bip.sys.permission.service.PermissionService;
@@ -46,7 +48,8 @@ public class SysTreeAction extends baseAction {
 	private PermissionService perservice;
 	@Resource
 	private DmzdService dmzdservice;
-
+	@Resource
+	private SubjectService subjectService;
 	private List<Tree> treelist;
 	
 
@@ -58,6 +61,7 @@ public class SysTreeAction extends baseAction {
 		this.treelist = treelist;
 	}
 
+	
 	/**
 	 * 功能：获取部门comboTree
 	 */
@@ -325,6 +329,26 @@ public class SysTreeAction extends baseAction {
 		treelist=this.resservice.getRsourceListByResPid(resourceid,super.getUser().getUserid());
 		return "success";
 	}
+
+	public void getSubjectTree() {
+		List<JocSubject> datalist = subjectService.find("from JocSubject");
+		List rdatalist = new ArrayList();
+		TreeVo vo = null;
+		for (JocSubject po : datalist) {
+			vo = new TreeVo();
+			vo.setPid("0");
+			vo.setId(po.getCode());
+			vo.setText(po.getName());
+			rdatalist.add(vo);
+		}
+		String jsonstr = "[" + JqueryUtil.getComboTreeJson("0", rdatalist) + "]";
+		ControllerUtil.responseWriter(jsonstr, this.getResponse());
+	}
+	
+	
+	
+	
+	
 	public DeptService getDeptservice() {
 		return deptservice;
 	}
