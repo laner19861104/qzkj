@@ -3,9 +3,18 @@
 <struts>
 	<!--登录操作-->
 	<package name="wlogin" extends="struts-default">
+		<action name="index" class="wwwEntry" method="index">
+			<result name="success" >/www/stuInfo/index.jsp</result>
+			<result name="failure" >/reg.jsp</result>
+		</action>
+		<action name="list" class="wwwEntry" method="list">
+			<result name="success" >/www/stuInfo/list.jsp</result>
+			<result name="failure" >/reg.jsp</result>
+		</action>
+		
 		<action name="wlogin" class="webSiteLoginAction" method="login">
 			<result name="success" >/www/stuInfo/s_center.jsp</result>
-			<result name="failure" >/login.jsp</result>
+			<result name="failure" >/reg.jsp</result>
 		</action>
 		<action name="reLogin" class="webSiteLoginAction" method="reLogin">
 			<result name="success" >/reg.jsp</result>
@@ -35,12 +44,6 @@
 		</action>
 		<action name="regUser" class="wwwUsersAction" method="add">
 			<result name="success" >/www/stuInfo/reg2.jsp
-			</result>
-			<result name="failure" >/www/stuInfo/reg.jsp
-			</result>
-		</action>
-		<action name="regEditUser" class="wwwUsersAction" method="userRegEdit">
-			<result name="success" >/www/stuInfo/reg_success.jsp
 			</result>
 			<result name="failure" >/www/stuInfo/stu_failure.jsp
 			</result>
