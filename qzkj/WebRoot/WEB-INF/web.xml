@@ -12,7 +12,7 @@
   <filter-class>com.bip.common.util.WebSiteFilter</filter-class>
   <init-param>
    <param-name>directUrl</param-name>
-   <param-value>/wlogin.do,/registerExists.do,/regUser.do</param-value>
+   <param-value>/index.do,/list.do,/wlogin.do,/registerExists.do,/regUser.do</param-value>
   </init-param>
  </filter>
  <filter>
@@ -78,7 +78,7 @@
   <mime-type>application/flv</mime-type>
  </mime-mapping>
  <welcome-file-list>
-  <welcome-file>login.vm</welcome-file>
+  <welcome-file>index.do</welcome-file>
  </welcome-file-list>
  <login-config>
   <auth-method>BASIC</auth-method>
