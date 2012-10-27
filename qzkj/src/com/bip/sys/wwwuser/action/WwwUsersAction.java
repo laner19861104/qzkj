@@ -101,18 +101,21 @@ public class WwwUsersAction extends baseAction {
 			SqlUtil sqlUtil = new SqlUtil();
 			WwwUsers addpo = new WwwUsers();
 			WwwUsers po = (WwwUsers) sqlUtil.getObjByMap(map, addpo);
-		
+			po.setUuid(Tool.getStringUUid());
+			po.setPassword(Tool.MD5(po.getPassword()));
 			/*
 			 * 执行数据库写入操作，并根据返回值进行成功、失败处理
 			 */
 			Serializable a = wwwUsersService.save(po);
-			if ((Integer) a > 0) {
+			if ( a != null) {
+				this.getSession().setAttribute("webuser", po);
 				msg=new resultMsg(true, UniContant.addok);
 			} else {
 				msg=new resultMsg(true, UniContant.adderror);
 			}
 		} catch (Exception ex) {
 				msg=new resultMsg(true, UniContant.adderror);
+				return "failture";
 		}
 		return "success";
 
