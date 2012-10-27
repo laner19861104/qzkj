@@ -33,6 +33,11 @@
 			<result name="failure" >/www/stuInfo/stu_failure.jsp
 			</result>
 		</action>
-		
+		<action name="regUser.do" class="wwwUsersAction" method="add">
+			<result name="success" >/www/stuInfo/reg2.jsp
+			</result>
+			<result name="failure" >/www/stuInfo/stu_failure.jsp
+			</result>
+		</action>
 	</package>
 </struts>    
