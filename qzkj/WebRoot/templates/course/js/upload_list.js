@@ -26,11 +26,15 @@ function makeupupload(index,el) {
 		},
 		onUploadProgress : function(file, bytesUploaded, bytesTotal, totalBytesUploaded, totalBytesTotal) {
 			var percentage = Math.round(bytesUploaded / bytesTotal * 100);
-			$("#jdt_"+index).width(percentage*2.50+'px');
+			$("#jdt_"+index).width(percentage*2+'px');
 			$("#jd_"+index).html(percentage+"%");
 		},
 		onUploadSuccess : function(file, data, response) {//上传成功
-			
+			data = eval("(" + data + ")");
+			$("#cnvideo"+index).val(data.name);
+			$("#video"+index).val(data.uuid);
+			$("#jdt_"+index).width('0px');
+			$("#jd_"+index).html("");
 		}
     });
 }
