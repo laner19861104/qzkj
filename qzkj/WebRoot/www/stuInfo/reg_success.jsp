@@ -75,7 +75,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </div>
         </div>
         <div class="zhuceft" style="margin-left:auto; margin-right:auto;"><span class="hui">您还可以去：</span>
-    	<a href="" style="color:#3F3F3F">网校首页</a>　
+    	<a href="index.do" style="color:#3F3F3F">网校首页</a>　
     	<a href="s_center.jsp">我的网校我的家</a>　
     	<br>
     	<span class="f12" style="color:#3F3F3F">提示信息</span></a> </span>

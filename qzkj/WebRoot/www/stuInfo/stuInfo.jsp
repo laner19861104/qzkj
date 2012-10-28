@@ -141,7 +141,7 @@ src="images/left_menu_dpic.gif"></DIV></DIV>
     <ul class="TabbedPanelsTabGroup">
       <li class="TabbedPanelsTab" tabindex="0">个人资料修改</li>
       <li class="TabbedPanelsTab" tabindex="0">密码修改</li>
-      <li class="TabbedPanelsTab" tabindex="0">昵称修改</li>
+      <!-- <li class="TabbedPanelsTab" tabindex="0">昵称修改</li> -->
     </ul>
     <div class="TabbedPanelsContentGroup">
       <div class="TabbedPanelsContent">

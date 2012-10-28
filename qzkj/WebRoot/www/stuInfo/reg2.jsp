@@ -69,7 +69,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         		</div>
         		<div class="left" style="margin-top:4px;padding-left: 20px;color: #ff0000">欢迎 <span style="font-weight: bold">${webuser.account}</span>，您已经注册成功！</div>
         		<div class="right" >
-        		如果您已经是我们的学员，请直接&nbsp;<a href="">登录</a>
+        		如果您已经是我们的学员，请直接&nbsp;<a href="login.jsp">登录</a>
         		</div>
         	</div>
         	<div class="infotip mid" style="margin-left:auto; margin-right:auto;">

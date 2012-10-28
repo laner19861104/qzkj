@@ -5,29 +5,29 @@
 	<package name="wlogin" extends="struts-default">
 		<action name="index" class="wwwEntry" method="index">
 			<result name="success" >/www/stuInfo/index.jsp</result>
-			<result name="failure" >/reg.jsp</result>
+			<result name="failure" >/login.jsp</result>
 		</action>
 		<action name="list" class="wwwEntry" method="list">
 			<result name="success" >/www/stuInfo/list.jsp</result>
-			<result name="failure" >/reg.jsp</result>
+			<result name="failure" >/login.jsp</result>
 		</action>
 		
 		<action name="wlogin" class="webSiteLoginAction" method="login">
 			<result name="success" >/www/stuInfo/s_center.jsp</result>
-			<result name="failure" >/reg.jsp</result>
+			<result name="failure" >/login.jsp</result>
 		</action>
 		<action name="reLogin" class="webSiteLoginAction" method="reLogin">
-			<result name="success" >/reg.jsp</result>
+			<result name="success" >/login.jsp</result>
 			<result name="failure" >/www/stuInfo/stu_failure.jsp
 			</result>
 		</action>	
 		<action name="entryStuInfo" class="wwwUsersAction" method="entry">
 			<result name="success" >/www/stuInfo/stuInfo.jsp</result>
-			<result name="failure" >/reg.jsp</result>
+			<result name="failure" >/login.jsp</result>
 		</action>
 		<action name="entryAccount" class="wwwUsersAction" method="accountentry">
 			<result name="success" >/www/stuInfo/stu_account.jsp</result>
-			<result name="failure" >/reg.jsp</result>
+			<result name="failure" >/login.jsp</result>
 		</action>
 		
 		<action name="userEdit" class="wwwUsersAction" method="userEdit">
