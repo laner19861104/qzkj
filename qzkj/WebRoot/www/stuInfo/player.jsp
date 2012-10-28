@@ -1,15 +1,16 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="gb2312"   contentType="text/html;charset=gb2312"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="x-ua-compatible" content="ie=7" /> 
-<title>æ— æ ‡é¢˜æ–‡æ¡£</title>
+<title>ÆæÕı»á¼ÆÅàÑµÍøĞ£-ÊÓÆµ²¥·Å</title>
 <link href="css/gong.css" rel="stylesheet" type="text/css" />
 <link href="css/shipin.css" rel="stylesheet" type="text/css" />
 
@@ -20,12 +21,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	<div class="btn">
         	<table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td><img src="images/btn_03.jpg" width="58" height="46" alt="åœ¨çº¿å®¢æœ" /></td>
-    <td><img src="images/btn_05.jpg" width="57" height="46" alt="åœ¨çº¿å®¢æœ" /></td>
-    <td><img src="images/btn_07.jpg" width="57" height="46" alt="åœ¨çº¿å®¢æœ" /></td>
-    <td><img src="images/btn_09.jpg" width="57" height="46" alt="åœ¨çº¿å®¢æœ" /></td>
-    <td><img src="images/btn_11.jpg" width="57" height="46" alt="åœ¨çº¿å®¢æœ" /></td>
-    <td><img src="images/btn_13.jpg" width="57" height="46" alt="åœ¨çº¿å®¢æœ" /></td>
+    <td><img src="images/btn_03.jpg" width="58" height="46" alt="ÔÚÏß¿Í·ş" /></td>
+    <td><img src="images/btn_05.jpg" width="57" height="46" alt="ÔÚÏß¿Í·ş" /></td>
+    <td><img src="images/btn_07.jpg" width="57" height="46" alt="ÔÚÏß¿Í·ş" /></td>
+    <td><img src="images/btn_09.jpg" width="57" height="46" alt="ÔÚÏß¿Í·ş" /></td>
+    <td><img src="images/btn_11.jpg" width="57" height="46" alt="ÔÚÏß¿Í·ş" /></td>
+    <td><img src="images/btn_13.jpg" width="57" height="46" alt="ÔÚÏß¿Í·ş" /></td>
   </tr>
 </table>
 
@@ -34,28 +35,28 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         
         
         
-        </div><!--btnxç»“æŸ-->
+        </div><!--btnx½áÊø-->
     
     
     
-    </div><!--topflashç»“æŸ-->
+    </div><!--topflash½áÊø-->
     
     <div class="clear"></div>
       
       <div id="menu">
 		<ul>
-		  <li><a href="index.html">é¦–é¡µ</a></li>
-			<li><a href="list.html?a=å·¥ä½œåŠ¨æ€" rel="dropmenu1">ä¿ƒé”€è¯¾ç¨‹</a></li>
-			<li><a href="list.html?a=æ”¿ç­–æ³•è§„" rel="dropmenu2">çƒ­é”€è¯¾ç¨‹</a></li>
-			<li><a href="zhongbiao.html?a=æ‹›æ ‡å…¬å‘Š" rel="dropmenu3">å¢å€¼æœåŠ¡</a></li>
+		  <li><a href="index.html">Ê×Ò³</a></li>
+			<li><a href="list.html?a=¹¤×÷¶¯Ì¬" rel="dropmenu1">´ÙÏú¿Î³Ì</a></li>
+			<li><a href="list.html?a=Õş²ß·¨¹æ" rel="dropmenu2">ÈÈÏú¿Î³Ì</a></li>
+			<li><a href="zhongbiao.html?a=ÕĞ±ê¹«¸æ" rel="dropmenu3">ÔöÖµ·şÎñ</a></li>
 		</ul>
         
         <div class="search">
         	<select name="">
-        	  <option value="è¯¾ç¨‹">è¯¾ç¨‹</option>
+        	  <option value="¿Î³Ì">¿Î³Ì</option>
         	</select>
         	<input name="" type="text" />
-        <img src="images/19.gif" width="43" height="20" alt="æœç´¢" /></div><!--searchç»“æŸ-->
+        <img src="images/19.gif" width="43" height="20" alt="ËÑË÷" /></div><!--search½áÊø-->
 	</div> 
 	<!--end menu-->
  
@@ -64,10 +65,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
     
     
-    <div id="main"><!--ä¸­é—´å¼€å§‹-->
+    <div id="main"><!--ÖĞ¼ä¿ªÊ¼-->
     		<div class="position">
 		
-			 <h1> æ‚¨çš„ä½ç½®ï¼šé¦–é¡µ>>è§†é¢‘</h1>
+			 <h1> ÄúµÄÎ»ÖÃ£ºÊ×Ò³>>ÊÓÆµ</h1>
 		   </div> <!--end position-->
            <div class="clear mt8"></div>
            <table width="960" border="0" cellspacing="0" cellpadding="0">
@@ -81,22 +82,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
                            <table width="61" border="0" cellspacing="0" cellpadding="0"  class="shi_img">
                                           <tr>
-                                            <td ><img src="images/s_09.jpg" width="60" height="61" alt="è¯¾ç¨‹ç›®å½•" /></td>
+                                            <td ><img src="images/s_09.jpg" width="60" height="61" alt="¿Î³ÌÄ¿Â¼" /></td>
                                           </tr>
                                           <tr>
-                                            <td><img src="images/s_11.jpg" width="60" height="61" alt="ä¸‹è½½ä¸­å¿ƒ" /></td>
+                                            <td><img src="images/s_11.jpg" width="60" height="61" alt="ÏÂÔØÖĞĞÄ" /></td>
                                           </tr>
                                           <tr>
-                                            <td><img src="images/s_19.jpg" width="60" height="61" alt="è¯¾ç¨‹è®²ä¹‰" /></td>
+                                            <td><img src="images/s_19.jpg" width="60" height="61" alt="¿Î³Ì½²Òå" /></td>
                                           </tr>
                                           <tr>
-                                            <td><img src="images/s_20.jpg" width="60" height="61" alt="å†å¹´è¯•é¢˜" /></td>
+                                            <td><img src="images/s_20.jpg" width="60" height="61" alt="ÀúÄêÊÔÌâ" /></td>
                                           </tr>
                                           <tr>
-                                            <td><img src="images/s_23.jpg" width="60" height="61" alt="æˆ‘çš„é¢˜åº“" /></td>
+                                            <td><img src="images/s_23.jpg" width="60" height="61" alt="ÎÒµÄÌâ¿â" /></td>
                                           </tr>
                                           <tr>
-                                            <td><img src="images/s_24.jpg" width="60" height="61" alt="è€ƒè¯•å¤§çº²" /></td>
+                                            <td><img src="images/s_24.jpg" width="60" height="61" alt="¿¼ÊÔ´ó¸Ù" /></td>
                                           </tr>
                                         </table>     
                                 
@@ -112,9 +113,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 <td width="83%" VALIGN="top">
                                 <div style="padding-top:6px;">
                                 	<div class="mulu">
-                                    	 <h2> è§†é¢‘</h2>
+                                    	 <h2> ÊÓÆµ</h2>
                                     
-                                    <!--åˆ›å»ºæ’­æ”¾å™¨å¯¹è±¡-->
+                                    <!--´´½¨²¥·ÅÆ÷¶ÔÏó-->
 <OBJECT name=myWebPlayer9
 	id=myWebPlayer9
 	classid="clsid:947BA55B-2113-4349-8784-FFB9D7F881C9"
@@ -124,20 +125,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	hspace=0
 	vspace=0
 >
-<!--æ¨¡å¼é€‰æ‹©, full è¡¨ç¤ºå®Œæ•´æ˜¾ç¤ºåŒ…æ‹¬æ’­æ”¾çª—å£å’Œæ§åˆ¶æ , simple è¡¨ç¤ºç®€å•æ˜¾ç¤º, åªæ˜¾ç¤ºæ’­æ”¾çª—å£, ä¸æ˜¾ç¤ºæ§åˆ¶æ -->
+<!--Ä£Ê½Ñ¡Ôñ, full ±íÊ¾ÍêÕûÏÔÊ¾°üÀ¨²¥·Å´°¿ÚºÍ¿ØÖÆÀ¸, simple ±íÊ¾¼òµ¥ÏÔÊ¾, Ö»ÏÔÊ¾²¥·Å´°¿Ú, ²»ÏÔÊ¾¿ØÖÆÀ¸-->
 <param name="Mode" value="full">
-<!--æ’­æ”¾æ—¶æ˜¾ç¤ºçš„æ’­æ”¾æ–‡ä»¶çš„æ ‡é¢˜-->
-<param name="Title" value="äºšç‘Ÿçš„è¿·ä½ ç‹å›½A">
-<!--æ’­æ”¾å¼€å§‹å‰, æ˜¾ç¤ºå¹¿å‘Šçš„URLåœ°å€, å¦‚æœåŒ…å«Flash,æœ€å¥½ä¸è¦å¯ç”¨æ˜¾ç¤ºFlashçš„å³é”®èœå•åŠŸèƒ½, åœ°å€ä¸ºç©º,ä¸æ˜¾ç¤ºå¹¿å‘Š-->
+<!--²¥·ÅÊ±ÏÔÊ¾µÄ²¥·ÅÎÄ¼şµÄ±êÌâ-->
+<param name="Title" value="/${file.realname}">
+<!--²¥·Å¿ªÊ¼Ç°, ÏÔÊ¾¹ã¸æµÄURLµØÖ·, Èç¹û°üº¬Flash,×îºÃ²»ÒªÆôÓÃÏÔÊ¾FlashµÄÓÒ¼ü²Ëµ¥¹¦ÄÜ, µØÖ·Îª¿Õ,²»ÏÔÊ¾¹ã¸æ-->
 <param name="AdURL" value="">
-<!--æ’­æ”¾çš„è§†é¢‘çš„åœ°å€,ç›®å‰æ”¯æŒä¸¤ç§åœ°å€æ ¼å¼ä¸€æ˜¯æ˜æ–‡HTTPåœ°å€ï¼ŒäºŒæ˜¯WP9://åŠ å¯†åœ°å€ï¼Œè§æ„ä½¿ç”¨åŠ å¯†åœ°å€-->
-<param name="URL" value="wp9://48311CA3881895FAB8D9FEA4FA8857586B84/kad/D9428A0F0102F75BF0AF513589560473A8352C50/E/å¸è¡€é¬¼æ—¥è®°/ç¬¬ä¸€å­£/å¸è¡€é¬¼æ—¥è®°.The.Vampire.Diaries.S01E01.Chi_Eng.HDTVrip.720X396-YYeTsäººäººå½±è§†.rmvb">
-<!--ä¸é™åˆ¶ä¸ªæ•°çš„æ–‡å­—å¹¿å‘Š-->
+<!--²¥·ÅµÄÊÓÆµµÄµØÖ·,Ä¿Ç°Ö§³ÖÁ½ÖÖµØÖ·¸ñÊ½Ò»ÊÇÃ÷ÎÄHTTPµØÖ·£¬¶şÊÇWP9://¼ÓÃÜµØÖ·£¬¼ûÒâÊ¹ÓÃ¼ÓÃÜµØÖ·-->
+<param name="URL" value="wp9://6C97AF2C670CBD6997A9EB6DE88CCA9808D8/kad/D9428A0F0102F75BF0AF513589560473A8352C50/D/apache-tomcat-6.0.30/webapps/qzkj/views/${file.name}${file.suffix}">
+<!--²»ÏŞÖÆ¸öÊıµÄÎÄ×Ö¹ã¸æ-->
 <param name="TextAds" 
-value="æŠ€æœ¯æ”¯æŒ|http://www.webplayer9.com/bbs@ä¹…ä¹…å½±éŸ³å®˜ç½‘|http://www.webplayer9.com">
-<!--æ’­æ”¾å®Œæ¯•åè·³è½¬åˆ°ä¸‹ä¸€ä¸ªé¡µé¢çš„åœ°å€, ä¸ºç©ºåˆ™ä¸è·³è½¬-->
-<param name="NextVideoURL" value="wp9://48311CA3881895FAB8D9FEA4FA8857586B84/kad/D9428A0F0102F75BF0AF513589560473A8352C50/E/å¸è¡€é¬¼æ—¥è®°/ç¬¬ä¸€å­£/å¸è¡€é¬¼æ—¥è®°.The.Vampire.Diaries.S01E02.Chi_Eng.HDTVrip.720X396-YYeTsäººäººå½±è§†.rmvb">
-<!--æ§åˆ¶è‡ªåŠ¨æ§åˆ¶IEæ’­æ”¾çª—å£ä¸ºè§†é¢‘çš„åŸå§‹å¤§å°. 0 è¡¨ç¤ºä¸å¯ç”¨, -1 å¯ç”¨-->
+value="¼¼ÊõÖ§³Ö|http://www.webplayer9.com/bbs@¾Ã¾ÃÓ°Òô¹ÙÍø|http://www.webplayer9.com">
+<!--²¥·ÅÍê±ÏºóÌø×ªµ½ÏÂÒ»¸öÒ³ÃæµÄµØÖ·, Îª¿ÕÔò²»Ìø×ª-->
+<!--¿ØÖÆ×Ô¶¯¿ØÖÆIE²¥·Å´°¿ÚÎªÊÓÆµµÄÔ­Ê¼´óĞ¡. 0 ±íÊ¾²»ÆôÓÃ, -1 ÆôÓÃ-->
 <param name="AutoSize" value=0>
 </OBJECT>
 
@@ -151,7 +151,7 @@ value="æŠ€æœ¯æ”¯æŒ|http://www.webplayer9.com/bbs@ä¹…ä¹…å½±éŸ³å®˜ç½‘|http://www.
                                     
                                     
                                     
-                                    </div><!--nuluç»“æŸ-->
+                                    </div><!--nulu½áÊø-->
     </div>                            
                                 
                                 
@@ -165,22 +165,22 @@ value="æŠ€æœ¯æ”¯æŒ|http://www.webplayer9.com/bbs@ä¹…ä¹…å½±éŸ³å®˜ç½‘|http://www.
                                 </td>
                                 <td width="8%"  VALIGN="top"><table width="61" border="0" cellspacing="0" cellpadding="0"  class="shi_img1">
   <tr>
-                                    <td><img src="images/s_27.jpg" width="60" height="61" alt="ç­”ç–‘æ¿" /></td>
+                                    <td><img src="images/s_27.jpg" width="60" height="61" alt="´ğÒÉ°å" /></td>
                                   </tr>
                                   <tr>
-                                    <td><img src="images/s_28.jpg" width="60" height="61" alt="æ¢¦æƒ³åœ¨çœŸ" /></td>
+                                    <td><img src="images/s_28.jpg" width="60" height="61" alt="ÃÎÏëÔÚÕæ" /></td>
                                   </tr>
                                   <tr>
-                                    <td><img src="images/s_31.jpg" width="60" height="61" alt="æŸ¥çœ‹ç¬”è®°" /></td>
+                                    <td><img src="images/s_31.jpg" width="60" height="61" alt="²é¿´±Ê¼Ç" /></td>
                                   </tr>
                                   <tr>
-                                    <td><img src="images/s_32.jpg" width="60" height="61" alt="æ•™å¸ˆè¯„ä»·" /></td>
+                                    <td><img src="images/s_32.jpg" width="60" height="61" alt="½ÌÊ¦ÆÀ¼Û" /></td>
                                   </tr>
                                   <tr>
-                                    <td><img src="images/s_35.jpg" width="60" height="61" alt="å­¦ä¹ è®°å½•" /></td>
+                                    <td><img src="images/s_35.jpg" width="60" height="61" alt="Ñ§Ï°¼ÇÂ¼" /></td>
                                   </tr>
                                   <tr>
-                                    <td><img src="images/s_36.jpg" width="60" height="61" alt="ä½¿ç”¨å¸®åŠ©" /></td>
+                                    <td><img src="images/s_36.jpg" width="60" height="61" alt="Ê¹ÓÃ°ïÖú" /></td>
                                   </tr>
                                 </table>
                                 </td>
@@ -238,12 +238,12 @@ value="æŠ€æœ¯æ”¯æŒ|http://www.webplayer9.com/bbs@ä¹…ä¹…å½±éŸ³å®˜ç½‘|http://www.
            
     
     
-	</div><!--ä¸­é—´å¼€å§‹ç»“æŸ-->
+	</div><!--ÖĞ¼ä¿ªÊ¼½áÊø-->
     
     <div class="clear mt8"></div>
     <div id="foot">
-    	<p>ç‰ˆæƒæ‰€æœ‰ï¼šæ½åŠæ”¿åºœé‡‡è´­<br>
-            æŠ€æœ¯æ”¯æŒï¼šæ½åŠä¸­è´¢ä¿¡ç§‘æŠ€æœ‰é™å…¬å¸
+    	<p>°æÈ¨ËùÓĞ£ºÎ«·»Õş¸®²É¹º<br>
+            ¼¼ÊõÖ§³Ö£ºÎ«·»ÖĞ²ÆĞÅ¿Æ¼¼ÓĞÏŞ¹«Ë¾
         </p>
     
     

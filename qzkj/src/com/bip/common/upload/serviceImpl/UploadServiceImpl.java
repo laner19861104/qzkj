@@ -51,13 +51,13 @@ public class UploadServiceImpl implements UploadService {
 		}
 		String uuid = UUID.randomUUID().toString();//bean的id,也是物理文件的文件名
 		String name = fname.replace(ftype, "");//用于显示的文件名
-		String filename = uuid/* + ftype*/;//便于以后添加后缀
+		String filename = uuid + ftype;//便于以后添加后缀
 		String filepath = fpath;
-		if (0 < floors) {
-			for (int i = floors; i > 0; i--) {
-				filepath = filepath + "/" + UUID.randomUUID();
-			}
-		}
+//		if (0 < floors) {
+//			for (int i = floors; i > 0; i--) {
+//				filepath = filepath + "/" + UUID.randomUUID();
+//			}
+//		}
 		String path = filepath + "/" + filename;
 		boolean ius = this.excuteUpload(file, filepath, filename);
 		

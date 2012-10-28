@@ -48,5 +48,12 @@
 			<result name="failure" >/www/stuInfo/stu_failure.jsp
 			</result>
 		</action>
+		<action name="player" class="playerAction" method="getMovie">
+			<result name="success" >/www/stuInfo/player.jsp
+			</result>
+			<result name="failure" >/www/stuInfo/failure.jsp
+			</result>
+		</action>
+		
 	</package>
 </struts>    

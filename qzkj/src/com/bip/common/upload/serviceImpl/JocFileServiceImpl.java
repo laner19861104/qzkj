@@ -78,4 +78,10 @@ public class JocFileServiceImpl implements JocFileService {
 		this.listeners = listeners;
 	}
 
+	@Override
+	public JocFile get(String uuid) {
+		return this.jocFileDao.get(uuid);
+		
+	}
+
 }

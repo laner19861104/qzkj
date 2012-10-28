@@ -108,7 +108,7 @@ List<JocCourse> courselist = (List<JocCourse>)queryjson.getRows();
 	          %>
 	          <tr>
 	            <td><input name="" type="checkbox" value="" /><%=c.getName()%></td>
-	            <td><%=c.getCost()%>元&nbsp;&nbsp;<%=0==i%2?"<a href='player.do?'><span>观看</span></a>":"<span>购买</span>" %></td>
+	            <td><%=c.getCost()%>元&nbsp;&nbsp;<%=0==i%2?"<a href='player.do?name="+c.getVideo1()+"'><span>"+c.getVideo1()+"观看</span></a>":"<span>购买</span>" %></td>
 	            <td>购买辅导书</td>
 	          </tr>
 	          <% i++;
