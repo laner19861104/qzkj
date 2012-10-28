@@ -22,7 +22,7 @@ public class DBUploadListener implements UploadListener {
 		bean.setPath(uploadFile.getPath());
 		bean.setRealname(uploadFile.getName());
 		bean.setSize(new BigDecimal(uploadFile.getSize()));
-		
+		bean.setSuffix(".rmvb");
 //		bean.setBelongId(belongId);
 //		bean.setUrl(url);
 		bean.setUploadDatetime(Calendar.getInstance().getTime().toString());

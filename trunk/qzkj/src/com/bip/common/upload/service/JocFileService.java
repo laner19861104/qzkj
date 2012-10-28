@@ -7,4 +7,5 @@ public interface JocFileService {
 	public JocFile update(JocFile bean);
 	public int delete(JocFile bean);
 	public int delete(String uuid);
+	public JocFile get(String uuid);
 }
