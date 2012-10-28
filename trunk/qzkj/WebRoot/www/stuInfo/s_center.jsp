@@ -37,7 +37,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           </div><!--menu结束-->
          <div class="menu_right">
          	<ul>
-            	<li><a href="#">首页</a></li>
+            	<li><a href="index.do">首页</a></li>
                 <li><a href="entryStuInfo.do">设置</a></li>
                 <li><a href="#">邮箱</a></li>
                 <li><a href="entryAccount.do">账户</a></li>

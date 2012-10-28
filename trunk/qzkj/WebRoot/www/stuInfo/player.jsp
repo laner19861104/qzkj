@@ -131,12 +131,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!--播放开始前, 显示广告的URL地址, 如果包含Flash,最好不要启用显示Flash的右键菜单功能, 地址为空,不显示广告-->
 <param name="AdURL" value="">
 <!--播放的视频的地址,目前支持两种地址格式一是明文HTTP地址，二是WP9://加密地址，见意使用加密地址-->
-<param name="URL" value="http://192.168.117.200:8899/movie/1234.rmvb">
+<param name="URL" value="wp9://48311CA3881895FAB8D9FEA4FA8857586B84/kad/D9428A0F0102F75BF0AF513589560473A8352C50/E/吸血鬼日记/第一季/吸血鬼日记.The.Vampire.Diaries.S01E01.Chi_Eng.HDTVrip.720X396-YYeTs人人影视.rmvb">
 <!--不限制个数的文字广告-->
 <param name="TextAds" 
 value="技术支持|http://www.webplayer9.com/bbs@久久影音官网|http://www.webplayer9.com">
 <!--播放完毕后跳转到下一个页面的地址, 为空则不跳转-->
-<param name="NextVideoURL" value="">
+<param name="NextVideoURL" value="wp9://48311CA3881895FAB8D9FEA4FA8857586B84/kad/D9428A0F0102F75BF0AF513589560473A8352C50/E/吸血鬼日记/第一季/吸血鬼日记.The.Vampire.Diaries.S01E02.Chi_Eng.HDTVrip.720X396-YYeTs人人影视.rmvb">
 <!--控制自动控制IE播放窗口为视频的原始大小. 0 表示不启用, -1 启用-->
 <param name="AutoSize" value=0>
 </OBJECT>

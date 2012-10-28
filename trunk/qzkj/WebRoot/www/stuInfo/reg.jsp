@@ -68,7 +68,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         		<img src="images/ft1.gif"/>
         		</div>
         		<div class="right" >
-        		如果您已经是我们的学员，请直接&nbsp;<a href="">登录</a>
+        		如果您已经是我们的学员，请直接&nbsp;<a href="wlogin.do">登录</a>
         		</div>
         	</div>	
         	<div class="conter mid">
@@ -156,7 +156,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <dd style="width: 120px">
                 <img name="verifyCodeImg" id="verifyCodeImg"  src="/qzkj/VerifyCodeServlet.action"  align="top" />
                 </dd>  
-                <dd class="crt hui martop6"><a href="#" onClick="javascript:changeVerifyCode(document.form1.verifyCodeImg)">看不清？换一张</a></dd>              
+                <dd class="crt hui martop6"><a href="javascript:changeVerifyCode(document.getElementById('verifyCodeImg'))">看不清？换一张</a></dd>              
             </dl>
         	</div>
         	<div class="conter mid">
